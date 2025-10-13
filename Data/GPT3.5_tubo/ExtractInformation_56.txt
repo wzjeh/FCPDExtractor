@@ -1,0 +1,26 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Aryl halides | N/A | N/A | Zigzag template, 2D porous networks | 2D |
+
+| Precursor       | Substrate | Temperature | Products | Dimensions |
+|-----------------|-----------|-------------|----------|------------|
+| Aryl bromides   | Au(111)   | Elevated    | C−C linked template | N/A |
+| Aryl chlorides  | Au(111)   | Higher than aryl bromides | 2D porous networks | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|------------|
+| CTP | Cu(111) | 80 °C | (Ph)6 | 2D (close-packed array) |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| DCTP | Au(111) | 200 °C | N/A | N/A |
+| DCTP | Au(111) | 300 °C | N/A | N/A |
+| BCB | Au(111) | 200 °C | N/A | N/A |
+| BCB | Au(111) | 300 °C | N/A | N/A |
+
+| Precursor            | Substrate | Temperature | Products | Dimensions |
+|----------------------|-----------|-------------|----------|------------|
+| Aryl Chlorides       | Cu(111)   | N/A         | N/A      | N/A        |
+| Aryl Chlorides       | Ag(111)   | N/A         | N/A      | N/A        |
+| Aryl Chlorides       | Au(111)   | N/A         | N/A      | N/A        |
+

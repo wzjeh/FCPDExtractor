@@ -1,0 +1,8 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| Porphyrin with four phenyl legs | Surface | Heating of the sample | Compound molecules with activated radical fragments | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| N/A        | N/A       | N/A         | N/A      | N/A        |
+

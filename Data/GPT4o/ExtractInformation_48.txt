@@ -1,0 +1,44 @@
+Sure, here's a table summarizing the details from the provided abstract:
+
+| Precursor              | Substrate | Temperature | Products               | Dimensions |
+|------------------------|-----------|-------------|------------------------|------------|
+| Iron octaethylporphyrin| Au(111)   | N/A         | Iron tetrabenzoporphyrin | N/A        |
+
+Note: The abstract did not specify the exact annealing/reaction temperature or the dimensions of the product molecules.
+
+| Precursor       | Substrate | Temperature | Products | Dimensions |
+|-----------------|-----------|-------------|----------|------------|
+| FeOEP-Cl        | Au(111)   | >500 K      | FeTBP    | N/A        |
+
+**Notes:**
+- **Precursor**: Iron octaethylporphyrinchloride (FeOEP-Cl)
+- **Substrate**: Gold (Au(111))
+- **Temperature**: Above 500 K
+- **Products**: Tetrabenzoporphyrin (FeTBP) 
+- **Dimensions**: Not specified in the provided information
+
+Sure, here's the summarized table based on the provided details:
+
+| Precursor   | Substrate | Temperature | Products  | Dimensions |
+|-------------|-----------|-------------|-----------|------------|
+| FeOEP-Cl    | Au(111)   | 240 K       | FeOEP-Cl  | N/A        |
+| FeOEP-Cl    | Au(111)   | 520 K       | Iron porphyrins | N/A    |
+| FeOEP-Cl    | Au(111)   | 530 K       | Iron porphyrins | N/A    |
+| FeOEP-Cl    | Au(111)   | 550 K       | Iron porphyrins | N/A    |
+| H2TBP + Fe  | Au(111)   | Room Temp   | FeTBP     | N/A        |
+
+Note:
+- FeOEP-Cl is likely the Cl-substituted iron(II) octaethylporphyrin.
+- H2TBP is likely 5,10,15,20-tetrakis(4-bromophenyl)porphyrin.
+- Temperatures are simplified to K (Kelvin).
+- Products are based on the text mentioning molecular species and metalation.
+- Dimensions of the product molecules are listed as N/A since the text does not provide specific dimensionality details.
+
+Sure, here is the summary in a table format:
+
+| Precursor                | Substrate  | Temperature       | Products   | Dimensions |
+|--------------------------|------------|-------------------|------------|------------|
+| Iron and H₂TBP           | Au(111)    | Room temperature  | FeTBP      | N/A        |
+
+If you need further details or additional information, please let me know!
+

@@ -1,0 +1,21 @@
+
+
+
+Precursor | Substrate | Temperature | Products | Dimensions |
+Melamine | Au(111) | Room Temperature | Urea Oligomers | 2D |
+
+
+Precursor: Melamine
+Substrate: 1,4-phenylene diisocyanate
+Temperature: N/A
+Products: Urea-functionalized porous 2-D structures
+Dimensions: 2D
+
+
+Precursor: Melamine and 1,4-phenylene diisocyanate
+Substrate: Au(111)
+Temperature: N/A
+Products: Porous 2-D structures with urea functionality
+Dimensions: 2D
+Precursor: Melamine and 1,4-phenylene diisocyanate Substrate: Au(111) Temperature: N/A Products: Porous 2-D structures with urea functionality Dimensions: 2D
+

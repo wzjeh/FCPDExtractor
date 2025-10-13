@@ -1,0 +1,21 @@
+
+Precursor Molecules Substrates Annealing/Reaction Temperature (K) Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A 300 K N/A N/A
+N/A N/A N/A N/A 2D
+N/A N/A N/A N/A 1D
+N/A N/A N/A N/A 0D
+
+
+Precursor | Substrate | Temperature | Products | Dimensions |
+AEB1 | Au(111) | Room Temperature | 1,4-Regioisomer | 2D |
+Note: The precursor molecule used was AEB1, which was deposited onto the surface. The reaction occurred under mild conditions at room temperature, providing exclusively the 1,4-regioisomer product 2. The reaction mechanism and the observed regioselectivity were clarified through DFT simulations.
+
+
+Precursor: N-(4-azidophenyl)-4-ethynyl-benzamide (AEB)
+Substrate: Au(111) surface
+Temperature: 300 K
+Products: [2+2] cycloadducts of AEB monomers on the Au(111) surface
+Dimensions: 2D (simplified as 2)
+Note: The table is not exhaustive and may not cover all the details mentioned in the text. It is meant to provide a summary of the experimental conditions related to the synthesis of the product molecules.
+

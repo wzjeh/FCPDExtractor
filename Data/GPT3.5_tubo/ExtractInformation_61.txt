@@ -1,0 +1,16 @@
+| Precursor                              | Substrate | Temperature | Products                                | Dimensions |
+|----------------------------------------|-----------|-------------|-----------------------------------------|------------|
+| 9,10-bis((trimethylsilyl)ethynyl)anthracene | Cu(111)   | 400 K       | Oligomerized anthracene units          | 2D         |
+
+| Precursor                                  | Substrate | Temperature | Products                                | Dimensions |
+|--------------------------------------------|-----------|-------------|-----------------------------------------|------------|
+| 9,10-bis((trimethylsilyl)ethynyl)anthracene | Cu(111)   | 400 K       | 9,10-di(ethynyl)-anthracene oligomers | N/A        |
+
+| Precursor              | Substrate         | Temperature     | Products                               | Dimensions |
+|------------------------|-------------------|-----------------|----------------------------------------|------------|
+| 1,4-di(phenylethynyl)benzene πsystem | Ag(111) and Au(111) | Room temperature (for desilylation), High temperature (for Glaser coupling) | 1,3-butadiynediyl-linked polymers | 2D        |
+
+| Precursor             | Substrate | Temperature | Products           | Dimensions |
+|-----------------------|-----------|-------------|-------------------|------------|
+| Trimethylsilyl groups | Cu(111)   | 400 K       | Anthracene oligomers with diacetylene linkers | 2D        |
+

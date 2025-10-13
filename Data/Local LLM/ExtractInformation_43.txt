@@ -1,0 +1,14 @@
+
+Precursor Substrate Temperature Products Dimensions
+Pd(PPh3)4 Pt(111) 600 8C Pd4(PPh3)4 0D
+
+
+| Fullerene | Ru(001) | 700 8C | C60 | 0D |
+
+
+Precursor: C84H42
+Substrate: Pt(111)
+Temperature: 1250°C (dehydrogenation)
+Products: N/A
+Dimensions: N/A
+

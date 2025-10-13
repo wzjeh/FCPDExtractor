@@ -1,0 +1,44 @@
+Here's a summary of the experimental details in the form of a table:
+
+| Precursor                 | Substrate                | Temperature | Products                     | Dimensions                |
+|---------------------------|--------------------------|-------------|------------------------------|---------------------------|
+| Aromatic trisalicylaldehyde (trialdehyde) | Au(111)-(227#qACﬃﬃ ﬃ 3p ) | >400K       | Open filamentous structures | N/A                       |
+| 1,6-diaminohexane (diamine) | Au(111)-(227#qACﬃﬃ ﬃ 3p ) | >400K       | Open filamentous structures | N/A                       |
+| Trisalicylaldehyde and ethylenediamine | N/A                      | N/A         | Cross-linked polymer        | N/A                       |
+| Two-spoke salicylaldehydes and octylamine | Au-(111)               | N/A         | Covalently interlinked structures | N/A                 |
+
+**Notes:**
+- The temperature is specified only for the formation of open filamentous structures (>400K).
+- Dimensions are not explicitly mentioned for the products in the text provided.
+
+Here is the summary of the experimental conditions in a table format:
+
+| Precursor                                                                 | Substrate   | Temperature | Products    | Dimensions |
+|--------------------------------------------------------------------------|-------------|-------------|-------------|------------|
+| 1,3,5-tris[(5-tert-butyl-3-formyl-4-hydroxyphenyl)ethynyl]benzene         | Au(111)     | 850K        | Covalently interlinked 2D polymers | 2D         |
+| 1,6-diaminohexane (>99%, Fluka)                                           | Au(111)     | N/A         | Covalently interlinked 2D polymers | 2D         |
+
+**Notes:**
+- The substrate used in both cases is Au(111).
+- The temperature for annealing is specified as 850K for the trialdehyde precursor.
+- The products are covalently interlinked 2D polymers.
+- The dimensionality of the product molecules is 2D.
+
+| Precursor                | Substrate         | Temperature                  | Products                        | Dimensions |
+|--------------------------|-------------------|------------------------------|---------------------------------|------------|
+| Trialdehydes             | N/A               | 300 K                        | N/A                             | N/A        |
+| 1,6-diaminohexane (Method A) | N/A               | 120–160 K (dosing), 450 K (heating) | Imine oligomers, unreacted diamines | N/A        |
+| 1,6-diaminohexane (Method B) | N/A               | 400 K (exposure), 400 K (flashed)   | N/A                             | N/A        |
+
+**Note:** The substrate details were not provided in the given text.
+
+Sure, here's a summary table based on the given text:
+
+| Precursor          | Substrate | Temperature     | Products         | Dimensions |
+|--------------------|-----------|-----------------|------------------|------------|
+| Trialdehyde        | Surface   | 400–450 K       | Covalently linked trialdehydes and alkyl chains | 2D         |
+| Trialdehyde        | Surface   | 400 K           | Covalently linked trialdehydes and alkyl chains | 2D         |
+| 1,6-diaminohexane  | N/A       | 120–160 K       | Multilayers      | 3D         |
+
+Note: The text only provides specific details on the precursor molecules, substrates, annealing/reaction temperatures, and products formed under the two methods (A and B). The dimensionality of the products is inferred based on the description of the structures.
+

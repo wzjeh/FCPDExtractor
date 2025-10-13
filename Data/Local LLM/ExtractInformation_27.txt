@@ -1,0 +1,38 @@
+
+Precursor: 1,2-bis(2-ethynylphenyl)ethyne
+Substrate: Au(111) surface
+Temperature: Room temperature (293 K)
+Products: Trans-conformation and cis-conformation of 1
+Dimensions: 2D (N/A for 3D)
+
+
+Precursor: N/A
+Substrate: Au(111) surface decorated with a submonolayer coverage of a specific molecule
+Annealing/Reaction Temperature: 160 °C
+Products: Covalently linked oligo-(E)-1,1′-bi-indenylidene chains containing the common monomer subunit 2, with chain lengths ranging from 5 to 10 monomer units, but sometimes exceeding 20.
+Dimensions: 1D (simplified number 1)
+
+
+| 1,1'-bi(indenylidene) | Gold surface | N/A | Oligo-( E)-1,1 ′-bi(indenylidene) | 1D |
+
+
+Precursor: Indenylidene
+Substrate: Au(111)
+Temperature: N/A
+Products: Oligo-( E)-1,1 ′-bi(indenylidene)
+Dimensions: 2D (oligo)
+
+
+Precursor: C1 −C5 thermal enediyne
+Substrate: Au(111) surface
+Temperature: N/A
+Products: Oligo-( E)-1,1 ′-bi(indenylidene)
+Dimensions: 1D (polymeric structure)
+
+
+| Ullmann-type cross-coupling | N/A | N/A | Conjugated polymers | 1D |
+| Diyne polymerization | N/A | N/A | Conjugated polymers | 1D |
+| Alkyne homocoupling | N/A | N/A | Conjugated polymers | 1D |
+| Thermally induced enediyne cyclization | Surfaces | N/A | Conjugated polymers | 1D |
+Note: The precursor molecules are not mentioned in the text, so the information is not available.
+

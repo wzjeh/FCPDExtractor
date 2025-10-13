@@ -1,0 +1,21 @@
+| Precursor            | Substrate | Temperature | Products | Dimensions |
+|----------------------|-----------|-------------|----------|------------|
+| CHP (Cyclohexa-m-phenylene) | Cu(111)   | 475 K       | Polyphenylene networks | Dendritic structures with single-molecule-wide branches |
+| CHP (Cyclohexa-m-phenylene) | Au(111)   | 525 K       | Polyphenylene networks | Small 2D network domains |
+| CHP (Cyclohexa-m-phenylene) | Ag(111)   | 575 K       | Polyphenylene networks | Extended and well-ordered 2D networks |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| CHPs | Cu(111) | Room temperature | CHPs | 2D |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|-------------|---------|-----------|
+| N/A | N/A | N/A | N/A | N/A |
+
+| Precursor   | Substrate | Temperature | Products | Dimensions |
+|-------------|-----------|-------------|----------|------------|
+| CHP         | Cu        | Room Temp   | CHPRs and coadsorbed iodine | N/A |
+| CHPRs       | Cu        | Varies      | Polyphenylene networks | Varies |
+| CHPRs       | Au        | Varies      | Polyphenylene networks | Varies |
+| CHPRs       | Ag        | Varies      | Polyphenylene networks | Varies |
+

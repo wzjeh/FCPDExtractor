@@ -1,0 +1,32 @@
+
+Precursor: N/A
+Substrate: Ag(111) surface
+Temperature: 152 K
+Products: Alkyne dimers
+Dimensions: 2D (simplified as 2)
+
+
+Precursor: Alkyne molecules
+Substrate: Silver (Ag)
+Temperature: 300 K
+Products: Homo-coupling products of terminal alkynes
+Dimensions: N/A
+Note: The table is missing the "Products" column. Please provide the information about the products formed in the experiment.
+
+
+Precursor: Acetylenic molecules
+Substrate: Ag(111) surface
+Temperature: UHV
+Products: Alkyne homo-coupling products
+Dimensions: N/A
+Precursor: Silver-acetylide complexes
+Substrate: Ag(111) surface
+Temperature: Soft conditions
+Products: Discrete compounds or polymeric networks with a conjugated backbone
+Dimensions: 1D (linear)
+Precursor: Alkyne molecules
+Substrate: Ag(111) surface
+Temperature: Mild thermal activation
+Products: Selective formation of discrete compounds or polymeric networks with a conjugated backbone
+Dimensions: 1D (linear) or 2D (planar)
+

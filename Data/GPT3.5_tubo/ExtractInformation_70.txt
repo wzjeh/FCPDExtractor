@@ -1,0 +1,19 @@
+| Precursor            | Substrate | Temperature | Products       | Dimensions  |
+|----------------------|-----------|-------------|---------------|------------|
+| Isocyanide precursors| Ag(111)   | N/A         | Aza-[3]radialenes | N/A    |
+
+| Precursor           | Substrate | Temperature | Products | Dimensions |
+|---------------------|-----------|-------------|----------|------------|
+| ICB                 | Ag(111)   | N/A         | N/A      | N/A        |
+| DCICB               | Ag(111)   | N/A         | N/A      | N/A        |
+| DCICB absorbed on Ag(111) | N/A   | N/A         | N/A      | N/A        |
+
+| Precursor                | Substrate                | Temperature | Products      | Dimensions |
+|--------------------------|--------------------------|-------------|---------------|------------|
+| 1,4-dichloro-2-isocyanobenzene (DCICB) | Ag(111) surface          | N/A         | aza[3]radialenes (T1) | N/A        |
+
+| Precursor            | Substrate        | Temperature | Products   | Dimensions |
+|----------------------|------------------|-------------|------------|------------|
+| N/A                  | N/A              | N/A         | aza[3]radialenes | N/A |
+
+

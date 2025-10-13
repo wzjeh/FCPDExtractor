@@ -1,0 +1,23 @@
+| Precursor              | Substrate             | Temperature | Products | Dimensions |
+|------------------------|-----------------------|-------------|----------|------------|
+| Aromatic trisalicylaldehyde | 1,6-diaminohexane | Above 400K | Cross-linked polymer | Filamentous structures |
+| Ethylenediamine         | N/A                   | N/A         | N/A      | N/A        |
+
+| Precursor                                                       | Substrate                      | Temperature | Products                                                                                                     | Dimensions |
+|-----------------------------------------------------------------|--------------------------------|-------------|--------------------------------------------------------------------------------------------------------------|------------|
+| 1,3,5-tris[(5-tert-butyl-3-formyl-4-hydroxyphenyl)ethynyl]benzene | Herringbone reconstructed Au(111) | 850K        | Covalently interlinked 2D polymers on Au(111) surface with nanometer-sized pores                                | 2D        |
+| 1,6-diaminohexane                                               | N/A                            | N/A         | N/A                                                                                                          | N/A        |
+
+| Precursor          | Substrate         | Temperature | Products                 | Dimensions |
+|--------------------|-------------------|-------------|--------------------------|------------|
+| Trialdehydes       | N/A               | 300K        | Imine oligomers          | N/A        |
+| 1,6-diaminohexane  | Trialdehydes      | 120-160K    | Matrix of diamines       | N/A        |
+| Trialdehydes       | N/A               | 400K        | N/A                      | N/A        |
+| 1,6-diaminohexane  | Trialdehydes      | 120-160K    | N/A                      | N/A        |
+
+| Precursor        | Substrate             | Temperature | Products        | Dimensions  |
+|------------------|-----------------------|-------------|-----------------|-------------|
+| Trialdehydes     | 1,6-diaminohexane     | 120-160K    | Multilayers     | 2D          |
+| Trialdehydes     | 1,6-diaminohexane     | 400-450K    | Multilayers     | 2D          |
+| Trialdehydes     | 1,6-diaminohexane     | 400K        | N/A             | N/A         |
+

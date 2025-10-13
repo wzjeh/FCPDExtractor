@@ -1,0 +1,26 @@
+
+Precursor: IB
+Substrate: Au(111)
+Temperature: 90 K
+Products: DPA, DPDA, BP
+Dimensions: 2D (DPA), 3D (DPDA, BP)
+
+
+Precursor: Phenylacetylene and Iodobenzene
+Substrate: Au(111) surface
+Temperature: Not mentioned
+Products: Biphenyl, Diphenyldiacetylene, and Diphenylacetylene
+Dimensions: 2D (Biphenyl), 3D (Diphenyldiacetylene and Diphenylacetylene)
+Note: The information provided in the text is not sufficient to create a complete table. The experiment details are missing, such as the annealing/reaction temperature, which is crucial for understanding the reaction conditions.
+
+
+| Au(111) | CO | 900K | CO | 1D |
+
+
+| Precursor Molecules | Au(111) Crystal | 900°C | Compound Molecules | N/A |
+Precursor Molecules: N/A
+Substrate: Au(111) Crystal
+Annealing/Reaction Temperature: 900°C
+Products: Compound Molecules
+Dimensions: N/A
+

@@ -1,0 +1,18 @@
+Sure! Here's a summary table based on the provided abstract:
+
+| Precursor                                | Substrate     | Temperature | Products                                   | Dimensions |
+|------------------------------------------|---------------|-------------|--------------------------------------------|------------|
+| Iron tetrakis(pentafluorophenyl)porphyrin| Gold surface  | N/A         | Prochiral product                          | 2D         |
+| Iron tetrakisphenylporphyrin             | Gold surface  | N/A         | N/A                                        | N/A        |
+
+**Note:** The abstract did not specify the exact temperatures used in the experiments, so "N/A" is noted in the Temperature column.
+
+Sure, here is the summary in a table format:
+
+| Precursor     | Substrate   | Temperature | Products             | Dimensions |
+|---------------|-------------|-------------|----------------------|------------|
+| FeF20TPP      | N/A         | N/A         | Prochiral product 5in | N/A        |
+| Four porphyrins with different symmetries | N/A | N/A | N/A | N/A |
+
+Note: The provided text does not contain specific details about the substrates, temperatures, or the dimensionality of the product molecules. It primarily describes the outcome of the reaction and the yield. Therefore, many entries are marked as "N/A" due to the lack of specific information.
+

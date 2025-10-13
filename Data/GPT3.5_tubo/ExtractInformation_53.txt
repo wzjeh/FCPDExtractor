@@ -1,0 +1,17 @@
+| Precursor         | Substrate         | Temperature | Products                                                                                   | Dimensions |
+|-------------------|-------------------|-------------|---------------------------------------------------------------------------------------------|------------|
+| Aryl-Bromide      | Porphyrin-Bromide | Annealing   | Oligomers consisting of porphyrin moieties linked by p-phenylene at porphyrin’s meso-positions | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+| --- | --- | --- | --- | --- |
+| Molecule 1 | Au(111) | 630°C | Compound molecules | 2D |
+| Molecule 2 | Au(111) | Room temperature | Compound molecules | 2D |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Aryl-bromide (1) | Porphyrin-bromide (2) | Not specified | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Molecular precursors adsorbed on a surface | N/A | N/A | Covalent bonds formed between molecular precursors on the surface | 2D (two-dimensional) |
+

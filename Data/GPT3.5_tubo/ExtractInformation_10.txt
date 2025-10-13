@@ -1,0 +1,12 @@
+| Precursor           | Substrate | Temperature | Products | Dimensions |
+|---------------------|-----------|-------------|----------|------------|
+| rac-DBH             | Ag(111)   | ~350 K      | (P)-DBH  | 2D         |
+
+| Precursor                     | Substrate | Temperature | Products                             | Dimensions |
+|-------------------------------|-----------|-------------|--------------------------------------|------------|
+| 6-phenyldibenzo[a,g]coronene  | N/A       | N/A         | 6-phenyldibenzo[a,g]coronene (P1)  | 2D         |
+
+| Precursor           | Substrate | Temperature | Products | Dimensions |
+|---------------------|-----------|-------------|----------|------------|
+| Optically pure helical precursor | Solid achiral surface | N/A | Compound molecules formed in experiment | Flat prochiral molecules adsorbed on surface |
+

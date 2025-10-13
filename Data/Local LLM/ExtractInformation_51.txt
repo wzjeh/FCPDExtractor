@@ -1,0 +1,28 @@
+
+Precursor: I2F6
+Substrate: Rhodium (111)
+Temperature: 5.5 K
+Products: IF, F2
+Dimensions: 2D (IF) and 0D (F2)
+Note: The table is not exhaustive and only includes the information provided in the text.
+
+
+Precursor: 5,5 0,500,5000,500000-hexaiodocyclohexa-m-phenylene (I6-CHP)
+Substrate: Cu(111),Ag(111), and Au(111)
+Temperature: Room temperature
+Products: Porous graphene
+Dimensions: 2D (N)
+Precursor: 5,5 0,500,5000,500000-hexaiodocyclohexa-m-phenylene (I6-CHP)
+Substrate: Cu(111),Ag(111), and Au(111)
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+
+
+
+
+Precursor: I-CHP
+Substrate: h-BN
+Temperature: 550 K
+Products: CHP dimers with different iodine terminations
+Dimensions: 2D

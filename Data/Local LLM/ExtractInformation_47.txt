@@ -1,0 +1,37 @@
+
+Precursor: Iron octaethylporphyrin
+Substrate: Gold surface (Au(111))
+Temperature: N/A
+Products: Iron tetrabenzoporphyrin
+Dimensions: 2D (N/A for 1D, 3D)
+Precursor: Iron tetrabenzoporphyrin
+Substrate: Gold surface (Au(111))
+Products: N/A
+Dimensions: 2D (N/A for 1D, 3D)
+
+
+Precursor: FeOEP-Cl
+Substrate: Au(111) surface
+Temperature: Above 500 K
+Products: Tetrabenzoporphyrin (FeTBP)
+Dimensions: 2D (N/A for 3D)
+Precursor: Octaethylporphyrin
+Substrate: Au(111) surface
+Temperature: N/A
+Products: Tetrabenzo-porphyrin
+Dimensions: 2D (N/A for 3D)
+
+
+Precursor: Iron Porphyrins
+Substrate: Au(111)
+Temperature: 240 K, 520 K, 530 K
+Products: Iron Porphyrins
+Dimensions: 2D (N/A)
+Note: The table is not exhaustive and may not cover all the details mentioned in the text. Please refer to the text for more information.
+
+
+Precursor Molecules Substrate Annealing/Reaction Temperature Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A 300 K Tetrabenzoporphyrin (TBP) 2D
+N/A N/A N/A N/A N/A
+

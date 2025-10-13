@@ -1,0 +1,21 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|------------|
+| N/A | Aldehyde | Room temperature | Vicinal diolate intermediates | N/A |
+| N/A | Aldehyde | Subsequent thermal treatment | C-C coupling products | N/A |
+
+| Precursor            | Substrate | Temperature | Products                   | Dimensions |
+|----------------------|-----------|-------------|----------------------------|------------|
+| Terephthalaldehyde   | Au(111)   | N/A         | Polyphenylene vinylene     | 2D        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|------------|
+| Aldehydes | Gold adatoms on surface | N/A | Organic nanostructures | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|------------|
+| DTA-SAM | Au(111) | 100-250°C | Disordered oligomers | N/A |
+
+| Precursor              | Substrate | Temperature | Products       | Dimensions |
+|------------------------|-----------|-------------|----------------|------------|
+| 2,5-dihexyl-terephthalaldehyde (DTA 1) | Au(111)   | UHV conditions | p-PPV 2 (para-polyphenylene vinylene derivative) | N/A |
+

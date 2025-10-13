@@ -1,0 +1,23 @@
+
+| Trialdehyde | Diamine | N/A | Polymer | 1D |
+Note: The table is not exhaustive and only includes the information provided in the text.
+
+
+| Trialdehyde | Au(111) | 850 K | Covalently interlinked 2D polymers | 2D |
+| 1,6-diaminohexane | Au(111) | 850 K | Covalently interlinked 2D polymers | 2D |
+The table shows that the precursor molecules used in the experiment were trialdehyde and 1,6-diaminohexane. The substrate used was Au(111) and the annealing/reaction temperature was 850 K. The products formed in this experiment were covalently interlinked 2D polymers. The dimensionality of the product molecules is 2D.
+
+
+Precursor: 1,6-diaminohexane
+Substrate: Trialdehydes
+Annealing/Reaction Temperature: 300K
+Products: Imine oligomers embedded in a matrix of diamines
+Dimensions: 2D (N2)
+
+
+Precursor: Trialdehyde
+Substrate: Diamine
+Temperature: N/A
+Products: Polymer network of interconnected trialdehydes and diamines
+Dimensions: 3D
+

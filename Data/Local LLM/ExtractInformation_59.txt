@@ -1,0 +1,30 @@
+
+Precursor Molecules A1, B
+Substrate Au(111)
+Annealing/Reaction Temperature N/A
+Products Cross-coupling products
+Dimensions 2D (Simplified)
+
+
+Precursor A1, B A1, B Au(111)
+Substrate Au(111) Au(111) Au(111)
+Temperature Room temperature -20°C Room temperature
+Product P2 N/A N/A
+Dimensions 4D N/A N/A
+Note: 4D stands for four-dimensional, which means that the product molecules have four tails.
+
+
+Precursor: N/A
+Substrate: N/A
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+
+
+Precursor A1 A2
+Substrate B B
+Temperature N/A N/A
+Products P1 P2
+Dimensions 39 × 39 nm2 7 × 7 nm2
+Note: The table is not exhaustive and may not cover all the details mentioned in the text. Please use the information provided in the text to create the table.
+

@@ -1,0 +1,51 @@
+Here is a summary of the experimental details in a table format:
+
+| Precursor            | Substrate | Temperature | Products            | Dimensions |
+|----------------------|-----------|-------------|---------------------|------------|
+| Alkenyl gem-dibromide| Au(111)   | N/A         | Cumulene products   | N/A        |
+
+Please note that some details such as the exact temperature and the dimensions of the product molecules were not explicitly mentioned in the provided text. Therefore, they are marked as N/A (Not Available).
+
+Sure, here is a summary of the details in a table format:
+
+| Precursor        | Substrate | Temperature | Products | Dimensions |
+|------------------|-----------|-------------|----------|------------|
+| Organic monomers | N/A       | N/A         | N/A      | 2D         |
+
+Note: The provided text does not give specific details about the precursor molecules, substrates, or temperatures. It speaks generally about on-surface synthesis strategies and their advantages but does not list specific experimental conditions. If more specific information is found elsewhere in the document, it would be necessary to refer to those sections for a more detailed table.
+
+Here's the summary in table format based on the provided details:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| bBVBP molecules | Au(111) | Room Temperature | Discrete structural motifs (D-1, D-2) | N/A |
+
+**Notes:**
+- The precursor molecules are bBVBP molecules.
+- The substrate used is Au(111).
+- The annealing/reaction temperature mentioned is room temperature.
+- The products formed are discrete structural motifs with linear and curved shapes labeled D-1 and D-2.
+- The dimensionality of the product molecules is not explicitly mentioned, so it's marked as N/A.
+
+Sure, I'll extract the relevant experimental details and organize them into a table for you.
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| bBVBP (4-(2,2-dibromovinyl)-1,1’-biphenyl) | Au(111) | N/A | C/C homo-coupled alkenyl gem-dibromides | N/A |
+
+Please note that the information on temperature and dimensions was not provided in the text. If you have more details or data from the experiment that includes these specifics, I can update the table accordingly.
+
+Here is the summarized table based on the details provided:
+
+| Precursor | Substrate     | Temperature | Products | Dimensions |
+|-----------|---------------|-------------|----------|------------|
+| N/A       | NaCl/Cu(111)  | N/A         | Aryne    | Curved     |
+| N/A       | N/A           | N/A         | Cumulene | Linear     |
+
+**Notes:**
+- The exact precursor molecules are not mentioned.
+- The substrate for aryne formation is NaCl/Cu(111).
+- Annealing/reaction temperatures are not specified.
+- The products are aryne and cumulene.
+- The dimensionality of aryne is curved, and cumulene is linear.
+

@@ -1,0 +1,13 @@
+
+| DEBPB | Ag(111) | 300 K | N/A | N/A |
+| DEBPB | Ag(110) | 300 K | N/A | N/A |
+Note: The table is not complete as it lacks information about the products formed in the experiment.
+
+
+Precursor: 2,5-diethynyl-1,4-bis(phenylethynyl)benzene (DEBPB)
+Substrate: Au(111), Au(100), and Ag(111), (877), and (100)
+Temperature: 300 K
+Products: N/A
+Dimensions: N/A
+Note: The table is not complete as the products of the reaction are not mentioned. Please provide the products of the reaction to complete the table.
+

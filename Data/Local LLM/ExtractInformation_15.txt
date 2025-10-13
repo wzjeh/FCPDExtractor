@@ -1,0 +1,17 @@
+
+Precursor: BMBP
+Substrate: Cu(110)
+Temperature: B300 K, B420 K
+Products: C-Ag-C organometallic intermediates
+Dimensions: 2D
+Substrate: Au(111)
+Temperature: B150-200 K
+Products: Unknown
+Dimensions: Unknown
+
+
+Precursor Molecules Substrates Annealing/Reaction Temperature (K) Products Dimensionality
+N/A N/A 300 K N/A N/A
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+

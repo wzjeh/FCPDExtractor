@@ -1,0 +1,17 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| Bromine-terminated porphyrin precursors | Au(111) surface | Ultrahigh-vacuum conditions | Dimeric, polymeric, and network structures | N/A |
+| N/A | N/A | N/A | Polymeric chains, hyper-branched oligomers, graphene ribbons, porous molecular networks, super honeycomb frameworks | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|------------|
+| Molecules of 1 | Cu-covered hot surface | 240°C | TR chains, DR chains | 2D |
+
+| Precursor     | Substrate | Temperature | Products | Dimensions |
+|---------------|-----------|-------------|----------|------------|
+| Cu-pyridyl    | Surface   | Annealing   | Macromolecular structures | 2D          |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| Compound 3 molecules | Sample covered with DR chains | 180°C annealing | 2D coordination islands attached to the end of pre-existing DR chains | 2D |
+

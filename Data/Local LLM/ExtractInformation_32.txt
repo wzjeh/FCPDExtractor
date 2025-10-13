@@ -1,0 +1,22 @@
+
+Precursor Molecules TAPP Organic Molecules 150°C Porous Molecular Network N/A
+Substrates Organic Molecules N/A N/A N/A N/A
+Temperature 150°C N/A N/A N/A N/A
+Products Porous Molecular Network N/A N/A N/A N/A
+Dimensions N/A N/A N/A 3D N/A
+
+
+Precursor Molecules: Polycyclic heteroaromatic compounds
+Substrate: Not specified
+Temperature: Not specified
+Products: Electronically highly delocalized polyaromatic chains
+Dimensions: N/A
+
+
+Precursor Molecules: N-heterocyclic carbene (NHC)
+Substrate: Not mentioned
+Annealing/Reaction Temperature: 100 degrees Celsius
+Products: Linked polycondensed aromatics
+Dimensions: N/A
+Precursor Molecules: N-heterocyclic carbene (NHC) Substrate: Not mentioned Annealing/Reaction Temperature: 100 degrees Celsius Products: Linked polycondensed aromatics Dimensions: N/A
+

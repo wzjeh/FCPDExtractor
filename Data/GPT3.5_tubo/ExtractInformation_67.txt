@@ -1,0 +1,20 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+| --- | --- | --- | --- | --- |
+| Aliphatic hydrocarbons | Metal surface | Annealing in ultrahigh vacuum conditions | Aromatic hydrocarbons | N/A |
+
+| Precursor                | Substrate                | Temperature | Products | Dimensions |
+|--------------------------|--------------------------|-------------|----------|------------|
+| diisopropyl-p-terphenyl  | Gold surface             | UHV conditions | Polymers via surface-assisted cycloaromatization | N/A |
+
+| Precursor     | Substrate    | Temperature | Products       | Dimensions |
+|---------------|--------------|-------------|----------------|------------|
+| Dihaloarenes  | Metal surfaces | Annealing | Diradicals     | 2D         |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+| --- | --- | --- | --- | --- |
+| Isopropyl substituents of arenes | Metal surfaces | Annealing temperature | Polyarylenes | 2D |
+
+| Precursor            | Substrate     | Temperature | Products              | Dimensions |
+|----------------------|---------------|-------------|-----------------------|------------|
+| Isopropyl-substituted arylenes | Gold (Au(111) and Au(110)) surfaces | Annealing/reaction temperature not provided | Phenylene rings | N/A |
+

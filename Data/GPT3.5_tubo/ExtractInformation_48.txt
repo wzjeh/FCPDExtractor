@@ -1,0 +1,20 @@
+| Precursor              | Substrate | Temperature | Products                   | Dimensions |
+|------------------------|-----------|-------------|----------------------------|------------|
+| Iron octaethylporphyrin| Au(111)   | Annealing   | Iron tetrabenzoporphyrin  | N/A        |
+
+| Precursor             | Substrate | Temperature | Products | Dimensions |
+|-----------------------|-----------|-------------|----------|------------|
+| FeOEP-Cl              | Au(111)   | > 500 K     | FeTBP    | N/A        |
+
+| Precursor   | Substrate | Temperature | Products | Dimensions |
+|-------------|-----------|-------------|----------|------------|
+| FeOEP-Cl    | Au(111)  | 240 K       | N/A      | N/A        |
+| Iron porphyrins | Au(111) | 520 K | N/A | N/A |
+| Iron porphyrins | Au(111) | 530 K | N/A | N/A |
+| Iron porphyrins | Au(111) | 550 K | N/A | N/A |
+| H2TBP | Au(111) | Room temperature | FeTBP | N/A |
+
+| Precursor       | Substrate | Temperature | Products | Dimensions |
+|-----------------|-----------|-------------|----------|------------|
+| Iron, H2TBP    | Au(111)  | Room temperature | FeTBP | N/A |
+

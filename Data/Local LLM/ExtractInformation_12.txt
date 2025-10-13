@@ -1,0 +1,24 @@
+
+| 1,2-dibromoethane | Au(111) | Room temperature | 1,2-diphenylethyne | 1D |
+| bromotriphenylmethane | Au(111) | Room temperature | Poly- (arylene ethynylene) (PAE) | 1D |
+| tribromotriphenylmethane | Au(111) | Room temperature | 2D network structures | 2D |
+Note: The precursor molecules are not mentioned in the text, but can be assumed to be the starting materials for the synthesis.
+
+
+
+
+Precursor: Alkyl-substituted carbon molecule
+Substrate: Surface of metal oxide
+Temperature: N/A
+Products: Graphyne-like molecular wires
+Dimensions: 2D
+
+
+Precursor: TBP
+Substrate: Au(111) surface
+Temperature: Room temperature
+Products: 1,2-diphenylethyne
+Dimensions: 1D (N/A for 2D or 3D)
+Precursor: bTBP
+Substrate: Au(111) surface
+

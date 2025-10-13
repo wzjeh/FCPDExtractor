@@ -1,0 +1,19 @@
+i
+Precursor: Bromoarenes
+Substrate: Ag(111) surface
+Temperature: 298 K
+Products: [30]-honeycombene (C180H120), square cycloicosaphenylene (C120H80), pentagonal cyclopentacosaphenylene (C150H100), and heptagonal cyclo-pentatriacontaphenylene (C210H140)
+Dimensions: [30], [4], [5], [7]
+
+
+
+
+Precursor Molecules Substrate Annealing/Reaction Temperature Products Dimensionality
+N/A Ag(111) 300 K Molecular Quantum Corral N/A
+The table shows that the precursor molecules are not specified, and the substrate used is Ag(111). The annealing/reaction temperature is set at 300 K. The product formed in this experiment is a molecular quantum corral, and its dimensionality is not specified.
+
+
+Precursor Molecules Substrate Annealing/Reaction Temperature Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A 300 K Honeycombene Oligophenylene Macrocycles 2D (square)
+

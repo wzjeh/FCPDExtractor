@@ -1,0 +1,25 @@
+| Precursor                                | Substrate | Temperature | Products | Dimensions |
+|------------------------------------------|-----------|-------------|----------|------------|
+| 1,2-bis(2-ethynylphenyl)ethyne (1) | Au(111)    | 293 K       | Isomers  | 2D         |
+
+| Precursor              | Substrate | Temperature | Products                                      | Dimensions |
+|------------------------|-----------|-------------|-----------------------------------------------|------------|
+| Au(111) surface         | N/A       | 160 °C      | Oligo-(E)-1,1'-(indenylidene) chains          | 5-10       |
+| Submonolayer coverage of 1 | Au(111) surface | 160 °C | Covalently linked molecular assemblies | n≥3       |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|--------------|-----------|-------------|---------|------------|
+| 1 | N/A | Below 100 °C | 2 | N/A |
+
+| Precursor              | Substrate   | Temperature | Products                             | Dimensions |
+|------------------------|-------------|-------------|--------------------------------------|------------|
+| (E)-1,1'-bi(indenylidene) monomer | Au(111) surface | N/A         | oligo-(E)-1,1'-bi(indenylidene)      | N/A        |
+
+| Precursor              | Substrate | Temperature | Products                                         | Dimensions |
+|------------------------|-----------|-------------|--------------------------------------------------|------------|
+| Oligo-( E)-1,1 ′-bi(indenylidene) | Au(111)   | C1 −C5 thermal enediyne cyclizations | ( E)-1,1 ′-bi(indenylidene) diradical intermediates | N/A        |
+
+| Precursor        | Substrate | Temperature | Products | Dimensions |
+|------------------|-----------|-------------|----------|------------|
+| Enediyne         | Surface   | N/A         | Polymer  | 2D         |
+

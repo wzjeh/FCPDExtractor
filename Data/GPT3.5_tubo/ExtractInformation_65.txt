@@ -1,0 +1,39 @@
+| Precursor              | Substrate | Temperature | Products | Dimensions |
+|------------------------|-----------|-------------|----------|------------|
+| Aryldimethylsilane 1   | Au(111)   | 468 K       | N/A      | N/A        |
+| Aryldimethylsilane 1   | Cu(111)   | N/A         | Linear polymers | 1D |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| BDS 3 | Au(111) | Room temperature | Intact molecules and trans-bis-3 dimers | N/A |
+| AMS 2 (replaced by phenylsilane M) | Cu(111) | Room temperature | Disordered oligomers with high cross-linking | N/A |
+
+| Precursor    | Substrate | Temperature | Products | Dimensions |
+|--------------|-----------|-------------|----------|------------|
+| AMS          | Cu(111)  | r.t.        | Polymers | 2D         |
+| N/A          | Au(111)  | N/A         | N/A      | N/A        |
+
+| Precursor          | Substrate | Temperature | Products                       | Dimensions |
+|--------------------|-----------|-------------|--------------------------------|------------|
+| Arylmethylsilanes  | Au(111)   | Mild        | Polydisilanediyls              | 2D         |
+| Arylsilanes        | Cu(111)   | Mild        | Polydisilanediyls              | 2D         |
+
+| Precursor     | Substrate | Temperature | Products   | Dimensions |
+|---------------|-----------|-------------|------------|------------|
+| Hydrosilane 1 | Au(111)   | r.t.        | N/A        | N/A        |
+| Dihydrosilane 2 | Au(111)  | r.t.        | cis-poly-2 | 2D         |
+| Dihydrosilane 2 | Cu(111)  | r.t.        | trans-poly-2 | 2D       |
+| Trihydrosilane 3 | Cu(111) | r.t.       | trans-poly-2 | 2D       |
+
+| Precursor          | Substrate | Temperature | Products | Dimensions |
+|--------------------|-----------|-------------|----------|------------|
+| AMS                | Cu(111)  | r.t.         | N/A      | N/A        |
+
+| Precursor         | Substrate | Temperature | Products | Dimensions |
+|-------------------|-----------|-------------|----------|------------|
+| Aryldimethylsilane 1 | Cu(111)   | N/A         | N/A      | N/A        |
+| Aryldimethylsilane 1 | Au(111)   | N/A         | N/A      | N/A        |
+| Arylmethylsilane 2  | Cu(111)   | Upon annealing | Stereoselective dehydrogenative Si-Si bond formation | 2D |
+| Arylmethylsilane 2  | Au(111)   | Upon annealing | Stereoselective dehydrogenative Si-Si bond formation | 2D |
+| Arylsilane 3        | Cu(111)   | Upon annealing | Stereoselective dehydrogenative Si-Si bond formation | 2D |
+

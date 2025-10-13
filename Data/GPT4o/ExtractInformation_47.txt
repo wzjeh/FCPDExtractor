@@ -1,0 +1,35 @@
+Here is the summarized information in the requested table format:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Iodine-functionalized | Au(111) | N/A | Covalent organic nanostructures | 2D |
+| Bromine-functionalized | Au(111) | N/A | Covalent organic nanostructures | 2D |
+
+Note: The provided text did not specify exact temperatures for the reactions, so "N/A" was used. The products and dimensions were inferred based on the given description of the experiment.
+
+Here's the summary of the experimental conditions in a table format:
+
+| Precursor                         | Substrate | Temperature                           | Products                           | Dimensions |
+|-----------------------------------|-----------|---------------------------------------|------------------------------------|------------|
+| BIB                               | Au(111)   | Room temperature and subsequent annealing | Covalent networks                   | N/A        |
+| trans-Br2I2tetraphenyl porphyrin  | N/A       | N/A                                   | N/A                                | N/A        |
+
+Please note that some details such as the products and dimensions are not explicitly provided in the text, so they are marked as N/A.
+
+Sure, here is the summarized table with the details extracted from the provided text:
+
+| Precursor                                | Substrate | Temperature          | Products             | Dimensions |
+|------------------------------------------|-----------|----------------------|----------------------|------------|
+| TBQ (Terphenyl-based quinone)            | N/A       | Higher surface temp. | 1D chains, hexagonal pores | 1D, 2D     |
+| Iodine- and bromine-functionalized aromatic precursor | Au(111)   | Room temperature, further thermal activation | Covalent networks | N/A        |
+
+Please note that some information was not explicitly provided in the text, so N/A was used where appropriate.
+
+Here is the summarized table based on the provided details:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| BIB       | Au(111)   | 500 °C      | N/A      | 1D         |
+
+Note: The provided text specifies details related to the synthesis on Au(111) surfaces and the annealing temperature but doesn't provide explicit details on the products formed or their full dimensionality. Only the dimensionality (1D) is inferred from the context. If more specific information about products and dimensions is found in the supporting information, it should be included accordingly.
+

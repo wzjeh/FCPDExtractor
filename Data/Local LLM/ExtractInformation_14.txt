@@ -1,0 +1,33 @@
+
+Precursor: BVBP
+Substrate: Alkenyl bromides
+Temperature: B170 K
+Products: Cis-dienes
+Dimensions: 2D
+
+
+Precursor: Alkyne Substrate: Cu(110) Surface Annealing/Reaction Temperature: 100°C Products: 1,2-dihydrodiylne (sp2 hybridized carbon) Dimensions: 2D
+
+
+Precursor: Alkenylbromides
+Substrate: Cu(110) surface
+Temperature: N/A
+Products: Cis-diene
+Dimensions: 2D (linear)
+Precursor: Alkenylbromides Substrate: Cu(110) surface Temperature: N/A Products: Cis-diene Dimensions: 2D (linear)
+
+
+| trans-BVBP | Cu(110) | N/A | Cis-diene | 2D |
+| trans-BVBP | Cu(110) | N/A | Trans-diene | 2D |
+
+Precursor: BVBP
+Substrate: Cu(110)
+Temperature: Annealing at 300 K
+Products: Debrominated species and detached bromine atoms
+Dimensions: 2D (N/A)
+Precursor: N/A
+Substrate: N/A
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+

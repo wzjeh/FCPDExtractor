@@ -1,0 +1,31 @@
+Here is the summarized information in table format based on the provided text:
+
+| Precursor   | Substrate        | Temperature | Products | Dimensions |
+|-------------|------------------|-------------|----------|------------|
+| rac-DBH     | Ag(111) surface  | ∼350 K      | (P)-DBH  | 2D         |
+
+Notes:
+- The precursor molecule is rac-DBH.
+- The substrate is an atomically clean Ag(111) single-crystal surface.
+- The temperature at which the molecules were deposited is approximately 350 K.
+- The product formed in this experiment is (P)-DBH.
+- The dimensionality of the product molecules is 2D.
+
+If you have any additional details or specific aspects you'd like to focus on, let me know!
+
+Here is the summary of the details in a table format:
+
+| Precursor        | Substrate | Temperature | Products                              | Dimensions |
+|------------------|-----------|-------------|---------------------------------------|------------|
+| N/A              | N/A       | N/A         | 6-phenyldibenzo[a,g]coronene (P1)     | N/A        |
+
+Since the provided text only briefly mentions the product (6-phenyldibenzo[a,g]coronene (P1)) without specifying the precursor molecules, substrates, or exact annealing/reaction temperatures, most of the information is marked as N/A. If more details are provided or found in the referenced figures and supplementary information, the table could be updated accordingly.
+
+Sure, here's a table summarizing the details from the provided text:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Helical precursor (optically pure) | Solid achiral surface | N/A | Flat prochiral molecules | N/A |
+
+The text does not specify the exact temperatures or the exact dimensions of the product molecules. If you have more detailed parts of the text that provide this information, please share them, and I can update the table accordingly.
+

@@ -1,0 +1,19 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| N/A | iodobenzene | N/A | N/A | N/A |
+| N/A | phenyl-acetylene | N/A | N/A | N/A |
+
+| Precursor       | Substrate        | Temperature | Products | Dimensions |
+|-----------------|------------------|-------------|----------|------------|
+| Chlorobenzene  | Ag(100) surface  | 105 K       | BP       | N/A        |
+| Phenyl-acetylene| Ag(100) surface  | 105 K       | DPDA     | N/A        |
+
+| Precursor       | Substrate | Temperature | Products | Dimensions |
+|-----------------|-----------|-------------|----------|------------|
+| Phenylacetylene | Ag(100)   | 120 K       | N/A      | N/A        |
+
+| Precursor        | Substrate   | Temperature | Products          | Dimensions |
+|------------------|-------------|-------------|-------------------|------------|
+| Phenylacetylene  | Ag(100)     | N/A         | Homocoupling      | N/A        |
+| Chlorobenzene    | Ag(100)     | N/A         | Sonogashira cross-coupling | N/A |
+

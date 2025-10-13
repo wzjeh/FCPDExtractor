@@ -1,0 +1,15 @@
+| Precursor    | Substrate | Temperature | Products | Dimensions |
+|--------------|-----------|-------------|----------|------------|
+| N/A          | Au(111)   | 530°C       | N/A      | N/A        |
+| N/A          | Au(100)   | 530°C       | N/A      | N/A        |
+
+| Precursor               | Substrate | Temperature | Products                                                | Dimensions |
+|-------------------------|-----------|-------------|---------------------------------------------------------|------------|
+| Halogen–carbon bonds    | Surface   | Heating     | Porphyrin nanostructures, conjugated polyfluorenes      | 2D, 1D    |
+| Benzene/thiophene-based | Surface   | Heating     | Monomers connected                                       | N/A        |
+| Anthracene units        | Surface   | Heating     | Narrow graphene ribbons                                  | 1D        |
+
+| Precursor       | Substrate       | Temperature | Products           | Dimensions |
+|-----------------|-----------------|-------------|---------------------|------------|
+| trans-Br2I2TPP  | Au(111) surface | 250°C       | TPP chains, DBTF chains attached to TPP building blocks | N/A        |
+

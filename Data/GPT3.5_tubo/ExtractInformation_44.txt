@@ -1,0 +1,16 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| 1          | Pt(111)   | 960°C       | Compound 2 | N/A       |
+| 2          | Pt(111)   | Room temperature | Compound 2 | N/A  |
+| 3          | Pt(111)   | Room temperature | Compound 2 | N/A  |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| N/A | Pt-group metals (Ru, Rh, Pd, Os, Ir, Pt) | 380°C | Fullerene formation | N/A |
+| N/A | Cu(100) | 380°C | Triangular-shaped molecules | 2D |
+| N/A | Cu(100) | 480°C | Fuzzy mobile features | N/A |
+
+| Precursor   | Substrate | Temperature | Products | Dimensions |
+|-------------|-----------|-------------|----------|------------|
+| C84H42      | Pt(111)  | 550°C       | C84      | 3 nm2      |
+

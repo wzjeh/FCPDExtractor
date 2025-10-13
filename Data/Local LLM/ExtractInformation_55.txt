@@ -1,0 +1,20 @@
+
+Precursor | Substrate | Temperature | Products | Dimensions |
+Aryl Iodides | Gold (Au(111)) | 200-300°C | C-C linked molecules | N/A |
+Aryl Bromides | Gold (Au(111)) | 200-300°C | C-C linked molecules | N/A |
+Aryl Chlorides | Gold (Au(111)) | 200-300°C | C-C linked molecules | N/A |
+
+
+Precursor: Aryl Chlorides
+Substrate: Clean Metal Surfaces (Cu, Ag, Au)
+Temperature: Varies for each metal surface (Cu: N/A, Ag: N/A, Au: N/A)
+Products: Organo-metal complexes
+Dimensions: N/A
+Note: The information provided in the text is not sufficient to create a complete table. More information is needed to determine the specific precursor, substrate, and reaction conditions for each metal surface.
+
+
+Precursor Molecules Substrate Temperature Products Dimensions
+Aryl Chlorides Cu(111) 300 K COFs N/A
+Aryl Chlorides Ag(111) 300 K COFs N/A
+Aryl Chlorides Au(111) 300 K COFs N/A
+

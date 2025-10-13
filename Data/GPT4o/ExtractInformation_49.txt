@@ -1,0 +1,35 @@
+Sure, here is the summarized information in a table based on the provided text:
+
+| Precursor                          | Substrate | Temperature | Products                        | Dimensions |
+|------------------------------------|-----------|-------------|---------------------------------|------------|
+| Bromine-terminated porphyrin precursors | Au(111)   | N/A         | Dimeric, polymeric, and network structures | N/A        |
+| Various                            | N/A       | N/A         | Polymeric chains                 | N/A        |
+| Various                            | N/A       | N/A         | Hyper-branched oligomers         | N/A        |
+| Various                            | N/A       | N/A         | Graphene ribbons                 | N/A        |
+| Various                            | N/A       | N/A         | Porous molecular networks        | N/A        |
+| Various                            | N/A       | N/A         | Super honeycomb frameworks       | N/A        |
+
+Note: The provided text did not specify exact temperatures or dimensions for many of the products, so those entries are marked as N/A.
+
+Sure, here's a summary in table form based on the given details:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| 1         | Cu        | 240°C       | TR chains, DR chains, large macromolecules | N/A        |
+| Bifunctional porphyrin compounds | N/A       | 180°C       | Dimeric structure, supramolecular chains | N/A        |
+
+Note: The "Precursor" and "Substrate" columns may need further specification depending on the full context of the experiment, which isn't entirely clear from the provided text.
+
+Sure, here is the summarized information in a table format:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| N/A       | N/A       | N/A         | Macromolecular porphyrin structures | N/A |
+
+The provided text does not specify detailed information about precursor molecules, substrates, or the exact annealing/reaction temperature. The product mentioned is macromolecular porphyrin structures, but the dimensionality of the product molecules is also not specified.
+
+| Precursor        | Substrate  | Temperature | Products                   | Dimensions |
+|------------------|------------|-------------|----------------------------|------------|
+| Compound 3       | DR chains  | N/A         | 2D coordination islands    | 2D         |
+| 1 (Porphyrin)    | Cu         | 180 °C      | Covalently bonded dimers   | N/A        |
+

@@ -1,0 +1,9 @@
+| Precursor                           | Substrate                           | Temperature | Products                              | Dimensions |
+|-------------------------------------|-------------------------------------|-------------|---------------------------------------|------------|
+| Iron tetrakis(pentafluorophenyl)porphyrin | Gold surface                        | Ultrahigh vacuum | Prochiral product                     | 2D        |
+| Iron tetrakisphenylporphyrin        | Gold surface                        | Ultrahigh vacuum | N/A                                   | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|------------|
+| N/A | N/A | N/A | prochiral product 5in | N/A |
+

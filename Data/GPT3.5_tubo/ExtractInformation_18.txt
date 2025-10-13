@@ -1,0 +1,17 @@
+| Precursor                           | Substrate | Temperature | Products | Dimensions |
+|-------------------------------------|-----------|-------------|----------|------------|
+| 1,3,5-tris(4-Dodecyloxyphenyl)benzene (TDPB) | Au(111)   | Room temperature | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| THPB       | Au(111)  | Up to 230°C | THPB self-assembled structures | 2D (on Au(111) surfaces) |
+| Ether derivative | Au(111) | N/A | Self-assembled structures | 2D (on Au(111) surfaces) |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|------------|-------------|----------|------------|
+| N/A       | N/A        | N/A         | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|----------|-----------|
+| Ethers | Metal surfaces | Annealing temperature | De-alkylated compounds | N/A |
+

@@ -1,0 +1,27 @@
+Here's the summary in table format based on the provided details:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| TAPP      | Cu(111)   | 150 °C      | Porous molecular network | N/A |
+
+The information provided does not specify the exact products beyond the formation of a porous molecular network, nor does it give a clear indication of the dimensionality in simplified numbers plus letters. If more details are given, the table can be updated accordingly.
+
+Here is the summarized table based on the provided details:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Polycyclic heteroaromatic compounds | Crystal surfaces | N/A | Electronically highly delocalized polyaromatic chains | N/A |
+
+**Note:**
+- The information provided did not specify exact precursor molecules, temperatures, or dimensions of the product molecules.
+- Relevant experimental details are missing, so placeholders (N/A) have been used where information is not provided or unclear.
+
+Sure, here's the summary of the details from the provided reference in a table format:
+
+| Precursor               | Substrate        | Temperature | Products                           | Dimensions |
+|-------------------------|------------------|-------------|------------------------------------|------------|
+| N-Heterocyclic Carbene  | N/A              | N/A         | Covalent Surface Polymers          | N/A        |
+| N/A                     | N/A              | N/A         | Linked Polycondensed Aromatics     | N/A        |
+
+Please note that the information provided was limited, and some details were marked as N/A. If more specific information is available in the full text, you might want to consult the original source for precise experimental conditions.
+

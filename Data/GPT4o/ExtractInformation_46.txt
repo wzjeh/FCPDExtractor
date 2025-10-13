@@ -1,0 +1,31 @@
+| Precursor         | Substrate | Temperature | Products          | Dimensions |
+|-------------------|-----------|-------------|-------------------|------------|
+| TEB               | Ag(111)   | N/A         | Homo-coupling products | N/A        |
+| Ext-TEB           | N/A       | 152 K       | Supramolecular domains | 2D         |
+| Ext-TEB           | N/A       | 300 K       | Characteristic dimers  | N/A        |
+
+Note: The table is based on the information provided. Some details were not explicitly mentioned, so "N/A" is used where information is missing or unclear.
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|-------------|
+| Terminal alkyne | Ag | N/A | Homo-coupled product | N/A |
+| Cyclodehydrogenation precursors | Cu(111) | N/A | Tailored nanographenes | N/A |
+| Linear alkane | Au(110) | N/A | Polymers | N/A |
+
+Note: The table is based on the information provided. Temperatures and detailed dimensions were not specified in the text.
+
+Sure, here is the summary in a table format:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| N/A       | Ag(111)   | Mild thermal activation | Discrete compounds or polymeric networks | Low-dimensional |
+
+**Notes:**
+- The exact precursor molecules are not explicitly mentioned in the provided text.
+- The substrate mentioned is Ag(111).
+- The temperature is described as "mild thermal activation."
+- The products are discrete compounds or polymeric networks with a conjugated backbone.
+- The dimensionality is described as low-dimensional nano-architectures.
+
+If you have more specific details from other parts of the document, they could be added to make the table more complete.
+

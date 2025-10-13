@@ -1,0 +1,39 @@
+
+Precursor: Halide precursors with only one halogen atom attached to a carbon atom
+Substrate: Au(111) surface
+Temperature: 300 K
+Products: Fabricated on the Au(111) surface by dehalogenative homocoupling reactions
+Dimensions: N/A
+Precursor: Alkenyl gem-dibromide
+Substrate: Au(111) surface
+Products: Reaction products and reaction pathway are unambiguously characterized by a combination of high-resolution scanning tunneling microscopy and non-contact atomic force microscopy measurements together with density functional theory calculations
+Dimensions: N/A
+
+
+Precursor Molecules Substrates Annealing/Reaction Temperature Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+
+
+Precursor: 4-(2,2-dibromovinyl)-1,1'-biphenyl (bBVBP)
+Substrate: Au(111) surface
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+Precursor: 4-(2,2-dibromovinyl)-1,1'-biphenyl (bBVBP)
+Substrate: Au(111) surface
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+Precursor: 4-(2,2-dibromovinyl)-1,1'-biphenyl (bBVBP)
+Substrate: Au(111) surface
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+
+
+Precursor Molecules Substrate Temperature Products Dimensions
+Cumulene NaCl/Cu(111) 300 K Linear cumulene structures N/A
+Benzene NaCl/Cu(111) 300 K Linear cumulene structures N/A
+

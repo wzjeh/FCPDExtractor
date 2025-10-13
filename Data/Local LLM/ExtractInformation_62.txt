@@ -1,0 +1,8 @@
+
+
+Precursor: FeF20TPP
+Substrate: N/A
+Temperature: N/A
+Product: Prochiral planar product
+Dimensions: 2D
+

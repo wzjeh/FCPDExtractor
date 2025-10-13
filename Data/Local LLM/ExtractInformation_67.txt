@@ -1,0 +1,40 @@
+
+Precursor: Bromine-functionalized phenanthroline
+Substrate: Au (111)
+Temperature: N/A
+Products: Double-chain structure on Au (111)
+Dimensions: 2D (N/A)
+
+
+Precursor: DBPA
+Substrate: Au(111)
+Temperature: Room temperature
+Products: Self-assembled island structures formed by the intact DBPA molecules
+Dimensions: 2D (N/A)
+
+
+Precursor: 1,10-phenanthroline
+Substrate: Au(111)
+Temperature: N/A
+Products: [1,10-phenanthroline]2[1,10-phenanthroline]
+Dimensions: 1D (simplified as 1D)
+
+
+Precursor: DBPA
+Substrate: Au(111)
+Temperature: N/A
+Products: Bromine-decorated DBPA dimers
+Dimensions: 2D
+Precursor: N/A
+Substrate: N/A
+Temperature: 200 1C
+Products: Dimer structures
+Dimensions: 3D
+
+
+Precursor: DBPA
+Substrate: Au(111) surface
+Temperature: N/A
+Products: Dimeric structure stabilized by Au-ligand coordination
+Dimensions: 0D (molecule)
+

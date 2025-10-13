@@ -1,0 +1,24 @@
+
+Precursor: Helically chiral racemic benzo[2,1-g:3,4-g′]dichrysene
+Substrate: Ag(111) single-crystal surface
+Temperature: 350 K
+Product: (P)-DBH on Ag(111)
+Dimensions: 2D
+Precursor: Enantiopure (P)-DBH
+Substrate: Ag(111) single-crystal surface
+Product: (P)-DBH on Ag(111)
+Dimensions: 2D (N/A)
+
+
+| 6-phenyldibenzo[ a,g]coronene | 1,3,5-trisubstituted benzene | 150°C | 6-phenyldibenzo[ a,g]coronene | 0D |
+| 6-phenyldibenzo[ a,g]coronene | 1,3,5-trisubstituted benzene | 200°C | 6-phenyldibenzo[ a,g]coronene | 0D |
+| 6-phenyldibenzo[ a,g]coronene | 1,3,5-trisubstituted benzene | 250°C | 6-phenyldibenzo[ a,g]coronene | 0D |
+| 6-phenyldibenzo[ a,g]coronene | 1,3,5-trisubstituted benzene | 300°C | 6-phenyldibenzo[ a,g]coron
+
+
+| Helical precursor | Achiral solid surface | N/A | Optically pure helical product | Planar |
+| Helical precursor | Achiral solid surface | N/A | Optically pure helical product | Planar |
+| Helical precursor | Achiral solid surface | N/A | Optically pure helical product | Planar |
+| Helical precursor | Achiral solid surface | N/A | Optically pure helical product | Planar |
+| Helical precursor | Achiral solid surface | N/A | Optically pure helical product | Planar |
+

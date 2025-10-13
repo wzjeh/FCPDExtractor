@@ -1,0 +1,27 @@
+
+Precursor Molecules: Pentamers
+Substrate: h-BN/Cu(111)
+Annealing/Reaction Temperature: 500 K
+Products: Coupled molecular units similar to cycloaddition products observed on Au(111) and Ag(111), chains of up to eight monomer units
+Dimensions: N/A
+Note: The table is not exhaustive and only includes the information provided in the text.
+
+
+Precursor: 1,8-diiodooctane
+Substrate: Au(111)
+Temperature: 520 K
+Products: 1,8-diiodooctane
+Dimensions: 1D
+Precursor: 1,8-diiodooctane
+Substrate: Ag(111)
+Products: 1,8-diiodooctane, imidazole ring-containing oligomers
+Dimensions: 1D (for 1,8-diiodooctane), 2D (for imidazole ring-containing oligomers)
+
+
+Precursor Molecules Substrate Annealing/Reaction Temperature (K) Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A 500 K N/A N/A
+N/A N/A 580 K N/A N/A
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+

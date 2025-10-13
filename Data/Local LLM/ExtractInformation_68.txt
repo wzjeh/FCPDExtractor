@@ -1,0 +1,40 @@
+
+Precursor: (E)-3,4-bis(4-iodophenyl)-1,6-diphenyl-3-hexen-1,5-diyne (1b)
+Substrate: Au(111) surface
+Temperature: 20°C
+Products: Polymer 10, graphene nanoribbons 12 and 13
+Dimensions: 2D (graphene nanoribbons)
+Precursor: Diiodoenediyne 1b
+Substrate: Au(111) surface
+Products: N/A
+Dimensions: N/A
+
+
+Precursor Molecules:
+Substrate:
+Annealing/Reaction Temperature:
+Products (Simplified numbers plus letters):
+Dimensions:
+Diiodoenediynes
+Au(111) surface
+100°C
+Graphene nanoribbons
+3D (nanoribbons)
+
+
+Precursor: Alkyne
+Substrate: Alkyne
+Temperature: N/A
+Products: Coupled alkynes (e.g., Glaser, Sonogashira, decarboxylative coupling products)
+Dimensions: 2D (linear)
+
+
+Precursor: [8]annulene
+Substrate: Au(111)
+Temperature: 300 K
+Products: enediynes, noretriynes, and benzofulvenes
+Dimensions: 2D (N)
+Precursor: [8]radialene
+Products: enediynes, noretriynes, and benzofulvenes
+Dimensions: 2D (N)
+

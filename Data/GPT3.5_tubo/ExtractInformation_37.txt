@@ -1,0 +1,23 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| Monoradical 1a' | N/A | N/A | Monoradical 1a | N/A |
+| Iodine | N/A | Ambient conditions | Monoradical 1a | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| 2b | Tetrahydrofuran solution with iodine as a catalyst | Thermal annealing | Product 3, Rubicene (Product 5) | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| 1a on Au (111) | N/A | N/A | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| 1 | Au(111) substrate | N/A | Monoradical 1a | N/A |
+
+| Precursor         | Substrate          | Temperature | Products | Dimensions |
+|-------------------|--------------------|-------------|----------|------------|
+| Commercial antraquinone | Au(111) surface | N/A         | Diol, dichloroanthracene, rubicene | N/A |
+| Diol              | Au(111) surface    | N/A         | Dichloroanthracene, rubicene | N/A |
+| Dichloroanthracene | Au(111) surface   | N/A         | Rubicene | N/A |
+

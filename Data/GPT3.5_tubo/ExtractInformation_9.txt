@@ -1,0 +1,29 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| 1 | Au(111) | 340 °C | 2A,B | Nonbenzenoid NGs |
+
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+|     S2    |9-bromoanthracene|340°C|Non-Benzenoid NGs 2A,B|Rectangle-shaped NGs, fused NGs|
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|---------|-----------|
+| 2A,B | Au(111) | N/A | Four heptagonal rings | Planar |
+| N/A | N/A | N/A | Ring rearrangement | N/A |
+
+| Precursor                           | Substrate | Temperature | Products                                    | Dimensions |
+|--------------------------------------|-----------|-------------|--------------------------------------------|------------|
+| 1 (contains 1,10-dimethyldibenzo[a,m]rubicene with additional anthracene moieties) | Coinage-metal surface under UHV conditions | Thermal activation on the metal surface | NGs 2A,B containing embedded azulene units, pentalene, and as-indacene | N/A        |
+
+| Precursor       | Substrate   | Temperature | Products             | Dimensions |
+|-----------------|-------------|-------------|----------------------|------------|
+| N/A             | N/A         | N/A         | N/A                  | N/A        |
+| Ullmann coupling| Metal surface| N/A         | Stable molecular graphene structures | N/A |
+| Imine coupling  | Metal surface| N/A         | Stable molecular graphene structures | N/A |
+| Alkyne homocoupling| Metal surface| N/A       | Stable molecular graphene structures | N/A |
+| Cyclodehydrogenation| Metal surface| N/A     | Stable molecular graphene structures | N/A |
+| Rearrangement reactions| Metal surface| N/A | Novel nanostructures | N/A |
+| Fritsch-Buttenberg-Wiechell (FBW)| Metal surface| N/A | Novel nanostructures | N/A |
+| Bergman cyclization| Metal surface| N/A       | Novel nanostructures | N/A |
+

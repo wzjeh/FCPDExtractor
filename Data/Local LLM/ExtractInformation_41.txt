@@ -1,0 +1,13 @@
+
+Precursor Molecules Substrate Annealing/Reaction Temperature Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+
+
+Precursor: 10,10'-dibromo-9,9'-bianthryl
+Substrate: N/A
+Annealing/Reaction Temperature: 300°C
+Products: Fully aromatic GNRs
+Dimensions: 2D (graphene)
+

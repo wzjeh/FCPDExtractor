@@ -1,0 +1,14 @@
+| Precursor              | Substrate | Temperature | Products | Dimensions |
+|------------------------|-----------|-------------|----------|------------|
+| Azulene-derivative PAHs| Flat surface| N/A         | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|------------|
+| DAPh | Cu(001) | N/A | N/A | N/A |
+| DAPyr | Cu(001) | N/A | 4, 5, 6 | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|-----------|
+| Molecule 1 (DAPh 1) | Cu(001) surface | Annealing on Cu(001) surface | DAPyr 4 | Planar configuration on the surface |
+| DAPyr 4 | Cu(001) surface | Thermal induction | Fulvalenomoiety PAH | Intrinsically flat |
+

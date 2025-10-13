@@ -1,0 +1,40 @@
+
+Precursor: Precursor molecules are not mentioned in the text.
+Substrate: Metal surface is not mentioned in the text.
+Temperature: The reaction occurs at a specific temperature, but the exact temperature values are not provided in the text.
+Products: The products of the reaction are determined based on the morphological characteristics of the product molecules on the surface. However, the exact compound molecules formed in this experiment are not mentioned in the text.
+Dimensions: The dimensionality of the product molecules is not mentioned in the text.
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|-----------|-------------|
+| N/A       | Metal surface | N/A        | N/A       | N/A        |
+
+
+Precursor: diisopropyl-p-ter-phenyl 1
+Substrate: gold surface
+Temperature: N/A
+Products: new phenylene rings
+Dimensions: 2D (Simplified: 2)
+
+
+Precursor: Dihaloarenes
+Substrate: Metal surfaces
+Temperature: N/A
+Products: Polymerization of diradicals
+Dimensions: 1D (simplified as 1)
+Precursor: Dihaloarenes Substrate: Metal surfaces Temperature: N/A Products: Polymerization of diradicals Dimensions: 1D (simplified as 1)
+
+
+Precursor Molecules:
+Substrate:
+Annealing/Reaction Temperature:
+Products (Compound Molecules):
+Dimensionality of Products:
+N/A (since no information is provided about the dimensionality of the product molecules)
+
+
+Precursor: N/A
+Substrate: N/A
+Temperature: 300 K
+Products: N/A
+Dimensions: N/A
+

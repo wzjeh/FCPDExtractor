@@ -1,0 +1,17 @@
+| Precursor     | Substrate | Temperature | Products                        | Dimensions |
+|--------------|-----------|-------------|---------------------------------|------------|
+| PA           | IB        | 90 K        | DPA, DPDA, BP                  | N/A        |
+
+| Precursor         | Substrate | Temperature | Products                           | Dimensions |
+|-------------------|-----------|-------------|------------------------------------|------------|
+| Phenylacetylene   | Au(111)   | Vacuum      | Diphenyldiacetylene, Biphenyl, Diphenylacetylene | N/A        |
+| Iodobenzene       | Au(111)   | Vacuum      | Diphenyldiacetylene, Biphenyl, Diphenylacetylene | N/A        |
+
+| Precursor       | Substrate    | Temperature | Products                             | Dimensions |
+|-----------------|--------------|-------------|--------------------------------------|------------|
+| Phenylacetylene | Iodobenzene  | Vacuum      | Biphenyl, Diphenyldiacetylene, Diphenylacetylene | 2D         |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|--------------|----------|------------|
+| N/A       | Au(111)   | 550 K        | N/A      | N/A        |
+

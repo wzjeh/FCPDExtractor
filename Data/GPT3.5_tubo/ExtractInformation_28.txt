@@ -1,0 +1,25 @@
+| Precursor          | Substrate            | Temperature | Products                        | Dimensions |
+|---------------------|----------------------|-------------|---------------------------------|------------|
+| Boronic acids       | Single-crystal surface | UHV         | Condensation products          | 2D        |
+| Alkynes             | Single-crystal surface | UHV         | Homocoupling products          | 2D        |
+| Schiﬀ bases         | Single-crystal surface | UHV         | Schiﬀ base compounds           | 2D        |
+| Acylation reactions | Single-crystal surface | UHV         | Acylated compounds             | 2D        |
+| N/A                 | N/A                  | N/A         | N/A                             | N/A       |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| p-AAB | Au(111) | N/A | N/A | N/A |
+| AEB | Vacuum | N/A | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| AEB 1     | Au(111)   | 85°C (crucible temp), RT (surface) | Monomers, Dimers, Trimers | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|----------|------------|---------|-----------|
+| AEB1 (charged with azide and alkyne moiety) | Au(111) surface | Room temperature | 1,4-regioisomer 2 | N/A |
+
+| Precursor                                   | Substrate | Temperature | Products | Dimensions |
+|---------------------------------------------|-----------|-------------|----------|------------|
+| N-(4-azidophenyl)-4-ethynylbenzamide (AEB) | Au(111)   | UHV         | N/A      | N/A        |
+

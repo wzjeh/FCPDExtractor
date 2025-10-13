@@ -1,0 +1,27 @@
+
+| 1,3,5-tris(3-bromophenyl)benzene | Ag(111) | 750 K | N/A | N/A |
+| 1,3,5-tris(3-bromophenyl)benzene | Au(111) | 700 K | N/A | N/A |
+
+
+| H2 | N2 | 700 K | H2O | 1D |
+Note: The precursor molecules are not mentioned in the text, but can be inferred from the products formed.
+
+
+Precursor | Substrate | Temperature | Products | Dimensions |
+| Cs-mTBPB | Au(111) | 550 K | 1D polymer chains | 1D |
+| C3h-mTBPB | Ag(111) | 550 K | 1D polymer chains | 1D |
+
+
+Precursor: Phenyl and Phenylene
+Substrate: Silver (Ag) surface
+Annealing/Reaction Temperature: 350 K
+Products: Porous carbon nanoribbons
+Dimensions: N/A
+Note: The table is not exhaustive and may not cover all the details mentioned in the text. Please refer to the text for more information.
+
+
+Precursor Molecules Substrate Annealing/Reaction Temperature Products Dimensionality
+N/A N/A 300 K N/A N/A
+N/A N/A N/A N/A 1D
+N/A N/A N/A N/A 2D
+

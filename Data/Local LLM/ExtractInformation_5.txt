@@ -1,0 +1,31 @@
+
+Precursor: 1-octanoic acid
+Substrate: HOPG surface
+Temperature: 298 K
+Products: Polymerized and crystallized PDBA 2DP on the HOPG surface
+Dimensions: 2D (Simplified: 2)
+Precursor: PDBA (2,5-dibromo-3-bromo-6-bromo-4-bromo-S-triazene)
+Products: Polymerized and crystallized PDBA 2DP on the HOPG surface
+Dimensions: 2D (Simplified: 2)
+
+
+| Precursor 1 | Substrate 1 | Temperature | Product 1 | Dimensions |
+| Precursor 2 | Substrate 2 | Temperature | Product 2 | Dimensions |
+Precursor 1: 4-aminophenylboronic acid
+Substrate 1: Indium tin oxide (ITO)
+Temperature: 100 degrees Celsius
+Product 1: A new product with a morphological characteristic of a thin film
+Dimensions: 2D (N/A)
+Precursor 2: 4-aminophenylboronic acid
+Substrate 2: Gold nanoparticles
+Product 2: A new product with a morphological characteristic of a nanoparticle
+Dimensions: 3D (N/A)
+
+
+Precursor Molecules Substrates Annealing/Reaction Temperature (K) Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A 300 K N/A N/A
+N/A N/A N/A N/A 2D
+N/A N/A N/A N/A 1D
+N/A N/A N/A N/A 0D
+

@@ -1,0 +1,24 @@
+Sure, here is a summary of the experimental details in a table format:
+
+| Precursor             | Substrate                           | Temperature | Products   | Dimensions |
+|-----------------------|-------------------------------------|-------------|------------|------------|
+| Dialdehyde, Aliphatic amine | Au(111)-(22 6%8NIﬃﬃ ﬃ 3p) surface | N/A         | Imines     | Monomolecular height |
+
+Note: The text provided did not specify the exact temperature for the reaction. If you need more detailed information or specific temperatures, please refer to the original study or additional sources.
+
+Sure, here's a summary table based on the provided information:
+
+| Precursor                    | Substrate  | Temperature | Products | Dimensions |
+|------------------------------|------------|-------------|----------|------------|
+| Aldehyde and Amine           | Au(111)    | N/A         | N/A      | N/A        |
+
+The provided text is quite limited in detail regarding specific temperatures and products formed, so some information is marked as N/A. If there are more detailed sections of the text that provide specific experimental conditions, feel free to share them, and I will update the table accordingly.
+
+Sure, here is the summarized information in a table format:
+
+| Precursor            | Substrate   | Temperature | Products                      | Dimensions |
+|----------------------|-------------|-------------|-------------------------------|------------|
+| Aldehydes and amines | Au(111)     | N/A         | Imine reaction products       | N/A        |
+
+Please note that the text provided does not specify the exact annealing/reaction temperature or the dimensionality of the product molecules. If you have more detailed information regarding those parameters, feel free to provide it, and I can update the table accordingly.
+

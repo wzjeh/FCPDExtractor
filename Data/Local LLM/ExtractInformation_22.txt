@@ -1,0 +1,40 @@
+
+Precursor: Gold nanoparticles
+Substrate: Iodobenzene and phenyl-acetylene
+Temperature: N/A
+Product: Cross-coupling of iodobenzene with phenyl-acetylene
+Dimensions: 0D (molecule), 1D (ligand), 2D (surface)
+
+
+Precursor: Chlorobenzene
+Substrate: Ag(100) surface
+Temperature: N/A
+Product: BP (phenyl-acetylene)
+Dimensions: 2D
+Precursor: Phenyl-acetylene
+Substrate: Ag(100) surface
+Product: DPDA (dipyrrolidine-acetylene)
+Dimensions: 3D
+
+
+Precursor: Phenylacetylene (PA)
+Substrate: Ag(100)
+Temperature: 120 K (annealing)
+Products: ClBz
+Dimensions: 2D
+Precursor: Chlorobenzene (ClBz)
+Substrate: Ag(100)
+Temperature: N/A (reaction)
+Products: Unknown
+Dimensions: 3D (assuming the product is a complex molecule formed on the surface)
+
+
+Precursor: Phenylacetylene
+Substrate: Ag(100)
+Temperature: N/A
+Product: Homo-coupling and Sonogashira cross-coupling products
+Dimensions: 2D (Ag surface)
+Precursor: Chlorobenzene
+Product: Homo-coupling and Sonogashira cross-coupling products
+Dimensions: 2D (Ag surface)
+

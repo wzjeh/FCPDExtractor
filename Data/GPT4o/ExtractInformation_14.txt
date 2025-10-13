@@ -1,0 +1,44 @@
+| Precursor      | Substrate | Temperature | Products | Dimensions |
+|----------------|-----------|-------------|----------|------------|
+| BVBP molecules | Cu(110)   | ~170 K      | N/A      | N/A        |
+
+Note: The provided text does not specify the products (compound molecules formed) or the dimensions of the product molecules.
+
+Sure, here’s a table summarizing the details:
+
+| Precursor                          | Substrate          | Temperature | Products                             | Dimensions |
+|------------------------------------|--------------------|-------------|--------------------------------------|------------|
+| Alkyne (sp1 hybridized carbon)     | Surface            | N/A         | N/A                                  | N/A        |
+| Alkene (sp2 hybridized carbon)     | Cu(110)            | N/A         | N/A                                  | N/A        |
+| Arene (sp2 hybridized carbon)      | Surface            | N/A         | N/A                                  | N/A        |
+| Alkane (sp3 hybridized carbon)     | Surface            | N/A         | N/A                                  | N/A        |
+| Aryl halide (Ullmann reaction)     | Surface            | N/A         | Various surface nanostructures       | N/A        |
+| Alkene (sp2 hybridized carbon)     | Cu(110)            | N/A         | N/A                                  | N/A        |
+
+Note: The provided information in the text did not include specific temperatures, products, or dimensionality for most of the reactions, and thus, "N/A" is used where applicable.
+
+Sure, here is the summary in a table format based on the provided information:
+
+| Precursor          | Substrate | Temperature | Products | Dimensions |
+|--------------------|-----------|-------------|----------|------------|
+| Terminal alkenylbromides | Cu(110)   | N/A         | cis-diene | N/A        |
+
+Please note that the provided text does not include specific details about the exact temperature used in the reaction, so "N/A" is used in that column. Additionally, the dimensions of the product molecules are not specified in the provided text, so "N/A" is also used for that column.
+
+Sure, here is a summary of the details in a table format:
+
+| Precursor             | Substrate | Temperature | Products     | Dimensions |
+|-----------------------|-----------|-------------|--------------|------------|
+| Alkenyl bromide group | Cu(110)   | N/A         | cis-dienes   | N/A        |
+| Alkene                | Cu(110)   | N/A         | trans-diene  | N/A        |
+
+Note: The temperatures are not explicitly mentioned in the provided text, so they are marked as N/A. If there is additional information in the ESI (Electronic Supplementary Information) that provides these details, it would be necessary to refer to that document for more precise data.
+
+Here is the summarized information in a table format:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| BVBP molecule | Cu(110) | Room Temperature (RT) | Debrominated species, Ordered islands | N/A |
+
+Please note that the exact dimensions of the product molecules were not provided in the text, so it is marked as N/A.
+

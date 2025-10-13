@@ -1,0 +1,12 @@
+| Precursor                                 | Substrate | Temperature | Products | Dimensions |
+|-------------------------------------------|-----------|-------------|----------|------------|
+| 10-bromo-10′-(2,6-dimethylphenyl)-9,9 ′-bianthracene (2) | Au(111)  | N/A         | Two distinct NGs | N/A        |
+
+| Precursor                                            | Substrate | Temperature | Products | Dimensions |
+|------------------------------------------------------|-----------|-------------|----------|------------|
+| 10-bromo-10 ′-(2,6-dimethylphenyl)-9,9 ′-bianthracene | Au(111)   | N/A         | 1a, 1b  | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|-----------|
+| 1a and 1b | Au(111) | 300 °C | 1a and 1b | 2D |
+

@@ -1,0 +1,31 @@
+Sure! Here is the summary in a table format based on the given information:
+
+| Precursor Molecules | Substrates | Annealing/Reaction Temperature | Products | Dimensionality |
+|---------------------|------------|-------------------------------|----------|----------------|
+| N/A                 | Single-crystal metal surfaces | N/A                           | Covalently interlinked nanostructures | N/A            |
+
+Please note that the provided text does not specify detailed information about specific precursor molecules, exact reaction temperatures, or specific products. Therefore, N/A has been used where the information is not provided or is unclear from the text. If you have more detailed experimental data or specific examples, I can help further refine the table.
+
+Here's the summarized information in a table format:
+
+| Precursor           | Substrate | Temperature | Products                        | Dimensions |
+|---------------------|-----------|-------------|---------------------------------|------------|
+| Enediyne precursor  | Cu(110)   | N/A         | 1D polyphenylene via Bergman cyclization | 1D         |
+| DNHD                | N/A       | N/A         | Product of Bergman cyclization  | N/A        |
+
+Note: The exact annealing/reaction temperature for the molecules was not specified in the provided text.
+
+| Precursor                     | Substrate | Temperature | Products                      | Dimensions |
+|-------------------------------|-----------|-------------|-------------------------------|------------|
+| N/A                           | Cu(110)   | N/A         | 1D polyphenylene chains       | 1D         |
+
+Please note that the specific details about precursor molecules and the reaction temperature were not provided in the given text. If you have more detailed sections of the document, I can help extract further information.
+
+Sure, here is the summarized table based on the provided details:
+
+| Precursor                              | Substrate | Temperature | Products                      | Dimensions |
+|----------------------------------------|-----------|-------------|-------------------------------|------------|
+| 1,6-di-2-naphthylhex-3-ene-1,5-diyne (DNHD) | Cu(110)   | N/A         | Covalently linked conjugated carbon nanostructures | 1D         |
+
+Please note, the temperature for annealing/reaction is not provided in the text.
+

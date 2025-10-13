@@ -1,0 +1,31 @@
+
+| Porphyrin | Au(111) | N/A | Polymeric chains, porous molecular networks | 2D |
+| Bromine-terminated porphyrin precursors | Au(111) | N/A | Dimeric, polymeric, and network structures | 2D |
+| Various reaction routes | N/A | N/A | Hyper-branched oligomers, graphene ribbons, super honeycomb frameworks | 2D |
+| Covalent coupling | N/A | N/A | Porous molecular networks, porous molecular networks | 2D |
+| On-surface polymerization | N/A | N/A | Polymeric chains, porous molecular networks | 2D |
+
+
+| Porphyrin | Cu | 180°C | Dimeric structure (TR) | 2D |
+| Porphyrin | Cu | 240°C | Trimeric structure (TR) | 3D |
+Note: The precursor molecules are not mentioned in the text, but they are assumed to be the same for both experiments.
+
+
+| Cu-pyridyl | Surface | N/A | Macromolecular porphyrin structures | 2D |
+| Cu-pyridyl | Surface | N/A | Macromolecular porphyrin structures | 2D |
+
+
+Precursor: 1
+Substrate: 2
+Temperature: 180 °C
+Products: Porphyrin dimer
+Dimensions: 2D
+Precursor: Cu
+Substrate: 1, 3
+Products: Porphyrin dimer
+Dimensions: 2D (N/A)
+Precursor: 3
+Substrate: 1, 2, 3
+Products: Porphyrin trimer
+Dimensions: 3D (N/A)
+

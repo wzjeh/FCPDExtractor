@@ -1,0 +1,30 @@
+
+Precursor Pd-TPTBP N/A N/A
+Substrate Ag(111) N/A N/A
+Temperature 600K N/A N/A
+Products γ-ortho fused benzoporphyrins N/A N/A
+Dimensions 2D (planar) N/A N/A
+
+
+Precursor: Pd-TPTBP
+Substrate: Ag(111) surface
+Temperature: 600K
+Products: γ-ortho fused porphyrins with 66 conjugated π-electrons, fully planar γ-ortho fused products lacking one or two phenyl moieties
+Dimensions: 2D (planar)
+Note: The table is not exhaustive and may not cover all the details mentioned in the text. Please refer to the text for more information.
+
+
+Precursor: Pd-TPTBP
+Substrate: Ag(111)
+Temperature: 600K
+Products: P6
+Dimensions: 2D
+
+
+Precursor: Fused porphyrins with eight benzene rings at the periphery
+Substrate: Graphene template
+Temperature: Up to 1000 °C
+Products: Hybrid structures with the porphyrin fully embedded in the graphene template, which are fully aromatic and have up to 66 conjugated π-electrons.
+Dimensions: 2D (graphene)
+Note: The table is not exhaustive and may not cover all the details mentioned in the text. Please refer to the text for more information.
+

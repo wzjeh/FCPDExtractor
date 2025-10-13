@@ -1,0 +1,20 @@
+
+| Enediyne 1 | Au(111) | N/A | C1−C6cyclic product | 1D |
+| Enediyne 2 | Au(111) | N/A | C1−C6cyclic product | 1D |
+
+
+Precursor: 1-hexene
+Substrate: Au(111)
+Temperature: 300 K
+Products: C1-C6
+Dimensions: 1D
+Precursor: 1-heptene
+Products: C1-C5
+
+
+Precursor: 1,2-bis(2-phenylethynyl)benzene
+Substrate: Gold (Au) surface
+Temperature: 293 K
+Products: Discrete molecules of 1,2-bis(2-phenylethynyl)benzene
+Dimensions: N/A (since the molecules are not self-assembled into a higher-dimensional structure)
+

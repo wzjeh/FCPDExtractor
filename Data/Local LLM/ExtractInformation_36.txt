@@ -1,0 +1,19 @@
+
+Precursor: Fluorene
+Substrate: Au(111)
+Temperature: N/A
+Products: Various hydrocarbon molecules
+Dimensions: N/A
+Note: The table is not exhaustive and assumes that the precursor molecules are transformed into various hydrocarbon molecules on the surface via intra- and intermolecular bond rearrangements. The morphological characteristics of the products can be determined based on the shape of the product molecules on the surface.
+
+
+| 1 | Au(111) | 300°C | 1a | 1D |
+Note: The table is not complete as there is no information about the precursor molecules, substrates, annealing/reaction temperature of the molecules, products (i.e., the compound molecules formed in this experiment), and the dimensionality of the product molecules (Simplified numbers plus letters). If you can provide the missing information, please do so.
+
+
+Precursor: N-heterocyclic carbene (NHC)
+Substrate: Metal complex (e.g., Pd, Ni, Cu)
+Annealing/Reaction Temperature: 100°C
+Products: Metal-NHC complex (e.g., Pd-NHC, Ni-NHC, Cu-NHC)
+Dimensions: 0D (N/A)
+

@@ -1,0 +1,16 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| DEBP | Au(111) | Annealing process | Polymeric network | 2D |
+
+| Precursor     | Substrate     | Temperature | Products | Dimensions |
+|---------------|---------------|-------------|----------|------------|
+| DEBP molecule | Au(111) surface | N/A         | N/A      | N/A        |
+
+| Precursor            | Substrate | Temperature | Products | Dimensions |
+|----------------------|-----------|-------------|----------|------------|
+| Acetylene            | Au(111)   | N/A         | Benzene  | 2D         |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+| ---------- | --------- | ----------- | -------- | ---------- |
+| DEDP molecule | Au(111) substrate | N/A | 1,3,5- and 1,2,4-isomers | 2D (2-dimensional) |
+

@@ -1,0 +1,21 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| Triyne 1 | Cu(111) partially covered by bilayer NaCl islands | 2510 K | Different adsorption conformations of 1 on Cu(111) | N/A |
+
+| Precursor              | Substrate | Temperature | Products | Dimensions |
+|------------------------|-----------|-------------|----------|------------|
+| Heptahelicene derivative | Ag(111) | N/A         | N/A      | N/A        |
+| Bis(phenylethynyl)-benzene derivatives | Au(111) | N/A | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| N/A | N/A | N/A | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| 1 | N/A | Elevated temperatures | 3' and 3'' | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|-----------|
+| N/A | Cu substrate | 463 K | 3' (intermediate) | N/A |
+

@@ -1,0 +1,16 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|-----------|
+| I6-CHP | h-BN on Rh(111) | 5.5 K | Ix-CHP species | Not specified |
+
+| Precursor                         | Substrate   | Temperature | Products     | Dimensions |
+|-----------------------------------|-------------|-------------|--------------|------------|
+| 5,5' 0,500,5000,50000,500000-hexaiodocyclohexa-m-phenylene (I6-CHP) | Cu(111), Ag(111), Au(111) | Room temperature | Porous graphene | 2D |
+
+| Precursor       | Substrate | Temperature | Products | Dimensions |
+|-----------------|-----------|-------------|----------|------------|
+| N/A             | N/A       | N/A         | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|------------|
+| CHP species | h-BN | 550 K for 20 min | Various dimers with different iodine terminations | Not specified |
+

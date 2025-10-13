@@ -1,0 +1,47 @@
+Sure, here is the summarized information in a table format:
+
+| Precursor         | Substrate   | Temperature | Products                                              | Dimensions |
+|-------------------|-------------|-------------|-------------------------------------------------------|------------|
+| Aryl-bromide      | Au(111)     | N/A         | Oligomers consisting of porphyrin moieties linked by p-phenylene | N/A        |
+| Porphyrin-bromide | Au(111)     | N/A         | Oligomers consisting of porphyrin moieties linked by p-phenylene | N/A        |
+
+**Notes:**
+- The precise annealing/reaction temperature was not provided in the provided text.
+- The dimensions of the product molecules were not detailed in the provided text.
+
+Here's a summarized table based on the provided experimental details:
+
+| Precursor           | Substrate        | Temperature (°C) | Products | Dimensions |
+|---------------------|------------------|------------------|----------|------------|
+| Molecule 1          | Au(111)          | 325              | N/A      | N/A        |
+| Molecule 2          | Au(111)          | 285              | N/A      | N/A        |
+
+Note: The details provided in the text were primarily related to the experimental setup and imaging parameters. Specific information about the products and their dimensions was not explicitly mentioned. Therefore, the products and dimensions columns are marked as N/A.
+
+Sure, here is the summary of the details in a table:
+
+| Precursor               | Substrate   | Temperature | Products             | Dimensions |
+|-------------------------|-------------|-------------|----------------------|------------|
+| Aryl-bromide (1)        | Au(111)     | N/A         | N/A                  | N/A        |
+| Porphyrin-bromide (2)   | Au(111)     | N/A         | N/A                  | N/A        |
+
+Note: The provided text does not specify the exact temperature or the specific products formed in the experiment. Therefore, those fields are marked as N/A.
+
+Certainly! Below is a table summarizing the experimental conditions for on-surface synthesis from the provided text.
+
+| Precursor                  | Substrate | Temperature | Products | Dimensions |
+|----------------------------|-----------|-------------|----------|------------|
+| Molecular precursors       | Surface   | N/A         | Covalent bonds between molecular precursors | 2D         |
+| Ullmann coupling precursors| Surface   | N/A         | N/A      | 2D         |
+| Glaser coupling precursors | Surface   | N/A         | N/A      | 2D         |
+| Alkane polymerization precursors | Surface   | N/A         | N/A      | 2D         |
+| Boronic acid condensation precursors | Surface   | N/A         | N/A      | 2D         |
+| Decarboxylative polymerization precursors | Surface   | N/A         | N/A      | 2D         |
+| Imine coupling precursors  | Surface   | N/A         | N/A      | 2D         |
+| Acylation reaction precursors | Surface   | N/A         | N/A      | 2D         |
+| N-heterocyclic carbene dimerization precursors | Surface   | N/A         | N/A      | 2D         |
+| Azide–alkyne cycloaddition precursors | Surface   | N/A         | N/A      | 2D         |
+| Bergman cyclization precursors | Surface   | N/A         | N/A      | 2D         |
+
+Note: The specific precursor molecules, substrates, reaction temperatures, and products are not detailed in the provided text, so placeholders are used where specific information is unavailable (N/A).
+

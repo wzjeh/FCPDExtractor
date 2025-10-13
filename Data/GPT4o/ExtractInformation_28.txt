@@ -1,0 +1,45 @@
+Sure, here is the summarized information in a table:
+
+| Precursor               | Substrate         | Temperature         | Products           | Dimensions |
+|-------------------------|-------------------|---------------------|--------------------|------------|
+| Ullman coupling         | Single-crystal    | UHV conditions (N/A)| Covalently linked nanostructures | 2D         |
+| Boronic acids           | Single-crystal    | UHV conditions (N/A)| Covalently linked nanostructures | 2D         |
+| Schiﬀ bases             | Single-crystal    | UHV conditions (N/A)| Covalently linked nanostructures | 2D         |
+| Acylation reactions     | Single-crystal    | UHV conditions (N/A)| Covalently linked nanostructures | 2D         |
+| Homocoupling of alkynes | Single-crystal    | UHV conditions (N/A)| Covalently linked nanostructures | 2D         |
+
+Note: The specific temperatures are not provided in the text and are thus marked as N/A (Under Ultrahigh Vacuum (UHV) conditions). The products are generalized as covalently linked nanostructures based on the provided information.
+
+Sure! Based on the provided text, here's a summary table focusing on the requested experimental conditions:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| p-AAB     | Au(111)   | N/A         | N/A      | N/A        |
+| AEB 1     | N/A       | N/A         | N/A      | N/A        |
+
+**Note:**
+- The text does not provide specific information on the annealing/reaction temperature, products, or dimensions of the resulting molecules.
+- If you have more details or additional sections of the text, please provide them so I can include more information accurately.
+
+Here is the summarized information presented in a table:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| 1 (AEB)   | Au(111)   | 85°C        | AEB monomers, AEB dimers, AEB trimers | Monomers (1), Dimers (2), Trimers (3) |
+
+Note: The temperature mentioned is the sublimation temperature of the precursor. The substrate was kept at room temperature.
+
+Sure, here is the summarized table based on the provided information:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| AEB1      | Au(111)   | Room temperature | 1,4-regioisomer 2 | N/A |
+
+If you have more details or specific sections from the document that you want to include, feel free to share!
+
+| Precursor                               | Substrate | Temperature | Products | Dimensions |
+|----------------------------------------|-----------|-------------|----------|------------|
+| N-(4-azidophenyl)-4-ethynyl-benzamide (AEB, 1) | Au(111)   | N/A         | N/A      | N/A        |
+
+Note: The provided text does not specify the exact annealing/reaction temperature, products, or dimensionality of the product molecules directly. Therefore, some fields are marked as N/A. If more details are provided in other parts of the document, those could be used to complete the table.
+

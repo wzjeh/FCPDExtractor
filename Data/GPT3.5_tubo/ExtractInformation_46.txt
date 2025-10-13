@@ -1,0 +1,13 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|------------|
+| Ext-TEB (1,3,5-tris-(4-ethynylphenyl)benzene) | Ag(111) surface | 152 K | Highly regular supramolecular domains | 2D |
+| Ext-TEB (1,3,5-tris-(4-ethynylphenyl)benzene) | Ag(111) surface | 300 K | Characteristic dimers coexisting with unreacted precursor Ext-TEB species | 2D |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Terminal alkyne | Ag | N/A | Homo-coupling product | 2D |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| N/A | Ag(111) noble metal surface | UHV under soft conditions | Discrete compounds or polymeric networks with a conjugated backbone | Low-dimensional nano-architectures |
+

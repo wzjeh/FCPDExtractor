@@ -1,0 +1,22 @@
+
+Precursor: 10-bromo-10'-(2,6-dimethylphenyl)-9,9'-bianthracene (2)
+Substrate: Gold (Au(111))
+Temperature: 300 degrees Celsius
+Product 1: 1a (All-benzenoid NG)
+Product 2: 1b (Mixture of benzenoid and non-benzenoid units)
+Dimensions: 2D (Simplified as 2)
+
+
+Precursor: 10-bromo-10'-(2,6-dimethylphenyl)-9,9'-bianthracene
+Substrate: Au(111)
+Temperature: N/A
+Products: 1a (all-benzenoid nanographene with triangulene-like termini, containing a high proportion of zigzag edges), 1b (non-benzenoid nanographene consisting of a single pentagonal ring in a benzenoid framework)
+Dimensions: 1a - 2D (Simplified: 2D), 1b - 2D (Simplified: 2D)
+
+
+Precursor 1a 1b
+Substrate N/A N/A
+Temperature 300 °C 300 °C
+Products Linear structure with a flat and wide terminus Circular structure with a sharp and narrow terminus
+Dimensions 1D 1D
+

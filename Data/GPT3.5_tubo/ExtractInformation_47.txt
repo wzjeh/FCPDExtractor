@@ -1,0 +1,16 @@
+| Precursor                           | Substrate | Temperature | Products                 | Dimensions |
+|-------------------------------------|-----------|-------------|--------------------------|------------|
+| Iodine- and bromine-functionalized | Au(111)   | Ultrahigh vacuum conditions | 2D porous covalent networks | 2D         |
+
+| Precursor              | Substrate | Temperature | Products | Dimensions |
+|------------------------|-----------|-------------|----------|------------|
+| BIB                    | Au(111)   | Room temperature and subsequent thermal annealing | Covalent networks | N/A |
+
+| Precursor              | Substrate | Temperature | Products | Dimensions |
+|------------------------|-----------|-------------|----------|------------|
+| Iodine- and bromine-functionalized aromatic precursor | Au(111)   | Room temperature | Covalent networks | 1D chains, strings of pores, hexagonal pores from three, four, or six TBQ monomers |
+
+| Precursor     | Substrate | Temperature | Products | Dimensions |
+|---------------|-----------|-------------|----------|------------|
+| BIB           | Au(111)   | 500°C       | N/A      | N/A        |
+

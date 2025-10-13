@@ -1,0 +1,20 @@
+
+Precursor: 4on
+Substrate: Silver (Ag(111))
+Temperature: 530 K (C–O–C coupled products)
+Temperature: 580 K (carbon–carbon coupled products)
+Products: C–O–C coupled products
+Dimensions: 2D
+Products: carbon–carbon coupled products
+Dimensions: 3D (porous nanostructure)
+
+
+Precursor: Hydroxymethyl-substituted molecular precursor 1
+Substrate: Ag(111) surface
+Temperature: 300 K
+Products: Ether chains and rings
+Dimensions: 2D (N/A for 3D)
+Precursor: Hydroxymethyl-substituted molecular precursor 2
+Products: Ether chains and rings
+Dimensions: 2D (N/A for 3D)
+

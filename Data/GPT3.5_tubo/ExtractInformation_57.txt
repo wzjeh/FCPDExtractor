@@ -1,0 +1,18 @@
+| Precursor                               | Substrate | Temperature | Products                                      | Dimensions |
+|-----------------------------------------|-----------|-------------|---------------------------------------------|------------|
+| 5,15-di-(4-pyridyl)-10,20-bromophenyl porphyrin (B1) | Au(111)   | Room temperature | Closely-packed 2D molecular islands (B1) | 2D        |
+| 5,10,15-tri-(4-pyridyl)-20-bromophenyl porphyrin (B2) | Au(111)   | N/A         | N/A                                         | N/A        |
+| 4-ethynylbiphenyl functionalized with a terminal alkyne (A) | Au(111)   | N/A         | Star-shaped species with branches          | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|--------|-----------|
+| Metal-organic coordination | Terminal alkynes and aryl halides | N/A | On-surface Ullmann coupling, imine formation, condensation of boronic acids, Bergman cyclization, acylation, cycloaddition of acetyls, cyclodehydrogenation, azide-alkyne reactions, homo-coupling of alkanes, alkenes, and alkynes | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| N/A        | N/A       | N/A         | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+| ----------- | --------- | ----------- | -------- | ---------- |
+| Metal-coordination structures | N/A | N/A | N/A | N/A |
+

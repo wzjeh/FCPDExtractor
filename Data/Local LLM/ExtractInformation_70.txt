@@ -1,0 +1,16 @@
+
+| Isocyanide | Ag(111) | N/A | Aza-[3]radialenes | 2D |
+The paper describes an experiment conducted by the authors on the synthesis of aza-[3]radialenes on the Ag(111) surface. The authors used a [11111] cycloaddition reaction for the synthesis of these compounds. The reaction involves the selective and orientational assembling of isocyanide precursors due to the steric hindrance of chlorine substituents. The authors used scanning tunneling microscopy, non-contact atomic force microscopy, and time-of-flight secondary ion mass spectrometry to determine the atomic structure of the produced aza-[3]radialenes. The authors also proposed two reaction pathways, including synergistic and stepwise reactions, based on density functional theory calculations. These calculations revealed the role of chlorine substituents in activating the isocyano groups via electrostatic interaction.
+
+
+Precursor: DCICB
+Substrate: Ag(111) surface
+Temperature: N/A
+Products: DCICB adsorbed on Ag(111) surface
+Dimensions: 2D (Ag(111) surface)
+
+
+| Gold surface | Aza[3]radialene precursors | N/A | Aza[3]radialenes | 0D |
+| Chlorine substituents | Isocyano groups | N/A | Activated isocyano groups | 0D |
+Note: The precursor molecules are not mentioned in the text, but they are assumed to be the molecules that react with the gold surface to form the aza[3]radialenes. The substrate is the gold surface, and the temperature is not mentioned, so N/A is used. The products are the aza[3]radialenes, and their dimensionality is 0D, meaning they are single molecules. The chlorine substituents are used to activate the isocyano groups, and their dimensionality is also 0D.
+

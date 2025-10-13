@@ -1,0 +1,22 @@
+| Precursor  | Substrate  | Temperature | Products  | Dimensions |
+|------------|------------|-------------|-----------|------------|
+| Terminal alkyne, azide | Solid surfaces of metalsingle-crystals | Ultrahigh vacuum (UHV) conditions | 1,4-disubstituted 1,2,3-triazole | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|-----------|
+| Azide reactant | Surface | N/A | 1,4-triazole | N/A |
+
+| Precursor        | Substrate | Temperature | Products | Dimensions |
+|------------------|-----------|-------------|----------|------------|
+| Terminal alkyne  | Azide     | Ultrahigh vacuum conditions | 1,2,3-triazole compound | 2D on Cu(111) surface |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|------------|
+| Alkynes | Azide molecules | Room temperature | Small clusters of two to five elongated entities (biphenyl units) | 2D/3D |
+| Alkynes and azides | Cu(111) surface | Room temperature | Various structures comprising different numbers of biphenyl units | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|-----------|---------|-----------|
+| Azide | Cu(111) surface | Room temperature | N/A | N/A |
+| Alkynes | Cu(111) surface | Room temperature | N/A | N/A |
+

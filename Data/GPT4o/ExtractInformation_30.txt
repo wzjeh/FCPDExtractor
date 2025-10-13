@@ -1,0 +1,57 @@
+Here's the summarized table based on the provided details:
+
+| Precursor                              | Substrate    | Temperature | Products                            | Dimensions |
+|----------------------------------------|--------------|-------------|-------------------------------------|------------|
+| Amine and Aldehyde                     | Au(111)      | N/A         | Discrete Imines                     | N/A        |
+| Diamines and Dianhydrides              | Au(111)      | N/A         | Parallel Strands of Polyimides      | N/A        |
+| Amides and Acid Chlorides              | Ag(111)      | N/A         | Surface-Assisted Polymerization     | N/A        |
+| TPB                                    | Au(111)      | 110 K       | Well-Ordered Array (H-bonding)      | 25 x 25 nm |
+| TPB and TMC                            | Au(111)      | N/A         | SCOF                                | 35 x 35 nm |
+
+Note: N/A is used where specific information is not provided in the text.
+
+Here is the summary of the experimental conditions in a table:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| TPB (Tri-phenyl-boroxine) | Au(111) | 100–120 K (low temperature), heated at higher temperatures for reaction | Ordered extended COF (Covalent Organic Framework) phase | 2D |
+| TMC (Trimesoyl Chloride) | Au(111) | N/A | N/A | N/A |
+
+Please note that some details such as the exact temperature for the reaction with TMC and the resulting products are not specified in the provided text.
+
+Certainly! Based on the provided text, I have extracted and summarized the relevant details into a table format:
+
+| Precursor        | Substrate | Temperature | Products                 | Dimensions |
+|------------------|-----------|-------------|--------------------------|------------|
+| Alcohols, Boronic Acids | N/A       | N/A         | Layered Covalent Organic Frameworks (COFs) | 2D         |
+| N/A              | N/A       | N/A         | Surface Covalent Organic Framework (SCOF) | 2D         |
+
+**Notes:**
+- The text mentions the use of alcohols and boronic acids for the formation of layered COFs but does not specify the substrate or temperature.
+- The application of this reaction to ultrahigh vacuum (UHV) techniques led to the formation of SCOFs, but again, specific precursor molecules, substrates, and temperatures are not provided.
+
+If you have more detailed information or additional text, I can further refine the table.
+
+Here is a summary of the experimental details in a table format:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| TPB, TMC  | Au(111)   | 575 K       | Covalent networks (polyester condensation) | 2D         |
+
+**Notes:**
+- TPB: Tris(4-bromophenyl)benzene
+- TMC: Trimesoyl chloride
+- Au(111): Gold surface with a (111) orientation
+- The reaction involves annealing to 575 K.
+
+If you need further details or have additional questions, feel free to ask!
+
+Here's a summarized table based on the provided details:
+
+| Precursor                         | Substrate | Temperature | Products | Dimensions |
+|-----------------------------------|-----------|-------------|----------|------------|
+| Benzene-1,3,5-tricarbonyltrichloride (TMC) | Au(111)   | UHV conditions | 2D-polyester material | 2D         |
+| 1,3,5-tris(4-hydroxyphenyl)benzene (TPB) | N/A       | N/A         | N/A      | N/A        |
+
+This table focuses solely on the experimental conditions related to the surface chemistry synthesis as requested.
+

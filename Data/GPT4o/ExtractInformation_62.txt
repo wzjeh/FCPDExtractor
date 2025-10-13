@@ -1,0 +1,32 @@
+Sure, here's the summary in a table format:
+
+| Precursor                                           | Substrate | Temperature | Products | Dimensions |
+|-----------------------------------------------------|-----------|-------------|----------|------------|
+| 10-bromo-10′-(2,6-dimethylphenyl)-9,9′-bianthracene | Au(111)   | N/A         | 1a       | N/A        |
+
+Note: The provided passage does not include specific information on the annealing/reaction temperature or the exact dimensionality of the product molecules. If additional details are present elsewhere in the document, they should be incorporated accordingly.
+
+Sure, here's a table summarizing the experimental details from the given abstract:
+
+| Precursor                                         | Substrate | Temperature | Products | Dimensions |
+|---------------------------------------------------|-----------|-------------|----------|------------|
+| 10-bromo-10′-(2,6-dimethylphenyl)-9,9′-bianthracene | Au(111)   | N/A         | 1a       | N/A        |
+|                                                   |           | N/A         | 1b       | N/A        |
+
+### Notes:
+- The abstract does not provide specific temperatures for the annealing/reaction process.
+- The dimensions of the product molecules are not directly specified in the provided text.
+
+Sure, here is the summarized information in a table format:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| 2         | Au(111)   | 300 °C      | 1a, 1b   | N/A        |
+
+### Notes:
+- The precursor molecule is referred to as "2".
+- The substrate used is "Au(111)".
+- The annealing/reaction temperature is "300 °C".
+- The products formed are "1a" and "1b".
+- The dimensionality of the product molecules is not specified in the provided text, so it is marked as N/A.
+

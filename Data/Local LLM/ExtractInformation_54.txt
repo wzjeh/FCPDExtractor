@@ -1,0 +1,26 @@
+
+Precursor | Substrate | Temperature | Products | Dimensions |
+THPB | Au(111) | N/A | C-H bond-activated phenol | 2D |
+DHQP | Ag(111) | N/A | C-H bond-activated phenol | 2D |
+In summary, the experiment explored the selective ortho C-H bond activation of phenol molecules on gold and silver surfaces. The precursor molecules used were terphenyl-based and dihydroxyquinoline-based. The experiment was conducted at room temperature. The key finding was that for THPB precursors, both ortho C-H bonds were activated on Au(111) surfaces, whereas only one ortho C-H bond of each phenol ring was activated on Ag(111) surfaces. The products were C-H bond-activated phenol molecules with a dimensionality of 2D.
+
+
+Precursor: N/A
+Substrate: N/A
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+
+
+Precursor | Substrate | Temperature | Products | Dimensions |
+THPB | Au(111) | 270 °C | 2D network | 21.3 Å |
+DHQP | Au(111) | 320 °C | 2D network | 21.7 Å |
+N/A | N/A | N/A | N/A | N/A |
+
+
+Precursor: Phenol
+Substrate: Gold surface
+Temperature: 300 K
+Products: Dehydrogenated phenol, deoxygenated phenol
+Dimensions: 2D (N/A for 3D)
+

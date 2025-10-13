@@ -1,0 +1,22 @@
+| Precursor        | Substrate | Temperature | Products | Dimensions |
+|------------------|-----------|-------------|----------|------------|
+| Acetyls          | Surface   | Ultrahigh vacuum | Aromatics | 2D |
+
+| Precursor                          | Substrate | Temperature | Products | Dimensions |
+|------------------------------------|-----------|-------------|----------|------------|
+| 1,3,5-tris(4-acetylphenyl)benzene (TAPB) | Ag(111)   | Room temperature | Not polymerized | N/A |
+
+| Precursor             | Substrate | Temperature | Products | Dimensions |
+|-----------------------|-----------|-------------|----------|------------|
+| Acetyl-containing compounds | Metal surfaces | Not specified | 2D covalent networks | 2D |
+
+| Precursor          | Substrate | Temperature | Products      | Dimensions |
+|--------------------|-----------|-------------|--------------|------------|
+| Aryl halides       | Noble metal supports | N/A         | Graphene nanoribbons | 2D       |
+| Terminal alkynes   | N/A       | N/A         | N/A          | N/A        |
+| N/A                | Reconstructed Au(110) surface | N/A | Linear alkane polymer | 1D |
+
+| Precursor                | Substrate | Temperature | Products | Dimensions |
+|--------------------------|-----------|-------------|----------|------------|
+| Trifunctional acetyl compounds | N/A       | N/A         | 2D covalent networks, elongated linear structures with zigzag shape, extended graphene-like networks | 2D        |
+

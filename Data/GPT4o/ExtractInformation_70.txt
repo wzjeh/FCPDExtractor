@@ -1,0 +1,41 @@
+Sure, here's the summarized information presented in a table:
+
+| Precursor           | Substrate   | Temperature | Products        | Dimensions |
+|---------------------|-------------|-------------|-----------------|------------|
+| Isocyanide          | Ag(111)     | N/A         | Aza-[3]radialenes | N/A        |
+
+**Note:**
+- The precursor molecules are isocyanide.
+- The substrate used is Ag(111).
+- The exact annealing/reaction temperature is not provided in the abstract.
+- The product formed is aza-[3]radialenes.
+- The dimensionality of the product molecules is not specified in the abstract. 
+
+If you need more detailed information or further clarification, please refer to the full text of the paper.
+
+| Precursor  | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| DCICB      | Ag(111)   | N/A         | N/A      | N/A        |
+| ICB        | N/A       | N/A         | N/A      | N/A        |
+
+**Notes**:
+- The provided text did not specify the exact annealing or reaction temperature.
+- The specific products and their dimensions were not mentioned.
+- The main focus was on the adsorption structure and interaction mechanisms rather than explicit synthetic conditions.
+
+If you have more detailed sections of the document or additional context, I can extract more specific information for the table.
+
+Here is a summary of the experimental conditions extracted from the provided text, formatted into a table:
+
+| Precursor                     | Substrate | Temperature | Products          | Dimensions |
+|-------------------------------|-----------|-------------|-------------------|------------|
+| 1,4-dichloro-2-isocyanobenzene (DCICB) | Ag(111)   | N/A         | aza[3]radialene T1 | N/A        |
+
+Note: The text does not provide specific details about the temperature or the dimensions of the product molecules.
+
+| Precursor               | Substrate | Temperature       | Products        | Dimensions |
+|-------------------------|-----------|-------------------|-----------------|------------|
+| N/A                     | N/A       | N/A               | aza[3]radialenes| N/A        |
+
+The provided text does not give explicit details about the precursor molecules, substrates, or specific temperatures used in the experiment. It mentions the formation of aza[3]radialenes and some analysis techniques, but does not provide a complete set of experimental conditions. Therefore, based on the given information, we can only fill in the product column. Additional details would be required to complete the table fully.
+

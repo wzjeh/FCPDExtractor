@@ -1,0 +1,28 @@
+Here is the summarized information in a table based on the provided text:
+
+| Precursor  | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| I 6-CHP    | h-BN/Rh(111) | N/A         | I x-CHP species | N/A        |
+
+Note: The text provided does not include specific temperature information for the annealing or reaction process, the exact products formed, or their dimensions. The table reflects the available details extracted from the text. If more information is available in other parts of the document, it should be incorporated accordingly.
+
+Here is the summarized information in a table format:
+
+| Precursor            | Substrate       | Temperature    | Products                           | Dimensions |
+|----------------------|-----------------|----------------|------------------------------------|------------|
+| I6-CHP               | Cu(111)         | Room temperature | Porous graphene                    | N/A        |
+| I6-CHP               | Ag(111)         | Room temperature | Porous graphene                    | N/A        |
+| I6-CHP               | Au(111)         | Room temperature | Porous graphene                    | N/A        |
+
+Note: The precursor molecule is 5,5,5',5'',5''',5''''-hexaiodocyclohexa-m-phenylene (I6-CHP). The products formed are graphene nanoribbons and porous graphene, specifically mentioned to form on Cu(111), Ag(111), and Au(111) substrates at room temperature. The exact dimensionality of the product molecules is not specified in the provided text.
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| N/A       | N/A       | N/A         | N/A      | N/A        |
+
+| **Precursor**   | **Substrate** | **Temperature** | **Products**            | **Dimensions** |
+|-----------------|---------------|-----------------|-------------------------|----------------|
+| CHP             | h-BN          | 550 K           | I3-CHP molecules, dimers with different iodine terminations | N/A            |
+
+Note: The provided text does not mention specific details about the dimensions of the product molecules.
+

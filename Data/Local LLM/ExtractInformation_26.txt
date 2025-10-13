@@ -1,0 +1,11 @@
+
+Precursor Molecules: Acetylene and Cyclohexene
+Substrate: Gold (Au(111))
+Temperature: 300 K
+Products: Benzene and Cyclohexene
+Dimensions: 2D (Simplified as 2)
+Note: The table only includes the experimental conditions related to the synthesis of the products, and the information about the catalytic reactions is ignored.
+
+
+Precursor Molecules | DEDP | Au(111) | 300 K | 2D Polymers | N/A |
+

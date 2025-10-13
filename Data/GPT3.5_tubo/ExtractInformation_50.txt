@@ -1,0 +1,22 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| 2 on Au(111) | Au(111) | N/A | Linear chains | N/A |
+| 2 on Ag(111) | Ag(111) | N/A | Glaser coupling product | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| 1 | Au(111) surface | ca. 125-140°C | Short chains through covalent coupling of alkyne functionalities | 2D |
+
+| Precursor     | Substrate     | Temperature | Products | Dimensions |
+|---------------|---------------|-------------|----------|------------|
+| diethynyl-substituted p-system 1 | Au(111) surface | Room temperature | 2D Glaser coupling product | N/A |
+
+| Precursor         | Substrate | Temperature | Products | Dimensions |
+|-------------------|-----------|-------------|----------|------------|
+| Aryl halides      | Metal     | Annealing   | Ullman coupling products | 2D         |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| Alkyne 1 | Au(111) | 123–140°C | Oligomers | 2D |
+| N/A | N/A | N/A | N/A | N/A |
+

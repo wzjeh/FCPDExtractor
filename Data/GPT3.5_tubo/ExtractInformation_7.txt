@@ -1,0 +1,21 @@
+| Precursor                                                      | Substrate    | Temperature | Products                                                            | Dimensions |
+|----------------------------------------------------------------|--------------|-------------|---------------------------------------------------------------------|------------|
+| 9,10-bis(dibromomethylene)-2,3,6,7-tetrafluoro-9,10-dihydroanthracene | Au(111) surface | Hot         | Fluorinated Br−Au−dibenzo[a,e]pentalene molecules                 | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| 1          | Au(111)  | 150-250°C   | Ethynylene-bridged anthracene polymer | 1D |
+| 1          | Hot gold surface (165°C) | N/A | N/A | N/A |
+
+| Precursor                                    | Substrate | Temperature | Products                                                                                                   | Dimensions |
+|----------------------------------------------|-----------|-------------|-----------------------------------------------------------------------------------------------------------|------------|
+| 5                                            | Au(111)   | 200°C       | diindeno[2,1-a :2',1'-g ]-s-indacene, diindeno[2,1-a :1',2'-h ]-s-indacene derivatives, homochiral dimers | N/A        |
+
+| Precursor                    | Substrate | Temperature | Products                      | Dimensions |
+|------------------------------|-----------|-------------|-------------------------------|------------|
+| Dibromomethylene-functionalized molecular precursors | Au(111) metal surface | Sublimation on hot surface | Pentalene segments into acene-based precursors, π-conjugated ladder polymers linked through cyclobutadiene connections | 2D        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| Organic precursors | Metal surface | Varies | Various organic compounds | Two-dimensional |
+

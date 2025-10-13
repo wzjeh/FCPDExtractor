@@ -1,0 +1,18 @@
+
+Precursor Molecules Substrate Temperature Products Dimensions
+TBDMB aAu(111) 100 K LPs with methyl-modified edges 2D
+
+
+Precursor: P(OMe)3
+Substrate: Au(111)
+Temperature: 433 K
+Products: P(OMe)3/Au(111)
+Dimensions: 2D
+
+
+Precursor 1,2,4,5-tetrabromo-3,6-dimethylbenzene N/A N/A N/A N/A
+Substrate N/A Au(111) surface N/A N/A N/A
+Temperature N/A 300°C N/A N/A N/A
+Products N/A Ladder phenylenes (LP) Linear chains of alternating fused benzene and cyclobutadiene rings N/A N/A
+Dimensions N/A N/A N/A N/A
+

@@ -1,0 +1,23 @@
+| Precursor           | Substrate  | Temperature | Products       | Dimensions |
+|---------------------|------------|-------------|---------------|------------|
+| Phenol derivatives  | N/A        | N/A         | N/A           | N/A        |
+| Molecular precursors| Hydroxyl substituents | N/A | Ethers | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| 4 | Ag(111) | RT (Room Temperature) | C–O–C bonded dimer structure | 2D (two-dimensional) |
+| 4 | Ag(111) | 530 K for 30 minutes | C–O–C coupled products | 1D (one-dimensional) |
+| 4 | Ag(111) | 580 K | Carbon–carbon coupled products | 1D (one-dimensional) |
+
+| Precursor           | Substrate | Temperature | Products | Dimensions |
+|---------------------|-----------|-------------|----------|------------|
+| Hydroxymethyl-substituted molecules | Ag(111)   | N/A         | Ethers   | Chains and rings |
+
+| Precursor     | Substrate | Temperature | Products | Dimensions |
+|---------------|-----------|-------------|----------|------------|
+| N/A           | N/A       | N/A         | N/A      | N/A        |
+
+| Precursor   | Substrate | Temperature | Products | Dimensions |
+|-------------|-----------|-------------|----------|------------|
+| N/A         | N/A       | N/A         | Ethers with chain and ring shapes | 1D and 2D |
+

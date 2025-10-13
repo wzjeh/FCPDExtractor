@@ -1,0 +1,12 @@
+| Precursor     | Substrate      | Temperature | Products | Dimensions |
+|-----------------|----------------|-------------|-----------|------------|
+| Dialdehyde     | Octylamine     | UHV         | Imines    | Monomolecular height |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Aldehyde and Amine | Au(111) Surface | N/A | Covalent Interlinking Compound | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| Aldehydes and amines | Au(111) surface | N/A | Imines | 2D |
+

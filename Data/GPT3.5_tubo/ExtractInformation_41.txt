@@ -1,0 +1,12 @@
+| Precursor           | Substrate          | Temperature | Products         | Dimensions |
+|---------------------|-------------------|-------------|------------------|------------|
+| Polyphenylene       | Single-crystal metal surfaces | N/A         | Polymeric networks, end-caps of carbon nanotubes and azofullerenes | 2D |
+
+| Precursor          | Substrate | Temperature | Products | Dimensions |
+|--------------------|-----------|-------------|----------|------------|
+| CHP                | N/A       | N/A         | TBC      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|------------|
+| Polyphenylene precursors | Cu(111) | Thermally induced on Cu(111) | Nanographenes | N/A |
+

@@ -1,0 +1,28 @@
+| Precursor      | Substrate | Temperature | Products | Dimensions |
+|----------------|-----------|-------------|---------|------------|
+| BDNA           | Au(111)   | Glaser coupling conditions | Poly-BDNA | 2D         |
+| Boronic acids  | N/A       | N/A         | N/A     | N/A        |
+| Carbene        | N/A       | N/A         | N/A     | N/A        |
+| Alkanes        | Au(110)   | C/C0H activation on Au(110) | Linear alkane polymers | 1D |
+
+| Precursor              | Substrate | Temperature | Products                           | Dimensions |
+|------------------------|-----------|-------------|------------------------------------|------------|
+| Residual ENAs          | Au(111)   | N/A         | N/A                                | N/A        |
+| 2D metal-organic polymers | Au(111)   | 124°C       | Reaction products                  | 2D         |
+| Au carboxylate complex | Au(111)   | N/A         | N/A                                | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| ENA monomers | Au(111) crystal | 124°C | Linear bis(alkinyl) gold complex with two ENA units connected by an Au atom | 2D |
+| N/A | N/A | N/A | Glaser product | N/A |
+| N/A | N/A | N/A | BDNA monomer | N/A |
+
+| Precursor              | Substrate     | Temperature | Products                                       | Dimensions |
+|-----------------------|------------|-------------|------------------------------------------------|------------|
+| Aromatic carboxylic acids | Metal surfaces | N/A         | Self-assembled nanostructures                  | N/A        |
+| 2,6-naphthalenedicarboxylic acid | N/A | Decarboxylative C/C0C bond formation | Polymerization product | 2D        |
+
+| Precursor                                       | Substrate | Temperature | Products | Dimensions |
+|-------------------------------------------------|-----------|-------------|----------|------------|
+| 6,6 ’- (1,4-buta-1,3-diynyl)bis(2-naphthoic acid) (BDNA) | ENA       | N/A         | Self-assembled structure | N/A        |
+

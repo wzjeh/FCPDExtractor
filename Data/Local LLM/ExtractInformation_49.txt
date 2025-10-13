@@ -1,0 +1,27 @@
+
+Precursor Molecules Substrates Annealing/Reaction Temperature Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+
+
+Precursor Molecules Substrate Temperature Products Dimensions
+Linear alkyl chain Au(111) 125 8C Oligomers N/A
+Alkyne functional group N/A N/A N/A N/A
+
+
+Precursor: diethynyl-substituted p-systems
+Substrate: Au(111) surface
+Temperature: Room temperature (not mentioned in the text)
+Products: Glaser coupled conjugated p-systems
+Dimensions: 2D (N/A)
+Note: The text does not provide information about the dimensionality of the product molecules.
+
+
+Precursor: Alkyne 1
+Substrate: Au(111)
+Temperature: 123–140 °C
+Products: Oligomers
+Dimensions: N/A
+Note: The table is not exhaustive and may not cover all the details mentioned in the text. It is intended to provide a summary of the experimental conditions related to the synthesis of the product molecules.
+

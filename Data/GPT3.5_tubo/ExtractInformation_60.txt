@@ -1,0 +1,25 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|------------|
+| P1 (Pd as catalyst on Au(111)) | Aryl bromide and alkene | Room temperature | N/A | N/A |
+| A2 (Porphyrin molecule containing four phenyl bromide groups) | N/A | Room temperature | Close-packed monolayer structure | 1.58 ±0.05 nm |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|----------|
+| A1 | Au(111) | Room temperature | Cross-coupling product | Monolayer |
+| B | Au(111) | Approximately -20°C | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| A2, B | Au(111) | Room temperature | P2 with four tails | 12 × 12 nm2 |
+| A1, B | Au(111) | -20°C | P2 with four tails | 20 × 20 nm2 |
+| A1, B | Au(111) | 150 °C | P2 with four tails | 26 × 26 nm2 |
+| N/A | N/A | N/A | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| A1 molecules | B molecules | 150 °C for 20 min | Self-assembled porphyrin A1 on Au(111) surface | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| Aryl bromides A1 and A2 | Terminal alkene | Room temperature | P1 and P2 | 2D |
+

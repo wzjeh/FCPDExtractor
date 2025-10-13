@@ -1,0 +1,21 @@
+| Precursor                                      | Substrate | Temperature | Products | Dimensions |
+|---------------------------------------------|-----------|-------------|---------|------------|
+| 4,4'-dibromo-1,1':3',1"-terphenyl         | Ag(111)    | 640 K       | N/A       | N/A        |
+| 4,4'-dibromo-1,1':4',1":3',1‴:4‴,1⁗-quinquephenyl | Ag(111)    | 640 K       | N/A       | N/A        |
+
+| Precursor            | Substrate           | Temperature | Products              | Dimensions |
+|----------------------|---------------------|-------------|-----------------------|------------|
+| 4,4'-dibromo-meta-quinquephenyl | Ag(111) single-crystal surface | N/A         | [30]-honeycombene, square cycloicosaphenylene, pentagonal cyclopentacosaphenylene, heptagonal cyclopentatriacontaphenylene | C180H120, C120H80, C150H100, C210H140 |
+
+| Precursor             | Substrate | Temperature | Products                       | Dimensions |
+|-----------------------|-----------|-------------|--------------------------------|------------|
+| Small precursor molecules | Metal surface | Annealing temperature | Large oligophenylene macrocycles ([n]-honeycombenes) | One- and two-dimensional |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| N/A | N/A | N/A | N/A | N/A |
+
+| Precursor                | Substrate | Temperature | Products       | Dimensions |
+|--------------------------|-----------|-------------|----------------|------------|
+| N/A                      | N/A       | N/A         | [30]-honeycombene | 2D         |
+

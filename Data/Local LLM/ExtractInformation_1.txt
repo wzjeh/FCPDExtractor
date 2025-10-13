@@ -1,0 +1,14 @@
+
+Precursor Molecules Substrate Annealing/Reaction Temperature Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+
+
+Precursor: Silylethynyl- and chloro-substituted partially fluorinated phenylene ethynylenes (SiCPFPEs)
+Substrate: Ag(111) substrates
+Temperature: 130 8C
+Products: Oligomers
+Dimensions: N/A
+Note: The table is not exhaustive and only includes the information provided in the text.
+

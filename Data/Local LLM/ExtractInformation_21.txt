@@ -1,0 +1,26 @@
+
+Precursor: Acetylene
+Substrate: Gold surface
+Annealing/Reaction Temperature: 300 K
+Products: Phenylacetylene
+Dimensions: 1D
+
+
+Precursor: Acetyls
+Substrate: Surface
+Temperature: Under ultrahigh vacuum
+Products: 2D conjugated covalent networks on the surface
+Dimensions: 2D (Simplified as 2)
+
+
+Precursor: Aryl alkyne
+Substrate: Metal surface
+Temperature: UHV
+Products: 2D porous networks
+Dimensions: 2D
+Precursor: Metal catalyst
+Substrate: Organic molecule
+Temperature: Room temperature
+Products: COF materials
+Dimensions: 3D (N/A for 2D)
+

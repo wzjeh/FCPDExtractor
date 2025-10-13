@@ -1,0 +1,12 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| PDBA (1-octanoic acid solution) | Highly oriented pyrolytic graphite (HOPG) | N/A | Disordered phase of PDBA | Amorphous (2D) |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|-----------|
+| N/A       | N/A       | N/A         | N/A     | N/A       |
+
+| Precursor      | Substrate | Temperature | Products | Dimensions |
+|----------------|-----------|-------------|----------|------------|
+| N/A            | N/A       | N/A         | N/A      | N/A        |
+

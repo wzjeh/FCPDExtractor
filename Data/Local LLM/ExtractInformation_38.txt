@@ -1,0 +1,24 @@
+
+Precursor Molecules: Br2TPP
+Substrate: Au(100)
+Annealing/Reaction Temperature: 530°C
+Products: Molecular networks of trans-Br2TPP chains on Au(100) and copolymerization and segregation on a Au(100) surface.
+Dimensions: N/A
+
+
+Precursor: Halogen-carbon bonds
+Substrate: Organic framework
+Temperature: 300°C
+Products: Porphyrin nanostructures and conjugated polyfluorenes
+Dimensions: 2D (N/A for 3D)
+
+
+Precursor: trans-Br2I2TPP
+Substrate: Au(111)
+Temperature: 250°C
+Products: TPP chains
+Dimensions: 2D
+Precursor: dibromoterfluorene (DBTF)
+Products: Chains attached to porphyrin building blocks at the bromine sites
+Dimensions: 1D (N/A for 2D or 3D)
+

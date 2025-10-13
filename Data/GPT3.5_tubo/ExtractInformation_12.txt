@@ -1,0 +1,21 @@
+| Precursor       | Substrate | Temperature | Products                          | Dimensions |
+|-----------------|-----------|-------------|-----------------------------------|------------|
+| TBP molecules   | Au(111)   | Room temperature | 1,2-diphenylethyne products | 1D (PAE)   |
+| bTBP and tTBP   | Au(111)   | N/A         | Linear graphyne wire (PAE), 2D network structures | 1D, 2D    |
+
+| Precursor                           | Substrate                           | Temperature | Products | Dimensions |
+|--------------------------------------|-------------------------------------|-------------|----------|------------|
+| Tribromomethyl-Substituted Arenes    | N/A                                 | N/A         | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+| ----------- | --------- | ----------- | -------- | ---------- |
+| N/A | N/A | N/A | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| TBP molecules | Au(111) surface | Room temperature | 1,2-diphenylethyne | 1.1nm (dumbbell-shaped) |
+
+| Precursor        | Substrate | Temperature | Products | Dimensions |
+|------------------|-----------|-------------|----------|------------|
+| N/A              | N/A       | N/A         | N/A      | N/A        |
+

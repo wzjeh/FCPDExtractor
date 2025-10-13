@@ -1,0 +1,533 @@
+On-Surface Synthesis of Oligo(indenoindene)
+ Marco Di Giovannantonio,* Qiang Chen, José I. Urgel, Pascal Ruﬃeux, Carlo A. Pignedoli,
+Klaus Müllen,* Akimitsu Narita,* and Roman Fasel*
+Cite This: J. Am. Chem. Soc. 2020, 142, 12925−12929
+Read Online
+ACCESS
+Metrics & More
+Article Recommendations
+*
+sı
+Supporting Information
+ABSTRACT: Fully conjugated ladder polymers (CLP) possess unique optical and electronic properties and are considered
+promising materials for applications in (opto)electronic devices. Poly(indenoindene) is a CLP consisting of an alternating array of
+ﬁve- and six-membered rings, which has remained elusive so far. Here, we report an on-surface synthesis of oligo(indenoindene) on
+Au(111). Its structure and a low electronic band gap have been elucidated by low-temperature scanning tunneling microscopy and
+spectroscopy and noncontact atomic force microscopy, complemented by density functional theory calculations.
+
+Achieving defect-
+free segments of oligo(indenoindene) oﬀers exclusive insight into this CLP and provides the basis to further synthetic approaches.
+ C
+onjugated ladder polymers (CLPs) have attracted
+extensive attention for their intriguing properties distinct
+from the conventional conjugated polymers.1−5 In virtue of
+their fully conjugated and rigid polymer backbone, CLPs hold
+promise for high mobility of charge carriers,6,7 long exciton
+diﬀusion length,8 and low energy gaps.5,9−14 CLPs can be
+synthesized by either direct ladder polymerization, simulta-
+neously forming two covalent bonds between monomer units,
+or “zipping” of a prepolymer decorated with proper functional
+groups that can form additional bonds.1−3,15
+A particular class of CLPs is represented by an extension of
+indenoﬂuorene16 into a polymer, that is poly(indenoindene)
+(PInIn), where the alternation of ﬁve- and six-membered rings
+gives rise to the ladder structure.17−20
+
+The synthesis of PInIns
+was pioneered by Scherf and Müllen in 1992, but the ﬁnal
+dehydrogenation step did not proceed completely, and
+unambiguous structural proof could not be obtained.21 More
+recently, Wu et al. synthesized a short segment of PInIn with
+four and ﬁve pentagons and hexagons, respectively,17 but more
+extended PInIns have remained elusive.
+ On-surface synthesis has become a powerful tool for the
+preparation of two-dimensional covalent organic frameworks
+and quasi-one-dimensional graphene nanoribbons with various
+structures and properties by rational design of small-molecule
+precursors.4,22−24 Under ultrahigh vacuum (UHV) conditions,
+chemical and electronic structures of the resulting products can
+be in situ visualized by scanning tunneling microscopy/
+spectroscopy (STM/STS) and noncontact atomic force
+microscopy (nc-AFM), providing their unambiguous charac-
+terizations.
+
+Recently, we have established on-surface syntheses of
+indenoﬂuorene polymers by utilizing oxidative cyclization of
+methyl groups against phenylene rings of polyphenylene
+backbones,25,26 an alternative strategy to dehydrogenation of
+dihydroindenoﬂuorene precursors by the STM tip.27 We have
+considered that increasing the number of methyl groups on the
+PPP backbone in this system can lead to PInIns. Here, we
+report an unprecedented on-surface synthesis of para-type
+oligo(indenoindene) (p-OInIn, 4) on Au(111), starting from
+dibromo-trimethyl-p-terphenyl 1 as the precursor (Scheme 1).
+ A sequence of thermally activated reactions led to atomically
+precise segments of the targeted p-OInIn 4, although defects,
+mainly due to isomerization and incomplete dehydrogenation
+of methylene carbons, were overall present. p-OInIn 4 was
+characterized by means of low-temperature STM/STS and nc-
+Received:
+May 29, 2020
+ Published: July 14, 2020
+Scheme 1.
+
+Reaction Pathway from 1 to p-OInIn 4 on
+Au(111)
+ Communication
+pubs.acs.org/JACS
+© 2020 American Chemical Society
+12925
+https://dx.doi.org/10.1021/jacs.0c05701
+J. Am. Chem. Soc. 2020, 142, 12925−12929
+Downloaded via HOKKAIDO UNIV on October 13, 2025 at 07:38:17 (UTC).
+ See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+AFM, complemented by density functional theory (DFT)
+calculations, providing structural and electronic insights into
+this elusive CLP.
+ To achieve the formation of the desired ladder polymer,
+precursor 1 was sublimed onto a clean Au(111) surface held at
+room temperature (RT) in UHV. STM images of the resulting
+adsorbate layer show intact molecules of precursor 1 that form
+self-assembled domains, stabilized by Br···H interactions
+(Figure 1a,b; see also Figure S1 for large scale STM images
+of all the investigated phases). Annealing this sample to 160 °C
+led to homolytic cleavage of (most of) the C−Br bonds and
+C−C bond formation between the generated diradical species
+to form methyl substituted oligo-p-phenylene 2, which was still
+terminated with bromine atoms (Figure 1c,d).23,28−31 The
+dissociated bromine atoms chemisorbed onto the Au(111)
+surface and stabilized islands of packed oligomers 2.
+
+The
+presence of diagonal features in the oligomer backbones
+suggested that the methyl groups had not reacted at this
+annealing step, as previously reported for similar systems.25,26
+Oligomer 2 had a length distribution mostly ranging from 2 to
+10 repeat units (m = 0−8 in Scheme 1). Annealing the sample
+to 250 °C promoted complete debromination of the terminal
+sites accompanied by further polymer growth. The appearance
+of the chains was more disordered (Figure 1e), which
+suggested that beyond the formation of methyl substituted
+poly-p-phenylene (PPP) chains 3, additional reactions
+involving part of the methyl groups took place. Phenylene
+rings in polymer 3 could undergo torsional rotation, changing
+the alternation of methyl groups along the polymer chains
+(e.g., 3-I and 3-II in Scheme 1) in a dynamic manner (vide
+infra).25 Methyl cyclization and partial dehydrogenation were
+initiated at this temperature, aﬀording methylene bridges (3-
+III in Scheme 1) randomly distributed along the chains.
+
+The
+observed polymers were no longer packed into islands. This
+change can be attributed to the desorption of bromine atoms
+from the Au(111) surface, which is known to be promoted by
+the presence of atomic hydrogen,32,33 and to occur in this
+temperature range.34 Moreover, some T-shape connections
+between the polymers appeared (see Figure S1c), most likely
+arising from undesired coupling reactions between the terminal
+radicals and methyl groups on the backbones.
+ The oxidative cyclization of methyl groups was (nearly)
+completed after annealing the sample to 360 °C (Figure 1f).
+ This on-surface reaction is most probably initiated by the
+homolytic cleavage of the benzylic C−H bond, namely of the
+methyl group, considering its higher reactivity compared to
+that of the phenyl C−H bond. A zigzag appearance of the
+resulting polymers suggested the formation of ﬁve-membered
+rings on alternating sides of the polymer backbones, even
+though long-range order of such pattern was lacking.
+
+Nevertheless, some polymer segments had a well-deﬁned,
+regular spacing between the characteristic features correspond-
+ing to the ﬁve-membered rings, as visible in the STM image in
+Figure 2a. We subsequently performed constant-height STM
+imaging with a CO-functionalized tip, which resulted in the
+ultrahigh resolution STM (UHR-STM) image in Figure 2b.
+ Thereby, an alternation of ﬁve- and six-membered rings could
+be clearly discerned. To unambiguously resolve the structure of
+such segments, constant-height frequency-shift nc-AFM
+imaging with a CO-functionalized tip35 was carried out (Figure
+2c). The resulting image identiﬁed the chemical structure of
+this segment as the desired ladder oligomer p-OInIn 4. Hence,
+the methyl groups had cyclized to the neighboring phenylene
+rings, releasing two hydrogen atoms and forming methine
+bridges on alternating sides of the PPP backbone (Figure 2c
+and d).
+
+We attribute the lack of long-range order in the position of
+the ﬁve-membered rings along the polymer axis to rotation of
+polymer subunits before cyclization (see structures 3-I and 3-II
+in Scheme 1). The rotation of an ortho-methyl substituted
+phenylene ring of a PPP chain on Au(111) exhibits an energy
+barrier of only 0.7 eV (computed by the nudged elastic band
+method), which can be overcome at the experimental
+conditions during the annealing procedure,25 thus producing
+the observed defects. Therefore, the targeted p-OInIn 4 with
+regularly alternating ﬁve- and six-membered rings was achieved
+only when the methyl groups were organized with the desired
+consecutive alternation. In other cases, constitutional isomers
+of 4 with diﬀerent orientations of ﬁve- and six-membered rings
+Figure 1. STM images of the Au(111) surface after deposition of
+precursor 1 at RT followed by repeated annealing steps at the given
+temperatures (a−f). (b,d)
+
+Magniﬁed STM images of panels (a) and
+(c), respectively, at the positions indicated by the dashed squares,
+with superimposed molecular schemes. The blue circles in (d)
+indicate bromine atoms. Scanning parameters: (a,b) It = 100 pA, Vb =
+−0.5 V; (c,d) It = 50 pA, Vb = −0.5 V; (e) It = 100 pA, Vb = −0.5 V;
+(f) It = 30 pA, Vb = −0.5 V.
+Figure 2. Images of a ladder oligomer p-OInIn 4 segment obtained
+after annealing 1 on Au(111) at 360 °C, acquired in diﬀerent modes.
+ (a) Constant-current STM image. (b) Constant-height STM image
+recorded with a CO-functionalized tip. (c) Constant-height
+frequency-shift nc-AFM image performed with a CO-functionalized
+tip. (d) Laplace-ﬁltered image of (c).
+
+(e) DFT-optimized geometry of
+an oligomer 4 on Au(111). Scanning parameters: (a) It = 50 pA, Vb =
+−0.2 V; (b) Δz is 1.0 Å above the STM set point: It = 100 pA, Vb =
+−5 mV; (c) Δz is 2.6 Å above the STM set point: It = 150 pA, Vb =
+−5 mV.
+Journal of the American Chemical Society
+pubs.acs.org/JACS
+Communication
+https://dx.doi.org/10.1021/jacs.0c05701
+J. Am. Chem. Soc. 2020, 142, 12925−12929
+12926
+
+were observed (see Figures 3 and S2). Figure 3 shows some
+examples of defective structures identiﬁed by nc-AFM.
+ Methylene (−CH2−) bridges were observed as brighter
+features (red arrows), which are attributed to incomplete
+dehydrogenation after heating at 360 °C for 10 min. The
+presence of two ﬁve-membered rings at the same polymer site
+(green arrows) was also detected, indicating that the undesired
+head-to-head coupling may proceed even with two ortho-
+methyl groups facing each other. Single bonds were addition-
+ally discerned (blue arrows), hindering complete ladderization.
+ The absence of the ﬁve-membered rings at these positions may
+be ascribed to either (i) tail-to-tail linkage of the precursor
+molecules or (ii) loss of methyl groups during the annealing, as
+observed also in other segments (see Figure S2).
+
+From the nc-
+AFM images (Figures 2, 3, and S2), we could ﬁnd a signiﬁcant
+amount of defect-free units in the ladders. Regrettably, the
+presence of the above-mentioned irregularities (even if in small
+amount) limits the defect-free ladders to rather short segments
+of about 3 nm; hence, we identify them as oligomers p-OInIn
+4. However, in the following we will show that even these short
+segments are long enough to be representative of the electronic
+properties of longer ladder polymers.
+ After a critical assessment of the possible defects, we
+characterized the electronic properties of a p-OInIn 4. A
+voltage-dependent diﬀerential conductance spectrum (dI/dV
+vs V) acquired on an ∼3 nm long defect-free segment of 4
+revealed peaks in the density of states (DOS) at −0.75, −0.35,
+and +0.45 V (Figure 4a).
+
+Spatial dI/dV mapping at these
+voltages agreed well with DFT-computed local DOS (LDOS)
+maps for HOMO−1, HOMO, and LUMO, respectively, for an
+oligomer of 4 (ﬁnite system with the length of 8.6 nm, Figure
+S3) adsorbed on Au(111), which conﬁrmed the origin of the
+observed DOS peaks (Figures 4b−g and S4). We computed an
+oligomer longer than the experimentally characterized segment
+in order to avoid limitations due to ﬁnite-size eﬀects (see
+Figure S3). The good match observed in Figure 4 shows that
+the experimentally investigated segment is representative of
+longer polymers. The band gap of p-OInIn 4 on Au(111) was
+determined to be 0.8 eV based on the dI/dV spectrum.
+
+On the
+other hand, DFT calculations indicated the HOMO−LUMO
+gap of the oligomer of 4 on Au(111) to be 0.22 eV (identiﬁed
+as the energy diﬀerence between HOMO and LUMO peaks of
+the ﬁnite oligomer in Figure S4), in accordance with the band
+gap value of 0.2 eV calculated for an inﬁnite polymer 4 in the
+gas phase (Figure 5). These theoretical energy gaps are in line
+with the experimental observations, considering the typical
+underestimation of DFT computed band gaps.36 Furthermore,
+DFT gas phase calculations for the inﬁnite polymer revealed
+that 4 is spin-polarized with spin density antiferromagnetically
+located at the ﬁve-membered ring apexes (Figure 5a).
+ Additionally, we found that the methine carbons at the ﬁve-
+membered ring apexes contribute to the lower conduction
+band and the second half of the upper valence band (Figure 5),
+highlighting the role of these nonbenzenoid rings in the
+electronic structure of 4.
+
+A complete assignment of the other
+bands is reported in Figure S5.
+ Figure 3. Laplace-ﬁltered nc-AFM images of defective segments (see
+Figure S2 for the raw data) obtained after annealing 1 on Au(111) at
+360 °C.
+Figure 4. (a) dI/dV spectrum acquired on a segment of the ladder
+oligomer p-OInIn 4 (blue curve), and a reference spectrum taken on
+the bare Au(111) surface (black curve). Three main signals arise from
+4 at −0.75, − 0.35, and 0.45 V. (b−d) Constant-current dI/dV maps
+at the indicated voltages, corresponding to the main features observed
+in (a). (e−g) Theoretical dI/dV maps of HOMO−1, HOMO, and
+LUMO of an oligomer 4 adsorbed on Au(111) (the full maps are
+shown in Figure S3).
+ Figure 5. (a) Spin density map of polymer 4 in gas phase.
+
+(b) Band
+structure and DOS. The blue lines in the band structure and the ﬁlled
+blue DOS indicate the corresponding bands/DOS, respectively, to
+originate from states that have major contributions from the carbon
+atom at the apex of the ﬁve-membered rings (blue circle in panel a).
+ Journal of the American Chemical Society
+pubs.acs.org/JACS
+Communication
+https://dx.doi.org/10.1021/jacs.0c05701
+J. Am. Chem. Soc. 2020, 142, 12925−12929
+12927
+
+In conclusion, we have demonstrated the on-surface
+synthesis of oligo(indenoindene) 4 via sequential aryl−aryl
+coupling of p-terphenyl-based precursor 1 and cyclization of
+methyl substituents. Although formation of constitutional
+isomers and incomplete dehydrogenation were observed,
+defect-free segments of 4 could be clearly visualized by nc-
+AFM. Detailed electronic characterizations by STS and DFT
+calculations revealed a low band gap and the antiferromagnetic
+character of 4. Alternative monomer designs are currently
+considered in our laboratories to achieve such conjugated
+ladder polymers with high regioselectivity, for electronic device
+applications and experimental elucidation of their magnetic
+properties.
+ ■ ASSOCIATED CONTENT
+*
+sı Supporting Information
+The Supporting Information is available free of charge at
+https://pubs.acs.org/doi/10.1021/jacs.0c05701.
+
+Crystallographic data for 1 (CIF)
+Synthesis of the molecular precursor 1; experimental and
+theoretical methods; additional experimental and
+theoretical results (PDF)
+■ AUTHOR INFORMATION
+Corresponding Authors
+Marco Di Giovannantonio − Empa, Swiss Federal
+Laboratories for Materials Science and Technology, nanotech@
+surfaces Laboratory, 8600 Dübendorf, Switzerland;
+orcid.org/0000-0001-8658-9183;
+Email: marco.digiovannantonio@empa.ch
+Klaus Müllen − Max Planck Institute for Polymer Research,
+55128 Mainz, Germany; Institute of Physical Chemistry,
+Johannes Gutenberg University Mainz, 55128 Mainz,
+Germany;
+orcid.org/0000-0001-6630-8786;
+Email: muellen@mpip-mainz.mpg.de
+Akimitsu Narita − Max Planck Institute for Polymer Research,
+55128 Mainz, Germany; Organic and Carbon Nanomaterials
+Unit, Okinawa Institute of Science and Technology Graduate
+University, Okinawa 904-0495, Japan;
+orcid.org/0000-
+0002-3625-522X; Email: narita@mpip-mainz.mpg.de
+Roman Fasel − Empa, Swiss Federal Laboratories for Materials
+Science and Technology, nanotech@surfaces Laboratory, 8600
+Dübendorf, Switzerland; Department of Chemistry and
+Biochemistry, University of Bern, 3012 Bern, Switzerland;
+orcid.org/0000-0002-1553-6487; Email: roman.fasel@
+empa.ch
+Authors
+Qiang Chen − Max Planck Institute for Polymer Research,
+55128 Mainz, Germany;
+orcid.org/0000-0001-5612-1504
+José I. Urgel − Empa, Swiss Federal Laboratories for Materials
+Science and Technology, nanotech@surfaces Laboratory, 8600
+Dübendorf, Switzerland;
+orcid.org/0000-0001-7608-2979
+Pascal Ruﬃeux − Empa, Swiss Federal Laboratories for
+Materials Science and Technology, nanotech@surfaces
+Laboratory, 8600 Dübendorf, Switzerland;
+orcid.org/0000-
+0001-5729-5354
+Carlo A. Pignedoli − Empa, Swiss Federal Laboratories for
+Materials Science and Technology, nanotech@surfaces
+Laboratory, 8600 Dübendorf, Switzerland;
+orcid.org/0000-
+0002-8273-6390
+Complete contact information is available at:
+https://pubs.acs.org/10.1021/jacs.0c05701
+Notes
+
+The authors declare no competing ﬁnancial interest.
+ ■ ACKNOWLEDGMENTS
+This work was supported by the Swiss National Science
+Foundation under Grant No. 200020_182015, the NCCR
+MARVEL funded by the Swiss National Science Foundation
+(51NF40-182892), the European Union’s Horizon 2020
+research and innovation program under Grant Agreement
+Number 785219 (Graphene Flagship Core 2), the Max Planck
+Society, and the Oﬃce of Naval Research (N00014-18-1-
+2708). Computational support from the Swiss Supercomputing
+Center (CSCS) under Project ID s904 is gratefully acknowl-
+edged. We are thankful to Lukas Rotach (Empa) for his
+excellent technical support during the experiments and to Dr.
+Dieter Schollmeyer (Johannes Gutenberg-Universität Mainz)
+for single crystal X-ray diﬀraction analysis.
+ ■ REFERENCES
+(1) Zhu, C.; Kalin, A. J.; Fang, L. Covalent and Noncovalent
+Approaches to Rigid Coplanar π-Conjugated Molecules and Macro-
+molecules. Acc. Chem.
+
+Res. 2019, 52 (4), 1089−1100.
+ (2) Cai, Z.; Awais, M. A.; Zhang, N.; Yu, L. Exploration of Syntheses
+and Functions of Higher Ladder-Type π-Conjugated Heteroacenes.
+ Chem. 2018, 4 (11), 2538−2570.
+ (3) Lee, J.; Kalin, A. J.; Yuan, T.; Al-Hashimi, M.; Fang, L. Fully
+Conjugated Ladder Polymers. Chem. Sci. 2017, 8 (4), 2503−2521.
+ (4) Sakamoto, J.; van Heijst, J.; Lukin, O.; Schlüter, A. D. Two-
+Dimensional Polymers: Just a Dream of Synthetic Chemists? Angew.
+ Chem., Int. Ed. 2009, 48 (6), 1030−1069.
+ (5) Scherf, U. Ladder-Type Materials. J. Mater. Chem. 1999, 9 (9),
+1853−1864.
+
+(6) Prins, P.; Grozema, F. C.; Schins, J. M.; Patil, S.; Scherf, U.;
+Siebbeles, L. D. A. High Intrachain Hole Mobility on Molecular Wires
+of Ladder-Type Poly(p-Phenylenes). Phys. Rev. Lett. 2006, 96 (14),
+146601.
+ (7) Babel, A.; Jenekhe, S. A. High Electron Mobility in Ladder
+Polymer Field-Effect Transistors. J. Am. Chem. Soc. 2003, 125 (45),
+13656−13657.
+ (8) Samiullah, M.; Moghe, D.; Scherf, U.; Guha, S. Diffusion Length
+of Triplet Excitons in Organic Semiconductors. Phys. Rev. B: Condens.
+ Matter Mater. Phys. 2010, 82 (20), 205211.
+ (9) Tsuda, A.; Osuka, A. Fully Conjugated Porphyrin Tapes with
+Electronic Absorption Bands That Reach into Infrared. Science 2001,
+293 (5527), 79−82.
+
+(10) Yang, W.; Lucotti, A.; Tommasini, M.; Chalifoux, W. A.
+Bottom-Up Synthesis of Soluble and Narrow Graphene Nanoribbons
+Using Alkyne Benzannulations. J. Am. Chem. Soc. 2016, 138 (29),
+9137−9144.
+ (11) Wu, Y.; Zhang, J.; Fei, Z.; Bo, Z. Spiro-Bridged Ladder-Type
+Poly(p-Phenylene)s: Towards Structurally Perfect Light-Emitting
+Materials. J. Am. Chem. Soc. 2008, 130 (23), 7192−7193.
+ (12) Piok, T.; Gamerith, S.; Gadermaier, C.; Plank, H.; Wenzl, F. P.;
+Patil, S.; Montenegro, R.; Kietzke, T.; Neher, D.; Scherf, U.;
+Landfester, K.; List, E. J. W. Organic Light-Emitting Devices
+Fabricated from Semiconducting Nanospheres. Adv. Mater. 2003,
+15 (10), 800−804.
+
+(13) Durban, M. M.; Kazarinoff, P. D.; Segawa, Y.; Luscombe, C. K.
+Synthesis and Characterization of Solution-Processable Ladderized n-
+Type Naphthalene Bisimide Copolymers for OFET Applications.
+ Macromolecules 2011, 44 (12), 4721−4728.
+ (14) Babel, A.; Jenekhe, S. A. Electron Transport in Thin-Film
+Transistors from an n-Type Conjugated Polymer. Adv. Mater. 2002,
+14 (5), 371−374.
+Journal of the American Chemical Society
+pubs.acs.org/JACS
+Communication
+https://dx.doi.org/10.1021/jacs.0c05701
+J. Am. Chem. Soc. 2020, 142, 12925−12929
+12928
+
+(15) Yano, Y.; Mitoma, N.; Matsushima, K.; Wang, F.; Matsui, K.;
+Takakura, A.; Miyauchi, Y.; Ito, H.; Itami, K. Living Annulative π-
+Extension Polymerization for Graphene Nanoribbon Synthesis.
+ Nature 2019, 571 (7765), 387−392.
+(16) Tobe, Y. Non-Alternant Non-Benzenoid Aromatic Com-
+pounds: Past, Present, and Future. Chem. Rec. 2015, 15 (1), 86−96.
+ (17) Hu, P.; Lee, S.; Herng, T. S.; Aratani, N.; Gonçalves, T. P.; Qi,
+Q.; Shi, X.; Yamada, H.; Huang, K.-W.; Ding, J.; Kim, D.; Wu, J.
+Toward Tetraradicaloid: The Effect of Fusion Mode on Radical
+Character and Chemical Reactivity. J. Am. Chem. Soc. 2016, 138 (3),
+1065−1077.
+
+(18) Kertesz, M. Structure and Electronic Structure of Low-Band-
+Gap Ladder Polymers. Macromolecules 1995, 28 (5), 1475−1480.
+ (19) Fukuda, K.; Fujiyoshi, J.; Matsui, H.; Nagami, T.; Takamuku,
+S.; Kitagawa, Y.; Champagne, B.; Nakano, M. A Theoretical Study on
+Quasi-One-Dimensional Open-Shell Singlet Ladder Oligomers:
+Multi-Radical Nature, Aromaticity and Second Hyperpolarizability.
+Org. Chem. Front. 2017, 4 (5), 779−789.
+(20) Yamane, M.; Kishi, R.; Tonami, T.; Okada, K.; Nagami, T.;
+Kitagawa, Y.; Nakano, M. Open-Shell Characters, Aromaticities and
+Third-Order Nonlinear Optical Properties of Carbon Nanobelts
+Composed of Five- and Six-Membered Rings. Asian J. Org. Chem.
+2018, 7 (11), 2320−2329.
+
+(21) Scherf, U.; Müllen, K. Polyarylenes and Poly(Arylenevinylene)-
+s: 8. The First Soluble Ladder Polymer with 1,4-Benzoquinone-
+Bismethide Subunits. Polymer 1992, 33 (11), 2443−2446.
+(22) Talirz, L.; Ruffieux, P.; Fasel, R. On-Surface Synthesis of
+Atomically Precise Graphene Nanoribbons. Adv. Mater. 2016, 28
+(29), 6222−6231.
+(23) Di Giovannantonio, M.; Contini, G. Reversibility and
+Intermediate Steps as Key Tools for the Growth of Extended
+Ordered Polymers via On-Surface Synthesis. J. Phys.: Condens. Matter
+2018, 30, 093001.
+ (24) Lindner, R.; Kühnle, A. On-Surface Reactions. ChemPhysChem
+2015, 16 (8), 1582−1592.
+
+(25) Di Giovannantonio, M.; Urgel, J. I.; Beser, U.; Yakutovich, A.
+V.; Wilhelm, J.; Pignedoli, C. A.; Ruffieux, P.; Narita, A.; Müllen, K.;
+Fasel, R. On-Surface Synthesis of Indenofluorene Polymers by
+Oxidative Five-Membered Ring Formation. J. Am. Chem. Soc. 2018,
+140 (10), 3532−3536.
+ (26) Di Giovannantonio, M.; Eimre, K.; Yakutovich, A. V.; Chen,
+Q.; Mishra, S.; Urgel, J. I.; Pignedoli, C. A.; Ruffieux, P.; Müllen, K.;
+Narita, A.; Fasel, R. On-Surface Synthesis of Antiaromatic and Open-
+Shell Indeno[2,1-b]Fluorene Polymers and Their Lateral Fusion into
+Porous Ribbons. J. Am. Chem. Soc. 2019, 141 (31), 12346−12354.
+
+(27) Majzik, Z.; Pavlǐek, N.; Vilas-Varela, M.; Pérez, D.; Moll, N.;
+Guitián, E.; Meyer, G.; Peña, D.; Gross, L. Studying an Antiaromatic
+Polycyclic Hydrocarbon Adsorbed on Different Surfaces. Nat.
+Commun. 2018, 9 (1), 1198.
+ (28) Grill, L.; Dyer, M.; Lafferentz, L.; Persson, M.; Peters, M. V.;
+Hecht, S. Nano-Architectures by Covalent Assembly of Molecular
+Building Blocks. Nat. Nanotechnol. 2007, 2 (11), 687−691.
+(29) Di Giovannantonio, M.; El Garah, M.; Lipton-Duffin, J.;
+Meunier, V.; Cardenas, L.; Fagot Revurat, Y.; Cossaro, A.; Verdini, A.;
+Perepichka, D. F.; Rosei, F.; Contini, G. Insight into Organometallic
+Intermediate and Its Evolution to Covalent Bonding in Surface-
+Confined Ullmann Polymerization.
+
+ACS Nano 2013, 7 (9), 8190−
+8198.
+ (30) Di Giovannantonio, M.; El Garah, M.; Lipton-Duffin, J.;
+Meunier, V.; Cardenas, L.; Fagot-Revurat, Y.; Cossaro, A.; Verdini, A.;
+Perepichka, D. F.; Rosei, F.; Contini, G. Reply to “Comment on
+‘Insight into Organometallic Intermediate and Its Evolution to
+Covalent Bonding in Surface-Confined Ullmann Polymerization’.
+ ACS Nano 2014, 8 (3), 1969−1971.
+ (31) Cai, J.; Ruffieux, P.; Jaafar, R.; Bieri, M.; Braun, T.;
+Blankenburg, S.; Muoth, M.; Seitsonen, A. P.; Saleh, M.; Feng, X.;
+Müllen, K.; Fasel, R. Atomically Precise Bottom-up Fabrication of
+Graphene Nanoribbons.
+
+Nature 2010, 466 (7305), 470−473.
+(32) Bronner, C.; Björk, J.; Tegeder, P. Tracking and Removing Br
+during the On-Surface Synthesis of a Graphene Nanoribbon. J. Phys.
+ Chem. C 2015, 119 (1), 486−493.
+ (33) Mairena, A.; Baljozovic, M.; Kawecki, M.; Grenader, K.;
+Wienke, M.; Martin, K.; Bernard, L.; Avarvari, N.; Terfort, A.; Ernst,
+K.-H.; Wäckerlin, C. The Fate of Bromine after Temperature-Induced
+Dehydrogenation of on-Surface Synthesized Bisheptahelicene. Chem.
+
+Sci. 2019, 10 (10), 2998−3004.
+(34) Di Giovannantonio, M.; Deniz, O.; Urgel, J. I.; Widmer, R.;
+Dienel, T.; Stolz, S.; Sánchez-Sánchez, C.; Muntwiler, M.; Dumslaff,
+T.; Berger, R.; Narita, A.; Feng, X.; Müllen, K.; Ruffieux, P.; Fasel, R.
+On-Surface Growth Dynamics of Graphene Nanoribbons: The Role
+of Halogen Functionalization. ACS Nano 2018, 12 (1), 74−81.
+ (35) Gross, L.; Mohn, F.; Moll, N.; Liljeroth, P.; Meyer, G. The
+Chemical Structure of a Molecule Resolved by Atomic Force
+Microscopy. Science 2009, 325 (5944), 1110−1114.
+ (36) Perdew, J. P. Density Functional Theory and the Band Gap
+Problem. Int. J. Quantum Chem. 1985, 28 (S19), 497−523.
+
+Journal of the American Chemical Society
+pubs.acs.org/JACS
+Communication
+https://dx.doi.org/10.1021/jacs.0c05701
+J. Am. Chem. Soc. 2020, 142, 12925−12929
+12929
+

@@ -1,0 +1,20 @@
+| Precursor    | Substrate    | Temperature | Products | Dimensions |
+|--------------|--------------|-------------|----------|------------|
+| SiCPFPE 4    | Ag(111)      | Room temp   | PFPE oligomer 6 | N/A |
+| SiCPFPE 4    | Ag(111)      | Room temp   | Silylene-PFPE 5 | N/A |
+| SiCPFPE 4    | Ag(111)      | Room temp   | SiCPFPE 4 self-assembled | 2D |
+
+| Precursor                                    | Substrate | Temperature | Products                                     | Dimensions |
+|----------------------------------------------|-----------|-------------|-------------------------------------------|------------|
+| Organometallic porphyrin bromide templates | Au(111)   | N/A         | Sonogashira coupling with terminal ethyne | N/A        |
+| Ethynylbromide                               | Ag(111)   | 700 K       | Biphenylene-ethynylene oligomers         | N/A        |
+| 9,10-bis(trimethylsilyl(TMS)ethynyl)anthracene | Cu(111) | N/A         | Butadiyne                                  | N/A        |
+
+| Precursor                   | Substrate              | Temperature | Products     | Dimensions |
+|-----------------------------|------------------------|-------------|--------------|------------|
+| (trimethylsilyl)ethynyl      | chlorophenyl           | 130°C       | Oligomers    | 1D         |
+
+| Precursor                | Substrate                | Temperature | Products                                 | Dimensions |
+|--------------------------|--------------------------|-------------|------------------------------------------|------------|
+| Silylethynyl- and chloro-substituted partially fluorinated phenylene–ethynylene | Ag(111) surface | Elevated temperatures | Phenylene–ethynylene nanowires with alternative phenylene and tetrafluorophenylene | N/A |
+

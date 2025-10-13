@@ -1,0 +1,45 @@
+Certainly! Here's the summary in a table:
+
+| Precursor  | Substrate               | Temperature | Products                               | Dimensions |
+|------------|-------------------------|-------------|----------------------------------------|------------|
+| N/A        | Metallic surfaces       | N/A         | Surface covalent organic frameworks (SCOFs) | 2D         |
+| Boronate-based chemistry | N/A                   | N/A         | Highly ordered three-dimensional covalent organic frameworks (COF) | 3D         |
+
+Note: The text snippet provided does not give specific details about the precursor molecules, substrate, or temperature for each reaction. The information is generalized in terms of the products and their dimensionality.
+
+Sure, here is the summarized information in a table:
+
+| Precursor                | Substrate | Temperature | Products       | Dimensions |
+|--------------------------|-----------|-------------|----------------|------------|
+| 1,4-benzenediboronic acid (BDBA) | Ag(111)   | N/A         | SCOF-1        | Hexagonal  |
+| 1,4-benzenediboronic acid (BDBA) and 2,3,6,7,10,11-hexahydroxytriphenylene (HHTP) | Ag(111)   | N/A         | SCOF-2        | Hexagonal  |
+
+Note:
+- The specific annealing/reaction temperature is not provided in the text.
+- The substrates are specified as Ag(111) surfaces.
+- The products are SCOF-1 and SCOF-2.
+- The dimensionality of the product molecules is specified as perfect hexagonal arrays.
+
+Sure, here is the summarized information in table format:
+
+| Precursor     | Substrate       | Temperature | Products | Dimensions |
+|---------------|-----------------|-------------|----------|------------|
+| N/A           | N/A             | N/A         | N/A      | N/A        |
+
+Since the provided text does not include specific details about precursor molecules, substrates, annealing/reaction temperatures, products, or the dimensionality of the product molecules, I have filled the table with "N/A" (Not Available). For a more detailed and accurate summary, more specific experimental data from the article would be needed.
+
+Certainly! Here's a summary of the details in a table format:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| BDBA      | Ag(111)   | N/A         | SCOF-1   | 2D         |
+
+**Notes:**
+- **Precursor**: BDBA (1,4-benzenediboronic acid).
+- **Substrate**: Ag(111) (Silver (111) surface).
+- **Temperature**: Not explicitly provided in the given text.
+- **Products**: SCOF-1 (a nanoporous molecular film formed from BDBA).
+- **Dimensions**: 2D (as it forms a monolayer film).
+
+If you need further details or clarifications, feel free to ask!
+

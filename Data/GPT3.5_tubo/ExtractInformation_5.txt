@@ -1,0 +1,19 @@
+| Precursor                                  | Substrate       | Temperature | Products | Dimensions |
+|--------------------------------------------|-----------------|-------------|----------|------------|
+| 2-cyano-8 H-isoquinolino[4,3,2-de] phenanthridin-9-ium tetrafluoroborate (1) | Au(111), Ag(111), h-BN/Cu(111) | ~750 K | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|---------|------------|
+| 1 | h-BN/Cu(111) | 500 K | Oligomerization products | 1D chains |
+| CO-functionalized tip | Au(111) | N/A | Imidazole rings | N/A |
+| CO-functionalized tip | Ag(111) | N/A | Loss of -CN group | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| N/A       | Au(111)  | 520 K      | N/A     | N/A       |
+| N/A       | Ag(111)  | 520 K      | Imidazole ring formation | Longer oligomer units |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|-----------|
+| 1 | h-BN/Cu(111) | 500 K (annealed up to 580 K) | Chains (dimeric structures and longer chains up to eight covalently coupled units) | 1D (chains) |
+

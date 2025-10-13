@@ -1,0 +1,15 @@
+
+Precursor: 9,10-bis((trimethylsilyl)ethyl)anthracene (TMSEA)
+Substrate: Cu(111) surface
+Temperature: 400 K
+Products: 9,10-di(ethynyl)-anthracene oligomeric chains
+Dimensions: 2D (N/A for dimensionality)
+
+
+Precursor: Anthracene oligomers with diacetylene linkers
+Substrate: Cu(111) surface
+Temperature: 400 K
+Products: Anthracene oligomers with trimethylsilyl groups on the surface
+Dimensions: 2D (N/A for 3D)
+Precursor: Anthracene oligomers with diacetylene linkers Substrate: Cu(111) surface Temperature: 400 K Products: Anthracene oligomers with trimethylsilyl groups on the surface Dimensions: 2D (N/A for 3D)
+

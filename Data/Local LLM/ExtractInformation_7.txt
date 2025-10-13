@@ -1,0 +1,34 @@
+
+Precursor Molecules Substrate Annealing/Reaction Temperature Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+N/A N/A N/A N/A N/A
+
+
+Precursor: Cl-ICBPs
+Substrate: Ag(111)
+Temperature: 300 K
+Products: Ag2I(111) and AgI(111) clusters
+Dimensions: 2D (Ag2I(111)) and 1D (AgI(111))
+
+
+| Triaza[3]radialene crystals | Ag(111) | 393 K | Disordered phase, regular phase | 2D |
+| Triaza[3]radialene crystals | Ag(111) | 433 K | Regular phase | 2D |
+Note: The table is not exhaustive and may not cover all the details mentioned in the text. It is intended to provide a summary of the experimental conditions related to the synthesis of the 2D triaza[3]radialene crystals on Ag(111) substrates.
+
+
+Precursor: N/A
+Substrate: N/A
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+Precursor: MoS2
+Substrate: HOPG (hexagonal boron nitride)
+Temperature: 1000°C
+Products: 2D MoS2 nanosheets
+Dimensions: 2D (monolayer)
+Precursor: WS2
+Substrate: Cu foil
+Products: 2D WS2 nanosheets
+Dimensions: 2D (monolayer)
+

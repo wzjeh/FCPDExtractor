@@ -1,0 +1,21 @@
+| Precursor                | Substrate | Temperature | Products | Dimensions |
+|--------------------------|-----------|-------------|----------|------------|
+| Terminal Alkynyl Bromides | Au(111)   | Elevated    | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| BEBP | Clean Au(111) surface | Room temperature | C-Au-C organometallic intermediates | N/A |
+| bBEBP and tBEP | N/A | N/A | 1-D molecular chains and 2-D molecular networks | 1-D and 2-D |
+
+| Precursor              | Substrate | Temperature | Products | Dimensions |
+|------------------------|-----------|-------------|----------|------------|
+| Terminal alkynyl bromide | Au(111)   | N/A         | Dimer structures, one-dimensional molecular wires, two-dimensional molecular networks | 1D, 2D |
+
+| Precursor      | Substrate | Temperature | Products | Dimensions |
+|-----------------|-----------|-------------|----------|------------|
+| Terminal alkynyl bromides | Au(111) | Room temperature | Rod-like structures with bright protrusions | Low-dimensional (presumably 2D) |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|------------|
+| BEBP, bBEBP, tBEP | Au(111) | RT (Room Temperature) | C-C coupled acetylenic moieties | N/A |
+

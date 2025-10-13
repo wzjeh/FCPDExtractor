@@ -1,0 +1,26 @@
+
+Precursor Molecules Substrates Annealing/Reaction Temperature Products Dimensionality
+NDCA Au(111) 156 °C Self-assembled structures N/A
+NDCA Ag(111) 298 K Desorption phenomena N/A
+Note: The table is not complete as the information provided is not sufficient to create a comprehensive table. Please provide more information to complete the table.
+
+
+Precursor Molecules Substrates Annealing/Reaction Temperature (K) Products Dimensionality
+Carboxylic Substituents N/A 300 K N/A N/A
+The table is missing information about the products and their dimensionality.
+
+
+Precursor Molecules NDCA
+Substrate Cu(111)
+Annealing/Reaction Temperature 100 K
+Products Oligomers and Polymers
+Dimensionality N/A
+
+
+Precursor Molecules: NDCA and metal carboxylates
+Substrate: Ag(111) or Au(111)
+Temperature: Room temperature to 400°C
+Products: Polymeric bisnaphthyl-Cu and poly-2,6-naphthalene chains
+Dimensions: N/A
+Note: The table is not exhaustive and only includes the essential information related to the experimental conditions of the surface chemistry synthesis.
+

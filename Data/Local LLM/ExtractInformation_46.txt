@@ -1,0 +1,21 @@
+
+Precursor Molecules: Iodine- and bromine-functionalized
+Substrate: Au(111)
+Annealing/Reaction Temperature: C/C0Br and C/C0I cleavage temperature thresholds are vastly different, allowing for two different polymerization routes to be compared: hierarchical and direct polymerization.
+Products: The morphological characteristics of the products can be determined based on the shape of the product molecules on the surface.
+Dimensions: N/A
+Table: | Precursor | Substrate | Temperature | Products | Dimensions |
+| Iodine- and bromine-functionalized | Au(111) | C/C0Br and C/C0I cleavage temperature thresholds | Hierarchical and direct polymerization routes | Morphological characteristics of the products | N/A |
+
+
+Precursor: N/A
+Substrate: N/A
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+Precursor: N/A
+Substrate: N/A
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+

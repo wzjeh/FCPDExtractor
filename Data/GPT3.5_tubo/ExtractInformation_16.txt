@@ -1,0 +1,21 @@
+| Precursor          | Substrate | Temperature | Products    | Dimensions |
+|---------------------|-----------|-------------|-------------|------------|
+| Alkenyl gem-Dibromide | Au(111)   | N/A         | Cumulene    | 1D         |
+
+| Precursor        | Substrate      | Temperature | Products    | Dimensions |
+|------------------|----------------|-------------|-------------|------------|
+| Organic monomers | On-surface     | Annealing   | Nanostructures | 2D         |
+
+| Precursor    | Substrate | Temperature | Products | Dimensions |
+|--------------|-----------|-------------|----------|------------|
+| bBVBP molecules | Au(111) | Room temperature | D-1, D-2 | 2D |
+
+| Precursor        | Substrate  | Temperature | Products | Dimensions |
+|------------------|------------|-------------|----------|------------|
+| 4-(2,2-dibromovinyl)-1,1 ’-biphenyl (bBVBP) | Au(111) surface | Annealing temperature on Au(111) surface | Alkenyl gem-dibromides | N/A |
+
+| Precursor  | Substrate   | Temperature | Products | Dimensions |
+|------------|-------------|-------------|----------|------------|
+| N/A        | NaCl/Cu(111)| N/A         | aryne    | curved cumulene resonance structure |
+| N/A        | N/A         | N/A         | cumulene moiety | linear cumulene structures |
+

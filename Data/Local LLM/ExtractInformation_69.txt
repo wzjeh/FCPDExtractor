@@ -1,0 +1,34 @@
+
+Precursor: 1
+Substrate: Cu(111)
+Temperature: N/A
+Products: Molecule 1 adsorbed either with a diyne group or a monoyne group in contact with Cu substrate
+Dimensions: 2D (simplified as 2)
+
+
+| Bis(phenylethynyl)-benzene | Heptahelicene | N/A | [Ag(111) surface]-bound bis(phenylethynyl)-benzene | 0D |
+| Bis(phenylethynyl)-benzene | Bis(phenylethynyl)-benzene | N/A | [Au(111) surface]-bound bis(phenylethynyl)-benzene | 0D |
+| Bis(phenylethynyl)-benzene | N/A | N/A | [Au(111) surface]-bound bis(phenylethynyl)-benzene | 0D |
+| Heptahelicene | N/A | N/A | [Ag(111) surface]-bound heptahelicene | 0D |
+| N/A | N/A | N/A | N/A | N/A |
+
+
+| Diels-Alder precursor | N/A | N/A | N/A | N/A |
+| Substrate | N/A | N/A | N/A | N/A |
+| Temperature | N/A | N/A | N/A | N/A |
+| Products | N/A | N/A | N/A | N/A |
+| Dimensions | N/A | N/A | N/A | N/A |
+The table is incomplete as it does not provide any information about the precursor, substrate, annealing/reaction temperature, or the products formed in the experiment. Additionally, the table does not provide any information about the dimensionality of the product molecules.
+
+
+Precursor: 1
+Substrate: N/A
+Annealing/Reaction Temperature: Elevated
+Products: 3' and 3
+Dimensions: 2D (N/A for 3D)
+
+| Molecule 1 | Cu surface | N/A | Diels-Alder product | 2D |
+| Molecule 2 | Cu surface | N/A | Hydrogen-bonded product | 2D |
+| Molecule 3 | Cu surface | N/A | Hydrogen-added product | 2D |
+Note: The precursor molecules are not mentioned in the text, so we assume that they are the same as the molecules mentioned in the products column.
+

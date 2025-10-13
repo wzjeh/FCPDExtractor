@@ -1,0 +1,38 @@
+Here is the requested summary in a table format:
+
+| Precursor                        | Substrate  | Temperature     | Products                         | Dimensions |
+|----------------------------------|------------|-----------------|----------------------------------|------------|
+| 1,3,5-tris(3-bromophenyl)benzene | Ag(111)    | 750 K           | Porous polymer chains            | N/A        |
+| 1,3,5-tris(3-bromophenyl)benzene | Au(111)    | 700 K           | Porous polymer chains            | N/A        |
+
+Note: The table focuses on the provided experimental conditions related to the surface chemistry synthesis as requested.
+
+| Precursor   | Substrate | Temperature | Products                         | Dimensions |
+|-------------|-----------|-------------|----------------------------------|------------|
+| mTBPB       | Au(111)   | 550 K       | 2D networks (Cs-mTBPB and C3h-mTBPB conformers) | 2D         |
+| mTBPB       | Ag(111)   | N/A         | Cs-mTBPB                         | 1D         |
+
+**Notes:**
+- **Precursor**: mTBPB (assumed to be the main precursor molecule).
+- **Substrate**: Au(111) and Ag(111) are the primary substrates mentioned.
+- **Temperature**: 550 K for Au(111); temperature for Ag(111) is not specified.
+- **Products**: On Au(111), a mixture of Cs-mTBPB and C3h-mTBPB in 2D networks; on Ag(111), Cs-mTBPB.
+- **Dimensions**: 2D networks on Au(111); 1D chains on Ag(111).
+
+Here is a summary of the experimental conditions extracted from the provided text:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| mTBPB precursor molecules | Ag(111) | 350 K (organometallic intermediates), 550 K (covalent structures) | Organometallic intermediates, Covalently linked mTBPB structures | N/A |
+
+This table captures the key details related to the surface chemistry synthesis as requested.
+
+Sure, here is the requested summary in a table format:
+
+| Precursor          | Substrate | Temperature | Products                       | Dimensions |
+|--------------------|-----------|-------------|-------------------------------|------------|
+| Aryl molecules     | Metal     | N/A         | Nanoporous chains, Carbon nanoribbons | N/A        |
+| m-Phenylene units  | Metal     | N/A         | Cyclic covalent organic nanostructures | N/A        |
+
+This table summarizes the experimental conditions and results based on the provided text. Note that some specific details like exact temperatures weren't provided in the text, hence marked as N/A.
+

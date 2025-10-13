@@ -1,0 +1,17 @@
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|------------|
+| Compound 1 with different functional groups (/C0C/C17N, /C0OH, /C0C/C17CH) | Ag(111) surface | Tsub/C25100K, Tmeas/C254.5K, Tann=250K | Zigzag (Z) and Snake (S) phases | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| N/A | N/A | Down to 150K | Benzofuran Derivative | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| 1          | N/A       | Tsub=100K, Tann=250K, Tann=400K | N/A | N/A |
+| 2          | N/A       | Tsub=100K, Tann=250K, Tann=400K | N/A | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| N/A       | N/A      | Sub-300 K  | N/A     | N/A       |
+

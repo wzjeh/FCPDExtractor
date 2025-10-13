@@ -1,0 +1,35 @@
+
+| Alkynyl Bromides | Au(111) | N/A | Acetylenic Sca ﬀolding Incorporated Surface Nanostructures | 1D |
+
+
+| bBEBP | Au(111) | 400 K | 1-D molecular chains | 1D |
+| tBEP | Au(111) | 400 K | 2-D molecular networks | 2D |
+Note: The "Dimensions" column refers to the dimensionality of the product molecules, which can be either 1D (one-dimensional) or 2D (two-dimensional).
+
+
+Precursor: Terminal alkynyl bromide
+Substrate: Au(111) surface
+Temperature: N/A
+Products: Formation of dimer structures, one-dimensional molecular wires, and two-dimensional molecular networks with acetylenic sca ﬀoldings
+Dimensions: 1D, 2D
+Precursor: Terminal alkynyl bromide Substrate: Au(111) surface Temperature: N/A Products: Formation of dimer structures, one-dimensional molecular wires, and two-dimensional molecular networks with acetylenic sca ﬀoldings Dimensions: 1D, 2D
+
+
+Precursor: BEBP
+Substrate: Au(111)
+Temperature: RT
+Products: Ordered islands of BEBP molecules
+Dimensions: 2D
+Note: The table should be formatted as follows:
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|-------------|
+| BEBP      | Au(111)   | RT          | Ordered islands of BEBP molecules | 2D          |
+
+
+Precursor: BEBP, bBEBP, tBEP
+Substrate: Au(111)
+Temperature: RT
+Products: C-Au-C organometallic intermediates, coupled acetylenic moieties
+Dimensions: 2D (C-Au-C) and 1D (coupled acetylenic moieties)
+Precursor: BEBP, bBEBP, tBEP Substrate: Au(111) Temperature: RT Products: C-Au-C organometallic intermediates, coupled acetylenic moieties Dimensions: 2D (C-Au-C) and 1D (coupled acetylenic moieties)
+

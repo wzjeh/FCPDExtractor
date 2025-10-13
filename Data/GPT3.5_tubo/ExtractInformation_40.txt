@@ -1,0 +1,20 @@
+| Precursor        | Substrate       | Temperature | Products | Dimensions |
+|------------------|-----------------|-------------|----------|------------|
+| Type bdimers     | Reconstructed Au(110) surfaces | Up to 470K | N/A      | N/A        |
+| n-dotriacontane  | Au(111) surface | Higher temperatures | Aromatic C-H bonds activated | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| N/A       | N/A       | High temperatures | N/A | N/A |
+| N/A       | N/A       | Superacidic conditions | N/A | N/A |
+| N/A       | N/A       | Annealing temperature | N/A | N/A |
+| N/A       | N/A       | N/A | Dehalogenating polymerization and dehydrocyclization | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| n-hexane | Au(110) surface | High temperatures | Branched islands, possible hydrogen dissociation, C-C bond breaking, C-H activation, C-C bond coupling | Undefined position on linear alkane molecules |
+
+| Precursor    | Substrate         | Temperature | Products       | Dimensions |
+|--------------|-------------------|-------------|----------------|------------|
+| n-dotriacontane (C32H66) | Au(110)-(1×2) surface | 300 K       | R–CH2–CH2–R' + H2 | 1D       |
+

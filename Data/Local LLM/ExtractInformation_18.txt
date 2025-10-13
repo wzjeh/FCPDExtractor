@@ -1,0 +1,29 @@
+
+Precursor: 1,3,5-tris(4-Dodecyloxyphenyl)benzene (TDPB)
+Substrate: Au(111)
+Temperature: Room temperature
+Products: Ordered porous structure of TDPB molecules
+Dimensions: 2D (N/A)
+
+
+Precursor: TBPB
+Substrate: Au(111)
+Temperature: 230 8C
+Products: THPB
+Dimensions: 2D
+Precursor: THPB
+Substrate: Au(111)
+
+
+Precursor: Ethylene
+Substrate: Au(111) surface
+Temperature: 300 K
+Products: C2H4
+Dimensions: 0D
+
+
+Precursor: Ethylphenyl ether
+Substrate: Au(110) surface
+Temperature: 300 K
+Products: Phenyl ethylene and ethylene
+Dimensions: 1D

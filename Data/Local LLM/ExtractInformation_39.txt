@@ -1,0 +1,28 @@
+
+Precursor Molecules: Methyl-substituted precursor, Phenyl-substituted precursor
+Substrates: Au(110), Au(111)
+Annealing/Reaction Temperature: 470 K (methyl-substituted precursor on Au(110)), N/A (phenyl-substituted precursor on Au(111))
+Products: N/A (methyl-substituted precursor on Au(110)), N/A (phenyl-substituted precursor on Au(111))
+Dimensions: N/A (methyl-substituted precursor on Au(110)), N/A (phenyl-substituted precursor on Au(111))
+
+
+Precursor: N/A
+Substrate: N/A
+Temperature: Reaction occurs under superacidic conditions or at high temperatures
+Products: Formation of product molecules on the surface
+Dimensions: N/A
+
+
+Precursor: Linear alkanes
+Substrate: Au(110) surface
+Temperature: 300 K
+Products: Branched islands formed on the surface due to possible hydrogen dissociation, C –C bond breaking and coupling at undefined positions on the linear alkane molecules, accompanied by the desorption of H2.
+Dimensions: 1D (N/A for the shape of the product molecules)
+
+
+Precursor: n-dotriacontane or C32H66
+Substrate: Au(110)-(1×2)
+Temperature: 300 K
+Products: C-C bond formation between residual chains
+Dimensions: 1D (N/A for dimensionality)
+

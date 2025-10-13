@@ -1,0 +1,28 @@
+
+Precursor: N/A
+Substrate: N/A
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+Precursor: N/A
+Substrate: N/A
+Temperature: N/A
+Products: N/A
+Dimensions: N/A
+
+
+Precursor: Cyclohexadienylphosphine (CHP)
+Substrate: Cyclohexadienylphosphine (CHP) on copper surface
+Temperature: 300 K
+Products: Tetrabromocyclododecene (TBC)
+Dimensions: 2D (N/A for 3D)
+Note: The table only includes the relevant information about the precursor, substrate, temperature, products, and dimensions. The details about the surface-assisted cyclodehydrogenation reaction and the morphological characteristics of the products are not included in the table.
+
+
+Precursor: Cyclic polyphenylene cyclohexa-o-p-o-p-o-p-phenylene (CHP)
+Substrate: Copper (Cu(111))
+Temperature: 400 degrees Celsius
+Products: Nanographenes (large PAHs)
+Dimensions: 2D (Nanographenes are planar molecules)
+Note: The information provided in the study is limited to the synthesis process and the products formed. No information is available on the catalytic reactions or the specific reaction conditions. Therefore, the table only includes the experimental conditions related to the surface chemistry synthesis.
+

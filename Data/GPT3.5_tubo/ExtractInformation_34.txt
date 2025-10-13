@@ -1,0 +1,17 @@
+| Precursor        | Substrate  | Temperature | Products | Dimensions |
+|------------------|------------|-------------|----------|------------|
+| Boronate-based   | Metallic   | N/A         | SCOFs    | 2D         |
+
+| Precursor             | Substrate                           | Temperature | Products             | Dimensions |
+|-----------------------|-------------------------------------|-------------|----------------------|------------|
+| 1,4-benzenediboronic acid (BDBA) | N/A                                 | N/A         | SCOF-1               | 2D         |
+| 1,4-benzenediboronic acid (BDBA) and 2,3,6,7,10,11-hexahydroxytriphenylene (HHTP) | N/A                                 | N/A         | SCOF-2               | 2D         |
+
+| Precursor              | Substrate | Temperature | Products | Dimensions |
+|------------------------|-----------|-------------|----------|------------|
+| N/A                    | N/A       | N/A         | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|---------|------------|
+| BDBA | Ag(111) | N/A | SCOF-1 | 2D |
+

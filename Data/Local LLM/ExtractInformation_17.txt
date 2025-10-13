@@ -1,0 +1,21 @@
+
+Precursor: 1,3-bis(diphenylphosphino)propane (dppp)
+Substrate: Au(111) surface
+Temperature: 300 K
+Products: [Au(dppp)2]n (n = 1, 2, 3)
+Dimensions: 0D (molecular clusters)
+
+
+| Enediyne | Cu(110) | 300 K | 1D Polyphenylene | 1D |
+| Bergman Cyclization | N/A | N/A | 1D Polyphenylene | 1D |
+| DNHD | N/A | N/A | 1D Polyphenylene | 1D |
+
+| Bergman cyclization | Cu(110) surface | N/A | 1D polyphenylene chains | 1D | 
+
+
+Precursor: 1,6-di-2-naphthylhex-3-ene-1,5-diyne (DNHD)
+Substrate: Cu(110) surface
+Temperature: N/A
+Products: Linear polyphenylene nanostructures
+Dimensions: 1D (Simplified as 1)
+

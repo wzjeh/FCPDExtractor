@@ -1,0 +1,24 @@
+| Precursor          | Substrate         | Temperature | Products | Dimensions |
+|---------------------|-------------------|-------------|----------|------------|
+| BVBP molecules      | Alkenes/Alkenyl bromides | ~170 K      | Dienemoieties | 2D      |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| Alkyne | Cu(110) surface | N/A | Surface nanostructures | N/A |
+| Alkene | Cu(110) surface | N/A | Surface nanostructures | N/A |
+| Arene | Cu(110) surface | N/A | Surface nanostructures | N/A |
+| Alkane | Cu(110) surface | N/A | Surface nanostructures | N/A |
+| Aryl halide | Cu(110) surface | N/A | Surface nanostructures | N/A |
+
+| Precursor        | Substrate         | Temperature | Products        | Dimensions |
+|------------------|-------------------|-------------|-----------------|------------|
+| Alkenyl bromides | Cu(110) surface   | N/A         | cis-diene moiety| N/A        |
+
+| Precursor       | Substrate            | Temperature | Products | Dimensions |
+|-----------------|---------------------|------------|---------|------------|
+| Alkenyl bromide | Biphenyl backbone    | N/A        | cis-dienes | 2D |
+
+| Precursor  | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| BVBP       | Cu(110)   | Room Temperature (RT) | Ordered islands | N/A |
+

@@ -1,0 +1,21 @@
+
+Precursor: H2C=CH-CH3
+Substrate: Ag(111) surface
+Temperature: 150K
+Products: Furan ring closure
+Dimensions: 2D
+
+
+Precursor: N/A
+Substrate: N/A
+Temperature: Tsub=100K, Tann=250K, Tann=400K
+Products: Hydroalkoxylation products
+Dimensions: N/A
+
+
+Precursor Molecules Substrates Annealing/Reaction Temperature (K) Products Dimensionality
+N/A N/A N/A N/A N/A
+N/A N/A 300 K N/A N/A
+N/A N/A N/A N/A 2D
+N/A N/A N/A N/A 3D
+

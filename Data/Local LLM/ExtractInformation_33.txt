@@ -1,0 +1,16 @@
+
+Precursor: Boronate ester
+Substrate: Gold surface
+Temperature: N/A
+Products: SCOFs
+Dimensions: 2D
+
+
+| BDBA | Ag(111) | UHV | SCOF-1 | 2D |
+| HHTP | Ag(111) | UHV | SCOF-2 | 2D |
+
+
+| UiO-66 | Zn(OAc)2 | 110°C | Zn-UiO-66 | 2D |
+
+ Precursor Molecules | BDBA | Ag(111) | 150°C | SCOF-1 | 2D | BDBA | Ag(111) | 150°C | SCOF-1 | 2D |
+

@@ -1,0 +1,23 @@
+| Precursor               | Substrate | Temperature | Products                   | Dimensions |
+|-------------------------|-----------|-------------|---------------------------|------------|
+| 3-chloro-4-isocyano-1,1′-biphenyl (Cl-ICBP) | Ag(111)   | 333K        | Triaza[3]radialenes       | 2D         |
+| Triaza[3]radialenes     | Ag(111)   | 373K        | Sparse phases with defects | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| N/A       | N/A       | N/A         | N/A      | N/A        |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|-----------|
+| Cl-ICBP | Ag(111) substrates with Ag and Cl adatoms | N/A | Compound molecules formed in the experiment | N/A |
+
+| Precursor           | Substrate | Temperature | Products                           | Dimensions |
+|---------------------|-----------|-------------|------------------------------------|------------|
+| Triaza[3]radialene  | Ag(111)   | 393K        | Disordered phase                   | 2D         |
+| Triaza[3]radialene  | Ag(111)   | 433K        | Regular phase consisting of chains | 2D         |
+
+| Precursor            | Substrate | Temperature | Products                  | Dimensions |
+|----------------------|-----------|-------------|---------------------------|------------|
+| Isocyanides          | Ag(111)   | Low         | 2D triaza[3]radialene     | 2D         |
+| Triaza[3]radialenes  | Ag(111)   | High        | 2D trans-diaza[3]cumulenes| 2D         |
+

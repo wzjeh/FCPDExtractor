@@ -1,0 +1,15 @@
+
+Precursor: Terminal alkyne and azide
+Substrate: Cu(111) surface
+Temperature: 300 K
+Products: Cycloaddition product
+Dimensions: 2D (N2)
+Precursor: Terminal alkyne and azide Substrate: Cu(111) surface Temperature: 300 K Products: Cycloaddition product Dimensions: 2D (N2)
+
+
+Precursor Azide-containing molecule Alkyne-containing molecule
+Substrate Cu(111) surface Cu(111) surface
+Temperature rt (room temperature) 400 K
+Products Hetero-dimolecular compound Hetero-dimolecular compound
+Dimensions 2D (N/A) 2D (N/A)
+

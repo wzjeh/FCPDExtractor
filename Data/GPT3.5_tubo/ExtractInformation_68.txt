@@ -1,0 +1,23 @@
+| Precursor                  | Substrate | Temperature | Products | Dimensions |
+|---------------------------|-----------|-------------|----------|------------|
+| Bromine-functionalized phenanthroline | Au (111) | N/A | Double-chain structure | 2D |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|---------|-----------|
+| DBPA molecules | Au(111) | Room temperature | Self-assembled island structures | 2D |
+
+| Precursor             | Substrate  | Temperature | Products                        | Dimensions |
+|-----------------------|------------|-------------|---------------------------------|------------|
+| Bidentate ligand      | Metal single crystals (Au, Ag, Cu) | N/A | Double-chain nanostructure consisting of two poly(1,10-phenanthroline)s | 2D      |
+
+| Precursor  | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| DBPA       | Au(111)  | Room temperature | Self-assembled structure | N/A |
+| DBPA       | Au(111)  | 200°C | Dimer structures | 2D |
+
+
+| Precursor             | Substrate | Temperature | Products           | Dimensions |
+|-----------------------|-----------|-------------|---------------------|------------|
+| Phenanthroline        | Metal     | N/A         | Double-chain structure | 2D       |
+| Dibromo-phenanthroline | Metal     | N/A         | Debrominated C-C coupling product | N/A |
+

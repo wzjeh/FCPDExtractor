@@ -1,0 +1,16 @@
+
+Precursor: Aryl-bromide and Porphyrin-bromide
+Substrate: Au(111) surface
+Temperature: Vacuum
+Products: Oligomers consisting of porphyrin moieties linked by p-phenylene at porphyrin's meso positions
+Dimensions: 2D (N/A for 3D)
+The experiment involves cross-coupling of aryl-bromide and porphyrin-bromide on an Au(111) surface. The cross-coupling reaction takes place in a vacuum, and the products are oligomers consisting of porphyrin moieties linked by p-phenylene at porphyrin's meso positions. The ratio of cross-coupled versus homocoupled bonds can be regulated by the reactant concentration. The kinetic Monte Carlo simulations were used to determine the activation barrier. The morphological characteristics of the products can be determined based on the shape of the product molecules on the surface.
+
+
+Precursor Molecule 1 Molecule 2
+Substrate Au(1 11) Au(1 11)
+Temperature 325 8C 285 8C
+Products AU(1 11)/M1 AU(1 11)/M2
+Dimensions 2D 2D
+Note: The products are compound molecules formed on the surface of the Au(1 11) substrate. The dimensionality of the products is 2D, which means they are two-dimensional structures.
+

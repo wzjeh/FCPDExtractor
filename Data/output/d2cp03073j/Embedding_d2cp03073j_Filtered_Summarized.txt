@@ -1,0 +1,22 @@
+ -------------------------------- | ---------- | ----------- | -------- | ------------| --------------------- | N/A         | Ag(111)      | 300 °C     | Ethers       | 2D            | --------------------- | HCHO       | OH groups   | 300 °C     | Ethers        | 2D            | --------------------- | N/A         |                    | N/A          |                | N/A            |
+
+
+|-----------|----------|-------------|---------|-------|
+| Molecule 1 | Surface A  | T(°C)      | CMP     | D    |
+| Molecule 2 | Surface B  | T(°C)      | CPBM   | N/A  |
+
+
+| CO2-N2O4 | Si(100) | - | HNO3 | Monolayer |
+| N2O4 | SiC(0001) | 500 K | N2O6 | Trilayer |
+| CO2 | Ge(100) | 700 K | C3N4 | Quadlayer |
+
+
+Precursor: Tetramethylcyclopentadienyl anion (C4H12)
+Substrate: Ag(110) surface
+Temperature: Annealing at 50°C
+Products: N/A
+Dimensions: 0D molecule
+
+
+1479-036X(22)00817-7
+

@@ -1,0 +1,48 @@
+
+Precursor BPDSC PSP
+Substrate Au(111) Ag(111)
+Temperature 300 K 300 K
+Products PDS + PSP PSP
+Dimensions 2D + 0D 2D + 0D
+The table shows that the precursor molecules used in the experiment were brominated poly(dodecyl sulfone) (BPDSC) and phenyl-SO2-phenyl (PSP). The substrates used were Au(111) and Ag(111) surfaces. The reactions were carried out at a temperature of 300 K. The products of the reactions were poly(dodecyl sulfone) (PDS) and phenyl-SO2-phenyl (PSP). The dimensionality of the product molecules was 2D + 0D for both
+
+
+Precursor: BPDSC
+Substrate: Au(111)
+Temperature: N/A
+Products: BPDSC
+Dimensions: 2D
+Precursor: TBB
+Substrate: Ag(111)
+Products: AgBr
+Dimensions: 1D
+
+
+Precursor: Halobenzenes
+Substrate: Cu(111), Ag(111), Au(111)
+Temperature: 300 K
+Products: Dehydrogenated phenol derivatives
+Dimensions: N/A
+Precursor: Halobenzenes
+Substrate: Cu(111), Ag(111), Au(111)
+Temperature: 300 K
+Products: Dehydrogenated phenol derivatives
+Dimensions: N/A
+
+
+Precursor Molecules Substrates Annealing/Reaction Temperature Products Dimensionality
+[1,1′-biphenyl]-4,4′-disulfonyl dichloride (BPDSC) Au(111) 130 K Polyphenylene viadesulfonylation homocoupling reactions N/A
+[1,1′-biphenyl]-4,4′-disulfonyl dichloride (BPDSC) Ag(111) 373 K Polyphenylene viadesulfonylation homocoupling reactions N/A
+
+
+Precursor: Molecular precursors
+Substrate: Au(111) and Ag(111)
+Temperature: N/A
+Products: Desulfonylation homocoupling products
+Dimensions: N/A
+Precursor: Molecular precursors
+Substrate: Au(111) and Ag(111)
+Temperature: N/A
+Products: Desulfonylation homocoupling products
+Dimensions: N/A
+

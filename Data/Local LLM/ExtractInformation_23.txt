@@ -1,0 +1,33 @@
+
+Precursor: Au carboxylate complex
+Substrate: Au(111) surface
+Temperature: 124°C
+Products: 2D metal-organic polymers
+Dimensions: 2D (Simplified as 2)
+Note: The precursor molecules are deposited at sub-monolayer (ca. 40%) coverage. The experiment uses a 2D metal-organic framework. The products form an ordered structure on the surface. The morphological characteristics of the products can be determined based on the shape of the product molecules on the surface.
+
+
+Precursor: ENAmonomers Substrate: Au(111) Annealing/Reaction Temperature: 124 8C Products: Ordered self-assembly region (linear bis-(alkinyl) gold complex with two ENA units connected by an Au atom) Disordered phase of branched polymer chains Dimensions: Ordered self-assembly region: 1.43 /C60.01 nm (Simplified numbers plus letters) Disordered phase of branched polymer chains: N/A
+
+
+Precursor Molecules: Aryl halides or alkynes
+Substrates: Metal surfaces
+Temperature: Not provided
+Products: Self-assembled nanostructures of aromatic carboxylic acids
+Dimensions: N/A
+Note: The table is not exhaustive and may not cover all possible experimental conditions. It is intended to provide a summary of the information provided in the text.
+
+
+Precursor: Aromatic carboxylic acids
+Substrate: Metal surfaces
+Temperature: N/A
+Products: Self-assembled nanostructures of aromatic carboxylic acids on the metal surfaces
+Dimensions: 1D (simplified as N/A)
+
+
+Precursor: Precursor molecules are not mentioned in the text.
+Substrate: The substrate is not mentioned in the text.
+Temperature: The exact temperature values are not provided in the text, but it is mentioned that the precursor molecules are prepared in situ on the substrate via a Glaser coupling reaction.
+Product: The resulting product is a self-assembled structure confined by the Au(111) herringbone reconstruction, which is driven by hydrogen bonding of the acid groups and van der Waals interactions between the aromatic backbones.
+Dimensions: The morphological characteristics of the product can be determined based on the shape of the product molecules on the surface.
+

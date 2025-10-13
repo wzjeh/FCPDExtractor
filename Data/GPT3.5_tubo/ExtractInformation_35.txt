@@ -1,0 +1,30 @@
+| Precursor                            | Substrate                               | Temperature | Products                 | Dimensions |
+|--------------------------------------|-----------------------------------------|-------------|--------------------------|------------|
+| Porphyrins or 1,3,5-tris(4-bromophenyl)benzene | N/A                                     | N/A         | N/A                      | N/A        |
+| Aldehydes and amines                 | N/A                                     | N/A         | N/A                      | N/A        |
+| Anhydrides and amines                 | N/A                                     | N/A         | N/A                      | N/A        |
+| Acyl chlorides and amines             | N/A                                     | N/A         | N/A                      | N/A        |
+| N-heterocyclic compounds              | N/A                                     | N/A         | N/A                      | N/A        |
+| Diiodobenzene                        | Cu(110)                                  | Annealing   | Ullmann coupling reactions| 2-D        |
+| Octylamine                           | Au(111)                                  | N/A         | Trioctylamine            | N/A        |
+| N/A                                  | Cu(110)                                  | N/A         | Multiporphyrins          | N/A        |
+
+| Precursor  | Substrate                    | Temperature   | Products              | Dimensions |
+|------------|------------------------------|---------------|-----------------------|------------|
+| Melamine   | 1,4-phenylene diisocyanate   | Room temperature | Small urea oligomers incorporated into 2-D melamine array | 2-D       |
+| Melamine   | 1,4-phenylene diisocyanate   | Annealing     | Larger oligomers with multiple urea linkages | 2-D       |
+| Melamine   | 1,4-phenylene diisocyanate   | Higher annealing temperatures | Oligomers containing up to seven or eight urea linkages | 2-D       |
+
+| Precursor                | Substrate                           | Temperature | Products                                      | Dimensions |
+|--------------------------|-------------------------------------|-------------|-----------------------------------------------|------------|
+| 1,4-phenylene diisocyanate (1,4-PDI) | 1,3,5-triazine-2,4,6-triamine (melamine) | Room temperature | Urea structures | 2D         |
+
+| Precursor               | Substrate | Temperature | Products | Dimensions |
+|-------------------------|-----------|-------------|----------|------------|
+| Melamine (Sigma-Aldrich) | Au(111)   | 363 K       | N/A      | N/A        |
+| 1,4-Phenylenediisocyanate (Sigma-Aldrich) | Au(111) | 333 K | N/A | N/A |
+
+| Precursor              | Substrate                    | Temperature | Products        | Dimensions |
+|------------------------|------------------------------|-------------|-----------------|------------|
+| Melamine, 1,4-phenylene diisocyanate | Au(111) | N/A | Urea functionality within porous 2-D structures | 2-D |
+

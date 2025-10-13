@@ -1,0 +1,13 @@
+| Precursor           | Substrate  | Temperature | Products | Dimensions |
+|---------------------|------------|-------------|----------|------------|
+| TAPP                | Cu(111)    | 150°C       | Porous molecular network | N/A |
+| Pyridine and Pyrimidine | N/A | N/A | Azacyclohexatriene-2-ylidene, Diazacyclohexatriene-2-ylidene, Diazacyclohexatriene-4-ylidene, di- and tetraaminoethylene linkages | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| Polycyclic heteroaromatic compounds | N/A | N/A | Electronically highly delocalized polyaromatic chains | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| N-Heterocyclic Carbene Intermediates | Surface Coordination Polymers | Annealing | Linked Polycondensed Aromatics | N/A |
+

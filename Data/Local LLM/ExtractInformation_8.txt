@@ -1,0 +1,22 @@
+
+Precursor: Azulene-derivative PAHs
+Substrate: Flat surface
+Temperature: Specific temperature (N/A)
+Products: On-surface reactions of azulene-derivative PAHs (N/A)
+Dimensions: N/A
+
+
+| DAPh | Cu(001) | 300 K | 4, 5, 6 | 2D |
+The table summarizes the following details:
+- Precursor molecules: DAPh
+- Substrate: Cu(001)
+- Annealing/reaction temperature: 300 K
+- Products: 4, 5, and 6
+- Dimensionality of product molecules: 2D
+Note: The table only includes the experimental conditions related to the synthesis of the product molecules. Information about the catalytic reactions in the reaction is ignored.
+
+
+Precursor Molecules Substrate Annealing/Reaction Temperature Products Dimensionality
+N/A N/A N/A N/A N/A
+The text does not provide any information about the precursor molecules, substrates, annealing/reaction temperature, products, or dimensionality of the product molecules. Therefore, the table remains incomplete.
+

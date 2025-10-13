@@ -1,0 +1,18 @@
+
+| B1 | A | N/A | SCC | 2D |
+| B2 | A | N/A | SCC | 2D |
+| A | B1 | N/A | SCC | 2D |
+| A | B2 | N/A | SCC | 2D |
+Note: The precursor column refers to the molecules used in the experiment, while the substrate column refers to the molecules that are reacting or interacting on the surface. The temperature column refers to the annealing or reaction temperature, while the products column refers to the compound molecules formed in this experiment. The dimensions column refers to the dimensionality of the product molecules, which can be simplified numbers plus letters (e.g., 2D for two-dimensional molecular islands).
+
+
+Precursor: Metal-organic coordination
+Substrate: Aryl halides
+Temperature: N/A
+Products: Cross-coupling products
+Dimensions: 0D (molecules)
+
+
+| Diborane | Graphene | 1100°C | B-doped Graphene | 2D |
+
+

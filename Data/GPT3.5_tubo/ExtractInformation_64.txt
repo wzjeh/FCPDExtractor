@@ -1,0 +1,22 @@
+| Precursor            | Substrate | Temperature | Products              | Dimensions |
+|----------------------|-----------|-------------|-----------------------|------------|
+| Palladium tetraphenyltetrabenzoporphyrins (Pd-TPTBP) | Ag(111)  | ~600K       | Planar γ-ortho fused benzoporphyrins | 2D         |
+
+| Precursor                 | Substrate | Temperature | Products                                             | Dimensions |
+|---------------------------|-----------|-------------|------------------------------------------------------|------------|
+| Palladium tetraphenyltetrabenzoporphyrins (Pd-TPTBP) | Ag(111)   | 600K        | γ-orthofused porphyrins with 66 conjugated π-electrons | Nearly planar |
+|                           |           |             | Fully planar γ-ortho fused products lacking one or two phenyl moieties | Fully planar |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|---------|------------|
+| P6        | Ag(111)  | 600K       | P7      | 2D        |
+
+| Precursor              | Substrate | Temperature | Products | Dimensions |
+|------------------------|-----------|-------------|----------|------------|
+| Tetraphenyltetrabenzoporphyrins (TPTBP) | Ag(111) surface | Room temperature | Hybrid structure with the porphyrin fully embedded in the graphene template | 2D |
+|                        |           |             |          |            |
+
+| Precursor   | Substrate | Temperature | Products | Dimensions |
+|-------------|-----------|-------------|----------|------------|
+| Pd-TPTBP    | Ag(111)   | 600K        | P1-P7    | Planarized with quasi-square contour |
+

@@ -1,0 +1,27 @@
+| Precursor   | Substrate | Temperature | Products | Dimensions |
+|-------------|-----------|-------------|----------|------------|
+| BMBP*       | Cu(110)   | 420 K       | Dimer    | 2D         |
+| BMBP        | Au(111)   | 150-200 K   | Debrominated | 2D       |
+
+| Precursor         | Substrate | Temperature | Products | Dimensions |
+|------------------|-----------|-------------|----------|------------|
+| Bromomethylbenzene (BMB) | Cu(110)   | N/A         | Debromination product | N/A |
+| Bromomethylbenzene (BMB) | Ag(110)   | N/A         | Debromination product | N/A |
+| Bromomethylbenzene (BMB) | Au(111)   | N/A         | Debromination product | N/A |
+
+| Precursor           | Substrate | Temperature | Products | Dimensions |
+|---------------------|-----------|-------------|----------|------------|
+| Debrominated BMB    | Au(111)   | High        | Coupled BMB molecules | 2D |
+| Debrominated BMB    | Cu(110)   | Lower       | N/A      | N/A |
+| Debrominated BMB    | Ag(110)   | N/A         | N/A      | N/A |
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|----------|------------|----------|------------|
+| N/A       | Metal surfaces | N/A | N/A | N/A |
+
+| Precursor      | Substrate | Temperature | Products | Dimensions |
+|----------------|-----------|-------------|----------|------------|
+| Alkyl halides  | Cu(110)   | 4°C         | Homo-coupling of alkyl halides | N/A |
+| Alkyl halides  | Ag(110)   | 4°C         | Homo-coupling of alkyl halides | N/A |
+| Alkyl halides  | Au(111)   | Room temperature | Homo-coupling of alkyl halides | N/A |
+

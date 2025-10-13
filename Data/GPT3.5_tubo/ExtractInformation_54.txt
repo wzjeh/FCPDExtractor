@@ -1,0 +1,29 @@
+| Precursor  | Substrate | Temperature | Products | Dimensions |
+|------------|-----------|-------------|----------|------------|
+| DEBPB terminal alkyne | Ag(111) | N/A | 1D covalent-bonded molecular wires | 1D |
+| DEBPB terminal alkyne | Ag(110) | N/A | Organometallic molecular wires | 1D |
+
+| Precursor                                             | Substrate | Temperature | Products                         | Dimensions |
+|-------------------------------------------------------|-----------|-------------|----------------------------------|------------|
+| 2,5-diethynyl-1,4-bis(phenylethynyl)benzene (DEBPB) | Ag(111)   | N/A         | N/A                              | N/A        |
+| 2,5-diethynyl-1,4-bis(phenylethynyl)benzene (DEBPB) | Ag(110)   | N/A         | N/A                              | N/A        |
+| 2,5-diethynyl-1,4-bis(phenylethynyl)benzene (DEBPB) | Ag(100)   | N/A         | N/A                              | N/A        |
+
+| Precursor        | Substrate | Temperature | Products                        | Dimensions |
+|------------------|-----------|-------------|---------------------------------|------------|
+| D3h terminal alkyne | Au(111)   | N/A         | Cyclotrimerized frameworks      | N/A        |
+| Linear precursors with alkyl side groups | N/A | N/A | Glaser coupling                | N/A        |
+| N/A              | Ag(111)   | N/A         | Glaser coupling                | N/A        |
+| N/A              | Au(111)   | N/A         | Side reactions                 | N/A        |
+| N/A              | Cu(111)   | N/A         | Side reactions                 | N/A        |
+
+| Precursor   | Substrate | Temperature | Products | Dimensions |
+|-------------|-----------|-------------|----------|------------|
+| DEBPB       | Ag(110)   | N/A         | N/A      | N/A        |
+
+| Precursor           | Substrate | Temperature | Products | Dimensions |
+|---------------------|-----------|-------------|----------|------------|
+| DEBPB molecules     | Ag(111)   | Up to 450 K | N/A      | N/A        |
+| Alkyl bromides      | N/A       | Higher temps| Organometallic chains | 1D |
+| N/A                 | Ag(110)   | N/A         | Organometallic chains | 1D |
+

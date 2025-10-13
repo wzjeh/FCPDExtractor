@@ -1,0 +1,17 @@
+| Precursor        | Substrate | Temperature | Products | Dimensions |
+|------------------|-----------|-------------|----------|------------|
+| Individual molecular building blocks | Single-crystal metal surfaces | Ultrahigh vacuum conditions | Covalently interlinked nanostructures | N/A |
+
+| Precursor        | Substrate  | Temperature | Products | Dimensions |
+|------------------|------------|-------------|----------|------------|
+| Enediyne precursor | Cu(110)    | Variable    | 1D polyphenylene | 1D |
+| DNHD             | Cu(110)    | N/A         | N/A      | N/A |
+
+| Precursor      | Substrate | Temperature | Products                   | Dimensions |
+|----------------|-----------|-------------|----------------------------|------------|
+| Not specified  | Cu(110)   | Not specified | 1D polyphenylene chains | 1D        |
+
+| Precursor                      | Substrate | Temperature | Products                | Dimensions |
+|---------------------------------|-----------|-------------|-------------------------|------------|
+| 1,6-di-2-naphthylhex-3-ene-1,5-diyne (DNHD) | Cu(110) surface | Stimulated by heat | Linear polyphenylene | 1D         |
+

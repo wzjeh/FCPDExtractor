@@ -1,0 +1,47 @@
+Sure, here is a summary table based on the provided information:
+
+| Precursor                                             | Substrate  | Temperature | Products                   | Dimensions |
+|-------------------------------------------------------|------------|-------------|----------------------------|------------|
+| Porphyrins                                            | N/A        | N/A         | N/A                        | 2-D        |
+| 1,3,5-Tris(4-bromophenyl)benzene                      | N/A        | N/A         | N/A                        | 2-D        |
+| Aldehydes and amines                                  | N/A        | N/A         | N/A                        | 2-D        |
+| Anhydrides and amines                                 | N/A        | N/A         | N/A                        | 2-D        |
+| Acyl chlorides and amines                             | N/A        | N/A         | N/A                        | 2-D        |
+| N-heterocyclic compounds via carbene intermediates    | N/A        | N/A         | N/A                        | 2-D        |
+| Diiodobenzene                                         | Cu(110)    | N/A         | N/A                        | 2-D        |
+| Octylamine                                            | Au(111)    | N/A         | Trioctylamine              | N/A        |
+| N/A                                                   | Cu(110)    | N/A         | Multiporphyrins            | 2-D        |
+
+Note: The table omits entries where specific precursor, substrate, temperature, product, or dimensionality information is not explicitly provided in the text.
+
+Sure! Here's a summary of the experimental conditions extracted from the provided abstract in a table format:
+
+| Precursor                         | Substrate | Temperature                | Products                             | Dimensions |
+|-----------------------------------|-----------|----------------------------|--------------------------------------|------------|
+| Melamine (1,3,5-triazine-2,4,6-triamine) | Au(111)   | Room temperature to higher annealing temperatures | Small urea oligomers to larger oligomers with up to seven or eight urea linkages | 2-D         |
+| 1,4-Phenylene diisocyanate       | Au(111)   | Room temperature to higher annealing temperatures | Small urea oligomers to larger oligomers with up to seven or eight urea linkages | 2-D         |
+
+Note: Both precursor molecules (melamine and 1,4-phenylene diisocyanate) were used on the same substrate and under similar temperature conditions, leading to the formation of polyurea networks with varying sizes of urea linkages, resulting in 2-dimensional structures.
+
+| Precursor                               | Substrate | Temperature | Products                | Dimensions |
+|-----------------------------------------|-----------|-------------|-------------------------|------------|
+| 1,4-phenylene diisocyanate (1,4-PDI)    | Au(111)   | Room Temp   | Urea linkages/oligomers | 2-D        |
+| 1,3,5-triazine-2,4,6-triamine (melamine)| Au(111)   | Room Temp   | Hexagonal network       | 2-D        |
+
+Note: The information provided is based on the specific details extracted from the text. Other details not explicitly mentioned in the message have been marked as N/A.
+
+| Precursor                  | Substrate | Temperature | Products | Dimensions |
+|----------------------------|-----------|--------------|----------|------------|
+| Melamine (Sigma-Aldrich)   | Au(111)   | 363 K        | N/A      | N/A        |
+| 1,4-Phenylenediisocyanate (Sigma-Aldrich) | Au(111)   | 333 K        | N/A      | N/A        |
+
+**Notes:**
+- The exact products and their dimensions were not specified in the provided experimental section.
+- The temperatures listed are those during the sublimation of the precursor molecules.
+
+| Precursor                              | Substrate | Temperature | Products                | Dimensions |
+|-----------------------------------------|-----------|-------------|-------------------------|------------|
+| Melamine, 1,4-Phenylene diisocyanate    | Au(111)   | N/A         | Urea functional structures | 2-D        |
+
+Note: The information provided in the text was quite limited regarding specific experimental conditions such as exact temperatures and detailed precursor information. If more detailed information is available in the full text, it would be important to include those details for a more comprehensive summary.
+

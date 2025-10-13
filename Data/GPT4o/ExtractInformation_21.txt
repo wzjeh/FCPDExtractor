@@ -1,0 +1,51 @@
+Here is a summary of the experimental conditions for the synthesis of surface covalent organic frameworks based on the provided abstract:
+
+| Precursor Molecules | Substrate | Annealing/Reaction Temperature | Products | Dimensionality |
+|---------------------|-----------|-------------------------------|----------|----------------|
+| Acetyls             | N/A       | N/A                           | Aromatics| 2D             |
+
+**Note:** The abstract provided does not give specific details on the substrates used or the exact annealing/reaction temperatures. Therefore, these entries are marked as N/A. The product is identified as aromatics formed through cyclotrimerization, leading to 2D conjugated covalent networks.
+
+Sure, here's the summarized information in a table format focusing on the experimental conditions in surface chemistry synthesis:
+
+| Precursor                               | Substrate | Temperature | Products | Dimensions |
+|-----------------------------------------|-----------|-------------|----------|------------|
+| 1,3,5-tris(4-acetylphenyl)benzene (TAPB) | Ag(111)   | Room temp   | N/A      | N/A        |
+
+This table is created based on the provided text, which specifies the precursor molecule (TAPB), the substrate (Ag(111)), and the reaction/annealing temperature (room temperature). The products and dimensions columns are marked as N/A since no specific information about the products or their dimensions was given in the provided text.
+
+Sure, here's the summary in a table format based on the provided information:
+
+| Precursor                               | Substrate       | Temperature | Products                     | Dimensions |
+|-----------------------------------------|-----------------|-------------|------------------------------|------------|
+| Acetyl-containing compounds             | Metal surfaces  | N/A         | 2D covalent networks         | 2D         |
+| N/A                                     | N/A             | N/A         | N/A                          | N/A        |
+
+Note: The provided information was limited, so some details couldn't be filled in, such as specific temperatures and substrates for certain reactions.
+
+Here's the summarized table based on the provided information:
+
+| Precursor                    | Substrate            | Temperature | Products                              | Dimensions |
+|------------------------------|----------------------|-------------|---------------------------------------|------------|
+| Aryl halides                 | Noble metal supports | N/A         | Graphene nanoribbons                  | Controlled size and shape |
+| Aryl precursors              | Various substrates   | N/A         | Various polymers                      | N/A        |
+| Terminal alkynes             | N/A                  | N/A         | Homocoupled products                  | N/A        |
+| Hydrocarbon precursors       | Au(110) surface      | N/A         | Linear alkane polymer                 | N/A        |
+
+### Notes:
+
+- The table includes only the information explicitly provided in the given text.
+- The exact temperatures for the reactions are not mentioned in the text, so they are marked as N/A.
+- For the dimensions, "Controlled size and shape" is used where it is explicitly mentioned.
+- If any information is missing or unspecified, it is marked as N/A.
+
+Sure, here is the summarized information in a table format:
+
+| Precursor Molecules | Substrates | Annealing/Reaction Temperature | Products | Dimensionality of Product Molecules |
+|---------------------|------------|-------------------------------|----------|------------------------------------|
+| Trifunctional acetyl compounds | N/A | N/A | 2D covalent networks | 2D |
+| N/A | N/A | N/A | Elongated linear structure with zigzag shape | N/A |
+| N/A | N/A | N/A | Extended graphenelike networks | N/A |
+
+Since the provided text does not specify the exact precursor molecules, substrates, or temperatures in detail, and focuses more on the reaction products and their analysis, some entries are marked as N/A.
+

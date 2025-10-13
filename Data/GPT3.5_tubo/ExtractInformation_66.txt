@@ -1,0 +1,16 @@
+| Precursor   | Substrate | Temperature | Products                  | Dimensions |
+|-------------|-----------|-------------|---------------------------|------------|
+| TBDMB       | Au(111)  | 433 K       | Linear Me-substituted ladder phenylenes | 1D |
+
+| Precursor                      | Substrate | Temperature | Products | Dimensions |
+|---------------------------------|-----------|-------------|----------|------------|
+| 1,2,4,5-tetrabromo-3,6-dimethylbenzene (TBDMB) | Au(111)   | N/A         | LPs with methyl-modified edges | N/A          |
+
+| Precursor           | Substrate | Temperature | Products | Dimensions |
+|---------------------|-----------|-------------|----------|------------|
+| 1,2,4,5-tetrabromobenzene (TBB) | N/A       | N/A         | LPs      | N/A        |
+
+| Precursor                        | Substrate | Temperature | Products | Dimensions |
+|----------------------------------|-----------|-------------|----------|------------|
+| 1,2,4,5-tetrabromo-3,6-dimethylbenzene | Au(111) surface | N/A         | Linear LP chains | N/A |
+

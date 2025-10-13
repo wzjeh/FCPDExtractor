@@ -1,0 +1,41 @@
+Sure, here is a summarized table based on the details provided:
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| N/A       | Metal Surface | UHV conditions | Unstable products stabilized by the metal surface | N/A |
+| Suitable precursors for on-surface polymer synthesis | Metal surfaces | N/A | Aromatic hydrocarbons | N/A |
+
+Note: The details provided in the text are not sufficient to fill out all the columns specifically. If more detailed experimental data were provided, such as specific precursor molecules, exact temperatures, and precise products, more detailed entries could be made.
+
+Here's the summarized information in a table format based on the provided details:
+
+| Precursor                          | Substrate | Temperature | Products          | Dimensions |
+|------------------------------------|-----------|-------------|-------------------|------------|
+| Diisopropyl-p-terphenyl (1)        | Gold      | N/A         | Phenylene rings   | N/A        |
+
+**Note:** The provided text does not specify the exact annealing/reaction temperature or the dimensionality of the product molecules. If additional information from the supplementary section or other parts of the experiment becomes available, it should be added to this table for completeness.
+
+| Precursor          | Substrate      | Temperature | Products                | Dimensions |
+|--------------------|----------------|-------------|--------------------------|------------|
+| Dihaloarenes       | Metal surface  | N/A         | Intermediate diradicals  | N/A        |
+
+**Note:** The provided text does not give specific details about the exact precursor molecules, substrates, temperatures, or the dimensions of the product molecules beyond the intermediate diradicals formed. If more detailed experimental conditions are provided elsewhere in the source, those should be included to complete the table.
+
+Sure, I can help with that. Here is the summary in tabular format based on the provided information:
+
+| Precursor Molecules | Substrate | Temperature | Products | Dimensions |
+|---------------------|-----------|-------------|----------|------------|
+| Isopropyl substituents of arenes | Metal surfaces | Thermally induced (exact temperature not provided) | Polyarylenes | N/A |
+
+Since the provided text does not include specific details about some of the experimental conditions (e.g., exact temperature, detailed precursor molecules, and dimensions of the products), I've filled in the table with the available information. If more details are available from the original source, they can be added to complete the table.
+
+| Precursor | Substrate | Temperature | Products | Dimensions |
+|-----------|-----------|-------------|----------|------------|
+| Isopropyl-substituted arylenes | Au(111) and Au(110) surfaces | N/A | Phenylene rings | 2D |
+
+**Notes:**
+- The specific annealing or reaction temperature is not mentioned in the provided text.
+- The precursor molecules are isopropyl-substituted arylenes.
+- The products formed are phenylene rings.
+- The dimensionality of the product molecules is 2D as they are formed on surfaces.
+
