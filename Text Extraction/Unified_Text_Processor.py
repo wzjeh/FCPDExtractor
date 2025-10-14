@@ -15,7 +15,25 @@ class UnifiedTextProcessor:
         self.model_name = model_name
         self.model_path = model_path
         self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+        self.model = self.load_llm_model() # 在初始化时只加载一次
+        # 角色扮演，系统指令扮演专家助理角色
+        self.system_prompt = (
+            "You are an expert assistant for scientific literature mining. "
+            "Your task is to follow the user's instructions precisely to extract structured data from scientific texts."
+        )
         
+    def _create_prompt(self, user_prompt, context=""):
+        """
+        一个辅助函数，用于创建带有系统指令的完整Prompt。
+        """
+        # 使用分隔符让结构更清晰
+        return (
+            f"{self.system_prompt}\n\n"
+            f"### Paragraph to Analyze ###\n"
+            f"{context}\n\n"
+            f"### Task ###\n"
+            f"{user_prompt}"
+        )
     def load_llm_model(self):
         """
         加载LLM模型，支持回退机制
@@ -57,39 +75,95 @@ class UnifiedTextProcessor:
                         print(f"❌ 所有模型加载尝试都失败: {e4}")
                         raise e4
     
+    # def filter_content_with_llm(self, df):
+    #     """
+    #     使用LLM过滤内容（替代Filter.py功能）
+    #     """
+    #     # model = self.load_llm_model()
+        
+    #     ## 原Filter.py功能
+    #     # questions = [
+    #     #     "Question: Does this section cover the types of surface chemical reactions or experimental studies on the formation of molecules on surfaces? Answer 'Yes' or 'No'. \nAnswer:"
+    #     # ]
+    #     questions = [
+    #     ("Question: Is this paragraph about flow chemistry or process development, including "
+    #      "continuous flow setup, reactor type/ID, flow rates, residence time, temperature, reactant, "
+    #      "catalyst, optimization, conversion/yield/selectivity? Answer 'Yes' or 'No'.\nAnswer:")
+    #     ]
+        
+    #     for idx, row in df.iterrows():
+    #         content = row['content']
+    #         classification = 'No'
+            
+    #         for question in questions:
+    #             prompt = f"{content}\n{question}"
+    #             try:
+    #                 response = self.model.generate(prompt=prompt, max_tokens=10, temp=0.1)
+    #                 if response and response.strip():
+    #                     first_word = response.split()[0].replace('.', '').replace(',', '')
+    #                     if first_word not in ['No', 'Not']:
+    #                         classification = first_word
+    #                         break
+    #             except Exception as e:
+    #                 print(f"Error generating response: {e}")
+    #                 continue
+            
+    #         df.loc[idx, 'classification'] = classification
+        
+    #     # 过滤掉"No"的段落
+    #     condition = (df['classification'] != 'No') & (df['classification'] != 'Not')
+    #     df_filtered = df[condition]
+        
+    #     return df_filtered
+
     def filter_content_with_llm(self, df):
         """
-        使用LLM过滤内容（替代Filter.py功能）
+        使用LLM过滤内容，已使用新的Prompt结构进行优化。
         """
-        model = self.load_llm_model()
+        # 1. 将核心问题定义得更清晰，作为用户指令
+        user_question = (
+            "Based on the criteria below, does the provided paragraph describe an experimental procedure "
+            "for flow chemistry or its process development? Answer strictly with 'Yes' or 'No'.\n\n"
+            "Criteria: The paragraph should mention specific experimental details, for example: "
+            "continuous flow setup, reactor type/ID, flow rates, residence time, temperature, reactant, "
+            "catalyst, optimization, or conversion/yield/selectivity.\n\n"
+            "Answer:"
+        )
+
+        classifications = []  # 创建一个列表来收集所有分类结果，比逐行修改DataFrame更高效
         
-        questions = [
-            "Question: Does this section cover the types of surface chemical reactions or experimental studies on the formation of molecules on surfaces? Answer 'Yes' or 'No'. \nAnswer:"
-        ]
-        
-        for idx, row in df.iterrows():
+        print("...开始使用LLM进行段落分类...")
+        # 2. 遍历DataFrame的每一行
+        for index, row in df.iterrows():
             content = row['content']
-            classification = 'No'
             
-            for question in questions:
-                prompt = f"{content}\n{question}"
-                try:
-                    response = model.generate(prompt=prompt, max_tokens=10, temp=0.1)
-                    if response and response.strip():
-                        first_word = response.split()[0].replace('.', '').replace(',', '')
-                        if first_word not in ['No', 'Not']:
-                            classification = first_word
-                            break
-                except Exception as e:
-                    print(f"Error generating response: {e}")
-                    continue
+            # 3. 使用您的辅助函数创建完整的、带有上下文和系统指令的Prompt
+            # 假设 self.system_prompt 和 self._create_prompt 已在类中定义
+            full_prompt = self._create_prompt(user_prompt=user_question, context=content)
             
-            df.loc[idx, 'classification'] = classification
+            try:
+                # 4. 调用模型生成响应
+                # 将temp设为0.0，让模型的回答更具确定性（减少随机性）
+                response = self.model.generate(prompt=full_prompt, max_tokens=5, temp=0.0)
+                
+                # 5. 对响应进行更稳健的解析
+                # .strip() 去除首尾空格, .lower() 转为小写, .startswith('yes') 判断是否以'yes'开头
+                if response and response.strip().lower().startswith('yes'):
+                    classifications.append('Yes')
+                else:
+                    classifications.append('No')
+
+            except Exception as e:
+                print(f"处理第 {index} 行时发生错误: {e}")
+                classifications.append('No')  # 如果出错，默认为'No'
+
+        # 6. 一次性将所有分类结果添加到DataFrame中
+        df['classification'] = classifications
         
-        # 过滤掉"No"的段落
-        condition = (df['classification'] != 'No') & (df['classification'] != 'Not')
-        df_filtered = df[condition]
+        # 7. 过滤掉 "No" 的段落，并使用 .copy() 避免潜在的警告
+        df_filtered = df[df['classification'] == 'Yes'].copy()
         
+        print(f"...分类完成，保留 {len(df_filtered)} 个相关段落。")
         return df_filtered
     
     def create_abstract_conclusion_embeddings(self, df):
@@ -99,11 +173,9 @@ class UnifiedTextProcessor:
         # 定义摘要和结论相关的关键词
         abstract_conclusion_keywords = [
             "conclusion", "abstract", "summary", "findings", "results", 
-            "synthesis parameters", "reaction conditions", "precursor molecules",
-            "substrate", "temperature", "products", "experimental results",
-            "key findings", "main results", "final results", "outcome",
-            "synthesis", "reaction", "molecular", "surface chemistry",
-            "on-surface", "catalytic", "formation", "yield", "selectivity"
+            "flow chemistry", "continuous flow", "process development", "reactor",
+            "flow rate", "residence time", "optimization", "scale-up", "yield",
+            "conversion", "selectivity", "catalyst", "temperature", "pressure"
         ]
         
         # 创建参考文本
@@ -129,56 +201,99 @@ class UnifiedTextProcessor:
     
     def abstract_text_with_llm(self, df):
         """
-        使用LLM进行文本抽象（整合Abstract.py功能）
+        使用LLM进行文本抽象（已优化）
         """
-        model = self.load_llm_model()
         abstract = []
+        
+        # 1. 定义针对此任务的用户指令
+        user_prompt = (
+            "Please summarize the paragraph focusing on flow-chemistry process development. "
+            "The summary should highlight: reaction type, reactants/catalyst, products, reactor details, "
+            "key conditions (like flow rates, residence time, temperature), "
+            "and any reported outcomes (conversion/yield/selectivity). Be concise and faithful to the source text."
+        )
         
         for index, row in df.iterrows():
             content = row['content']
             
-            prompt_template = (
-                f"{content}"
-                f"Answer the question as truthfully as possible using the provided context."
-                f"Please summarize the text below, emphasizing the types of reactions featured in the author's scientific experiments on surface reactions."            
-            )
+            # 2. 使用辅助函数构建完整的Prompt
+            full_prompt = self._create_prompt(user_prompt=user_prompt, context=content)
             
             try:
-                abstract_text = model.generate(prompt=prompt_template, max_tokens=250, temp=0.0, top_p=0.6)
+                # 3. 使用 self.model 进行调用
+                abstract_text = self.model.generate(prompt=full_prompt, max_tokens=250, temp=0.0, top_p=0.6)
                 print(f"Abstract {index+1}/{len(df)}:")
                 print(abstract_text)
                 abstract.append(abstract_text)
             except Exception as e:
-                print(f"Error generating abstract: {e}")
-                abstract.append("Error generating abstract")
+                print(f"Error generating abstract for row {index}: {e}")
+                abstract.append(f"Error: {e}")
         
-        df['abstract'] = pd.Series(abstract)
+        df['abstract'] = pd.Series(abstract, index=df.index) # 确保索引对齐
         return df
     
     def summarize_parameters_with_llm(self, df):
         """
-        使用LLM总结参数（整合Summerized.py功能）
+        使用LLM总结参数（已优化）
         """
-        model = self.load_llm_model()
         summarized = []
         
+        # 1. 定义一个清晰的用户指令，包含所有规则和Schema
+        user_prompt = (
+            "Extract structured data for flow-chemistry process development as a strict JSON object. "
+            # 没有就返回null 避免幻觉
+            "If a field is not explicitly stated, use null. Use original units when present; "
+            # 在JSON里，像转化率、产率这些数值，请直接用数字格式
+            "otherwise normalize as: temperature in °C, residence_time in min, flow_rate in mL/min, "
+            "inner_diameter in mm. Use strings for values with units (e.g., \"100 °C\", \"0.20 mL/min\").\n\n"
+            "### JSON Schema ###\n"
+            "{\n"
+            "  \"reaction_summary\": {\n"
+            "    \"reaction_type\": \"...\", \n"
+            "    \"reactants\": [ {\"name\": \"...\", \"role\": \"reactant|catalyst|solvent\"}, ... ],\n"
+            "    \"products\": [ {\"name\": \"...\", \"yield_optimal\": 95, \"unit\": \"%\"}, ... ],\n"
+            "    \"conditions\": [\n"
+            "      {\"type\": \"temperature\", \"value\": \"...\"},\n"
+            "      {\"type\": \"residence_time\", \"value\": \"...\"},\n"
+            "      {\"type\": \"flow_rate_reactant_A\", \"value\": \"...\"},\n"
+            "      {\"type\": \"flow_rate_total\", \"value\": \"...\"},\n"
+            "      {\"type\": \"pressure\", \"value\": \"...\"}\n"
+            "    ],\n"
+            "    \"reactor\": {\"type\": \"...\", \"inner_diameter\": \"...\"},\n"
+            "    \"metrics\": {\"conversion\": ..., \"yield\": ..., \"selectivity\": ..., \"unit\": \"%\"}\n"
+            "  }\n"
+            "}\n\n"
+            "### Rules ###\n"
+            # 只要纯净的json 不要任何多余文字
+            "- Output ONLY the valid JSON object and nothing else (no introductory text or explanations).\n"
+            "- Keep numbers as numbers where possible (e.g., in 'metrics'), but keep units within string values for 'conditions'.\n"
+            # 只使用提供的段落作为证据，不要从其他部分推断，防止牛头马面 乱拼
+            "- Only use the provided paragraph as evidence; do not infer from other parts of the paper.\n"
+            # 只有最优选最优
+            "- Set 'is_optimal': true only if words like 'optimal', 'optimized', 'best' are explicitly present in this paragraph; otherwise null.\n"
+            # 没有最优选最高产率
+            "- If multiple experimental conditions are reported, prioritize the one explicitly labeled as 'optimal'. If none are labeled, select the condition set that corresponds to the best reported performance (e.g., highest yield or conversion).\n"
+            "- If multiple reactant streams have distinct flow rates, use specific keys like 'flow_rate_reactant_A', 'flow_rate_reactant_B', and include 'flow_rate_total' if it is also reported.\n"
+        )
+
         for index, row in df.iterrows():
             content = row['content']
-            prompt_template = (
-                f"{content}\n"            
-                f"Task: Please summarize the following details in a table: precursor molecules, substrates, annealing/reaction temperature of the molecules, products (i.e., the compound molecules formed in this experiment), and the dimensionality of the product molecules (Simplified numbers plus letters). If no information is provided or you are unsure, use N/A. Please focus on extracting experimental conditions only from the surface chemistry synthesis. The table should have 5 columns: | Precursor | Substrate | Temperature | Products | Dimensions |"
-            )
+            
+            # 2. 使用辅助函数构建完整的Prompt
+            full_prompt = self._create_prompt(user_prompt=user_prompt, context=content)
             
             try:
-                summarize_text = model.generate(prompt=prompt_template, max_tokens=250, temp=0.0, top_p=0.6)
+                # 3. 使用 self.model 进行调用
+                # 增加max_tokens以容纳更复杂的JSON输出
+                summarize_text = self.model.generate(prompt=full_prompt, max_tokens=512, temp=0.0, top_p=0.6)
                 print(f"Summarized {index+1}/{len(df)}:")        
                 print(summarize_text)
                 summarized.append(summarize_text)
             except Exception as e:
-                print(f"Error generating summary: {e}")
-                summarized.append("Error generating summary")
+                print(f"Error generating summary for row {index}: {e}")
+                summarized.append(f"Error: {e}")
         
-        df['summarized'] = pd.Series(summarized)
+        df['summarized'] = pd.Series(summarized, index=df.index) # 确保索引对齐
         return df
     
     def save_df_to_text(self, df, file_path, content_column='content'):

@@ -13,12 +13,20 @@ class PDFUnifiedProcessor:
     """
     
     def __init__(self):
+        # self.section_keywords = {
+        #     'abstract': ['abstract'],
+        #     'conclusion': ['conclusion', 'conclusions', 'summary', 'final remarks'],
+        #     'results': ['results', 'findings', 'data', 'experimental results'],
+        #     'introduction': ['introduction', 'background'],
+        #     'methods': ['methods', 'methodology', 'experimental', 'procedure']
+        # }
         self.section_keywords = {
-            'abstract': ['abstract'],
-            'conclusion': ['conclusion', 'conclusions', 'summary', 'final remarks'],
-            'results': ['results', 'findings', 'data', 'experimental results'],
-            'introduction': ['introduction', 'background'],
-            'methods': ['methods', 'methodology', 'experimental', 'procedure']
+        'abstract': ['abstract', 'summary'],
+        'conclusion': ['conclusion', 'conclusions', 'final remarks', 'summary of findings'],
+        'results': ['results', 'findings', 'performance', 'optimization', 'design of experiments', 'DoE'],
+        'methods': ['methods', 'methodology', 'experimental', 'experimental section', 'materials and methods'],
+        'setup': ['reactor setup', 'flow setup', 'continuous flow setup', 'apparatus'],
+        'flow': ['flow chemistry', 'process development', 'continuous flow', 'microreactor', 'tubular reactor']
         }
     
     def process_page_text(self, page_text, max_tokens=200):
@@ -151,7 +159,7 @@ class PDFUnifiedProcessor:
         """
         创建重点内容文件（摘要+结论+结果）
         """
-        priority_sections = ['abstract', 'conclusion', 'results']
+        priority_sections = ['abstract', 'conclusion', 'results','setup']
         priority_content = []
         
         for section in priority_sections:

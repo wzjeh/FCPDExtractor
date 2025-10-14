@@ -20,7 +20,7 @@ def add_embedding_and_cosine_similarity(df, fixed_text):
 
 def select_top_neighbors(df):
     df = df.sort_values('similarity', ascending=False)
-    top_neighbors = df.head(10)
+    top_neighbors = df.head(30) # 原来是 10，现在改成 30。选更多段落
     return top_neighbors
 
 
@@ -46,7 +46,14 @@ def process_text_file_for_embedding(file_path):
             segments.append(' '.join(current_segment))
 
         df = pd.DataFrame(segments, columns=['content'])
-        fixed_text = "surface chemistry reactions, on-surface synthesis, molecular reactions, substrate interactions, precursor molecules, reaction conditions"
+
+        fixed_text = (
+        "flow chemistry, continuous flow, process development, residence time, "
+        "flow rate, mL/min, µL/min, temperature °C, catalyst, reagent feed, "
+        "reactor type, tubular reactor, microreactor, microchannel, coil, "
+        "inner diameter ID, mm, μm, conversion %, yield %, selectivity %, "
+        "optimization, space time yield, mixer, back pressure regulator"
+        )
         df_with_embeddings = add_embedding_and_cosine_similarity(df, fixed_text)
         df_top_neighbors = select_top_neighbors(df_with_embeddings)
 

@@ -8,8 +8,8 @@ from TXT_Processing import process_text_file_for_processing
 from Embedding_and_Similarity import process_text_file_for_embedding
 from Unified_Text_Processor import (
     process_text_file_for_filter, process_text_file_for_abstract, process_text_file_for_summerized,
-    process_text_file_for_filter_meta_llama, process_text_file_for_abstract_meta_llama, 
-    process_text_file_for_summerized_meta_llama
+    process_text_file_for_filter, process_text_file_for_abstract, 
+    process_text_file_for_summerized
 )
 
 print("🚀 启动 OSSExtractor 表面合成参数提取工具")
@@ -43,22 +43,22 @@ for file_path in processed_files:
 print("✅ 嵌入和相似度计算完成")
 
 print("\n🤖 步骤 4/5: LLM内容过滤...")
-print("💡 使用Meta-Llama-3.1-8B模型进行智能过滤")
+print("💡 使用nous-hermes-llama2-13b模型进行智能过滤")
 filter_files = []
 for file_path in embedding_files:
     print(f"处理文件: {os.path.basename(file_path)}")
-    filter_file_path = process_text_file_for_filter_meta_llama(file_path)
+    filter_file_path = process_text_file_for_filter(file_path)
     filter_files.append(filter_file_path)
 print("✅ LLM内容过滤完成")
 
 print("\n📊 步骤 5/5: 抽象和总结...")
-print("💡 使用Meta-Llama-3.1-8B模型进行抽象和总结")
+print("💡 使用nous-hermes-llama2-13b模型进行抽象和总结")
 abstract_files = []
 summarized_files = []
 for file_path in filter_files:
     print(f"处理文件: {os.path.basename(file_path)}")
-    abstract_file_path = process_text_file_for_abstract_meta_llama(file_path)
-    summerized_file_path = process_text_file_for_summerized_meta_llama(file_path)
+    abstract_file_path = process_text_file_for_abstract(file_path)
+    summerized_file_path = process_text_file_for_summerized(file_path)
     abstract_files.append(abstract_file_path)
     summarized_files.append(summerized_file_path)
 print("✅ 抽象和总结完成")
