@@ -20,7 +20,7 @@ def add_embedding_and_cosine_similarity(df, fixed_text):
 
 def select_top_neighbors(df):
     df = df.sort_values('similarity', ascending=False)
-    top_neighbors = df.head(30) # 原来是 10，现在改成 30。选更多段落
+    top_neighbors = df.head(10) # 原来是 10，现在改成 30。选更多段落
     return top_neighbors
 
 

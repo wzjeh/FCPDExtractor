@@ -16,7 +16,7 @@ print("🚀 启动 OSSExtractor 表面合成参数提取工具")
 print("=" * 60)
 
 pdf_files = [
-'/Users/zhaowenyuan/Projects/FCPDExtractor/Data/papers/d2cp03073j.pdf'
+"/Users/zhaowenyuan/Projects/FCPDExtractor/Data/papers/101021acsoprd7b00291.pdf"
 ]
 base_output_dir = '/Users/zhaowenyuan/Projects/FCPDExtractor/Data'  
 

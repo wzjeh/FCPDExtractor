@@ -121,21 +121,36 @@ class UnifiedTextProcessor:
         使用LLM过滤内容，已使用新的Prompt结构进行优化。
         """
         # 1. 将核心问题定义得更清晰，作为用户指令
-        user_question = (
-            "Based on the criteria below, does the provided paragraph describe an experimental procedure "
-            "for flow chemistry or its process development? Answer strictly with 'Yes' or 'No'.\n\n"
-            "Criteria: The paragraph should mention specific experimental details, for example: "
-            "continuous flow setup, reactor type/ID, flow rates, residence time, temperature, reactant, "
-            "catalyst, optimization, or conversion/yield/selectivity.\n\n"
-            "Answer:"
-        )
+        # user_question = (
+        #     "Based on the criteria below, does the provided paragraph describe an experimental procedure "
+        #     "for flow chemistry or its process development? Answer strictly with 'Yes' or 'No'.\n\n"
+        #     "Criteria: The paragraph should mention specific experimental details, for example: "
+        #     "continuous flow setup, reactor type/ID, flow rates, residence time, temperature, reactant, "
+        #     "catalyst, optimization, or conversion/yield/selectivity.\n\n"
+        #     "Answer:"
+        # ) # 过于严格了，没结果改成下边的
 
+        user_question = (
+            "Does the paragraph contain experimental details about flow-chemistry/process development? "
+            "Answer strictly with 'Yes' or 'No'."
+        )
+        # 导入多线程库
         classifications = []  # 创建一个列表来收集所有分类结果，比逐行修改DataFrame更高效
         
         print("...开始使用LLM进行段落分类...")
         # 2. 遍历DataFrame的每一行
         for index, row in df.iterrows():
             content = row['content']
+            content_low = content.lower()
+            kw = [
+                "flow chemistry","continuous flow","residence time","flow rate","mL/min","µL/min","ul/min",
+                "reactor","tubular","coil","microreactor","inner diameter","i.d.","mm","μm",
+                "temperature","°c","selectivity","conversion","yield","bpr","bar","back pressure","min","pressure"
+            ]
+            # 新增：关键词直通，避免过严导致0段落
+            if any(k in content_low for k in kw):
+                classifications.append('Yes')
+                continue
             
             # 3. 使用您的辅助函数创建完整的、带有上下文和系统指令的Prompt
             # 假设 self.system_prompt 和 self._create_prompt 已在类中定义
@@ -221,7 +236,16 @@ class UnifiedTextProcessor:
             
             try:
                 # 3. 使用 self.model 进行调用
-                abstract_text = self.model.generate(prompt=full_prompt, max_tokens=250, temp=0.0, top_p=0.6)
+                # abstract_text = self.model.generate(prompt=full_prompt, max_tokens=250, temp=0.0, top_p=0.6)
+                # if not abstract_text:
+                #     # 兜底：避免空摘要，保留上下文的一个精简片段
+                #     abstract_text = content[:400]
+                abstract_text = self.model.generate(prompt=full_prompt, max_tokens=300, temp=0.0, top_p=0.5)
+                abstract_text = (abstract_text or "").strip()
+                if not abstract_text:
+                    # 兜底：用原段落截断，保证后续文件非空
+                    abstract_text = content[:400]
+
                 print(f"Abstract {index+1}/{len(df)}:")
                 print(abstract_text)
                 abstract.append(abstract_text)
@@ -239,42 +263,73 @@ class UnifiedTextProcessor:
         summarized = []
         
         # 1. 定义一个清晰的用户指令，包含所有规则和Schema
+        # user_prompt = (
+        #     "Extract structured data for flow-chemistry process development as a strict JSON object. "
+        #     # 没有就返回null 避免幻觉
+        #     "If a field is not explicitly stated, use null. Use original units when present; "
+        #     # 在JSON里，像转化率、产率这些数值，请直接用数字格式
+        #     "otherwise normalize as: temperature in °C, residence_time in min, flow_rate in mL/min, "
+        #     "inner_diameter in mm. Use strings for values with units (e.g., \"100 °C\", \"0.20 mL/min\").\n\n"
+        #     "### JSON Schema ###\n"
+        #     "{\n"
+        #     "  \"reaction_summary\": {\n"
+        #     "    \"reaction_type\": \"...\", \n"
+        #     "    \"reactants\": [ {\"name\": \"...\", \"role\": \"reactant|catalyst|solvent\"}, ... ],\n"
+        #     "    \"products\": [ {\"name\": \"...\", \"yield_optimal\": 95, \"unit\": \"%\"}, ... ],\n"
+        #     "    \"conditions\": [\n"
+        #     "      {\"type\": \"temperature\", \"value\": \"...\"},\n"
+        #     "      {\"type\": \"residence_time\", \"value\": \"...\"},\n"
+        #     "      {\"type\": \"flow_rate_reactant_A\", \"value\": \"...\"},\n"
+        #     "      {\"type\": \"flow_rate_total\", \"value\": \"...\"},\n"
+        #     "      {\"type\": \"pressure\", \"value\": \"...\"}\n"
+        #     "    ],\n"
+        #     "    \"reactor\": {\"type\": \"...\", \"inner_diameter\": \"...\"},\n"
+        #     "    \"metrics\": {\"conversion\": ..., \"yield\": ..., \"selectivity\": ..., \"unit\": \"%\"}\n"
+        #     "  }\n"
+        #     "}\n\n"
+        #     "### Rules ###\n"
+        #     # 只要纯净的json 不要任何多余文字
+        #     "- Output ONLY the valid JSON object and nothing else (no introductory text or explanations).\n"
+        #     "- Keep numbers as numbers where possible (e.g., in 'metrics'), but keep units within string values for 'conditions'.\n"
+        #     # 只使用提供的段落作为证据，不要从其他部分推断，防止牛头马面 乱拼
+        #     "- Only use the provided paragraph as evidence; do not infer from other parts of the paper.\n"
+        #     # 只有最优选最优
+        #     "- Set 'is_optimal': true only if words like 'optimal', 'optimized', 'best' are explicitly present in this paragraph; otherwise null.\n"
+        #     # 没有最优选最高产率
+        #     "- If multiple experimental conditions are reported, prioritize the one explicitly labeled as 'optimal'. If none are labeled, select the condition set that corresponds to the best reported performance (e.g., highest yield or conversion).\n"
+        #     "- If multiple reactant streams have distinct flow rates, use specific keys like 'flow_rate_reactant_A', 'flow_rate_reactant_B', and include 'flow_rate_total' if it is also reported.\n"
+        # ) # 过于严格了
         user_prompt = (
-            "Extract structured data for flow-chemistry process development as a strict JSON object. "
-            # 没有就返回null 避免幻觉
+            "Only use the provided paragraph; do not infer across other paragraphs.\n"
             "If a field is not explicitly stated, use null. Use original units when present; "
-            # 在JSON里，像转化率、产率这些数值，请直接用数字格式
-            "otherwise normalize as: temperature in °C, residence_time in min, flow_rate in mL/min, "
-            "inner_diameter in mm. Use strings for values with units (e.g., \"100 °C\", \"0.20 mL/min\").\n\n"
-            "### JSON Schema ###\n"
-            "{\n"
-            "  \"reaction_summary\": {\n"
-            "    \"reaction_type\": \"...\", \n"
-            "    \"reactants\": [ {\"name\": \"...\", \"role\": \"reactant|catalyst|solvent\"}, ... ],\n"
-            "    \"products\": [ {\"name\": \"...\", \"yield_optimal\": 95, \"unit\": \"%\"}, ... ],\n"
-            "    \"conditions\": [\n"
-            "      {\"type\": \"temperature\", \"value\": \"...\"},\n"
-            "      {\"type\": \"residence_time\", \"value\": \"...\"},\n"
-            "      {\"type\": \"flow_rate_reactant_A\", \"value\": \"...\"},\n"
-            "      {\"type\": \"flow_rate_total\", \"value\": \"...\"},\n"
-            "      {\"type\": \"pressure\", \"value\": \"...\"}\n"
-            "    ],\n"
-            "    \"reactor\": {\"type\": \"...\", \"inner_diameter\": \"...\"},\n"
-            "    \"metrics\": {\"conversion\": ..., \"yield\": ..., \"selectivity\": ..., \"unit\": \"%\"}\n"
-            "  }\n"
-            "}\n\n"
-            "### Rules ###\n"
-            # 只要纯净的json 不要任何多余文字
-            "- Output ONLY the valid JSON object and nothing else (no introductory text or explanations).\n"
-            "- Keep numbers as numbers where possible (e.g., in 'metrics'), but keep units within string values for 'conditions'.\n"
-            # 只使用提供的段落作为证据，不要从其他部分推断，防止牛头马面 乱拼
-            "- Only use the provided paragraph as evidence; do not infer from other parts of the paper.\n"
-            # 只有最优选最优
-            "- Set 'is_optimal': true only if words like 'optimal', 'optimized', 'best' are explicitly present in this paragraph; otherwise null.\n"
-            # 没有最优选最高产率
-            "- If multiple experimental conditions are reported, prioritize the one explicitly labeled as 'optimal'. If none are labeled, select the condition set that corresponds to the best reported performance (e.g., highest yield or conversion).\n"
-            "- If multiple reactant streams have distinct flow rates, use specific keys like 'flow_rate_reactant_A', 'flow_rate_reactant_B', and include 'flow_rate_total' if it is also reported.\n"
+            "otherwise normalize: temperature in °C, residence_time in min, flow_rate in mL/min, inner_diameter in mm.\n"
+            "Output ONLY the following JSON object (no extra text):\n"
+            "{ \"reaction_summary\": {"
+            "  \"reaction_type\":\"...\","
+            "  \"reactants\":[{\"name\":\"...\",\"role\":\"reactant|catalyst|solvent\"}],"
+            "  \"products\":[{\"name\":\"...\",\"yield_optimal\":95,\"unit\":\"%\"}],"
+            "  \"conditions\":["
+            "    {\"type\":\"temperature\",\"value\":\"...\"},"
+            "    {\"type\":\"residence_time\",\"value\":\"...\"},"
+            "    {\"type\":\"flow_rate_reactant_A\",\"value\":\"...\"},"
+            "    {\"type\":\"flow_rate_total\",\"value\":\"...\"},"
+            "    {\"type\":\"pressure\",\"value\":\"...\"}"
+            "  ],"
+            "  \"reactor\":{\"type\":\"...\",\"inner_diameter\":\"...\"},"
+            "  \"metrics\":{\"conversion\":...,\"yield\":...,\"selectivity\":...,\"unit\":\"%\"}"
+            "}}\n"
+            "Example input: \"Flow rate 0.1 mL/min, T=80 °C in a 0.5 mm coil; yield 82%.\"\n"
+            "Example output: { \"reaction_summary\": {"
+            "  \"reaction_type\": null, \"reactants\": [],"
+            "  \"products\": [{\"name\": null, \"yield_optimal\": 82, \"unit\": \"%\"}],"
+            "  \"conditions\": [ {\"type\":\"temperature\",\"value\":\"80 °C\"}, {\"type\":\"flow_rate_total\",\"value\":\"0.1 mL/min\"} ],"
+            "  \"reactor\": {\"type\":\"coil\", \"inner_diameter\":\"0.5 mm\"},"
+            "  \"metrics\": {\"conversion\": null, \"yield\": 82, \"selectivity\": null, \"unit\": \"%\"}"
+            "}}"
         )
+
+        # 生成时降低随机性（移动到循环内前先注释旧误放位置）
+        # summarize_text = self.model.generate(prompt=full_prompt, max_tokens=512, temp=0.0, top_p=0.2)
 
         for index, row in df.iterrows():
             content = row['content']
@@ -284,11 +339,17 @@ class UnifiedTextProcessor:
             
             try:
                 # 3. 使用 self.model 进行调用
-                # 增加max_tokens以容纳更复杂的JSON输出
-                summarize_text = self.model.generate(prompt=full_prompt, max_tokens=512, temp=0.0, top_p=0.6)
+                # OLD: summarize_text = self.model.generate(prompt=full_prompt, max_tokens=512, temp=0.0, top_p=0.6)
+                # NEW: 更低随机性，便于严格JSON输出
+                summarize_text = self.model.generate(prompt=full_prompt, max_tokens=512, temp=0.0, top_p=0.2)
+                txt = (summarize_text or "").strip()
+                # 轻后处理：若模型前后带说明文字，裁剪为最外层花括号包裹部分
+                start, end = txt.find("{"), txt.rfind("}")
+                if start != -1 and end != -1 and end > start:
+                    txt = txt[start:end+1]
                 print(f"Summarized {index+1}/{len(df)}:")        
-                print(summarize_text)
-                summarized.append(summarize_text)
+                print(txt)
+                summarized.append(txt)
             except Exception as e:
                 print(f"Error generating summary for row {index}: {e}")
                 summarized.append(f"Error: {e}")
@@ -363,7 +424,36 @@ class UnifiedTextProcessor:
         if mode in ['summarize', 'comprehensive']:
             # 3. 参数总结
             print("\n📊 步骤3: 参数总结...")
-            df_summarized = self.summarize_parameters_with_llm(df_filtered if 'df_filtered' in locals() else df)
+            # OLD: 直接使用过滤后的原始段落进行总结
+            # df_summarized = self.summarize_parameters_with_llm(df_filtered if 'df_filtered' in locals() else df)
+
+            # NEW: 优先使用抽象后的文本作为总结输入；若无抽象则退回过滤文本，再退回原始文本
+            # 补充：当 mode='summarize' 且本次未运行抽象步骤时，尝试从同名抽象文件加载抽象结果
+            if 'df_abstract' not in locals():
+                try:
+                    abstract_file_try = file_path.replace('.txt', '_Abstract.txt')
+                    if os.path.exists(abstract_file_try):
+                        with open(abstract_file_try, 'r', encoding='utf-8', errors='ignore') as f_abs:
+                            lines_abs = f_abs.readlines()
+                        current_segment_abs = []
+                        segments_abs = []
+                        for line in lines_abs:
+                            if line.strip():
+                                current_segment_abs.append(line.strip())
+                            else:
+                                if current_segment_abs:
+                                    segments_abs.append(' '.join(current_segment_abs))
+                                    current_segment_abs = []
+                        if current_segment_abs:
+                            segments_abs.append(' '.join(current_segment_abs))
+                        if segments_abs:
+                            df_abstract = pd.DataFrame(segments_abs, columns=['content'])
+                            print(f"🔁 载入已有抽象文件用于总结: {os.path.basename(abstract_file_try)}，段落数: {len(df_abstract)}")
+                except Exception as e:
+                    print(f"⚠️ 载入抽象文件失败，改用过滤或原始文本: {e}")
+
+            df_input_for_sum = df_abstract if 'df_abstract' in locals() else (df_filtered if 'df_filtered' in locals() else df)
+            df_summarized = self.summarize_parameters_with_llm(df_input_for_sum)
             
             # 保存总结结果
             summarize_file = file_path.replace('.txt', '_Summarized.txt')

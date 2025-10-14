@@ -1,0 +1,42 @@
+Vt = �0.9 V, It = 50 pA, (e) and (f) Vt = �1.2 V, It = 100 pA. Scale bars: (a), (c), (e), 6 nm, (b), (d) and (f), 1 nm. PCCP Paper Published on 30 August 2022. Downloaded by Hokkaido Daigaku on 10/13/2025 8:39:59 AM. View Article Online
+
+We also note that the C–O–C group results in an angle of around 1071 between the biphenyl units (Fig. 2(d) and (g)). This observation is consistent with the compounds with ether groups in solid and gas phases.40 The formation of the ether chains from the coupling of hydroxymethyl groups suggests a dehydration process, which is common for hydroxyl groups in solution chemistry.41–43 Note that we do 
+
+The unit lengths in the computed C–O–C and carbon–carbon chains are shown in (j) and (l). Tunneling parameters: (a) and (b) Vt = �1.5 V, It = 50 pA; (d) and (e), (f) Vt = �0.5 V, It = 100 pA, (g) and (h), (i) Vt = �1.6 V, It = 50 pA. Scale bars: (a), (d) and (g), 2 nm, (b), (e), (f), (h) and (i), 1 nm. Paper PCCP Published on 30 August 2022. Downloaded by Hokkaido Daigaku on 10/13/2025 8:39:59 AM.
+
+(c) Large-scale and (d) high-resolution STM images of the C–O–C coupled oligomers after annealing at 530 K for 30 minutes. Wavy lines are overlaid on a few oligomers to illustrate the length of the formed ethers in (c). (e) Large-scale and (f) close-up STM images showing the carbon–carbon coupling chains after further annealing the sample at 580 K for 30 minutes. Corresponding DFT optimized models
+
+22126 |  Phys. Chem. Chem. Phys., 2022, 24, 22122–22128 This journal is © the Owner Societies 2022 from Int2 to the final state (FS). This final elementary step is analogous to the C–C bond formation of molecules with carbon radicals on metal surfaces, proceeding through the breaking of the molecule–substrate bonds to the formation of a new bond.47 Thermodynamically, the whole reaction is limited 
+
+(a) Large- scale and (b) close-up STM images showing the formation of a Kagome- like network after deposition of 1 on Ag(111) held at RT. (c) The corres- ponding DFT-optimized structural model. To better distinguish the Kagome-like arrangement, semitransparent lines are overlaid on the molecular structures. (d) Charge density diﬀerence map showing the hydrogen bonding of the three hydroxymethyl su
+
+Moreover, we have not taken into account the entropic contribution from the desorption of the water molecules, which may also lower the total energy of the FS. Conclusions In summary, we have demonstrated the on-surface formation of ethers through the dehydrative coupling of hydroxymethyl substituents. A linear di-topic molecule and a three-fold sym- metric tri-topic molecule were designed and stu
+
+After being prepared at 530 K, we find diﬀerent structures other than the porous network on the sample. As displayed in the large-scale image in Fig. 3(d) and the high-resolution ones in Fig. 3(e) and (f), the activation of two hydroxymethyl sub- stituents of 4 yields a linear and a ring structure. The length of two repeating units of the linear molecule is measured to be 29.1 � 0.3 Å (Fig. 3(e)),
+
+By using two hydroxymethyl substituent functionalized molecular precursors with different symmetries, we have achieved the formation of ether chains and rings. High-resolution scanning tunneling microscopy complemented with density functional theory calculations are used to support our findings and offer mechanistic insights into the reaction. This work expands the toolbox of on-surface reactions 
+
+Upon further increasing the temperature to 530 K for 30 minutes, most of the hydroxyl groups are activated, leading to the formation of zigzag-shaped nanowires (Fig. 2(c) and (d)). Remarkably, some nanowires could extend over tens of nan- ometers (Fig. S4, ESI†). A detailed comparison of the morphol- ogy and unit length between the zigzag nanowire with the DFT- relaxed model of the C–O–C coupled e
+
+(a) Large-scale and (b) close-up STM images showing the for- mation of a porous nanostructure after deposition of 4 on Ag(111) held at RT. (c) The corresponding DFT-optimized structural model and semitran- sparent lines indicate a hexagonal porous pattern. (d) STM image of the sample prepared at an annealing temperature of 530 K for 30 minutes, leading to the C–O–C coupled products. Zoomed-in STM 
+
+Moreover, the unit length of the DFT-relaxed molecular model also coincides with the molecular oligomer (Fig. 2(f) and (h)). More examples of product 3 can be found in Fig. S5 (ESI†). Although it is difficult to distinguish between the C–C single bond and CQC double bond in this nanostructure, we suggest that the carbon–carbon linkage is more likely to be the CQC motif rather than the C–C structur
+
+From the IS to intermediate state Int1, one OH group detached from one of the molecules captures the hydrogen from the hydroxyl group of the second molecule, which results in a water mole- cule. The water molecule is stabilized via an H� � �OH hydrogen bond with the O atom of the second molecule. Meanwhile, the two molecules are bonded to the underlying surface atoms. The energy barrier from the I
+
+This journal is © the Owner Societies 2022 Phys. Chem. Chem. Phys., 2022, 24, 22122–22128 |  22123 Herein, we have designed two molecular precursors function- alized with a hydroxymethyl group, which has a methylene bridge (–CH2– unit) connected to a hydroxyl group (–OH). The chemical structures of the two precursors, the linear molecule 1 (4,40-bis(hydroxymethyl)biphenyl) and the three-fold symme
+
+The same principle can be applied to the bottom-up construction of molecular nanostructures on surfaces, which has been widely investigated for the last two decades and a variety of supramolecular nanostructures have been fabricated on var- ious surfaces via choices of diﬀerent molecular building blocks.1 Later on, more studies aimed at covalently bonded nanostructures, which promise more robust i
+
+The same conclusion is also applied to the ring structure (Fig. 3(f) and (i)). Note that we have not observed extended 2D ether structures, and the ratio of precursor 4 forming circle products and linear products is about 1 : 3. To verify the covalent bonding of the formed nanostructures, we have tested their robustness by performing lateral STM manipulations on both the chain structure and ring s
+
+The corresponding DFT-optimized geometries with C–O–C linkages (Fig. 3(l) and (m)) are also consistent with the experimental results. Therefore, as expected, the reaction behaviors of 4 are consistent with 1, which further supports the dehydrative coupling of hydroxymethyl groups on Ag(111). To further validate the surface-assisted dehydration of mole- cule 1 on Ag(111), we have carried out the cl
+
+To further identify its atomic-scale structure, we resort to DFT calculations to model the self- assembled nanostructures in the gas phase. The structural motif can be reproduced by three 1 molecules with their hydroxyl groups forming cyclic hydrogen bonding, as indicated in Fig. 1(d). We further map the charge density difference of this motif, where hydrogen bonding interactions are unambiguously
+
+22124 |  Phys. Chem. Chem. Phys., 2022, 24, 22122–22128 This journal is © the Owner Societies 2022 across three molecules along the white arrow in Fig. 1(b) is 38.5 � 0.5 Å, while the theoretical value is 39.1 Å. Notably, despite the predominant number of pristine 1 molecules on the surface, a careful inspection of the data reveals a very small number (o1%) of molecules being already coupled, whic
+
+The reaction is further rationalized by searching for the reaction pathway using DFT- based nudged elastic band (NEB) method calculations. Results and discussion Molecule 1 forms ordered network nanostructures after being evaporated on the Ag(111) surface at room temperature (RT, 300 K) (Fig. 1(a) and Fig. S1, ESI†). The network structure is reminiscent of the Kagome lattice with additional nodes 
+
+This journal is © the Owner Societies 2022 Phys. Chem. Chem. Phys., 2022, 24, 22122–22128 |  22125 linear ditopic 1, we have designed a three-fold symmetric molecule 4 substituted with three hydroxymethyl groups. The deposition of 4 on Ag(111) kept at RT leads predominantly to a porous pattern which could extend over 50 nm (Fig. 3(a) and Fig. S7, ESI†). The corresponding DFT-optimized model is ind
+

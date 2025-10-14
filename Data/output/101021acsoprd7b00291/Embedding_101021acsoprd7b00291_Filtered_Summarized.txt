@@ -1,8 +1,60 @@
-- Normalize all temperature values to °C for consistency in units across the JSON object.
 
-- Do not add extra fields beyond the JSON schema or alter the data in any way other than to meet its structure.
 
-- In the case of "inner_diameter" field, use lowercase (e.g., "20 mm").
 
-- Do not modify the units of values in the original text; only normalize to standardized units (e.g., °C for temperature, min for residence time).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
