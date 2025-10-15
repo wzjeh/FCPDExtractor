@@ -386,6 +386,66 @@ class UnifiedTextProcessor:
         
         df['summarized'] = pd.Series(summarized, index=df.index) # 确保索引对齐
         return df
+
+    def summarize_document_overall(self, df_abstract):
+        """
+        基于整篇抽象文本生成全局JSON总结（择优汇总，避免逐段丢项）
+        输入: df_abstract，需包含列 'abstract' 或 'content'
+        输出: 字符串JSON
+        """
+        import json
+
+        col = 'abstract' if 'abstract' in df_abstract.columns else 'content'
+        texts = [t for t in df_abstract[col].fillna("").tolist() if t.strip()]
+        combined = "\n\n".join(texts)
+        if len(combined) > 8000:
+            combined = combined[:8000]
+
+        user_prompt = (
+            "You will be given multiple paragraph-level abstracts of a single paper (flow chemistry).\n"
+            "Aggregate them into ONE consolidated JSON object that captures the overall best/representative conditions.\n"
+            "- Use only info present in the abstracts (do not invent).\n"
+            "- If multiple values exist, prefer ones explicitly marked as optimal/best; otherwise pick those associated with highest performance (yield/conversion/selectivity).\n"
+            "- Keep units as-is when present.\n"
+            "Output ONLY the JSON (no extra text):\n"
+            "{ \"reaction_summary\": {\n"
+            "  \"reaction_type\": \"...\",\n"
+            "  \"reactants\": [ {\"name\": \"...\", \"role\": \"reactant|catalyst|solvent\"} ],\n"
+            "  \"products\": [ {\"name\": \"...\", \"yield_optimal\": 95, \"unit\": \"%\"} ],\n"
+            "  \"conditions\": [\n"
+            "     {\"type\": \"temperature\", \"value\": \"...\"},\n"
+            "     {\"type\": \"residence_time\", \"value\": \"...\"},\n"
+            "     {\"type\": \"flow_rate_total\", \"value\": \"...\"},\n"
+            "     {\"type\": \"pressure\", \"value\": \"...\"}\n"
+            "  ],\n"
+            "  \"reactor\": {\"type\": \"...\", \"inner_diameter\": \"...\"},\n"
+            "  \"metrics\": {\"conversion\": ..., \"yield\": ..., \"selectivity\": ..., \"unit\": \"%\"}\n"
+            "} }\n"
+        )
+
+        full_prompt = self._create_prompt(user_prompt=user_prompt, context=combined)
+
+        # 再做一次短warmup
+        try:
+            warm = self.model.generate(prompt="Say OK", max_tokens=8, temp=0.0)
+            print(f"🔥 Overall warmup: [{warm}]")
+        except Exception as e:
+            print(f"⚠️ Overall warmup error: {e}（继续尝试）")
+
+        txt = self.model.generate(prompt=full_prompt, max_tokens=500, temp=0.0, top_p=0.2) or ""
+        txt = txt.strip()
+
+        s, e = txt.find("{"), txt.rfind("}")
+        if s != -1 and e != -1 and e > s:
+            txt = txt[s:e+1]
+
+        try:
+            import json
+            json.loads(txt)
+        except Exception:
+            print("⚠️ Overall JSON看起来不合法，原样输出以便排查。")
+
+        return txt
     
     def save_df_to_text(self, df, file_path, content_column='content'):
         """
@@ -489,6 +549,18 @@ class UnifiedTextProcessor:
             summarize_file = file_path.replace('.txt', '_Summarized.txt')
             self.save_df_to_text(df_summarized, summarize_file, 'summarized')
             output_files['summarized'] = summarize_file
+
+            # 整篇汇总总结（以抽象为输入优先）
+            try:
+                overall_input = df_abstract if 'df_abstract' in locals() else (df_filtered if 'df_filtered' in locals() else df)
+                overall_json = self.summarize_document_overall(overall_input)
+                overall_file = file_path.replace('.txt', '_Overall.json')
+                with open(overall_file, 'w', encoding='utf-8') as f:
+                    f.write(overall_json)
+                output_files['summarized_overall'] = overall_file
+                print(f"  🧩 整篇汇总总结完成: {os.path.basename(overall_file)}")
+            except Exception as e:
+                print(f"⚠️ 整篇汇总总结失败: {e}")
         
         return output_files
 
