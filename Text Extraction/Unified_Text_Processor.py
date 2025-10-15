@@ -11,9 +11,10 @@ class UnifiedTextProcessor:
     统一的文本处理类，整合所有文本处理功能
     """
     
-    def __init__(self, model_name='nous-hermes-llama2-13b.Q4_0.gguf', model_path='models/'):
+    def __init__(self, model_name='nous-hermes-llama2-13b.Q4_0.gguf', model_path='models/', strict=False):
         self.model_name = model_name
         self.model_path = model_path
+        self.strict = strict  # 严格使用指定模型（失败不回退）
         self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
         self.model = self.load_llm_model() # 在初始化时只加载一次
         # 角色扮演，系统指令扮演专家助理角色
@@ -41,7 +42,26 @@ class UnifiedTextProcessor:
         # 获取绝对路径
         abs_model_path = os.path.abspath(self.model_path)
         print(f"🔍 尝试加载模型，路径: {abs_model_path}")
-        
+        # 严格模式：首选本地文件（models 目录）禁止下载；若未找到，再尝试默认缓存目录（仍禁止下载）
+        if self.strict:
+            strict_name = os.getenv('FCPD_STRICT_MODEL_NAME') or self.model_name
+            print(f"🔒 严格模式，目标模型: {strict_name}")
+            try:
+                # 首选 models 目录下本地文件（不下载）
+                model = GPT4All(strict_name, model_path=abs_model_path, allow_download=False)
+                print(f"✅ 成功加载(严格, 本地models目录) {strict_name} 模型")
+                return model
+            except Exception as e:
+                print(f"❌ 严格模式本地models目录加载失败: {e}")
+                try:
+                    # 再尝试默认缓存目录（不下载）
+                    model = GPT4All(strict_name, allow_download=False)
+                    print(f"✅ 成功加载(严格, 默认缓存目录) {strict_name} 模型")
+                    return model
+                except Exception as e2:
+                    print(f"❌ 严格模式默认缓存目录也失败: {e2}")
+                    raise e2
+
         try:
             # 首先尝试使用绝对路径加载指定模型
             model = GPT4All(self.model_name, model_path=abs_model_path, allow_download=False)
@@ -261,6 +281,18 @@ class UnifiedTextProcessor:
         使用LLM总结参数（已优化）
         """
         summarized = []
+
+        # Warmup 自检：先尝试生成少量token，失败则立刻中止，避免写入空文件
+        try:
+            warmup_prompt = self._create_prompt(user_prompt="Reply with OK only.", context="warmup")
+            warm = self.model.generate(prompt=warmup_prompt, max_tokens=8, temp=0.0)
+            print(f"🔥 Warmup output: [{warm}] (len={len(warm) if warm else 0})")
+            if not warm or not warm.strip():
+                print("⚠️ Warmup 返回空，但继续尝试正常总结（可能模型需要更长prompt或特定参数）")
+            else:
+                print("🔥 Summarize warmup passed.")
+        except Exception as e:
+            print(f"⚠️ Warmup generate 异常: {e}，但继续尝试正常总结")
         
         # 1. 定义一个清晰的用户指令，包含所有规则和Schema
         # user_prompt = (
@@ -328,8 +360,7 @@ class UnifiedTextProcessor:
             "}}"
         )
 
-        # 生成时降低随机性（移动到循环内前先注释旧误放位置）
-        # summarize_text = self.model.generate(prompt=full_prompt, max_tokens=512, temp=0.0, top_p=0.2)
+        # 生成时降低随机性
 
         for index, row in df.iterrows():
             content = row['content']
@@ -339,9 +370,8 @@ class UnifiedTextProcessor:
             
             try:
                 # 3. 使用 self.model 进行调用
-                # OLD: summarize_text = self.model.generate(prompt=full_prompt, max_tokens=512, temp=0.0, top_p=0.6)
-                # NEW: 更低随机性，便于严格JSON输出
-                summarize_text = self.model.generate(prompt=full_prompt, max_tokens=512, temp=0.0, top_p=0.2)
+                # NEW: 更低随机性，便于严格JSON输出；首轮验证将 max_tokens 降至 300
+                summarize_text = self.model.generate(prompt=full_prompt, max_tokens=300, temp=0.0, top_p=0.2)
                 txt = (summarize_text or "").strip()
                 # 轻后处理：若模型前后带说明文字，裁剪为最外层花括号包裹部分
                 start, end = txt.find("{"), txt.rfind("}")
@@ -474,7 +504,8 @@ def process_text_file_for_abstract(file_path):
     return list(result.values())[0]
 
 def process_text_file_for_summerized(file_path):
-    processor = UnifiedTextProcessor()
+    # 严格使用本地新版 Meta-Llama GGUF 进行总结（不回退）
+    processor = UnifiedTextProcessor(model_name='meta-llama-3.1-8b-instruct-q4_k_m-2.gguf', strict=True)
     result = processor.process_text_file_comprehensive(file_path, mode='summarize')
     return list(result.values())[0]
 
@@ -491,5 +522,11 @@ def process_text_file_for_abstract_meta_llama(file_path):
 
 def process_text_file_for_summerized_meta_llama(file_path):
     processor = UnifiedTextProcessor(model_name='Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf')
+    result = processor.process_text_file_comprehensive(file_path, mode='summarize')
+    return list(result.values())[0]
+
+# 严格：仅用 Meta-Llama 做 summarize，模型加载失败不回退
+def process_text_file_for_summerized_meta_llama_strict(file_path):
+    processor = UnifiedTextProcessor(model_name='Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf', strict=True)
     result = processor.process_text_file_comprehensive(file_path, mode='summarize')
     return list(result.values())[0]
