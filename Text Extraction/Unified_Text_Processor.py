@@ -432,21 +432,42 @@ class UnifiedTextProcessor:
         except Exception as e:
             print(f"⚠️ Overall warmup error: {e}（继续尝试）")
 
-        txt = self.model.generate(prompt=full_prompt, max_tokens=500, temp=0.0, top_p=0.2) or ""
-        txt = txt.strip()
+        raw = self.model.generate(prompt=full_prompt, max_tokens=500, temp=0.0, top_p=0.2) or ""
+        raw = raw.strip()
 
-        s, e = txt.find("{"), txt.rfind("}")
+        # 裁剪到最外层花括号
+        s, e = raw.find("{"), raw.rfind("}")
         if s != -1 and e != -1 and e > s:
-            txt = txt[s:e+1]
+            raw = raw[s:e+1]
+        # 清洗为合法JSON
+        cleaned = self._sanitize_json_text(raw)
 
+        # 校验
         try:
-            import json
-            json.loads(txt)
-        except Exception:
-            print("⚠️ Overall JSON看起来不合法，原样输出以便排查。")
+            json.loads(cleaned)
+            return cleaned
+        except Exception as _:
+            print("⚠️ Overall JSON清洗后仍不合法，回退输出原文本以便排查。")
+            return raw
+            
+    def _sanitize_json_text(self, text: str) -> str:
+        """
+        将可能含有注释/未加引号的键/尾随逗号的JSON样文本清洗为尽量合法的JSON字符串。
+        """
+        import re
+        s = text or ""
+        # 去除 // 行内注释
+        s = re.sub(r"//.*?(?=\n|$)", "", s)
+        # 去除 /* ... */ 注释
+        s = re.sub(r"/\*[\s\S]*?\*/", "", s)
+        # 修复未加引号的键: 在 { 或 , 之后出现的裸键名
+        s = re.sub(r"([\{,]\s*)([A-Za-z_][A-Za-z0-9_\-]*)\s*:\s*", r'\1"\2": ', s)
+        # 删除对象/数组中的尾随逗号
+        s = re.sub(r",\s*(\}|\])", r"\1", s)
+        # 去除多余空白
+        s = s.strip()
+        return s
 
-        return txt
-    
     def save_df_to_text(self, df, file_path, content_column='content'):
         """
         保存DataFrame到文本文件
@@ -554,13 +575,31 @@ class UnifiedTextProcessor:
             try:
                 overall_input = df_abstract if 'df_abstract' in locals() else (df_filtered if 'df_filtered' in locals() else df)
                 overall_json = self.summarize_document_overall(overall_input)
-                overall_file = file_path.replace('.txt', '_Overall.json')
+                overall_file = file_path.replace('.txt', '_Overall.txt')
                 with open(overall_file, 'w', encoding='utf-8') as f:
                     f.write(overall_json)
                 output_files['summarized_overall'] = overall_file
                 print(f"  🧩 整篇汇总总结完成: {os.path.basename(overall_file)}")
             except Exception as e:
                 print(f"⚠️ 整篇汇总总结失败: {e}")
+            
+            # 清理中间文件，只保留最终的 _Summarized.txt 和 _Overall.txt
+            intermediate_files = []
+            base_path = file_path.replace('.txt', '')
+            
+            # 可能的中间文件
+            intermediate_files.append(file_path.replace('.txt', '_Filtered.txt'))
+            intermediate_files.append(file_path.replace('.txt', '_Abstract.txt'))
+            intermediate_files.append(file_path.replace('.txt', '_Summarized.tsv'))
+            intermediate_files.append(file_path.replace('.txt', '_Summarized.md'))
+            
+            for f in intermediate_files:
+                if os.path.exists(f):
+                    try:
+                        os.remove(f)
+                        print(f"  🗑️  已删除中间文件: {os.path.basename(f)}")
+                    except Exception as e:
+                        print(f"  ⚠️  删除失败 {os.path.basename(f)}: {e}")
         
         return output_files
 
