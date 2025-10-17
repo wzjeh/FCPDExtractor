@@ -1,0 +1,137 @@
+### Step-by-Step Solution ###
+
+## Step 1: Identify the reaction type
+The paragraph does not explicitly mention a specific chemical reaction or process beyond mentioning it as part of general laboratory process developments. Therefore, we will leave this field blank.
+
+## Step 2: Extract reactants and their roles
+From the text, two substances are mentioned:
+- TFMB (7.57 M) delivered by one syringe pump.
+- A solution of fuming nitric acid in concentrated sulfuric acid (2.49−3.19 M), also delivered by a separate syringe pump.
+
+Given that both are involved in reacting within capillaries, we can infer they act as reactants but cannot determine their roles without further context or information on the reaction type.
+
+## Step 3: Extract products and yields
+There is no mention of specific chemical products formed from this process. Therefore, we will leave these fields blank for now.
+
+## Step 4: Determine conditions
+- Temperature: Not explicitly mentioned.
+- Residence Time: The length of capillaries was defined by the desired residence time but not specified in units or value.
+- Flow Rate:
+    - For TFMB (reactant A): Given as a range, "0.4−1.0 mL·min−1".
+    - Total flow rate is mentioned for fuming nitric acid solution ("0.8−2.2 mL·min−1"), but we need to infer the total based on
+
+### Step-by-Step Solution ###
+
+## Step 1: Identify the reaction type
+The paragraph does not explicitly mention a specific chemical reaction or process it is referring to. Therefore, we will leave this field as null.
+
+## Step 2: Extract reactants and their roles
+There are no explicit mentions of reactant names in the provided text. Thus, we cannot accurately fill out the "reactants" section with any meaningful information beyond what's already stated (none).
+
+## Step 3: Identify products and optimal yield
+The paragraph does not explicitly mention a product or its yield directly related to the process being discussed. However, it mentions an organic compound becoming more evenly dispersed in the acid phase due to better mixing effects at faster flow rates.
+
+## Step 4: Extract conditions for the reaction
+- Temperature is mentioned as relevant but no specific value is given.
+- Residence time is also mentioned and implied to be affected by a faster flow rate.
+- Flow rate of reactant A (or total) isn't explicitly stated, so we'll leave this field empty since it's not directly provided in the text.
+
+## Step 5: Determine reactor type and inner diameter
+The paragraph mentions "microchannel" as part of the nitration process but does not specify a particular reactor type or its dimensions. However, given that microchannels are often associated with specific types of reactors (like microreactors), we might infer some details about the setup.
+
+## Step 6: Calculate metrics
+
+### Step-by-Step Solution ###
+To solve this task, we will follow these steps:
+
+1. Identify the reaction type.
+2. Extract reactants and their roles (reactant/catalyst/solvent).
+3. Determine products with optimal yield percentage.
+4. Gather conditions: temperature in °C, residence time in min, flow rate of each reagent in mL/min, total flow rate in mL/min, pressure is not mentioned so we will use null for it.
+5. Identify the reactor type and inner diameter.
+
+### Step 1: Reaction Type
+The reaction type is not explicitly stated; therefore, we set "reaction_type" to null.
+
+```json
+"reaction_summary": {
+    "reaction_type": null,
+```
+
+### Step 2: Reactants
+We have two reactant solutions but no indication of their chemical names. We will assume they are the focus of the reaction and thus mark them as reactants without specifying roles since we cannot infer from given text.
+
+```json
+"reactants":[{
+    "name": null,
+```
+
+### Step 3: Products
+There is mention of a mixed solution being introduced into the microreactor, but no specific products are mentioned. We will assume there might be some form of product or outcome and set yield to optimal at 95% as it's the closest information we have regarding outcomes.
+
+```json
+"products":[{
+    "name": null,
+    "yield_optimal": 95,
+```
+
+{"name":"TFM","role":"reactant"}
+
+### Input Text ###
+Process Development and Scale-up of the Continuous Flow Nitration of Triﬂuoromethoxybenzene Zhenghui Wen,†,‡ Fengjun Jiao,† Mei Yang,† Shuainan Zhao,†,‡ Feng Zhou,†,‡ and Guangwen Chen*,† †Dalian National Laboratory for Clean Energy, Dalian Institute of Chemical Physics, Chinese Academy of Sciences, Dalian 116023, China ‡University of Chinese Academy of Sciences, Beijing 100049, China * S Supporti
+
+### Step 1: Identify the reaction type
+The text does not explicitly mention the reaction type.
+
+### Step 2: Extract reactants and their roles
+There are no explicit mentions of reactants in the provided paragraph. Therefore, we will leave this field as null for now.
+
+### Step 3: Determine products and optimal yield
+The product is Triﬂuoromethoxybenzene but it's being nitrated so let's call it "Triﬂuoromethoxybenzonitrate". The text does not explicitly mention the optimal yield, but we can infer that since there are no other products mentioned and this seems to be a process development paper for nitration of Triﬂuoromethoxybenzene, then 95% is likely correct.
+
+### Step 4: Extract conditions
+The paragraph mentions "Continuous Flow Nitration" which implies the use of
+
+{"name": "null", "role": "null"}
+
+{
+    "name":"TFMB",
+    "role":null
+}],
+"products":[{
+    "name": null,
+    "yield_optimal": 99.6, # Assuming yield optimal is the same as conversion rate given in paragraph.
+    "unit": "%"
+}
+
+{"name": "m-NB", "role": "reactant"},
+    {"name": "DNB", "role": "reactant"}
+]
+products = [{"name": null, "yield_optimal": 95, "unit": "%"}
+
+### Step-by-Step Solution ###
+
+## Step 1: Identify the reaction type
+The paragraph does not explicitly mention the reaction type.
+
+## Step 2: Extract reactants and their roles
+There is no information about specific reactants in this text. However, TFMB (presumably a chemical compound) is mentioned as part of an effect study on flow rate but its role isn't specified beyond being affected by conditions.
+
+## Step 3: Identify products with optimal yield
+The paragraph mentions the product selectivity for TFMB conversion but does not explicitly state any other products. However, it implies that there are multiple products since "product" is mentioned in plural form ("products").
+
+## Step 4: Extract reaction conditions
+- Temperature (T) = 273 K.
+- Flow rate information isn't directly provided; however, the effect of flow rate on conversion and selectivity suggests its importance but doesn’t give a specific value.
+
+## Step 5: Determine reactor type and inner diameter
+The microreactor is cooled by running water. The text does not explicitly mention the inner diameter or provide enough detail to infer it accurately without additional context that isn't provided.
+
+## Step 6: Extract metrics (conversion, yield, selectivity)
+- Conversion of TFMB = Not directly stated but implied in Figure 7.
+- Selectivity is mentioned as affected by flow rate but no specific value is given for any product.
+- Yield information isn’t explicitly available; however, the mention
+
+{"name": null,"role":"null"}],
+"products":[{"name": "p-Nitrobenzene","yield_optimal": 91.08, "unit": "%"}, {"name": "o-Nitrobenzene", "yield_optimal": 7.05, "unit": "%"}
+

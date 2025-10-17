@@ -584,39 +584,94 @@ class UnifiedTextProcessor:
                 print(f"⚠️ 整篇汇总总结失败: {e}")
             
             # 清理中间文件，只保留最终的 _Summarized.txt 和 _Overall.txt
+            print("\n🗑️  清理中间文件...")
             intermediate_files = []
-            base_path = file_path.replace('.txt', '')
             
-            # 可能的中间文件
-            intermediate_files.append(file_path.replace('.txt', '_Filtered.txt'))
-            intermediate_files.append(file_path.replace('.txt', '_Abstract.txt'))
-            intermediate_files.append(file_path.replace('.txt', '_Summarized.tsv'))
-            intermediate_files.append(file_path.replace('.txt', '_Summarized.md'))
+            # 获取文件所在目录和基础文件名
+            file_dir = os.path.dirname(file_path)
+            # 从文件名中提取原始PDF基础名（移除 Embedding_ 前缀和所有后缀）
+            file_name = os.path.basename(file_path)
+            if file_name.startswith('Embedding_'):
+                file_base = file_name.replace('Embedding_', '').split('_Filtered')[0].split('_Abstract')[0].split('.txt')[0]
+            else:
+                file_base = file_name.replace('.txt', '')
             
+            # 需要删除的所有中间文件（按处理流程顺序）
+            # 1. 原始PDF转文本
+            intermediate_files.append(os.path.join(file_dir, f"{file_base}.txt"))
+            intermediate_files.append(os.path.join(file_dir, f"{file_base}_other.txt"))
+            
+            # 2. 文本预处理
+            intermediate_files.append(os.path.join(file_dir, f"Processed_{file_base}.txt"))
+            
+            # 3. 嵌入相似度筛选
+            intermediate_files.append(os.path.join(file_dir, f"Embedding_{file_base}.txt"))
+            
+            # 4. LLM内容过滤
+            intermediate_files.append(os.path.join(file_dir, f"Embedding_{file_base}_Filtered.txt"))
+            
+            # 5. 文本抽象
+            intermediate_files.append(os.path.join(file_dir, f"Embedding_{file_base}_Filtered_Abstract.txt"))
+            
+            # 6. 总结表格文件
+            intermediate_files.append(os.path.join(file_dir, f"Embedding_{file_base}_Filtered_Abstract_Summarized.tsv"))
+            intermediate_files.append(os.path.join(file_dir, f"Embedding_{file_base}_Filtered_Abstract_Summarized.md"))
+            
+            # 删除中间文件
+            deleted_count = 0
             for f in intermediate_files:
                 if os.path.exists(f):
                     try:
                         os.remove(f)
-                        print(f"  🗑️  已删除中间文件: {os.path.basename(f)}")
+                        print(f"    ✓ 已删除: {os.path.basename(f)}")
+                        deleted_count += 1
                     except Exception as e:
-                        print(f"  ⚠️  删除失败 {os.path.basename(f)}: {e}")
+                        print(f"    ✗ 删除失败 {os.path.basename(f)}: {e}")
+            
+            if deleted_count > 0:
+                print(f"  🎉 清理完成，删除了 {deleted_count} 个中间文件")
+            
+            # 显示保留的最终文件
+            print(f"\n📦 最终保留文件:")
+            if 'summarized' in output_files:
+                print(f"  • {os.path.basename(output_files['summarized'])} (详细总结)")
+            if 'summarized_overall' in output_files:
+                print(f"  • {os.path.basename(output_files['summarized_overall'])} (整篇汇总)")
         
         return output_files
 
 # 兼容性函数
-def process_text_file_for_filter(file_path):
-    processor = UnifiedTextProcessor()
+def process_text_file_for_filter(file_path, model_name='nous-hermes-llama2-13b.Q4_0.gguf'):
+    """
+    LLM内容过滤函数
+    Args:
+        file_path: 要处理的文件路径
+        model_name: 使用的LLM模型名称
+    """
+    processor = UnifiedTextProcessor(model_name=model_name)
     result = processor.process_text_file_comprehensive(file_path, mode='filter')
     return list(result.values())[0]
 
-def process_text_file_for_abstract(file_path):
-    processor = UnifiedTextProcessor()
+def process_text_file_for_abstract(file_path, model_name='nous-hermes-llama2-13b.Q4_0.gguf'):
+    """
+    文本抽象函数
+    Args:
+        file_path: 要处理的文件路径
+        model_name: 使用的LLM模型名称
+    """
+    processor = UnifiedTextProcessor(model_name=model_name)
     result = processor.process_text_file_comprehensive(file_path, mode='abstract')
     return list(result.values())[0]
 
-def process_text_file_for_summerized(file_path):
-    # 严格使用本地新版 Meta-Llama GGUF 进行总结（不回退）
-    processor = UnifiedTextProcessor(model_name='meta-llama-3.1-8b-instruct-q4_k_m-2.gguf', strict=True)
+def process_text_file_for_summerized(file_path, model_name='meta-llama-3.1-8b-instruct-q4_k_m-2.gguf', strict=True):
+    """
+    参数总结函数
+    Args:
+        file_path: 要处理的文件路径
+        model_name: 使用的LLM模型名称
+        strict: 是否严格使用指定模型（不回退）
+    """
+    processor = UnifiedTextProcessor(model_name=model_name, strict=strict)
     result = processor.process_text_file_comprehensive(file_path, mode='summarize')
     return list(result.values())[0]
 

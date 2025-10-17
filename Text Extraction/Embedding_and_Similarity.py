@@ -19,8 +19,10 @@ def add_embedding_and_cosine_similarity(df, fixed_text):
     return df
 
 def select_top_neighbors(df):
+    # 从环境变量读取 Top-N 配置，默认为 10
+    top_n = int(os.getenv('FCPD_TOP_N', '10'))
     df = df.sort_values('similarity', ascending=False)
-    top_neighbors = df.head(10) # 原来是 10，现在改成 30。选更多段落
+    top_neighbors = df.head(top_n)
     return top_neighbors
 
 

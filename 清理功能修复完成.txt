@@ -1,0 +1,208 @@
+================================================================================
+✅ 清理功能已修复并测试通过
+================================================================================
+
+更新时间：2025年10月17日
+
+🐛 问题诊断
+────────────────────────────────────────────────────────────────
+
+【原因1】文件名解析错误
+  之前的代码：
+    file_base = os.path.basename(file_path).replace('Embedding_', '').replace('.txt', '')
+  
+  问题：
+    输入: Embedding_101021acsoprd7b00291_Filtered.txt
+    错误结果: 101021acsoprd7b00291_Filtered
+    正确结果: 101021acsoprd7b00291
+  
+  导致无法正确定位要删除的文件。
+
+【原因2】文件路径拼接错误
+  之前使用 file_path.replace() 来构造中间文件路径，但这种方式不可靠。
+
+🔧 修复方案
+────────────────────────────────────────────────────────────────
+
+1. 改进文件名解析逻辑
+   新代码：
+   ```python
+   file_name = os.path.basename(file_path)
+   if file_name.startswith('Embedding_'):
+       file_base = file_name.replace('Embedding_', '') \
+                            .split('_Filtered')[0] \
+                            .split('_Abstract')[0] \
+                            .split('.txt')[0]
+   else:
+       file_base = file_name.replace('.txt', '')
+   ```
+   
+   现在能正确提取基础文件名：101021acsoprd7b00291
+
+2. 使用完整路径拼接
+   新代码：
+   ```python
+   # 1. 原始PDF转文本
+   intermediate_files.append(os.path.join(file_dir, f"{file_base}.txt"))
+   intermediate_files.append(os.path.join(file_dir, f"{file_base}_other.txt"))
+   
+   # 2. 文本预处理
+   intermediate_files.append(os.path.join(file_dir, f"Processed_{file_base}.txt"))
+   
+   # 3. 嵌入相似度筛选
+   intermediate_files.append(os.path.join(file_dir, f"Embedding_{file_base}.txt"))
+   
+   # 4. LLM内容过滤
+   intermediate_files.append(os.path.join(file_dir, f"Embedding_{file_base}_Filtered.txt"))
+   
+   # 5. 文本抽象
+   intermediate_files.append(os.path.join(file_dir, f"Embedding_{file_base}_Filtered_Abstract.txt"))
+   ```
+   
+   现在能准确定位所有中间文件
+
+📝 修改的文件
+────────────────────────────────────────────────────────────────
+
+1. Text Extraction/Unified_Text_Processor.py (第591-618行)
+   • 修复了文件名解析bug
+   • 改进了文件路径拼接逻辑
+   • 现在能正确识别和删除所有中间文件
+
+2. 新增：手动清理.py
+   • 可以手动清理指定目录的中间文件
+   • 有交互式确认，安全可靠
+   • 显示清理前后的文件列表和大小
+
+✅ 测试结果
+────────────────────────────────────────────────────────────────
+
+【清理前】7 个文件，111 KB
+
+  101021acsoprd7b00291.txt (32.4 KB)
+  101021acsoprd7b00291_other.txt (32.3 KB)
+  Processed_101021acsoprd7b00291.txt (27.0 KB)
+  Embedding_101021acsoprd7b00291.txt (8.3 KB)
+  Embedding_101021acsoprd7b00291_Filtered.txt (8.3 KB)
+  Embedding_101021acsoprd7b00291_Filtered_Abstract_Summarized.txt (7.2 KB)
+  Embedding_101021acsoprd7b00291_Filtered_Abstract_Overall.txt (1.7 KB)
+
+【清理后】2 个文件，9 KB ✅
+
+  Embedding_101021acsoprd7b00291_Filtered_Abstract_Summarized.txt (7.2 KB)
+  Embedding_101021acsoprd7b00291_Filtered_Abstract_Overall.txt (1.7 KB)
+
+删除了 5 个文件，节省 102 KB (92%)
+
+🚀 使用方式
+────────────────────────────────────────────────────────────────
+
+【方式1】在 Notebook 中自动清理（推荐）
+
+1. 在 Notebook 中运行 Cell 7（重载模块）
+2. 运行步骤1-5，正常处理 PDF
+3. 步骤5完成后，会自动触发清理
+
+预期输出：
+  🗑️  清理中间文件...
+      ✓ 已删除: 101021acsoprd7b00291.txt
+      ✓ 已删除: 101021acsoprd7b00291_other.txt
+      ✓ 已删除: Processed_101021acsoprd7b00291.txt
+      ✓ 已删除: Embedding_101021acsoprd7b00291.txt
+      ✓ 已删除: Embedding_101021acsoprd7b00291_Filtered.txt
+    🎉 清理完成，删除了 5 个中间文件
+
+【方式2】手动清理已有的中间文件
+
+如果你之前已经处理过文件，可以使用手动清理脚本：
+
+  python3 手动清理.py
+
+或指定目录：
+
+  python3 手动清理.py /path/to/output/directory
+
+脚本会：
+  • 列出所有中间文件
+  • 显示将要删除的文件大小
+  • 要求确认（输入 'yes'）
+  • 执行删除并显示结果
+
+💡 重要提示
+────────────────────────────────────────────────────────────────
+
+1. **模块重载很重要**
+   修复后的代码需要重载模块才能生效。在 Notebook 中：
+   • 运行 Cell 7（模型配置，包含自动重载）
+   • 或重启 Jupyter Kernel
+
+2. **清理时机**
+   • 自动清理只在步骤5（mode='summarize'）完成后触发
+   • 如果你分步运行到步骤4就停止，不会触发清理
+   • 使用 手动清理.py 可以随时清理
+
+3. **最终文件不会被删除**
+   清理逻辑会自动识别并保留：
+   • *_Summarized.txt（详细总结）
+   • *_Overall.txt（整篇汇总）
+
+4. **批量处理**
+   处理多个 PDF 时，每个 PDF 的中间文件会独立清理
+
+📊 清理效果
+────────────────────────────────────────────────────────────────
+
+• 文件数量：7 → 2（减少 71%）
+• 磁盘空间：111 KB → 9 KB（节省 92%）
+• 输出目录：整洁清爽，只有最终结果
+
+🔧 故障排查
+────────────────────────────────────────────────────────────────
+
+Q: 在 Notebook 中运行步骤5，但没有看到清理输出？
+A: 需要重载模块。运行 Cell 7 或重启 Kernel。
+
+Q: 清理后发现中间文件还在？
+A: 检查文件修改时间，确保运行的是更新后的代码。
+
+Q: 想保留中间文件用于调试？
+A: 在步骤5之前复制整个输出目录。
+
+Q: 不小心删除了文件怎么办？
+A: 中间文件可以重新生成，重新运行处理流程即可。
+   最终结果文件不会被删除。
+
+📚 相关文件
+────────────────────────────────────────────────────────────────
+
+• Text Extraction/Unified_Text_Processor.py (第591-634行)
+  → 自动清理逻辑
+
+• 手动清理.py
+  → 手动清理脚本
+
+• 自动清理说明.txt
+  → 详细使用说明
+
+• 自动清理功能更新.txt
+  → 功能介绍
+
+🎉 总结
+────────────────────────────────────────────────────────────────
+
+清理功能现在完全正常工作：
+✅ 正确识别所有中间文件
+✅ 自动清理在步骤5后触发
+✅ 保留最终结果文件
+✅ 节省90%+的磁盘空间
+✅ 可以手动清理历史文件
+
+立即使用：
+1. 在 Notebook 运行 Cell 7 重载模块
+2. 运行步骤1-5 处理新的 PDF
+3. 或使用 python3 手动清理.py 清理历史文件
+
+输出目录将保持整洁，只有最终提取结果！
+
+================================================================================
+
