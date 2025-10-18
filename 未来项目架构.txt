@@ -1,0 +1,236 @@
+目前的代码 (UnifiedTextProcessor) 将文本处理逻辑和具体的模型调用（GPT4All）紧密地耦合在了一起。要同时支持本地模型和在线API，最关键的一步是引入一个“模型接口”的抽象层。
+
+推荐的新项目架构
+
+我们可以将项目划分为以下几个核心模块：
+
+
+
+FCPDExtractor/
+│
+├── main.py                     # 1. 主程序入口 (处理命令行参数，协调流程)
+│
+├── config.yaml / config.py     # 2. 配置文件 (模型选择, API密钥, 路径等)
+│
+├── core/                       # 核心处理逻辑
+│   ├── __init__.py
+│   ├── processor.py            # 3. UnifiedTextProcessor (只负责流程编排)
+│   ├── text_utils.py           # 4. 文本工具 (PDF解析, 段落分割, 清洗)
+│   └── models/                 # 5. 模型抽象层
+│       ├── __init__.py
+│       ├── base_llm.py         #    - 定义模型接口 (BaseLLM)
+│       ├── local_llm.py        #    - GPT4All 的实现 (LocalLLM)
+│       └── gemini_llm.py       #    - Gemini API 的实现 (GeminiLLM)
+│
+├── data/                       # 数据文件夹 (保持不变)
+│   ├── papers/                 #    - 原始PDF
+│   ├── output/                 #    - 处理结果
+│   └── ground_truth/           # 6. 新增：存放人工标注的“标准答案”
+│
+├── evaluation/                 # 7. 新增：评估模块
+│   ├── __init__.py
+│   └── metrics.py              #    - 计算 F1, Precision, Recall 的逻辑
+│
+└── requirements.txt            # 项目依赖
+└── README.md                   # 项目说明
+
+
+
+关键模块详解与修改建议
+
+
+1. main.py (主程序入口)
+
+职责:
+使用 argparse 解析命令行参数，例如：
+--input_dir: 指定 papers 文件夹路径。
+--output_dir: 指定 output 文件夹路径。
+--limit: 限制处理的文件数量（例如 --limit 5 只处理前5个）。
+--model: 选择要使用的模型 (local 或 gemini)。
+--mode: 选择运行模式 (filter, abstract, summarize, comprehensive, evaluate)。
+读取配置文件 (config)。
+根据 --model 参数，实例化正确的模型实现 (LocalLLM 或 GeminiLLM)。
+实例化 UnifiedTextProcessor，并将模型实例注入进去。
+遍历 --input_dir 下的PDF文件（根据 --limit 限制）。
+对每个文件，调用 processor 的方法执行相应任务。
+如果模式是 evaluate，则调用评估模块。
+修改: 需要重写或大幅修改您当前的执行脚本，使其具备上述功能。
+
+2. config.yaml / config.py (配置文件)
+
+职责: 集中管理所有可配置项，避免硬编码。
+内容示例 (config.yaml):
+YAML
+model_choice: local # 'local' or 'gemini'
+
+local_model:
+  name: 'Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf'
+  path: 'models/'
+
+gemini_api:
+  # !! 不要直接写在这里，使用环境变量 !!
+  api_key_env_var: 'GOOGLE_API_KEY' 
+  model_name: 'gemini-1.5-flash' # 或其他您想用的Gemini模型
+
+paths:
+  papers_dir: 'data/papers'
+  output_dir: 'data/output'
+  ground_truth_dir: 'data/ground_truth'
+
+evaluation:
+  metrics: ['precision', 'recall', 'f1']
+
+
+注意: API密钥绝不能直接写在代码或配置文件里。最佳实践是存储在环境变量中，然后在代码里读取环境变量。
+
+3. core/processor.py (UnifiedTextProcessor)
+
+职责: 只负责定义和执行处理流程（过滤->抽象->总结），不再关心具体用的是哪个模型。
+关键修改:
+__init__ 方法需要接收一个模型实例 (llm_instance) 作为参数，而不是自己去加载模型。
+Python
+class UnifiedTextProcessor:
+    def __init__(self, llm_instance):
+        self.llm = llm_instance # 不再是 self.model
+        self.embedding_model = SentenceTransformer(...)
+        # 不再需要 system_prompt 和 _create_prompt，这些由模型封装类处理
+
+
+所有原来调用 self.model.generate() 的地方，改为调用 self.llm.generate()。
+load_llm_model() 函数可以移除。
+_create_prompt() 函数可以移除（Prompt构建逻辑移到模型封装类中）。
+
+4. core/text_utils.py (文本工具)
+
+职责: 将所有与文本处理相关的、不依赖LLM的功能集中到这里。
+内容:
+PDF文本提取函数（使用 PyMuPDF 或其他库）。
+段落分割函数（您现在的实现就很好）。
+文本清洗函数（去除页眉页脚、处理断行等）。
+您原来的 _extract_with_regex, _bullets_to_row, _save_summary_tables 这些后处理函数也应该放在这里。
+
+5. core/models/ (模型抽象层 - 核心改动)
+
+base_llm.py: 定义一个抽象基类或接口。
+Python
+from abc import ABC, abstractmethod
+
+class BaseLLM(ABC):
+    @abstractmethod
+    def generate(self, prompt: str, **kwargs) -> str:
+        """接收Prompt，返回模型生成的文本"""
+        pass
+
+
+local_llm.py: 实现本地模型接口。
+Python
+from gpt4all import GPT4All
+from .base_llm import BaseLLM
+
+class LocalLLM(BaseLLM):
+    def __init__(self, model_name, model_path):
+        # ... 这里是您原来的 load_llm_model 逻辑 ...
+        self.model = GPT4All(...) 
+        # 可以在这里定义 system_prompt
+        self.system_prompt = "..." 
+
+    def _create_prompt(self, user_prompt, context=""):
+        # ... 您原来的 _create_prompt 逻辑 ...
+        return f"{self.system_prompt}..."
+
+    def generate(self, prompt: str, context: str = "", **kwargs) -> str:
+        full_prompt = self._create_prompt(user_prompt=prompt, context=context)
+        # 从 kwargs 获取 max_tokens, temp 等参数
+        max_tokens = kwargs.get('max_tokens', 256) 
+        temp = kwargs.get('temp', 0.0)
+        # ... 调用 self.model.generate ...
+        response = self.model.generate(prompt=full_prompt, max_tokens=max_tokens, temp=temp, ...)
+        return response
+
+
+gemini_llm.py: 实现Gemini API接口。
+Python
+import google.generativeai as genai
+import os
+from .base_llm import BaseLLM
+
+class GeminiLLM(BaseLLM):
+    def __init__(self, api_key_env_var, model_name):
+        api_key = os.getenv(api_key_env_var)
+        if not api_key:
+            raise ValueError(f"Environment variable {api_key_env_var} not set.")
+        genai.configure(api_key=api_key)
+        self.model = genai.GenerativeModel(model_name)
+        # Gemini 通常通过 content=[{'role':'user', 'parts':...}] 传递系统指令和用户指令
+        # 您可能需要调整 Prompt 构建方式
+
+    def generate(self, prompt: str, context: str = "", **kwargs) -> str:
+        # --- 构建 Gemini 需要的 Prompt 格式 ---
+        # 这部分需要参考 Gemini 的文档来精确构建
+        # 可能类似: full_prompt = f"Context:\n{context}\n\nTask:\n{prompt}"
+
+        # 从 kwargs 获取 Gemini 特定的参数
+        temperature = kwargs.get('temp', 0.0) 
+        max_output_tokens = kwargs.get('max_tokens', 512)
+
+        try:
+            response = self.model.generate_content(
+                # full_prompt, # 传递构建好的Prompt
+                # generation_config=genai.types.GenerationConfig(
+                #     temperature=temperature,
+                #     max_output_tokens=max_output_tokens
+                # )
+                # --- 请根据 Gemini Python SDK 文档更新此处的调用方式 ---
+            )
+            # --- 解析 Gemini 的响应 ---
+            # return response.text 
+        except Exception as e:
+            print(f"Error calling Gemini API: {e}")
+            return f"Error: {e}" 
+
+
+
+6. data/ground_truth/ (标准答案)
+
+职责: 存放您手动为一部分PDF文件创建的、完美的结构化数据（例如，与summarize输出格式一致的JSON或TSV文件）。这是进行自动化评估的基础。
+
+7. evaluation/metrics.py (评估模块)
+
+职责: 对比模型输出和标准答案，计算性能指标。
+内容:
+load_ground_truth(file_path): 加载标准答案文件。
+load_model_output(file_path): 加载模型生成的总结文件（可能需要调用 _bullets_to_row 将要点转换为字典）。
+calculate_metrics(ground_truth_data, model_output_data):
+逐个字段对比两个字典。
+对于每个字段，统计 TP (真阳性 - 模型提取正确), FP (假阳性 - 模型提取错误或多余), FN (假阴性 - 模型漏掉)。
+计算每个字段的 Precision, Recall, F1 Score。
+计算宏平均 (Macro Average) 或微平均 (Micro Average) F1 分数作为总体性能指标。
+
+## 新的工作流程
+
+准备: 在 config 文件中配置好模型选择、API密钥环境变量、文件路径等。手动创建好 ground_truth 数据。
+运行: 在终端执行 python main.py --model gemini --limit 10 --mode comprehensive (或其他参数组合)。
+主程序 main.py:
+读取配置。
+实例化 GeminiLLM (或 LocalLLM)。
+实例化 UnifiedTextProcessor，传入LLM实例。
+找到 data/papers 下的前10个PDF。
+对每个PDF：
+调用 text_utils 提取文本、分割段落。
+调用 processor.filter_content_with_llm (内部使用 gemini_llm.generate)。
+调用 processor.abstract_text_with_llm。
+调用 processor.summarize_parameters_with_llm。
+调用 text_utils._save_summary_tables 保存结果。
+评估 (如果 --mode evaluate):
+main.py 调用 evaluation/metrics.py 中的函数。
+加载 data/output 中的模型结果和 data/ground_truth 中的标准答案。
+计算并打印 F1 分数等指标。
+
+## 总结
+
+这是一个比较大的架构重构，但它能带来巨大的好处：
+灵活性: 可以轻松切换本地和云端模型，甚至未来添加更多模型。
+可维护性: 每个模块职责单一，代码更清晰，更容易修改和调试。
+可扩展性: 添加新功能（如不同的后处理、新的评估指标）更加方便。
+专业性: 这是构建一个健壮、可量化的数据提取系统的标准方法。
+这个过程可能会遇到挑战，但每解决一个问题，您的项目就会变得更强大。祝您重构顺利！

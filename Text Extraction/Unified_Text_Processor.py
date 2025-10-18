@@ -398,29 +398,34 @@ class UnifiedTextProcessor:
         col = 'abstract' if 'abstract' in df_abstract.columns else 'content'
         texts = [t for t in df_abstract[col].fillna("").tolist() if t.strip()]
         combined = "\n\n".join(texts)
-        if len(combined) > 8000:
-            combined = combined[:8000]
+        # 增加输入文本长度限制
+        if len(combined) > 12000:
+            combined = combined[:12000]
 
+        # 极简 prompt，直接命令输出 JSON
         user_prompt = (
-            "You will be given multiple paragraph-level abstracts of a single paper (flow chemistry).\n"
-            "Aggregate them into ONE consolidated JSON object that captures the overall best/representative conditions.\n"
-            "- Use only info present in the abstracts (do not invent).\n"
-            "- If multiple values exist, prefer ones explicitly marked as optimal/best; otherwise pick those associated with highest performance (yield/conversion/selectivity).\n"
-            "- Keep units as-is when present.\n"
-            "Output ONLY the JSON (no extra text):\n"
-            "{ \"reaction_summary\": {\n"
-            "  \"reaction_type\": \"...\",\n"
-            "  \"reactants\": [ {\"name\": \"...\", \"role\": \"reactant|catalyst|solvent\"} ],\n"
-            "  \"products\": [ {\"name\": \"...\", \"yield_optimal\": 95, \"unit\": \"%\"} ],\n"
-            "  \"conditions\": [\n"
-            "     {\"type\": \"temperature\", \"value\": \"...\"},\n"
-            "     {\"type\": \"residence_time\", \"value\": \"...\"},\n"
-            "     {\"type\": \"flow_rate_total\", \"value\": \"...\"},\n"
-            "     {\"type\": \"pressure\", \"value\": \"...\"}\n"
-            "  ],\n"
-            "  \"reactor\": {\"type\": \"...\", \"inner_diameter\": \"...\"},\n"
-            "  \"metrics\": {\"conversion\": ..., \"yield\": ..., \"selectivity\": ..., \"unit\": \"%\"}\n"
-            "} }\n"
+            "Extract flow chemistry parameters and output as ONE JSON object.\n\n"
+            "CRITICAL RULES:\n"
+            "- Output ONLY valid JSON - NO explanations, NO steps, NO markdown, NO comments\n"
+            "- Do NOT write '### Step' or '```json' or any text outside JSON\n"
+            "- Start directly with { and end with }\n"
+            "- Use null for unknown fields (not \"...\" or \"not mentioned\")\n"
+            "- Prefer best/optimal conditions when multiple values exist\n\n"
+            "JSON format:\n"
+            '{"reaction_summary": {\n'
+            '  "reaction_type": "string or null",\n'
+            '  "reactants": [{"name": "string", "role": "reactant|catalyst|solvent"}],\n'
+            '  "products": [{"name": "string", "yield_optimal": number, "unit": "%"}],\n'
+            '  "conditions": [\n'
+            '    {"type": "temperature", "value": "string or null"},\n'
+            '    {"type": "residence_time", "value": "string or null"},\n'
+            '    {"type": "flow_rate_total", "value": "string or null"},\n'
+            '    {"type": "pressure", "value": "string or null"}\n'
+            '  ],\n'
+            '  "reactor": {"type": "string or null", "inner_diameter": "string or null"},\n'
+            '  "metrics": {"conversion": number, "yield": number, "selectivity": number, "unit": "%"}\n'
+            "}}\n\n"
+            "Output JSON now:"
         )
 
         full_prompt = self._create_prompt(user_prompt=user_prompt, context=combined)
@@ -432,13 +437,44 @@ class UnifiedTextProcessor:
         except Exception as e:
             print(f"⚠️ Overall warmup error: {e}（继续尝试）")
 
-        raw = self.model.generate(prompt=full_prompt, max_tokens=500, temp=0.0, top_p=0.2) or ""
+        # 增加 max_tokens 确保输出完整
+        raw = self.model.generate(prompt=full_prompt, max_tokens=1200, temp=0.05, top_p=0.25) or ""
         raw = raw.strip()
+        
+        # 强力清洗：移除所有 markdown 代码块标记和步骤说明
+        import re
+        # 移除 ```json 和 ``` 标记
+        raw = re.sub(r'```json\s*', '', raw)
+        raw = re.sub(r'```\s*', '', raw)
+        # 移除 ### Step 开头的行
+        raw = re.sub(r'###\s+Step\s+\d+:.*?(?=\n|$)', '', raw, flags=re.MULTILINE)
+        # 移除其他 markdown 标题
+        raw = re.sub(r'###.*?(?=\n|$)', '', raw, flags=re.MULTILINE)
 
-        # 裁剪到最外层花括号
-        s, e = raw.find("{"), raw.rfind("}")
-        if s != -1 and e != -1 and e > s:
-            raw = raw[s:e+1]
+        # 提取最后一个完整的 JSON 对象（避免多个重复 JSON）
+        # 策略：找到所有 {...} 块，取最大最完整的一个
+        json_candidates = []
+        brace_count = 0
+        start_pos = -1
+        for i, char in enumerate(raw):
+            if char == '{':
+                if brace_count == 0:
+                    start_pos = i
+                brace_count += 1
+            elif char == '}':
+                brace_count -= 1
+                if brace_count == 0 and start_pos != -1:
+                    json_candidates.append(raw[start_pos:i+1])
+                    start_pos = -1
+        
+        # 选择最长的候选（通常是最完整的）
+        if json_candidates:
+            raw = max(json_candidates, key=len)
+        else:
+            # 回退到原始逻辑
+            s, e = raw.find("{"), raw.rfind("}")
+            if s != -1 and e != -1 and e > s:
+                raw = raw[s:e+1]
         # 清洗为合法JSON
         cleaned = self._sanitize_json_text(raw)
 
@@ -456,16 +492,36 @@ class UnifiedTextProcessor:
         """
         import re
         s = text or ""
-        # 去除 // 行内注释
+        
+        # 1. 移除所有非 JSON 的说明文字（如 "Note:", "Best regards" 等）
+        # 找到第一个 { 和最后一个 }，只保留这之间的内容
+        first_brace = s.find("{")
+        last_brace = s.rfind("}")
+        if first_brace != -1 and last_brace != -1 and last_brace > first_brace:
+            s = s[first_brace:last_brace+1]
+        
+        # 2. 去除 // 行内注释
         s = re.sub(r"//.*?(?=\n|$)", "", s)
-        # 去除 /* ... */ 注释
+        
+        # 3. 去除 /* ... */ 块注释
         s = re.sub(r"/\*[\s\S]*?\*/", "", s)
-        # 修复未加引号的键: 在 { 或 , 之后出现的裸键名
-        s = re.sub(r"([\{,]\s*)([A-Za-z_][A-Za-z0-9_\-]*)\s*:\s*", r'\1"\2": ', s)
-        # 删除对象/数组中的尾随逗号
+        
+        # 4. 修复未加引号的键
+        s = re.sub(r'([\{,]\s*)([A-Za-z_][A-Za-z0-9_\-]*)\s*:\s*', r'\1"\2": ', s)
+        
+        # 5. 删除对象/数组中的尾随逗号
         s = re.sub(r",\s*(\}|\])", r"\1", s)
-        # 去除多余空白
+        
+        # 6. 替换 ... 占位符为 null
+        s = re.sub(r':\s*"\.\.\."\s*([,\}])', r': null\1', s)
+        s = re.sub(r':\s*\.\.\.(\s*[,\}])', r': null\1', s)
+        
+        # 7. 修复可能的格式问题：确保数字不带引号
+        s = re.sub(r':\s*"(\d+\.?\d*)"\s*([,\}])', r': \1\2', s)
+        
+        # 8. 去除多余的空白和换行
         s = s.strip()
+        
         return s
 
     def save_df_to_text(self, df, file_path, content_column='content'):
