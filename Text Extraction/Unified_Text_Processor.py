@@ -524,6 +524,573 @@ class UnifiedTextProcessor:
         
         return s
 
+    def extract_influence_factors_with_llm(self, df):
+        """
+        Extract influence factors and their impact on metrics with optimized batch processing
+        
+        Args:
+            df: DataFrame with filtered/abstracted text content
+            
+        Returns:
+            str: Markdown table format
+        """
+        print("\n🔬 Extracting influence factors (optimized, relaxed)...")
+        
+        # Phase 1: Smart candidate selection with scoring
+        print("  📌 Phase 1: Intelligent candidate scoring...")
+        candidates = self._extract_influence_candidates(df)
+        
+        if not candidates:
+            print("  ⚠️ No candidate paragraphs found")
+            return "| Factor | Metric | Direction | Magnitude/Unit | Condition | Evidence |\n|--------|--------|-----------|----------------|-----------|----------|\n| None detected | - | - | - | - | - |"
+        
+        print(f"  ✓ Selected {len(candidates)} top-scored candidates")
+        
+        # 🐛 DEBUG: 显示前3个候选段落
+        print("\n  🐛 DEBUG - Top 3 candidates:")
+        for i, cand in enumerate(candidates[:3]):
+            print(f"    [{i}] Score={cand['score']}, Text preview: {cand['text'][:150]}...")
+        print()
+        
+        # Phase 2: Batch LLM extraction (reduce API calls)
+        print("  🤖 Phase 2: Batch LLM extraction...")
+        all_items = self._batch_extract_with_llm(candidates)
+        
+        if not all_items:
+            print("  ⚠️ LLM extraction produced no valid results")
+            return "| Factor | Metric | Relationship |\n|--------|--------|--------------||\n| Extraction failed | - | - |"
+        
+        print(f"  ✓ Extracted {len(all_items)} raw items")
+        
+        # Phase 3: Normalize, deduplicate, filter noise
+        print("  🔧 Phase 3: Normalizing and deduplicating...")
+        normalized_items = self._normalize_impact_items(all_items)
+        
+        print(f"  ✓ {len(normalized_items)} items after normalization")
+
+        # If still empty, try single-shot fallback (relaxed mode) with call limit guard
+        if not normalized_items:
+            import math
+            group_size = int(os.getenv('FCPD_IMPACT_GROUP_SIZE', '5'))
+            hard_limit = int(os.getenv('FCPD_IMPACT_HARD_LIMIT_CALLS', '3'))
+            relaxed = os.getenv('FCPD_IMPACT_RELAXED', 'true').lower() == 'true'
+            total_groups = math.ceil(len(candidates) / max(group_size, 1)) if candidates else 0
+            if relaxed and total_groups < hard_limit:
+                # Build a compact consolidated text from candidates (<= 1400 chars)
+                joined = []
+                used = 0
+                for c in candidates:
+                    t = c['text'].strip()
+                    if not t:
+                        continue
+                    if len(t) > 240:
+                        t = t[:240] + '...'
+                    if used + len(t) + 2 > 1400:
+                        break
+                    joined.append(t)
+                    used += len(t) + 2
+                consolidated = "\n\n".join(joined)
+                print("  🔁 Single-shot relaxed fallback (consolidated extraction)...")
+                user_prompt = (
+                    "From the following paragraphs, list cause-effect lines in the format: \n"
+                    "Factor | Metric | Relationship\n\n"
+                    "Guidelines:\n"
+                    "- Use paper-specific factor names (e.g., 'Sulfuric acid strength', 'Residence time').\n"
+                    "- If a metric is unchanged/no effect, write 'no effect' in Relationship.\n"
+                    "- Prefer concise phrases. One line per relation.\n\n"
+                    "Paragraphs:\n" + consolidated + "\n\n"
+                    "Lines:"
+                )
+                full_prompt = self._create_prompt(user_prompt=user_prompt, context="")
+                try:
+                    raw = self.model.generate(prompt=full_prompt, max_tokens=400, temp=0.1) or ""
+                    # Parse lines to items
+                    items_fallback = self._parse_lines_to_items(raw)
+                    normalized_items = self._normalize_impact_items(items_fallback)
+                    print(f"  ✓ Fallback extracted {len(normalized_items)} items")
+                except Exception as e:
+                    print(f"  ⚠️ Fallback failed: {e}")
+        
+        # Phase 4: Format as Markdown table
+        print("  📊 Phase 4: Formatting output...")
+        markdown_table = self._to_markdown_impact(normalized_items)
+        
+        return markdown_table
+    
+    def _extract_influence_candidates(self, df):
+        """
+        Score and select top candidate paragraphs for impact extraction
+        Uses adaptive scoring that prioritizes explicit causal patterns over generic keywords
+        
+        Returns:
+            list of dict: [{'index': ..., 'text': ..., 'score': ...}, ...]
+        """
+        topK = int(os.getenv('FCPD_IMPACT_TOPK', '12'))
+        content_col = 'abstract' if 'abstract' in df.columns else 'content'
+        
+        # Generic factor/metric keywords (lower weight - used as hints only)
+        generic_factor_keywords = [
+            'temperature', 'flow rate', 'residence time', 'pressure', 'concentration',
+            'ratio', 'diameter', 'velocity', 'catalyst', 'solvent'
+        ]
+        
+        metric_keywords = [
+            'conversion', 'yield', 'selectivity', 'purity', 'efficiency',
+            'product distribution', 'heat transfer', 'mixing'
+        ]
+        
+        # Causal patterns (high weight - these indicate actual cause-effect discussion)
+        causal_verbs = [
+            'increase', 'decrease', 'improve', 'enhance', 'reduce', 'affect',
+            'influence', 'impact', 'promote', 'inhibit', 'facilitate', 'optimize',
+            'control', 'determine', 'depend', 'vary', 'change', 'modulate'
+        ]
+        
+        # Explicit title patterns (highest weight)
+        title_pattern = r'(\d+\.\d+\.?\d*\.?)\s*(Effect|Influence|Impact|Role)\s+of\s+([^.\n]{3,60})'
+        
+        # Causal relationship patterns (high weight - paper-specific factors)
+        # These capture: "X affects/influences Y" or "Y depends on X"
+        causal_patterns = [
+            r'([A-Z][a-z\s]{2,40})\s+(affect|influence|impact|control|determine)s?\s+(?:the\s+)?([a-z\s]{3,30})',
+            r'([a-z\s]{3,30})\s+(?:is|was|are|were)\s+(?:strongly\s+)?(?:affected|influenced|controlled|determined)\s+by\s+([A-Z][a-z\s]{2,40})',
+            r'(?:higher|lower|increased|decreased)\s+([a-z\s]{2,30})\s+(?:result|lead|cause)s?\s+(?:in\s+)?(?:higher|lower|increased|decreased)\s+([a-z\s]{2,30})',
+            r'at\s+([0-9.]+\s*[A-Za-z°%]+)[,\s]+(?:the\s+)?([a-z\s]{3,30})\s+(?:is|was|reached)'
+        ]
+        
+        candidates = []
+        
+        for idx, row in df.iterrows():
+            paragraph = row[content_col]
+            if not paragraph or len(paragraph.strip()) < 30:
+                continue
+            
+            score = 0
+            hits = []
+            para_lower = paragraph.lower()
+            
+            # 1. HIGHEST PRIORITY: Explicit "Effect of X" titles
+            title_match = re.search(title_pattern, paragraph, re.IGNORECASE)
+            if title_match:
+                score += 80  # Increased from 50
+                factor_name = title_match.group(3).strip()
+                hits.append(f'title:{factor_name[:20]}')
+            
+            # 2. HIGH PRIORITY: Explicit causal relationship patterns
+            # Only apply if paragraph has causal verbs (pre-filter for performance)
+            has_causal_verb = any(verb in para_lower for verb in ['affect', 'influence', 'impact', 'control', 'determine'])
+            if has_causal_verb:
+                # Limit to 2 most important patterns for performance
+                key_patterns = causal_patterns[:2]  # Only first 2 patterns
+                for pattern in key_patterns:
+                    if re.search(pattern, paragraph, re.IGNORECASE):
+                        score += 15
+                        hits.append('causal_pattern')
+                        break  # Stop after first match
+            
+            # 3. MEDIUM PRIORITY: Results/Discussion sections with metrics
+            # Simple string matching (faster than regex)
+            is_results_section = any(sec in para_lower for sec in ['result', 'discussion', 'finding', 'observation'])
+            if is_results_section:
+                has_metric = any(kw in para_lower for kw in metric_keywords)
+                if has_metric:
+                    score += 25
+                    hits.append('results_with_metrics')
+                else:
+                    score += 10
+                    hits.append('results_section')
+            
+            # 4. MEDIUM PRIORITY: Causal verbs with metrics nearby
+            # Simplified: just check if causal verb AND metric both present
+            causal_count = sum(1 for verb in causal_verbs if verb in para_lower)
+            if causal_count > 0:
+                has_metric = any(m in para_lower for m in metric_keywords)
+                if has_metric:
+                    score += 8 * min(causal_count, 3)  # Cap at 3 to avoid over-scoring
+                else:
+                    score += 3 * min(causal_count, 2)  # Cap at 2
+                hits.append(f'{causal_count}_causal_verbs')
+            
+            # 5. LOW PRIORITY: Generic keywords (used as tie-breakers only)
+            # Only count if there's already some causal signal
+            if score > 0:
+                generic_factor_count = sum(1 for kw in generic_factor_keywords if kw in para_lower)
+                metric_count = sum(1 for kw in metric_keywords if kw in para_lower)
+                
+                score += generic_factor_count * 2  # Low weight
+                score += metric_count * 3  # Slightly higher for metrics
+                
+                if generic_factor_count > 0:
+                    hits.append(f'{generic_factor_count}_generic_factors')
+                if metric_count > 0:
+                    hits.append(f'{metric_count}_metrics')
+            
+            # 6. BOOST: Quantitative data present (numbers with units)
+            # This helps identify paragraphs with actual experimental conditions
+            quant_pattern = r'\b\d+\.?\d*\s*(?:%|K|°C|°F|mL|L|min|h|MPa|bar|M|mol|g)\b'
+            quant_matches = re.findall(quant_pattern, paragraph)
+            if len(quant_matches) >= 2:
+                score += 10
+                hits.append(f'{len(quant_matches)}_quantitative')
+            
+            # 7. PENALTY: Too generic or irrelevant
+            # Reduce score if paragraph is too short or has no specific content
+            if len(paragraph) < 100:
+                score -= 5
+            
+            # Must have at least some relevance (lowered threshold for adaptive discovery)
+            if score >= 8:  # Lowered from 10
+                candidates.append({
+                    'index': idx,
+                    'text': paragraph,
+                    'score': score,
+                    'hits': hits
+                })
+        
+        # Sort by score and take topK
+        candidates.sort(key=lambda x: x['score'], reverse=True)
+        return candidates[:topK]
+    
+    def _batch_extract_with_llm(self, candidates):
+        """
+        Process candidates in batches to reduce LLM calls
+        
+        Returns:
+            list of dict: extracted items with structured fields
+        """
+        group_size = int(os.getenv('FCPD_IMPACT_GROUP_SIZE', '5'))
+        max_tokens_per_group = int(os.getenv('FCPD_IMPACT_MAX_TOKENS_PER_GROUP', '700'))
+        relaxed = os.getenv('FCPD_IMPACT_RELAXED', 'true').lower() == 'true'
+        
+        all_items = []
+        total_groups = (len(candidates) + group_size - 1) // group_size
+        
+        for g_idx in range(total_groups):
+            group = candidates[g_idx * group_size : (g_idx + 1) * group_size]
+            
+            # Build batch prompt
+            para_list = []
+            for i, cand in enumerate(group):
+                text = cand['text']
+                if len(text) > 600:
+                    text = text[:600] + "..."
+                para_list.append(f"Para[{i}]: {text}")
+            
+            # Few-shot example with more realistic text
+            fewshot_text = (
+                "2.1.2. Eﬀect of Residence Time. Residence time is another important parameter which aﬀects the reagent conversion and "
+                "product selectivity. [...] It is observed that a longer residence time will result in a higher conversion of "
+                "TFMB, especially with mixed acid of a higher sulfuric acid strength. Nevertheless, the product selectivity "
+                "nearly remains unchanged with the increasing residence time during the experiments..."
+            )
+            fewshot_json = """[
+  {
+    "i": 0,
+    "factor": "residence time",
+    "metric": "conversion of TFMB",
+    "direction": "increase",
+    "magnitude": null,
+    "unit": null,
+    "condition": "especially with mixed acid of a higher sulfuric acid strength",
+    "evidence": "a longer residence time will result in a higher conversion of TFMB"
+  },
+  {
+    "i": 0,
+    "factor": "residence time",
+    "metric": "product selectivity",
+    "direction": null,
+    "magnitude": null,
+    "unit": null,
+    "condition": null,
+    "evidence": "the product selectivity nearly remains unchanged"
+  }
+]"""
+            
+            # Build structured prompt with clear schema and rules
+            user_prompt = f"""Extract ALL cause-and-effect relationships from the provided paragraphs about chemical engineering processes.
+
+### JSON Schema ###
+- "i": The 0-based index of the paragraph the information was extracted from.
+- "factor": The exact name of the process parameter that is being changed (e.g., "residence time", "reaction temperature").
+- "metric": The experimental outcome that is being affected (e.g., "conversion of TFMB", "product selectivity").
+- "direction": The direction of the effect. Must be one of: "increase", "decrease", or null if there is no effect or the direction is unclear.
+- "magnitude": Any specific number mentioned, otherwise null.
+- "unit": The unit for the magnitude, otherwise null.
+- "condition": Any specific condition under which this effect was observed, otherwise null (e.g., "at high temperatures").
+- "evidence": A short, direct quote from the text that supports the finding (max 100 characters).
+
+### High-Quality Example ###
+Context: "{fewshot_text}"
+JSON Output:
+{fewshot_json}
+
+### Rules ###
+- Output ONLY a valid JSON array. Do not include any explanations or surrounding text.
+- Extract relationships only from the provided paragraphs.
+- If a paragraph contains multiple relationships, create a separate JSON object for each.
+- If a paragraph contains no relationships, output an empty array [].
+
+### Paragraphs to Analyze ###
+{chr(10).join(para_list)}
+
+### Final JSON Output ###
+"""
+            
+            full_prompt = self._create_prompt(user_prompt=user_prompt, context="")
+            
+            try:
+                raw = self.model.generate(prompt=full_prompt, max_tokens=max_tokens_per_group, temp=0.05, top_p=0.25) or ""
+                raw = raw.strip()
+                
+                # 🐛 DEBUG: 打印LLM原始输出
+                print(f"\n    🐛 DEBUG Group {g_idx+1} - LLM raw output (first 500 chars):")
+                print(f"    {raw[:500]}")
+                print(f"    🐛 DEBUG - Total length: {len(raw)} chars\n")
+                
+                # Extract JSON array
+                start = raw.find('[')
+                end = raw.rfind(']')
+                if start != -1 and end != -1 and end > start:
+                    json_str = raw[start:end+1]
+                    json_str = self._sanitize_json_text(json_str)
+                    
+                    import json
+                    items = json.loads(json_str)
+                    if isinstance(items, list):
+                        all_items.extend(items)
+                        print(f"    ✓ Group {g_idx+1}/{total_groups}: extracted {len(items)} items")
+                    else:
+                        print(f"    ⚠️ Group {g_idx+1}/{total_groups}: invalid JSON structure")
+                else:
+                    # Relaxed parsing: try line-based fallback
+                    if relaxed:
+                        items_lines = self._parse_lines_to_items(raw)
+                        if items_lines:
+                            all_items.extend(items_lines)
+                            print(f"    ✓ Group {g_idx+1}/{total_groups}: line-based extracted {len(items_lines)} items")
+                        else:
+                            # Regex fallback per paragraph (no extra LLM calls)
+                            regex_items = []
+                            for c in group:
+                                regex_items.extend(self._regex_extract_items_from_paragraph(c['text']))
+                            if regex_items:
+                                all_items.extend(regex_items)
+                                print(f"    ✓ Group {g_idx+1}/{total_groups}: regex fallback {len(regex_items)} items")
+                            else:
+                                print(f"    ⚠️ Group {g_idx+1}/{total_groups}: no JSON/lines/regex matches")
+                    else:
+                        print(f"    ⚠️ Group {g_idx+1}/{total_groups}: no JSON array found")
+            
+            except Exception as e:
+                print(f"    ✗ Group {g_idx+1}/{total_groups} failed: {e}")
+                continue
+        
+        return all_items
+    
+    def _normalize_impact_items(self, items):
+        """
+        Normalize terminology lightly, deduplicate, and filter noise
+        Preserves paper-specific factor names (e.g., "Sulfuric acid strength", "Sand particle size")
+        
+        Returns:
+            list of dict: cleaned and normalized items
+        """
+        # Light normalization - only fix common typos/abbreviations
+        # DO NOT replace paper-specific terms
+        factor_abbreviations = {
+            'temp': 'temperature',
+            'conc': 'concentration',
+            'res time': 'residence time'
+        }
+        
+        metric_standardization = {
+            'conversion': 'Conversion',
+            'yield': 'Yield',
+            'selectivity': 'Selectivity',
+            'purity': 'Purity',
+            'efficiency': 'Efficiency',
+            'product distribution': 'Product Distribution',
+            'heat transfer': 'Heat Transfer',
+            'mixing': 'Mixing Efficiency'
+        }
+        
+        normalized = []
+        seen_pairs = set()
+        
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            
+            factor = str(item.get('factor', '')).strip()
+            metric = str(item.get('metric', '')).strip()
+            
+            # Filter noise
+            if not factor or not metric:
+                continue
+            if factor.lower() in ['multiple factors', 'unknown', 'various', 'x', 'parameter']:
+                continue
+            if metric.lower() in ['performance metrics', 'unknown', 'various', 'y', 'result']:
+                continue
+            if len(factor) < 3 or len(metric) < 3:
+                continue
+            
+            # Light normalization for factors (preserve paper-specific names)
+            factor_lower = factor.lower()
+            for abbrev, full in factor_abbreviations.items():
+                if factor_lower == abbrev:  # Exact match only
+                    factor = full.title()
+                    break
+            
+            # Always capitalize first letter of factor for consistency
+            if factor and not factor[0].isupper():
+                factor = factor[0].upper() + factor[1:]
+            
+            # Standardize metrics (these are more generic)
+            metric_lower = metric.lower()
+            for key, val in metric_standardization.items():
+                if key == metric_lower:  # Exact match
+                    metric = val
+                    break
+            
+            # Capitalize metric if not already standardized
+            if metric and not metric[0].isupper():
+                metric = metric[0].upper() + metric[1:]
+            
+            # Deduplicate by factor-metric pair
+            pair_key = (factor.lower(), metric.lower())
+            if pair_key in seen_pairs:
+                continue
+            seen_pairs.add(pair_key)
+            
+            # Build normalized item
+            direction = str(item.get('direction', '')).lower()
+            if direction not in ['increase', 'decrease']:
+                direction = ''
+            
+            magnitude = item.get('magnitude')
+            unit = str(item.get('unit', '')).strip()
+            condition = str(item.get('condition', '')).strip()
+            evidence = str(item.get('evidence', '')).strip()
+            
+            normalized.append({
+                'factor': factor,
+                'metric': metric,
+                'direction': direction,
+                'magnitude': magnitude,
+                'unit': unit,
+                'condition': condition,
+                'evidence': evidence[:100] if evidence else ''  # Truncate
+            })
+        
+        return normalized
+    
+    def _to_markdown_impact(self, items):
+        """
+        Convert structured items to Markdown table
+        
+        Returns:
+            str: Markdown table
+        """
+        if not items:
+            return "| Factor | Metric | Direction | Magnitude/Unit | Condition | Evidence |\n|--------|--------|-----------|----------------|-----------|----------|\n| None | - | - | - | - | - |"
+        
+        # Build table with extended columns
+        table_lines = [
+            "| Factor | Metric | Direction | Magnitude/Unit | Condition | Evidence |",
+            "|--------|--------|-----------|----------------|-----------|----------|"
+        ]
+        
+        for item in items:
+            factor = item['factor'].replace('|', '\\|')
+            metric = item['metric'].replace('|', '\\|')
+            direction = ('↑' if item['direction'] == 'increase' else 
+                        '↓' if item['direction'] == 'decrease' else '-')
+            
+            mag_unit = ''
+            if item['magnitude'] is not None:
+                mag_unit = f"{item['magnitude']}"
+                if item['unit']:
+                    mag_unit += f" {item['unit']}"
+            else:
+                mag_unit = '-'
+            
+            condition = item['condition'] if item['condition'] else '-'
+            condition = condition.replace('|', '\\|')[:40]  # Truncate
+            
+            evidence = item['evidence'] if item['evidence'] else '-'
+            evidence = evidence.replace('|', '\\|').replace('\n', ' ')[:60]  # Truncate
+            
+            table_lines.append(
+                f"| {factor} | {metric} | {direction} | {mag_unit} | {condition} | {evidence} |"
+            )
+        
+        return '\n'.join(table_lines)
+
+    def _parse_lines_to_items(self, text):
+        """
+        Parse loose 'Factor | Metric | Relationship' lines to structured items
+        """
+        items = []
+        for line in (text or '').split('\n'):
+            if '|' not in line:
+                continue
+            parts = [p.strip() for p in line.split('|')]
+            if len(parts) < 3:
+                continue
+            factor, metric, relation = parts[0], parts[1], parts[2]
+            if not factor or not metric:
+                continue
+            # Detect direction from relation text
+            rel_low = relation.lower()
+            if any(k in rel_low for k in ['no effect', 'unchanged', 'not affected', 'no significant']):
+                direction = ''
+            elif any(k in rel_low for k in ['increase', 'higher', 'improve', 'enhance']):
+                direction = 'increase'
+            elif any(k in rel_low for k in ['decrease', 'lower', 'reduce', 'inhibit']):
+                direction = 'decrease'
+            else:
+                direction = ''
+            items.append({
+                'factor': factor,
+                'metric': metric,
+                'direction': direction,
+                'magnitude': None,
+                'unit': '',
+                'condition': '',
+                'evidence': relation[:100]
+            })
+        return items
+
+    def _regex_extract_items_from_paragraph(self, paragraph):
+        """
+        Zero-LLM fallback: use regex to extract simple X→Y relations
+        """
+        results = []
+        p = paragraph or ''
+        if len(p) < 30:
+            return results
+        import re
+        # Pattern: higher X increases Y / lower X decreases Y
+        pat1 = re.compile(r'(higher|lower|increased|decreased)\s+([A-Za-z][A-Za-z\s]{2,30})\s+(?:lead|leads|result|results|cause|causes)\s+(?:in\s+)?(higher|lower|increased|decreased)\s+([A-Za-z][A-Za-z\s]{2,30})', re.IGNORECASE)
+        m = pat1.search(p)
+        if m:
+            dir_map = {'higher':'increase','increased':'increase','lower':'decrease','decreased':'decrease'}
+            factor = m.group(2).strip()
+            metric = m.group(4).strip()
+            direction = dir_map.get(m.group(3).lower(), '')
+            results.append({'factor':factor, 'metric':metric, 'direction':direction, 'magnitude':None, 'unit':'', 'condition':'', 'evidence': p[:100]})
+        # Pattern: X affects Y / Y affected by X
+        pat2 = re.compile(r'([A-Za-z][A-Za-z\s]{2,40})\s+(affect|influence|impact|control|determine)s?\s+([A-Za-z][A-Za-z\s]{2,40})', re.IGNORECASE)
+        m2 = pat2.search(p)
+        if m2:
+            results.append({'factor':m2.group(1).strip(), 'metric':m2.group(3).strip(), 'direction':'', 'magnitude':None, 'unit':'', 'condition':'', 'evidence': p[:100]})
+        # No effect phrases
+        if re.search(r'(no effect|unchanged|not significantly affected)', p, re.IGNORECASE):
+            # Try to attach to the last added metric if present
+            if results:
+                results[-1]['direction'] = ''
+        return results
+    
     def save_df_to_text(self, df, file_path, content_column='content'):
         """
         保存DataFrame到文本文件
@@ -639,7 +1206,33 @@ class UnifiedTextProcessor:
             except Exception as e:
                 print(f"⚠️ 整篇汇总总结失败: {e}")
             
-            # 清理中间文件，只保留最终的 _Summarized.txt 和 _Overall.txt
+            # 提取影响因素分析（新功能）
+            try:
+                influence_input = df_abstract if 'df_abstract' in locals() else (df_filtered if 'df_filtered' in locals() else df)
+                
+                # 调试：保存Impact输入数据
+                debug_input_file = file_path.replace('.txt', '_Impact_Input_Debug.txt')
+                self.save_df_to_text(influence_input, debug_input_file, 'content')
+                print(f"  🐛 DEBUG: 影响因素输入已保存到 {os.path.basename(debug_input_file)}")
+                
+                influence_md = self.extract_influence_factors_with_llm(influence_input)
+                influence_file = file_path.replace('.txt', '_Impact_Analysis.txt')
+                with open(influence_file, 'w', encoding='utf-8') as f:
+                    f.write("# Influence Factor Analysis\n\n")
+                    f.write(influence_md)
+                output_files['impact_analysis'] = influence_file
+                print(f"  📊 影响因素分析完成: {os.path.basename(influence_file)}")
+            except Exception as e:
+                print(f"⚠️ 影响因素分析失败: {e}")
+            
+            # 清理中间文件，只保留最终的 _Summarized.txt、_Overall.txt 和 _Impact_Analysis.txt
+            # 🐛 DEBUG: 临时禁用自动清理，便于调试
+            auto_cleanup_enabled = os.getenv('FCPD_AUTO_CLEANUP', 'false').lower() == 'true'
+            
+            if not auto_cleanup_enabled:
+                print("\n🐛 DEBUG: 自动清理已禁用，保留所有中间文件")
+                return output_files
+            
             print("\n🗑️  清理中间文件...")
             intermediate_files = []
             
@@ -693,6 +1286,8 @@ class UnifiedTextProcessor:
                 print(f"  • {os.path.basename(output_files['summarized'])} (详细总结)")
             if 'summarized_overall' in output_files:
                 print(f"  • {os.path.basename(output_files['summarized_overall'])} (整篇汇总)")
+            if 'impact_analysis' in output_files:
+                print(f"  • {os.path.basename(output_files['impact_analysis'])} (影响因素分析)")
         
         return output_files
 

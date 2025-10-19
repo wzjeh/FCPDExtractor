@@ -1,0 +1,5 @@
+# Influence Factor Analysis
+
+| Factor | Metric | Direction | Magnitude/Unit | Condition | Evidence |
+|--------|--------|-----------|----------------|-----------|----------|
+| The precise | Of temperature distribution and the e | - | - | - | with the conversion of TFMB being 99.6%. The results showed  |

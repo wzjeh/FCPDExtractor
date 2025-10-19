@@ -18,7 +18,7 @@
         ],
         "reactor": {
             "type": "microchannel",
-            "inner_diameter": ""
+            "inner_diameter": "not specified"
         },
         "metrics": {
             "conversion": null,
