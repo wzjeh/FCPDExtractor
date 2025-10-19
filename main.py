@@ -1,91 +1,147 @@
-import pandas as pd
+import argparse
+import glob
 import os
 import sys
-sys.path.append('Text Parser')
-sys.path.append('Text Extraction')
-from PDF_Unified_Processor import save_contents_to_specific_folders
-from TXT_Processing import process_text_file_for_processing
-from Embedding_and_Similarity import process_text_file_for_embedding
-from Unified_Text_Processor import (
-    process_text_file_for_filter, process_text_file_for_abstract, process_text_file_for_summerized,
-    process_text_file_for_filter, process_text_file_for_abstract, 
-    process_text_file_for_summerized
-)
+import yaml
+import shutil
+from typing import List
 
-print("🚀 启动 OSSExtractor 表面合成参数提取工具")
-print("=" * 60)
+from core.text_utils import extract_text_from_pdf, write_text
+from core.embedding import run_embedding_selection
+from core.models.gemini_llm import GeminiLLM
+from core.processor import UnifiedTextProcessor
+from core.local_pipeline import LocalPipeline
+from evaluation.metrics import calculate_metrics
 
-pdf_files = [
-"/Users/zhaowenyuan/Projects/FCPDExtractor/Data/papers/101021acsoprd7b00291.pdf"
-]
-base_output_dir = '/Users/zhaowenyuan/Projects/FCPDExtractor/Data'  
 
-print("📄 步骤 1/5: PDF转文本处理...")
-output_files = save_contents_to_specific_folders(pdf_files, base_output_dir)
-print("✅ PDF转文本完成")
+def iter_inputs(input_dir: str, limit: int | None) -> List[str]:
+    files = sorted(glob.glob(os.path.join(input_dir, '*.*')))
+    files = [f for f in files if f.lower().endswith(('.txt', '.pdf'))]
+    return files[:limit] if limit else files
 
-print("\n📝 步骤 2/5: 文本预处理...")
-processed_files = []
-total_filtered_count = 0
-for file_path in output_files:
-    print(f"处理文件: {os.path.basename(file_path)}")
-    processed_file_path, filtered_count = process_text_file_for_processing(file_path)
-    processed_files.append(processed_file_path)
-    total_filtered_count += filtered_count
-print(f"✅ 文本预处理完成，过滤了 {total_filtered_count} 个段落")
 
-print("\n🔍 步骤 3/5: 嵌入和相似度计算...")
-embedding_files = []
-for file_path in processed_files:
-    print(f"处理文件: {os.path.basename(file_path)}")
-    embedding_file_path = process_text_file_for_embedding(file_path)
-    embedding_files.append(embedding_file_path)
-print("✅ 嵌入和相似度计算完成")
+def load_config(path: str) -> dict:
+    if not os.path.exists(path):
+        return {}
+    with open(path, 'r', encoding='utf-8') as f:
+        return yaml.safe_load(f) or {}
 
-print("\n🤖 步骤 4/5: LLM内容过滤...")
-print("💡 使用nous-hermes-llama2-13b模型进行智能过滤")
-filter_files = []
-for file_path in embedding_files:
-    print(f"处理文件: {os.path.basename(file_path)}")
-    filter_file_path = process_text_file_for_filter(file_path)
-    filter_files.append(filter_file_path)
-print("✅ LLM内容过滤完成")
 
-print("\n📊 步骤 5/5: 抽象和总结...")
-print("💡 使用nous-hermes-llama2-13b模型进行抽象和总结")
-abstract_files = []
-summarized_files = []
-for file_path in filter_files:
-    print(f"处理文件: {os.path.basename(file_path)}")
-    abstract_file_path = process_text_file_for_abstract(file_path)
-    summerized_file_path = process_text_file_for_summerized(file_path)
-    abstract_files.append(abstract_file_path)
-    summarized_files.append(summerized_file_path)
-print("✅ 抽象和总结完成")
+def ensure_txt(fp: str, output_dir: str) -> str:
+    if fp.lower().endswith('.txt'):
+        return fp
+    base = os.path.splitext(os.path.basename(fp))[0]
+    out_dir = os.path.join(output_dir, base)
+    os.makedirs(out_dir, exist_ok=True)
+    out_txt = os.path.join(out_dir, f"{base}.txt")
+    text = extract_text_from_pdf(fp)
+    write_text(text, out_txt)
+    return out_txt
 
-print("\n🎉 所有处理步骤完成！")
-print("=" * 60)
 
-# 显示最终结果
-print("\n📊 处理结果总结:")
-print("=" * 30)
-print(f"📁 原始文本文件: {len(output_files)} 个")
-print(f"📁 预处理文件: {len(processed_files)} 个")
-print(f"📁 嵌入文件: {len(embedding_files)} 个")
-print(f"📁 过滤文件: {len(filter_files)} 个")
-print(f"📁 抽象文件: {len(abstract_files)} 个")
-print(f"📁 总结文件: {len(summarized_files)} 个")
+def main() -> None:
+    parser = argparse.ArgumentParser(description="FCPDExtractor - New Architecture CLI")
+    parser.add_argument('--config', type=str, default='config.yaml')
+    parser.add_argument('--input_dir', type=str, help='输入目录（.txt 或 .pdf）')
+    parser.add_argument('--output_dir', type=str, help='输出目录')
+    parser.add_argument('--limit', type=int, default=None)
+    parser.add_argument('--engine', type=str, choices=['gemini','local'])
+    parser.add_argument('--mode', type=str, default='comprehensive', choices=['filter','abstract','summarize','comprehensive','evaluate'])
+    args = parser.parse_args()
 
-print(f"\n🎯 最终输出文件:")
-for i, file in enumerate(summarized_files, 1):
-    if os.path.exists(file):
-        with open(file, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
-        print(f"  {i}. {os.path.basename(file)} ({len(lines)} 行)")
+    cfg = load_config(args.config)
+    paths = cfg.get('paths', {})
+    input_dir = args.input_dir or paths.get('papers_dir', 'data/papers')
+    output_dir = args.output_dir or paths.get('output_dir', 'data')
+    os.makedirs(output_dir, exist_ok=True)
+
+    engine_choice = args.engine or cfg.get('engine', 'gemini')
+    if engine_choice == 'local':
+        local_cfg = cfg.get('local_model', {})
+        engine = LocalPipeline(
+            model_name=None,  # 使用分阶段配置
+            model_path=local_cfg.get('path', 'models/'),
+            filter_model=local_cfg.get('filter'),
+            abstract_model=local_cfg.get('abstract'),
+            summarize_model=local_cfg.get('summarize'),
+        )
     else:
-        print(f"  {i}. {os.path.basename(file)} (文件不存在)")
+        gcfg = cfg.get('gemini_api', {})
+        llm = GeminiLLM(api_key_env_var=gcfg.get('api_key_env_var', 'GOOGLE_API_KEY'), model_name=gcfg.get('model_name', 'gemini-1.5-flash'))
+        engine = UnifiedTextProcessor(llm)
 
-print(f"\n✅ 处理完成！共处理了 {len(pdf_files)} 个PDF文件")
+    if args.mode == 'evaluate':
+        gt_dir = paths.get('ground_truth_dir', 'data/ground_truth')
+        # 遍历输出目录下 *_Overall.txt 与 ground_truth 同名.json 比对
+        for root, _, files in os.walk(output_dir):
+            for f in files:
+                if f.endswith('_Overall.txt'):
+                    base = f.replace('_Overall.txt', '')
+                    pred = os.path.join(root, f)
+                    gt_json = os.path.join(gt_dir, f'{base}.json')
+                    if os.path.exists(gt_json):
+                        m = calculate_metrics(gt_json, pred)
+                        print(f"{base}: P={m['precision']:.3f} R={m['recall']:.3f} F1={m['f1']:.3f}")
+        return
+
+    inputs = iter_inputs(input_dir, args.limit)
+    if not inputs:
+        print('未找到输入文件（.txt/.pdf）。')
+        sys.exit(1)
+
+    for fp in inputs:
+        fp_txt = ensure_txt(fp, output_dir)
+        # 嵌入相似度筛选（若选择comprehensive或明确要求filter/abstract/summarize前置）
+        emb_txt = run_embedding_selection(fp_txt, top_n=int(os.getenv('FCPD_TOP_N', '10')))
+
+        # 将后续输入替换为Embedding筛选结果
+        use_txt = emb_txt if os.path.exists(emb_txt) else fp_txt
+
+        res = engine.process_text_file_comprehensive(use_txt, mode=args.mode)
+        for k, v in res.items():
+            print(f"✓ {k}: {v}")
+
+        # 归档到 engine 专属目录
+        base_name = os.path.splitext(os.path.basename(fp_txt))[0]
+        subdir = 'gemini' if engine_choice == 'gemini' else 'local llm'
+        dest_dir = os.path.join(output_dir, subdir, base_name)
+        os.makedirs(dest_dir, exist_ok=True)
+
+        # 源目录（同一目录内可能有多种输出）
+        src_dir = os.path.dirname(use_txt)
+
+        # 必备：源txt
+        try:
+            shutil.copy2(use_txt, os.path.join(dest_dir, os.path.basename(use_txt)))
+        except Exception:
+            pass
+
+        # 已知产物：从res拷贝
+        for v in res.values():
+            try:
+                if v and os.path.exists(v):
+                    shutil.copy2(v, os.path.join(dest_dir, os.path.basename(v)))
+            except Exception:
+                pass
+
+        # 归档嵌入文件
+        try:
+            if emb_txt and os.path.exists(emb_txt):
+                shutil.copy2(emb_txt, os.path.join(dest_dir, os.path.basename(emb_txt)))
+        except Exception:
+            pass
+
+    # 清理 data/output 目录（若仍存在）
+    legacy_output = os.path.join(output_dir, 'output')
+    if os.path.isdir(legacy_output):
+        try:
+            shutil.rmtree(legacy_output)
+            print('🧹 已清理 data/output')
+        except Exception as e:
+            print(f'⚠️ 清理 data/output 失败: {e}')
+
+    print('✅ 完成')
 
 
-
+if __name__ == '__main__':
+    main()

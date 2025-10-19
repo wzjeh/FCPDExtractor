@@ -1,0 +1,21 @@
+engine: gemini
+
+gemini_api:
+  api_key_env_var: AIzaSyCt-ViWsRfCAUm3z6iLPu-b-Yb7H8OHg8o
+  model_name: gemini-2.5-flash
+
+local_model:
+  filter: nous-hermes-llama2-13b.Q4_0.gguf
+  abstract: nous-hermes-llama2-13b.Q4_0.gguf
+  summarize: meta-llama-3.1-8b-instruct-q4_k_m-2.gguf
+  path: models/
+
+paths:
+  papers_dir: data/papers
+  output_dir: data
+  ground_truth_dir: data/ground_truth
+
+evaluation:
+  metrics: [precision, recall, f1]
+
+
