@@ -365,7 +365,7 @@ class LocalPipeline:
         raw = self._safe_generate(model, prompt, max_tokens=700, temp=0.3)
         print(f"  🐛 LLM原始输出前500字符: {raw[:500]}")
 
-        # 解析为三列
+        # 解析为三列（兼容2列和3列格式）
         items = []
         for line in raw.splitlines():
             if '|' not in line:
@@ -375,21 +375,45 @@ class LocalPipeline:
             if 'factor' in low and 'metric' in low:
                 continue
             parts = [p.strip() for p in line.split('|')]
-            if len(parts) < 3:
+            if len(parts) < 2:  # 改为至少2列即可
                 continue
             # 跳过空行
             if not parts[0] or not parts[1] or parts[0] == '-':
                 continue
-            direction = parts[2].lower()
-            if 'increase' in direction or 'higher' in direction or 'improve' in direction or 'enhance' in direction:
-                direction = 'increase'
-            elif 'decrease' in direction or 'lower' in direction or 'reduce' in direction or 'inhibit' in direction:
-                direction = 'decrease'
-            elif 'unchange' in direction or 'unchanged' in direction or 'no effect' in direction:
-                direction = 'unchanged'
+            
+            # 兼容2列和3列格式
+            if len(parts) == 2:
+                # 两列格式：Factor | Metric（从Metric中提取Direction）
+                factor = parts[0]
+                metric_with_dir = parts[1].lower()
+                # 尝试从metric字段提取方向
+                if 'increase' in metric_with_dir or 'higher' in metric_with_dir:
+                    direction = 'increase'
+                    metric = parts[1].split()[0]  # 取第一个词作为metric
+                elif 'decrease' in metric_with_dir or 'lower' in metric_with_dir:
+                    direction = 'decrease'
+                    metric = parts[1].split()[0]
+                elif 'unchange' in metric_with_dir:
+                    direction = 'unchanged'
+                    metric = parts[1].split()[0]
+                else:
+                    direction = '-'
+                    metric = parts[1]
             else:
-                direction = ''
-            items.append({'factor': parts[0], 'metric': parts[1], 'direction': direction})
+                # 三列格式：Factor | Metric | Direction
+                factor = parts[0]
+                metric = parts[1]
+                direction = parts[2].lower()
+                if 'increase' in direction or 'higher' in direction or 'improve' in direction or 'enhance' in direction:
+                    direction = 'increase'
+                elif 'decrease' in direction or 'lower' in direction or 'reduce' in direction or 'inhibit' in direction:
+                    direction = 'decrease'
+                elif 'unchange' in direction or 'unchanged' in direction or 'no effect' in direction:
+                    direction = 'unchanged'
+                else:
+                    direction = ''
+            
+            items.append({'factor': factor, 'metric': metric, 'direction': direction})
         return self._to_markdown_impact(items)
 
     def process_text_file_comprehensive(self, file_path: str, mode: str = 'comprehensive') -> Dict[str, Any]:

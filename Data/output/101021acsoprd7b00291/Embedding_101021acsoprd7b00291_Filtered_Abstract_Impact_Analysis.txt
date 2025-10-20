@@ -2,25 +2,4 @@
 
 | Factor | Metric | Direction |
 |--------|--------|-----------|
-| residence_time | TFMB conversion | increase |
-| flow_rate | TFMB conversion | decrease |
-| flow_rate | product selectivity | - |
-| residence_time | TFMB conversion | increase |
-| H2SO4_strength | TFMB conversion | increase |
-| residence_time | product selectivity | unchanged |
-| temperature | byproduct_selectivity | increase |
-| microparticle_size | interfacial_area | increase |
-| flow_rate | residence_time | decrease |
-| residence_time | TFMB conversion | decrease |
-| mass_transfer | TFMB conversion | increase |
-| flow_rate | mononitration_selectivity | unchanged |
-| flow_rate | dinitration_selectivity | decrease |
-| temperature | product_selectivity | - |
-| temperature | selectivity | - |
-| byproduct_selectivity | downstream_separation_cost | decrease |
-| conversion | TFMB_conversion | - |
-| selectivity | p-NB_selectivity | - |
-| selectivity | m-NB_selectivity | - |
-| selectivity | DNB_selectivity | - |
-| mixing_efficiency | performance | increase |
-| reactor_type | byproduct_formation | decrease |
+| None | - | - |

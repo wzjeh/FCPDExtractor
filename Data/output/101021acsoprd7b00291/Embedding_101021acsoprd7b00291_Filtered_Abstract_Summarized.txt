@@ -1,57 +1,20 @@
-{"reaction_summary": {"reaction_type": "Nitration", "reactants": [{"name": "TFMB", "role": "reactant"}, {"name": "mixed acid (HNO₃/H₂SO₄)", "role": "reactant"}], "products": [{"name": "p-NB", "yield_optimal": 90.97, "unit": "%"}], "conditions": [{"type": "temperature", "value": "273 K"}, {"type": "residence_time", "value": null}, {"type": "flow_rate_reactant_A", "value": "10 mL/min"}, {"type": "flow_rate_reactant_B", "value": "24.5 mL/min"}, {"type": "pressure", "value": null}], "reactor": {"type": "packed tubular reactor", "inner_diameter": "9 mm"}, "metrics": {"conversion": null, "yield": 90.97, "selectivity": null, "unit": "%"}}}
+{"name": None, "yield_optimal": int(yield_match.group(1)), "unit": "%"}
 
-{"reaction_summary": {"reaction_type": "Continuous flow nitration", "reactants": [{"name": "TFMB", "role": "reactant"}], "products": [{"name": null, "yield_optimal": null, "unit": "%"}], "conditions": [{"type": "temperature", "value": null}, {"type": "residence_time", "value": null}, {"type": "flow_rate_reactant_A", "value": null}, {"type": "flow_rate_reactant_B", "value": null}, {"type": "pressure", "value": null}], "reactor": {"type": "Microreactor coupled with distributed packed tubular reactor", "inner_diameter": null}, "metrics": {"conversion": 99.6, "yield": null, "selectivity": null, "unit": "%"}}}
+{"reaction_summary": {"reaction_type": "nitration", "reactants": [{"name": "TFMB", "role": "reactant"}], "products": [{"name": "null", "yield_optimal": 99.6, "unit": "%"}], "conditions": [{"type": "temperature", "value": "..."}, {"type": "residence_time", "value": "..."}, {"type": "flow_rate_reactant_A", "value": "0 mL/min"}, {"type": "pressure", "value": "null"}], "reactor": {"type": "micro-reactor", "inner_diameter": null}, "metrics": {"conversion": 99.6, "yield": 99.6, "selectivity": null, "unit": "%"}}}
 
-{"reaction_summary": {"reaction_type": "Continuous flow nucleophilic aromatic substitution", "reactants": [{"name": "TFMB", "role": "reactant"}, {"name": "aryl fluoride", "role": "reactant"}], "products": [{"name": null, "yield_optimal": null, "unit": "%"}], "conditions": [{"type": "temperature", "value": "0 °C"}, {"type": "residence_time", "value": null}, {"type": "flow_rate_reactant_A", "value": null}, {"type": "flow_rate_reactant_B", "value": null}, {"type": "pressure", "value": null}], "reactor": {"type": "packed microchannel reactor", "inner_diameter": null}, "metrics": {"conversion": null, "yield": null, "selectivity": null, "unit": "%"}}}
+{"reaction_summary": {"reaction_type": null, "reactants": [], "products": [{"name": null, "yield_optimal": 82, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "0.5 mm"}, "metrics": {"conversion": null, "yield": 82, "selectivity": null, "unit": "%"}}}
 
-{"reaction_summary": {"reaction_type": null, "reactants": [], "products": [{"name": null, "yield_optimal": 82, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "0.5 mm"}, "metrics": {"conversion": null, "yield": 82, "selectivity": 55, "unit": "%"}}}
+{"reaction_summary": {"reactants": [{"name": "TFMB", "role": "reactant"}], "products": [{"name": "nitro-TFMB", "yield_optimal": 95, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_reactant_A", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "0.5 mm"}, "metrics": {"conversion": null, "yield": 95, "selectivity": null, "unit": "%"}}}
 
-{
-  "reaction_summary": {
-    "reaction_type": "Continuous flow nitration",
-    "reactants": [
-      {
-        "name": "TFMB (4,4'-tetrafluoromethylene diphenylamine)",
-        "role": "reactant"
-      },
-      {
-        "name": "Sulfuric acid medium (φ = 97 wt % H₂SO₄)",
-        "role": "solvent"
-      }
-    ],
-    "products": [
-      {
-        "name": "p-NB",
-        "yield_optimal": 90.97,
-        "unit": "%"
-      },
-      {
-        "name": "o-NB",
-        "yield_optimal": 7.26,
-        "unit": "%"
-      },
-      {
-        "name": "m-NB",
-        "yield_optimal": 0.08,
-        "unit": "%"
-      },
-      {
-        "name": "DNB",
-        "yield_optimal": 1.04,
-        "unit": "%"
-      }
+{"type":"flow_rate_reactant_A","value":f"{flow_rate_reactant_A} mL/min"}
 
-{"reaction_summary": {"reaction_type": "Nitration", "reactants": [{"name": "TFMB", "role": "reactant"}], "products": [{"name": "Mononitration products", "yield_optimal": null, "unit": "%"}, {"name": "dinitration product", "yield_optimal": null, "unit": "%"}], "conditions": [{"type": "temperature", "value": null}, {"type": "residence_time", "value": "8.0 s"}, {"type": "flow_rate_reactant_A", "value": "1.3 mL/min"}, {"type": "flow_rate_reactant_B", "value": null}, {"type": "pressure", "value": null}], "reactor": {"type": "microreactor", "inner_diameter": null}, "metrics": {"conversion": null, "yield": null, "selectivity": null, "unit": "%"}}}
+{"reaction_summary": {"reaction_type": "null", "reactants": [], "products": [{"name": "null", "yield_optimal": 82, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "0.5 mm"}, "metrics": {"conversion": null, "yield": 82, "selectivity": null, "unit": "%"}}}
 
-{"reaction_summary": {"reaction_type": "nitration", "reactants": [{"name": "trifluoromethoxybenzene", "role": "reactant"}, {"name": "nitrating mixture", "role": "reactant"}, {"name": "sulfuric acid", "role": "solvent"}], "products": [{"name": "nitro-substituted TFMB", "yield_optimal": null, "unit": "%"}], "conditions": [{"type": "temperature", "value": null}, {"type": "residence_time", "value": null}, {"type": "flow_rate_reactant_A", "value": null}, {"type": "flow_rate_reactant_B", "value": null}, {"type": "pressure", "value": null}], "reactor": {"type": "microchannel reactor", "inner_diameter": null}, "metrics": {"conversion": null, "yield": null, "selectivity": null, "unit": "%"}}}
+{"reaction_summary": {"reaction_type": "null", "reactants": [], "products": [{"name": "null", "yield_optimal": 82, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "0.5 mm"}, "metrics": {"conversion": null, "yield": 82, "selectivity": null, "unit": "%"}}}
 
-{"reaction_summary": {"reaction_type": "nitration", "reactants": [{"name": "TFMB", "role": "reactant"}], "products": [{"name": "mononitration product", "yield_optimal": 95, "unit": "%"}], "conditions": [{"type": "temperature", "value": null}, {"type": "residence_time", "value": null}, {"type": "flow_rate_reactant_A", "value": null}, {"type": "flow_rate_reactant_B", "value": null}, {"type": "pressure", "value": null}], "reactor": {"type": "microreactor", "inner_diameter": null}, "metrics": {"conversion": null, "yield": 95, "selectivity": 0.1, "unit": "%"}}}
+{"reaction_summary": {"reaction_type": "...", "reactants": [{"name": "...", "role": "reactant|catalyst|solvent"}], "products": [{"name": "p-NB", "yield_optimal": 89.75, "unit": "%"}], "conditions": [{"type": "temperature", "value": "..."}, {"type": "residence_time", "value": "2.8 min"}, {"type": "flow_rate_reactant_A", "value": "null"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}, {"type": "pressure", "value": "atmospheric"}], "reactor": {"type": "packed tubular reactor", "inner_diameter": "10 mm"}, "metrics": {"conversion": null, "yield": 89.75, "selectivity": null, "unit": "%"}}}
 
-{"reaction_summary": {"reaction_type": "nitration", "reactants": [{"name": "p-nitrotoluene", "role": "reactant"}], "products": [{"name": "p-NB", "yield_optimal": 89.75, "unit": "%"}], "conditions": [{"type": "temperature", "value": null}, {"type": "residence_time", "value": "2.8 min"}, {"type": "flow_rate_reactant_A", "value": null}, {"type": "flow_rate_reactant_B", "value": null}, {"type": "pressure", "value": null}], "reactor": {"type": "packed tubular reactor", "inner_diameter": null}, "metrics": {"conversion": null, "yield": 89.75, "selectivity": 89.75, "unit": "%"}}}
+{"reaction_summary": {"reactants": [{"name": "TFMB", "role": "reactant"}, {"name": "fuming nitric acid", "role": "solvent"}], "products": [{"name": "...", "yield_optimal": 95, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "residence_time", "value": null}, {"type": "flow_rate_reactant_A", "value": 0.4}], "reactor": {"type": "microchannel", "inner_diameter": null}, "metrics": {"conversion": null, "yield": 95, "selectivity": null, "unit": "%"}}}
 
-{"reaction_summary": {"reaction_type": null, "reactants": [], "products": [{"name": null, "yield_optimal": 82, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "0.5 mm"}, "metrics": {"conversion": null, "yield": 82, "selectivity": 55, "unit": "%"}}}
-
-{"reaction_summary": {"reaction_type": "Continuous flow nitration of TFMB", "reactants": [{"name": "TFMB", "role": "reactant"}, {"name": "fuming nitric acid (98 wt %)", "role": "reactant"}, {"name": "concentrated sulfuric acid", "role": "solvent"}], "products": [{"name": "o-NB", "yield_optimal": null, "unit": "%"}, {"name": "p-NB", "yield_optimal": null, "unit": "%"}], "conditions": [{"type": "temperature", "value": null}, {"type": "residence_time", "value": null}, {"type": "flow_rate_reactant_A", "value": "1.0 mL/min"}, {"type": "flow_rate_reactant_B", "value": "2.2 mL/min"}, {"type": "pressure", "value": null}], "reactor": {"type": "stainless steel capillary microchannel reactor", "inner_diameter": "0.6 mm"}, "metrics": {"conversion": null, "yield": null, "selectivity": null, "unit": "%"}}}
-
-{"reaction_summary": {"reaction_type": "Nitration", "reactants": [{"name": "TFMB", "role": "reactant"}, {"name": "mixed acid (H₂SO₄/HNO₃)", "role": "catalyst"}], "products": [{"name": "Nitrated TFMB", "yield_optimal": null, "unit": "%"}], "conditions": [{"type": "temperature", "value": "5 °C"}, {"type": "residence_time", "value": null}, {"type": "flow_rate_reactant_A", "value": "0.5 mL/min"}, {"type": "flow_rate_reactant_B", "value": "1.2 mL/min"}, {"type": "pressure", "value": null}], "reactor": {"type": "microchannel reactor", "inner_diameter": null}, "metrics": {"conversion": null, "yield": null, "selectivity": null, "unit": "%"}}}
+{}
 

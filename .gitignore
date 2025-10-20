@@ -1,1 +1,18 @@
 *.gguf
+__pycache__/
+*.pyc
+.DS_Store
+
+# 环境变量和API密钥（重要！禁止上传）
+.env
+.api_key
+*.key
+config_local.yaml
+
+# Jupyter Notebook检查点
+.ipynb_checkpoints/
+
+# 文档（包含API密钥示例）
+QWEN_SETUP_COMPLETE.md
+NOTEBOOK_STEP5_DUAL_MODE.py
+双模式使用说明.txt

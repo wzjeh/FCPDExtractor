@@ -2,25 +2,4 @@
 
 | Factor | Metric | Direction |
 |--------|--------|-----------|
-| residence_time | conversion of TFMB | increase |
-| flow_rate | mass transfer rate | increase |
-| temperature | reaction rate | decrease |
-| temperature | byproduct formation | increase |
-| temperature_distribution | reaction efficiency | - |
-| flow_rate | residence time | decrease |
-| residence_time | conversion of TFMB | increase |
-| temperature | yield and product selectivity | increase |
-| temperature_distribution | reaction efficiency | - |
-| residence_time | byproduct formation | increase |
-| flow_rate | mass transfer rate | decrease |
-| temperature | yield and product selectivity | decrease |
-| temperature_distribution | reaction efficiency | - |
-| flow_rate | residence time | decrease |
-| temperature | conversion of TFMB | increase |
-| residence_time | byproduct formation | decrease |
-| temperature | yield and product selectivity | increase |
-| temperature_distribution | reaction efficiency | - |
-| residence_time | conversion of TFMB | increase |
-| flow_rate | mass transfer rate | decrease |
-| temperature | yield and product selectivity | decrease |
-| temperature_distribution | reaction efficiency | - |
+| None | - | - |
