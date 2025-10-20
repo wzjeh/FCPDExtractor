@@ -212,13 +212,13 @@ class LocalPipeline:
             content = self._clip(content, 2200)
             prompt = self._create_prompt(system_prompt, user_prompt, content)
             model = self._get_stage_model('summarize')
-            # 追加严格择优规则（不再禁止selectivity对象，允许运行后清洗）
+            # 追加择优规则：conditions和metrics必须最优，其他信息取最丰富的
             prompt += (
                 "\nRules:\n"
-                "- If multiple conditions/results appear, OUTPUT ONLY ONE condition set:\n"
-                "  1) Prefer the one explicitly marked as 'optimal/optimized/best'.\n"
-                "  2) If none is marked, choose the set with the best performance (highest yield; if yield absent, then highest conversion).\n"
-                "- Do not include any other conditions or secondary results. Keep null for unknown fields.\n"
+                "- For CONDITIONS and METRICS: choose the OPTIMAL set (highest yield/conversion).\n"
+                "- For reaction_type, reactants, products, reactor: use the most informative/complete data (not necessarily from the optimal condition).\n"
+                "- If multiple conditions appear, output only ONE optimal condition set.\n"
+                "- Use null for unknown fields.\n"
             )
             raw = self._safe_generate(model, prompt, max_tokens=260, temp=0.0)
             # 去围栏并抽取花括号块
@@ -246,12 +246,13 @@ class LocalPipeline:
 
         system_prompt = "You output ONLY valid JSON. No explanations."
         user_prompt = (
-            "Extract the OPTIMAL condition set from abstracts below. Output ONE JSON:\n"
-            '{"reaction_summary":{"reaction_type":"nitration","reactants":["TFMB"],"products":["product"],'
-            '"conditions":[{"type":"temperature","value":"25 °C"},{"type":"residence_time","value":"8 min"}],'
-            '"reactor":{"type":"coil","inner_diameter":"10 mm"},'
-            '"metrics":{"conversion":99.6,"yield":95,"selectivity":90,"unit":"%"}}}\n'
-            "Rules: Choose the best yield/conversion. Use null if unknown. Numbers for metrics.\n"
+            "Extract the OPTIMAL condition set from abstracts. Output ONE JSON:\n"
+            '{"reaction_summary":{"reaction_type":"hydrogenation","reactants":["furfural","H2","Pd/C catalyst"],'
+            '"products":["furfuryl alcohol"],'
+            '"conditions":[{"type":"temperature","value":"80 °C"},{"type":"residence_time","value":"5 min"},{"type":"pressure","value":"2 MPa"}],'
+            '"reactor":{"type":"packed bed","inner_diameter":"5 mm"},'
+            '"metrics":{"conversion":95.2,"yield":89.5,"selectivity":94.1,"unit":"%"}}}\n'
+            "Choose best yield/conversion. Use null if unknown. Numbers for metrics.\n"
         )
         prompt = self._create_prompt(system_prompt, user_prompt, combined)
         raw = self._safe_generate(self._get_stage_model('summarize'), prompt, max_tokens=900, temp=0.05)

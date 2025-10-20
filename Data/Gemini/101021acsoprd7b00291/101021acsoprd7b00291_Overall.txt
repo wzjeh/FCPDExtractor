@@ -1,0 +1,1 @@
+{"reaction_summary":{"reaction_type":"flow_chemistry","reactants":[],"products":[],"conditions":[],"reactor":{"type":"continuous flow"},"metrics":{"conversion":null,"yield":null,"selectivity":null,"unit":"%"}}}

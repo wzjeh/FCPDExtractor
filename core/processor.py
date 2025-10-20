@@ -160,10 +160,10 @@ class UnifiedTextProcessor:
             # 追加严格择优规则，确保仅产出单一条件集
             prompt += (
                 "\nRules:\n"
-                "- If multiple conditions/results appear, OUTPUT ONLY ONE condition set:\n"
-                "  1) Prefer the one explicitly marked as 'optimal/optimized/best'.\n"
-                "  2) If none is marked, choose the set with the best performance (highest yield; if yield absent, then highest conversion).\n"
-                "- Do not include any other conditions or secondary results. Keep null for unknown fields.\n"
+                "- For CONDITIONS and METRICS: choose the OPTIMAL set (highest yield/conversion).\n"
+                "- For reaction_type, reactants, products, reactor: use the most informative/complete data (not necessarily from the optimal condition).\n"
+                "- If multiple conditions appear, output only ONE optimal condition set.\n"
+                "- Use null for unknown fields.\n"
             )
             raw = (self.llm.generate(prompt, max_tokens=300, temp=0.0) or '').strip()
             start, end = raw.find('{'), raw.rfind('}')
@@ -197,12 +197,13 @@ class UnifiedTextProcessor:
 
         system_prompt = "You output ONLY valid JSON. No explanations."
         user_prompt = (
-            "Extract the OPTIMAL condition set from abstracts below. Output ONE JSON:\n"
-            '{"reaction_summary":{"reaction_type":"nitration","reactants":["TFMB"],"products":["product"],'
-            '"conditions":[{"type":"temperature","value":"25 °C"},{"type":"residence_time","value":"8 min"}],'
-            '"reactor":{"type":"coil","inner_diameter":"10 mm"},'
-            '"metrics":{"conversion":99.6,"yield":95,"selectivity":90,"unit":"%"}}}\n'
-            "Rules: Choose the best yield/conversion. Use null if unknown. Numbers for metrics.\n"
+            "Extract the OPTIMAL condition set from abstracts. Output ONE JSON:\n"
+            '{"reaction_summary":{"reaction_type":"hydrogenation","reactants":["furfural","H2","Pd/C catalyst"],'
+            '"products":["furfuryl alcohol"],'
+            '"conditions":[{"type":"temperature","value":"80 °C"},{"type":"residence_time","value":"5 min"},{"type":"pressure","value":"2 MPa"}],'
+            '"reactor":{"type":"packed bed","inner_diameter":"5 mm"},'
+            '"metrics":{"conversion":95.2,"yield":89.5,"selectivity":94.1,"unit":"%"}}}\n'
+            "Choose best yield/conversion. Use null if unknown. Numbers for metrics.\n"
         )
         prompt = self._create_prompt(system_prompt, user_prompt, combined)
         raw = (self.llm.generate(prompt, max_tokens=1200, temp=0.05) or "").strip()
@@ -328,6 +329,12 @@ class UnifiedTextProcessor:
 
     def process_text_file_comprehensive(self, file_path: str, mode: str = 'comprehensive') -> Dict[str, Any]:
         print(f"🔍 处理文件: {os.path.basename(file_path)}")
+        
+        # 🚀 在线LLM快速模式：直接处理全文（仅Overall+Impact）
+        if mode == 'fast':
+            return self._process_fast_direct(file_path)
+        
+        # 标准5步流程（本地LLM和在线LLM都支持）
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
             lines = f.readlines()
         segs, cur = [], []
@@ -378,6 +385,116 @@ class UnifiedTextProcessor:
                 outputs['impact_analysis'] = impact_file
             except Exception:
                 pass
+        return outputs
+    
+    def _process_fast_direct(self, file_path: str) -> Dict[str, Any]:
+        """在线LLM快速模式：直接从全文提取Overall+Impact，跳过中间步骤"""
+        import re, json
+        print("  ⚡ 在线LLM快速模式：直接处理全文PDF→JSON+Impact")
+        
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            full_text = f.read()
+        
+        # 限制文本长度（在线LLM上下文窗口大）
+        if len(full_text) > 80000:
+            full_text = full_text[:80000]
+        
+        outputs = {}
+        
+        # 1. 一次性提取Overall JSON
+        print("  📊 提取Overall JSON（从全文）...")
+        system = "You are an expert in flow chemistry literature analysis."
+        user = f"""Extract the OPTIMAL flow chemistry parameters from this paper as ONE JSON object.
+
+Example output format:
+{{"reaction_summary":{{"reaction_type":"hydrogenation","reactants":["furfural","H2","Pd/C catalyst"],"products":["furfuryl alcohol"],"conditions":[{{"type":"temperature","value":"80 °C"}},{{"type":"residence_time","value":"5 min"}},{{"type":"pressure","value":"2 MPa"}}],"reactor":{{"type":"packed bed","inner_diameter":"5 mm"}},"metrics":{{"conversion":95.2,"yield":89.5,"selectivity":94.1,"unit":"%"}}}}}}
+
+Rules:
+- Extract reaction_type, all reactants (with catalysts), specific product names
+- Extract OPTIMAL conditions (highest yield/conversion reported in paper)
+- Include reactor type and dimensions
+- Metrics as numbers (conversion, yield, selectivity)
+- Use null for unknown fields
+
+Paper full text:
+{full_text}
+
+Output ONLY valid JSON:"""
+        
+        prompt = self._create_prompt(system, user, "")
+        raw = (self.llm.generate(prompt, max_tokens=1000, temp=0.1) or "").strip()
+        
+        # 清洗JSON
+        raw = re.sub(r'```json\s*', '', raw, flags=re.IGNORECASE)
+        raw = re.sub(r'```\s*', '', raw)
+        s, e = raw.find('{'), raw.rfind('}')
+        if s != -1 and e != -1 and e > s:
+            raw = raw[s:e+1]
+        
+        cleaned = self._sanitize_json_text(raw)
+        cleaned = self._keep_best_only(cleaned)
+        
+        overall_file = file_path.replace('.txt', '_Overall.txt')
+        with open(overall_file, 'w', encoding='utf-8') as f:
+            f.write(cleaned)
+        outputs['summarized_overall'] = overall_file
+        print(f"  ✅ Overall → {overall_file}")
+        
+        # 2. 一次性提取Impact
+        print("  📊 提取影响因素（从全文）...")
+        impact_sys = "Extract cause-effect relationships from chemical papers."
+        impact_user = f"""Extract ALL Factor-Metric-Direction relationships from this flow chemistry paper.
+
+Example:
+Input: "A longer residence time results in higher conversion. Selectivity remains unchanged."
+Output:
+residence_time | conversion | increase
+residence_time | selectivity | unchanged
+
+Rules:
+- Format: Factor | Metric | Direction (one per line)
+- Direction: increase, decrease, or unchanged
+- No table headers
+
+Paper text (first 40K chars):
+{full_text[:40000]}
+
+Output relationships:"""
+        
+        prompt_impact = self._create_prompt(impact_sys, impact_user, "")
+        raw_impact = (self.llm.generate(prompt_impact, max_tokens=800, temp=0.2) or "").strip()
+        
+        # 解析Impact
+        items = []
+        for line in raw_impact.splitlines():
+            if '|' not in line:
+                continue
+            low = line.lower()
+            if 'factor' in low and 'metric' in low:
+                continue
+            parts = [p.strip() for p in line.split('|')]
+            if len(parts) < 3 or not parts[0] or not parts[1] or parts[0] == '-':
+                continue
+            direction = parts[2].lower()
+            if 'increase' in direction or 'higher' in direction or 'improve' in direction:
+                direction = 'increase'
+            elif 'decrease' in direction or 'lower' in direction or 'reduce' in direction:
+                direction = 'decrease'
+            elif 'unchange' in direction or 'no effect' in direction:
+                direction = 'unchanged'
+            else:
+                direction = '-'
+            items.append({'factor': parts[0], 'metric': parts[1], 'direction': direction})
+        
+        impact_md = self._to_markdown_impact(items)
+        impact_file = file_path.replace('.txt', '_Impact_Analysis.txt')
+        with open(impact_file, 'w', encoding='utf-8') as f:
+            f.write("# Influence Factor Summary\n\n")
+            f.write(impact_md)
+        outputs['impact_analysis'] = impact_file
+        print(f"  ✅ Impact → {impact_file}")
+        print(f"  ⚡ 快速模式完成（2次API调用）")
+        
         return outputs
 
 

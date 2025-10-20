@@ -1,7 +1,11 @@
-engine: gemini
+engine: qwen
+
+qwen_api:
+  api_key_env_var: QWEN_API_KEY
+  model_name: qwen-flash  # qwen-turbo(快), qwen-plus(好), qwen-max(最好)
 
 gemini_api:
-  api_key_env_var: AIzaSyCt-ViWsRfCAUm3z6iLPu-b-Yb7H8OHg8o
+  api_key_env_var: GOOGLE_API_KEY #AIzaSyCt-ViWsRfCAUm3z6iLPu-b-Yb7H8OHg8o
   model_name: gemini-2.5-flash
 
 local_model:

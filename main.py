@@ -9,6 +9,7 @@ from typing import List
 from core.text_utils import extract_text_from_pdf, write_text
 from core.embedding import run_embedding_selection
 from core.models.gemini_llm import GeminiLLM
+from core.models.qwen_llm import QwenLLM
 from core.processor import UnifiedTextProcessor
 from core.local_pipeline import LocalPipeline
 from evaluation.metrics import calculate_metrics
@@ -45,7 +46,7 @@ def main() -> None:
     parser.add_argument('--input_dir', type=str, help='输入目录（.txt 或 .pdf）')
     parser.add_argument('--output_dir', type=str, help='输出目录')
     parser.add_argument('--limit', type=int, default=None)
-    parser.add_argument('--engine', type=str, choices=['gemini','local'])
+    parser.add_argument('--engine', type=str, choices=['qwen','gemini','local'])
     parser.add_argument('--mode', type=str, default='comprehensive', choices=['filter','abstract','summarize','comprehensive','evaluate'])
     args = parser.parse_args()
 
@@ -55,7 +56,7 @@ def main() -> None:
     output_dir = args.output_dir or paths.get('output_dir', 'data')
     os.makedirs(output_dir, exist_ok=True)
 
-    engine_choice = args.engine or cfg.get('engine', 'gemini')
+    engine_choice = args.engine or cfg.get('engine', 'qwen')
     if engine_choice == 'local':
         local_cfg = cfg.get('local_model', {})
         engine = LocalPipeline(
@@ -65,9 +66,16 @@ def main() -> None:
             abstract_model=local_cfg.get('abstract'),
             summarize_model=local_cfg.get('summarize'),
         )
+    elif engine_choice == 'qwen':
+        qcfg = cfg.get('qwen_api', {})
+        llm = QwenLLM(api_key_env_var=qcfg.get('api_key_env_var', 'QWEN_API_KEY'), 
+                      model_name=qcfg.get('model_name', 'qwen-plus'))
+        engine = UnifiedTextProcessor(llm)
     else:
+        # Gemini
         gcfg = cfg.get('gemini_api', {})
-        llm = GeminiLLM(api_key_env_var=gcfg.get('api_key_env_var', 'GOOGLE_API_KEY'), model_name=gcfg.get('model_name', 'gemini-1.5-flash'))
+        llm = GeminiLLM(api_key_env_var=gcfg.get('api_key_env_var', 'GOOGLE_API_KEY'), 
+                        model_name=gcfg.get('model_name', 'gemini-1.5-flash'))
         engine = UnifiedTextProcessor(llm)
 
     if args.mode == 'evaluate':

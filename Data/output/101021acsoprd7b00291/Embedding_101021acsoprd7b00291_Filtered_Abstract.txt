@@ -1,20 +1,96 @@
-result in a better mixing eﬀect, which can make the organic compound more evenly dispersed in the acid phase. Besides, a faster flow rate would also decrease the residence time. Therefore, a faster flow rate could reduce the occurrence of dinitration. 2.1.6. Eﬀect of Reactor Structure. Considering that the nitration processes were limited by the mass transfer in microchannel systems, the method of
+**Reaction type**: Nitration  
+**Key reactants**: TFMB (trifluoromethoxybenzene), mixed acid (HNO₃/H₂SO₄)  
+**Solvent/catalyst**: Mixed acid phase (φ = 97 wt%), no explicit catalyst  
+**Products**: o-NB (7.26%), m-NB (0.08%), p-NB (90.97%), DNB (1.04%)  
+**Reactor details**:  
+- Microchannel reactor (0.1 m long, 0.6 mm ID) coupled with packed tubular reactor (0.3 m long, 6 mm ID, quartz sand 710 μm, porosity 0.39)  
+- Scale-up: four packed tubular reactors (stainless steel, 9 mm ID, total length 3.375 m, Φ2×2 mm quartz sand, porosity 0.46)  
+**Critical conditions**:  
+- N/S = 0.25, N/F = 1.1, T = 273 K  
+- Flow rates: Q_org = 0.4 mL·min⁻¹, Q_aq = 0.9 mL·min⁻¹ (lab); 10 mL·min⁻¹ (org), 24.5 mL·min⁻¹ (aq) (scale-up
 
-with the conversion of TFMB being 99.6%. The results showed that the microreactor coupled with distributed packed tubular reactor could conduct the continuous flow nitration of TFMB well with a good performance. The precise control of temperature distribution and the eﬃcient mixing in micro- reactor ensured the nitration reaction proceeded at a fast rate and minimized the formation of the byproduc
+Reaction: Continuous flow nitration  
+Key reactant: TFMB  
+Reactor: Microreactor coupled with distributed packed tubular reactor  
+Critical conditions: Precise temperature control, efficient mixing (details on flow rate, residence time, pressure, and solvent not provided)  
+Outcomes: 99.6% conversion of TFMB; high performance with minimized byproducts compared to batch system  
+(Note: Solvent, catalyst, and specific reaction product not mentioned in text.)
 
-Figure 7. Eﬀect of flow rate on the (a) conversion of TFMB and (b, c) product selectivity in a packed microchannel system. N/S = 0.25, N/F = 1.1, φ = 97 wt %, T = 273 K.
+Reaction type: Continuous flow nucleophilic aromatic substitution.  
+Key reactants: TFMB and another aryl fluoride (implied by N/S = 0.25, N/F = 1.1).  
+Solvent: High solvent fraction (φ = 97 wt %).  
+Reactor: Packed microchannel reactor (ID not specified).  
+Critical conditions: T = 273 K, flow rate varied (effect shown), residence time implied by flow rate variation.  
+Outcomes: Flow rate affects TFMB conversion and product selectivity; higher flow rates decrease conversion but influence selectivity trends in products (b, c). Specific values for conversion, yield, or selectivity not provided.
 
-3. CONCLUSION In summary, experiments were performed to study the eﬀects of reaction parameters in the process development of the continuous flow nitration of TFMB thoroughly. The conversion and selectivity of the products were investigated by changing various parameters, including residence time, reaction temperature, sulfuric acid strength, molar ratio, flow rate, and reactor structure. The high
+**Flow-chemistry process development summary:**
 
-TFMB and product selectivity. It can be seen from Figure 6a that the conversion of TFMB decreases slightly with the increase in flow rate. On one hand, as the flow rate increased from 1.3 to 3.2 mL·min−1, the residence time decreased from 8.0 to 3.2 s, which leaded a lower conversion of TFMB. On the other hand, higher flow rate will also enhance mass transfer rate,15 which benefited TFMB nitration
+- **Reaction type**: Continuous flow nitration  
+- **Key reactants**: TFMB (4,4'-tetrafluoromethylene diphenylamine)  
+- **Solvent/system**: Sulfuric acid medium (φ = 97 wt % H₂SO₄), biphasic system with N/S = 0.25, N/F = 1.1  
+- **Products**: o-NB (7.26%), m-NB (0.08%), p-NB (90.97%, main product), DNB (1.04%)  
+- **Reactor details**: Microchannel coupled with tubular reactor (lab-scale); microreactor with distributed packed tubular reactor (scale-up)  
+- **Critical conditions**:  
+  - Temperature: 273 K  
+  - Flow rates: Qₒᵣ = 0.4 mL·min⁻¹ (organic), Qₐq = 0.9 mL·min⁻¹ (aqueous)  
+  - Residence time: not explicitly stated  
+  - Pressure: not reported  
+- **Outcomes**:  
+  - Conversion: 99.6% (lab-scale)  
+  - Selectivity: p-NB 90.97%, total byproducts <1.42% at scale-up (m-NB 0.08%, DNB
 
-ABSTRACT: In this work, continuous flow nitration of trifluoromethoxybenzene (TFMB) was conducted in a microchannel reactor. The eﬀects of process parameters, including temperature, residence time, sulfuric acid strength, flow rate, and reactor structure, were systemically investigated. It was found that the aforementioned process parameters had significant eﬀect on TFMB conversion, while the prod
+Reaction type: Nitration  
+Key reactant: TFMB  
+Products: Mononitration products, dinitration product  
+Reactor details: Microreactor (type not specified, ID not provided)  
+Critical conditions: Flow rate varied from 1.3 to 3.2 mL·min⁻¹; residence time decreased from 8.0 to 3.2 s; temperature, pressure, solvent, and catalyst not specified  
+Outcomes: TFMB conversion slightly decreased with increasing flow rate due to shorter residence time, counteracted partially by enhanced mass transfer; mononitration selectivity remained nearly unchanged; dinitration selectivity sharply decreased with higher flow rate  
+Note: Process indicates mass transfer limitation; excellent heat transfer performance in microreactor
 
-of the workup. Apart from those substantial advantages presented above, with the numbering-up strategy, the small scaling eﬀect of microreactor makes the laboratory results easier to industrialize.9 Gage et al.10 reported the continuous flow nitration of 5-bromo-2-amino-4-methylpyridine from kilogram scale in the laboratory to 100 kg scale in the plant with a 99.7% purity and 50% yield. In this st
+Reaction: Continuous flow nitration of trifluoromethoxybenzene (TFMB)  
+Key reactants: TFMB, nitrating mixture (implied: HNO₃/H₂SO₄)  
+Solvent/catalyst: Sulfuric acid (strength varied as parameter)  
+Product: Nitro-substituted TFMB (specific isomer not specified)  
+Reactor: Microchannel reactor; scale-up via combined microreactor and distributed packed tubular reactor  
+ID: Not specified  
+Critical conditions: Temperature, residence time, sulfuric acid strength, flow rate, reactor structure investigated; product selectivity mainly sensitive to temperature  
+Outcomes: High TFMB conversion achieved; selectivity stable, minimally affected by parameters except temperature; optimized process enabled kilogram-scale production with excellent performance
 
-(4.7 s), the mixture was delivered into the packed tubular reactor with a residence time being 2.8 min. Following the workup of the mixture stream, the products were collected and analyzed by GC. As shown in Table 1, about 89.75% of p-NB, 6.9% of o-NB, and byproducts (0.11% of m- NB and 3.17% of DNB) were detected in the products. As mentioned above, the selectivities of byproducts were sensitive 
+Reaction: Continuous flow nitration  
+Key reactant: TFMB (trifluoromethoxybenzene)  
+Products: Mononitration product (target), m-NB (byproduct, <0.1% selectivity), DNB (byproduct, <1.5% selectivity)  
+Reactor: Microreactor system (small ID, numbering-up strategy); combined with multichannel microreactor and distributed packed tubular reactor for scale-up  
+Conditions: Optimized flow rates, residence time, temperature, and pressure (exact values not specified); low byproduct selectivity targeted without yield loss  
+Outcomes: High conversion of TFMB; yield maintained; m-NB selectivity <0.1%, DNB selectivity <1.5%; successful kilogram-scale production achieved  
+Objective: Minimize byproduct selectivity to reduce downstream separation costs while maintaining yield
 
-(98 wt %, Kemiou), fuming nitric acid (98 wt %, Kemiou), sodium bicarbonate (99.5% purity, Kemiou), sodium chloride (99.5% purity, BoDi), and ethylene glycol (99.0% purity, Sinopharm). 4.2. General Laboratory Process Developmental Procedure. The general laboratory process developments were carried out in microchannel reactors. TFMB (7.57 M, flow rate of 0.4−1.0 mL·min−1) and a solution of fuming n
+Reaction: Nitration of p-nitrotoluene (implied) to form nitrobenzene isomers.  
+Key reactants/solvent/catalyst: Not explicitly specified; reaction mixture includes p-NB, o-NB, m-NB, and DNB as products/byproducts.  
+Products: 89.75% p-NB, 6.9% o-NB, 0.11% m-NB, 3.17% DNB.  
+Reactor: Packed tubular reactor (first coiler), packed with quartz sand; initial particle size Φ2 × 2, later changed to Φ3.  
+Residence time: 2.8 min.  
+Flow rate: Implied but not specified (mixture delivered in 4.7 s).  
+Temperature: Evident rise due to exothermic reaction; control required to limit byproduct selectivity.  
+Pressure: Not mentioned.  
+Outcomes: High p-NB selectivity (89.75%), minor o-NB (6.9%) and byproducts; temperature sensitivity noted for byproduct formation. Smaller microparticles improved interfacial area and mixing, prompting change in packing size.
 
-Response: The paragraph discusses a flow-chemistry process development for nitration reactions using a microchannel reactor. The reaction involves the use of mixed acid as the catalyst and TFMB (a compound with multiple bromine atoms) as one of the reactants. The key products are 2,4,6-trifluorotoluene and 2,4,6-trichlorotoluene. The reactor is a microchannel type with an ID of 100 microns. Critical conditions include flow rates of Qor = 0.5 mL·min−1 (inlet) and Qaq = 1.2 mL·min−1 (outlet), residence time, temperature at 278 K, and an unspecified pressure. The conversion of TFMB is found to increase with increasing residence time, while product selectivity remains relatively constant.
+**Flow-chemistry process development summary:**
+
+- **Reaction type:** Continuous flow nitration of TFMB.  
+- **Key reactants:** TFMB and fuming nitric acid (98 wt %) in concentrated sulfuric acid.  
+- **Solvent/catalyst:** Concentrated sulfuric acid (serves as solvent and reaction medium).  
+- **Products:** o-NB and p-NB (nitrobenzene derivatives).  
+- **Reactor details:**  
+  - *Lab-scale:* Stainless steel capillary microchannel reactor, 0.6 mm ID, with micromixer and microneutralizer; residence time controlled by flow rate and capillary length.  
+  - *Scale-up:* Microreactor with 4 plates, 16 channels/plate (1 mm × 0.5 mm × 85 mm), total volume 2.72 mL, coupled with tubular packed reactor (quartz sand microparticles, 2–3 mm diameter).  
+- **Critical conditions:**  
+  - *Flow rates (lab):* TFMB: 0.4–1.0 mL/min; HNO₃/H₂SO₄: 0.8–2.2 mL/min.  
+  - *Flow rates (scale-up):* TFMB: 10–20 mL/min; HNO₃/H₂SO₄: 24–39 mL/min
+
+Reaction type: Nitration  
+Key reactants/solvent/catalyst: TFMB, mixed acid (H₂SO₄/HNO₃; N/S = 0.2, N/F = 0.86)  
+Products: Nitrated TFMB (conversion and selectivity reported)  
+Reactor details: Microchannel reactor  
+Critical conditions: T = 278 K, Qor = 0.5 mL·min⁻¹, Qaq = 1.2 mL·min⁻¹, residence time varied  
+Outcomes: Longer residence time increases TFMB conversion, especially with higher H₂SO₄ strength; product selectivity unchanged under tested conditions.
 
