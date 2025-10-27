@@ -2,7 +2,7 @@ engine: qwen
 
 qwen_api:
   api_key_env_var: QWEN_API_KEY
-  model_name: qwen-flash  # qwen-turbo(快), qwen-plus(好), qwen-max(最好)
+  model_name: qwen-plus-2025-07-28  #qwen-plus-2025-07-14 qwen-plus-2025-09-11 qwen-turbo(快), qwen-plus(好), qwen-max(最好)
 
 gemini_api:
   api_key_env_var: GOOGLE_API_KEY  # 从环境变量读取，不要硬编码！
