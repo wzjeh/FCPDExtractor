@@ -1,0 +1,52 @@
+{
+  "reaction_type": "fluorination",
+  "reactants": [
+    {
+      "name": "toluene",
+      "role": "reactant"
+    },
+    {
+      "name": "acetonitrile",
+      "role": "solvent"
+    },
+    {
+      "name": "fluorine",
+      "role": "reactant"
+    }
+  ],
+  "products": [
+    {
+      "name": "Floride",
+      "yield_optimal": 28,
+      "unit": "%"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "temperature",
+      "value": "-16 ﾂｰC"
+    },
+    {
+      "type": "residence_time",
+      "value": "null"
+    },
+    {
+      "type": "flow_rate_total",
+      "value": "19.6 mL/h"
+    },
+    {
+      "type": "pressure",
+      "value": "null"
+    }
+  ],
+  "reactor": {
+    "type": "film microreactor",
+    "inner_diameter": "5 mm"
+  },
+  "metrics": {
+    "conversion": 76,
+    "yield": 28,
+    "selectivity": 37,
+    "unit": "%"
+  }
+}
