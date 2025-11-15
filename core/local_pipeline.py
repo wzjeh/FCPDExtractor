@@ -8,7 +8,7 @@ from gpt4all import GPT4All
 
 
 class LocalPipeline:
-    def __init__(self, model_name: str | None = None, model_path: str = 'models/', *, filter_model: str | None = None, abstract_model: str | None = None, summarize_model: str | None = None, finetuned_trigger_name: str | None = None) -> None:
+    def __init__(self, model_name: str | None = None, model_path: str = 'models/', *, filter_model: str | None = None, abstract_model: str | None = None, summarize_model: str | None = None, overall_model: str | None = None, finetuned_trigger_name: str | None = None) -> None:
         abs_model_path = os.path.abspath(model_path)
         # 单模型或分阶段模型装配
         self.model_path = abs_model_path
@@ -18,6 +18,8 @@ class LocalPipeline:
         self.model_filter_name = filter_model
         self.model_abstract_name = abstract_model
         self.model_summarize_name = summarize_model
+        # 新增：用于“多段JSON汇总为1个最佳JSON”的专用模型
+        self.model_overall_name = overall_model
         self.finetuned_trigger_name = finetuned_trigger_name or 'My_Finetuned_Model'
 
     def _create_prompt(self, system: str, user: str, context: str = "") -> str:
@@ -49,6 +51,9 @@ class LocalPipeline:
         # 判断当前阶段的模型是否是微调模型
         if stage == 'summarize' and self.model_summarize_name:
             if self._is_finetuned_model(self.model_summarize_name):
+                return self._create_llama31_chat_prompt(system, user, context)
+        if stage == 'overall' and self.model_overall_name:
+            if self._is_finetuned_model(self.model_overall_name):
                 return self._create_llama31_chat_prompt(system, user, context)
         return self._create_prompt(system, user, context)
 
@@ -267,26 +272,43 @@ class LocalPipeline:
         return out
 
     def summarize_document_overall(self, df_abstract: pd.DataFrame) -> str:
-        """参考旧项目：将抽象/内容汇总为单一JSON（择优合并）。"""
+        """将多个段落级结构化JSON汇总为单一最佳JSON；若无JSON则回落到基于文本的汇总。"""
         import re, json
-        col = 'abstract' if 'abstract' in df_abstract.columns else 'content'
-        texts = [t for t in df_abstract[col].fillna("").tolist() if t.strip()]
-        combined = "\n\n".join(texts)
-        if len(combined) > 12000:
-            combined = combined[:12000]
-
-        system_prompt = "You output ONLY valid JSON. No explanations."
-        user_prompt = (
-            "Extract the OPTIMAL condition set from abstracts. Output ONE JSON:\n"
-            '{"reaction_summary":{"reaction_type":"hydrogenation","reactants":["furfural","H2","Pd/C catalyst"],'
-            '"products":["furfuryl alcohol"],'
-            '"conditions":[{"type":"temperature","value":"80 °C"},{"type":"residence_time","value":"5 min"},{"type":"pressure","value":"2 MPa"}],'
-            '"reactor":{"type":"packed bed","inner_diameter":"5 mm"},'
-            '"metrics":{"conversion":95.2,"yield":89.5,"selectivity":94.1,"unit":"%"}}}\n'
-            "Choose best yield/conversion. Use null if unknown. Numbers for metrics.\n"
-        )
-        prompt = self._create_prompt(system_prompt, user_prompt, combined)
-        raw = self._safe_generate(self._get_stage_model('summarize'), prompt, max_tokens=900, temp=0.05)
+        # 优先使用段落级JSON（列名为 summarized）
+        if 'summarized' in df_abstract.columns:
+            json_items = [t for t in df_abstract['summarized'].fillna("").tolist() if t.strip()]
+            # 为防止超长，限制串接长度
+            combined = "\n\n".join(json_items)
+            if len(combined) > 12000:
+                combined = combined[:12000]
+            system_prompt = "You output ONLY valid JSON. No explanations."
+            user_prompt = (
+                "You are given multiple JSON objects, each with the same schema under key reaction_summary.\n"
+                "Merge them into ONE best JSON by selecting the optimal condition set (highest yield/conversion).\n"
+                "Rules:\n"
+                "- Keep only ONE optimal condition set.\n"
+                "- For reaction_type, reactants, products, reactor: choose the most informative/complete values across inputs.\n"
+                "- Metrics must be numeric when present; use null if unknown.\n"
+                "- Output ONLY the merged JSON object, no markdown, no comments.\n"
+            )
+        else:
+            # 回落：基于抽象/原文进行一次整体抽取
+            col = 'abstract' if 'abstract' in df_abstract.columns else 'content'
+            texts = [t for t in df_abstract[col].fillna("").tolist() if t.strip()]
+            combined = "\n\n".join(texts)
+            if len(combined) > 12000:
+                combined = combined[:12000]
+            system_prompt = "You output ONLY valid JSON. No explanations."
+            user_prompt = (
+                "Extract the OPTIMAL condition set from the abstracts. Output ONE JSON only.\n"
+                "Rules:\n"
+                "- Keep only ONE optimal condition set (highest yield/conversion).\n"
+                "- For reaction_type, reactants, products, reactor: use the most informative values.\n"
+                "- Metrics must be numeric when present; use null if unknown.\n"
+            )
+        # 使用 overall 阶段模型与对应的 chat template（若为微调模型）
+        prompt = self._get_chat_prompt(system_prompt, user_prompt, combined, stage='overall')
+        raw = self._safe_generate(self._get_stage_model('overall'), prompt, max_tokens=900, temp=0.05)
         # 去围栏并抽取最大花括号块
         raw = re.sub(r"```json\s*", "", raw, flags=re.IGNORECASE)
         raw = re.sub(r"```\s*", "", raw)
@@ -480,7 +502,8 @@ class LocalPipeline:
             self.save_df_to_text(df_summarized, summarize_file, 'summarized')
             outputs['summarized'] = summarize_file
             # Overall（基于抽象优先）
-            overall_input = df_abstract if 'df_abstract' in locals() else df_input
+            # 优先使用段落级JSON结果；若无则退回到抽象，再退回原始输入
+            overall_input = df_summarized if 'df_summarized' in locals() else (df_abstract if 'df_abstract' in locals() else df_input)
             overall_json = self.summarize_document_overall(overall_input)
             overall_file = file_path.replace('.txt', '_Overall.txt')
             with open(overall_file, 'w', encoding='utf-8') as f:
@@ -510,7 +533,9 @@ class LocalPipeline:
             name = self.model_abstract_name
         elif stage == 'summarize':
             name = self.model_summarize_name
+        elif stage == 'overall':
+            name = self.model_overall_name
         if not name:
             # 兜底：使用摘要模型或任一可用
-            name = self.model_abstract_name or self.model_summarize_name or self.model_filter_name
+            name = self.model_abstract_name or self.model_summarize_name or self.model_overall_name or self.model_filter_name
         return GPT4All(name, model_path=self.model_path, allow_download=False)

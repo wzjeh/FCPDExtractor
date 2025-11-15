@@ -13,6 +13,8 @@ local_model:
   abstract: nous-hermes-llama2-13b.Q4_0.gguf
   summarize: My_Finetuned_Model_Q4_K_M1_para2json_2.gguf
   # summarize: meta-llama-3.1-8b-instruct-q4_k_m-2.gguf
+  # 新增：用于“多段JSON汇总为1个最佳JSON”的专用模型（llama3.1微调的json2json）
+  overall: My_Finetuned_Model_Q4_K_M1_json2json.gguf
   finetuned_trigger_name: 'My_Finetuned_Model' # <-- 明确告诉它触发器
   path: models/
 
