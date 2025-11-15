@@ -8,6 +8,10 @@ from .models.base_llm import BaseLLM
 class UnifiedTextProcessor:
     def __init__(self, llm: BaseLLM) -> None:
         self.llm = llm
+        self.summary_generation_kwargs = {
+            "temperature": 0.0,
+            "top_p": 0.6,
+        }
 
     def _create_prompt(self, system: str, user: str, context: str = "") -> str:
         parts = []
@@ -165,7 +169,7 @@ class UnifiedTextProcessor:
                 "- If multiple conditions appear, output only ONE optimal condition set.\n"
                 "- Use null for unknown fields.\n"
             )
-            raw = (self.llm.generate(prompt, max_tokens=300, temp=0.0) or '').strip()
+            raw = (self.llm.generate(prompt, max_tokens=300, **self.summary_generation_kwargs) or '').strip()
             start, end = raw.find('{'), raw.rfind('}')
             if start != -1 and end != -1 and end > start:
                 raw = raw[start:end+1]
@@ -177,7 +181,7 @@ class UnifiedTextProcessor:
                 _json.loads(txt)
                 summarized.append(txt)
             except Exception:
-                raw2 = (self.llm.generate(prompt, max_tokens=240, temp=0.0) or '').strip()
+                raw2 = (self.llm.generate(prompt, max_tokens=240, **self.summary_generation_kwargs) or '').strip()
                 s2, e2 = raw2.find('{'), raw2.rfind('}')
                 if s2 != -1 and e2 != -1 and e2 > s2:
                     raw2 = raw2[s2:e2+1]
@@ -206,7 +210,7 @@ class UnifiedTextProcessor:
             "Choose best yield/conversion. Use null if unknown. Numbers for metrics.\n"
         )
         prompt = self._create_prompt(system_prompt, user_prompt, combined)
-        raw = (self.llm.generate(prompt, max_tokens=1200, temp=0.05) or "").strip()
+        raw = (self.llm.generate(prompt, max_tokens=1200, **self.summary_generation_kwargs) or "").strip()
         raw = re.sub(r'```json\s*', '', raw)
         raw = re.sub(r'```\s*', '', raw)
         s, e = raw.find("{"), raw.rfind("}")

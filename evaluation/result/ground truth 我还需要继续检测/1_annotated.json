@@ -1,0 +1,61 @@
+
+{
+  "reaction_type": "photoreduction",
+  "reactants": [
+    {
+      "name": "4-chloronitrobenzene",
+      "role": "reactant"
+    },
+    {
+      "name": "triethanolamine",
+      "role": "reactant"
+    },
+    {
+      "name": "Eosin Y (tetrabromofluorescein)",
+      "role": "catalyst"
+    },
+    {
+      "name": "ethyl acetate",
+      "role": "solvent"
+    },
+    {
+      "name": "water",
+      "role": "solvent"
+    }
+  ],
+  "products": [
+    {
+      "name": "4-chlorophenylhydroxylamine",
+      "yield_optimal": 96,
+      "unit": "%"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "temperature",
+      "value": null
+    },
+    {
+      "type": "residence_time",
+      "value": null
+    },
+    {
+      "type": "flow_rate_total",
+      "value": "36.7 mg/h"
+    },
+    {
+      "type": "pressure",
+      "value": null
+    }
+  ],
+  "reactor": {
+    "type": "FEP tube",
+    "inner_diameter": "1 mm"
+  },
+  "metrics": {
+    "conversion": null,
+    "yield": 96,
+    "selectivity": null,
+    "unit": "%"
+  }
+}

@@ -8,7 +8,7 @@ from gpt4all import GPT4All
 
 
 class LocalPipeline:
-    def __init__(self, model_name: str | None = None, model_path: str = 'models/', *, filter_model: str | None = None, abstract_model: str | None = None, summarize_model: str | None = None) -> None:
+    def __init__(self, model_name: str | None = None, model_path: str = 'models/', *, filter_model: str | None = None, abstract_model: str | None = None, summarize_model: str | None = None, finetuned_trigger_name: str | None = None) -> None:
         abs_model_path = os.path.abspath(model_path)
         # 单模型或分阶段模型装配
         self.model_path = abs_model_path
@@ -18,8 +18,10 @@ class LocalPipeline:
         self.model_filter_name = filter_model
         self.model_abstract_name = abstract_model
         self.model_summarize_name = summarize_model
+        self.finetuned_trigger_name = finetuned_trigger_name or 'My_Finetuned_Model'
 
     def _create_prompt(self, system: str, user: str, context: str = "") -> str:
+        """创建普通格式的 prompt"""
         parts = []
         if system:
             parts.append(system)
@@ -27,6 +29,30 @@ class LocalPipeline:
             parts.append(f"Context\n{context}")
         parts.append(f"Task\n{user}")
         return "\n\n".join(parts)
+    def _create_llama31_chat_prompt(self, system: str, user: str, context: str = "") -> str:
+        """创建 Llama 3.1 chat template 格式的 prompt（用于微调模型）"""
+        user_content = ""
+        if context:
+            user_content += f"Context\n{context}\n\n"
+        user_content += f"Task\n{user}"
+        
+        # Llama 3.1 chat template 格式
+        prompt = f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{system}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{user_content}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+        return prompt
+
+    def _is_finetuned_model(self, model_name: str) -> bool:
+        """判断是否是微调模型"""
+        return self.finetuned_trigger_name.lower() in model_name.lower()
+
+    def _get_chat_prompt(self, system: str, user: str, context: str = "", stage: str = "filter") -> str:
+        """根据模型类型选择 prompt 格式"""
+        # 判断当前阶段的模型是否是微调模型
+        if stage == 'summarize' and self.model_summarize_name:
+            if self._is_finetuned_model(self.model_summarize_name):
+                return self._create_llama31_chat_prompt(system, user, context)
+        return self._create_prompt(system, user, context)
+
+    
 
     def _clip(self, text: str, max_chars: int) -> str:
         if not text:
@@ -204,24 +230,29 @@ class LocalPipeline:
             "  \"conditions\": [ {\"type\":\"temperature\",\"value\":\"80 °C\"}, {\"type\":\"flow_rate_total\",\"value\":\"0.1 mL/min\"} ],"
             "  \"reactor\": {\"type\":\"coil\", \"inner_diameter\":\"0.5 mm\"},"
             "  \"metrics\": {\"conversion\": null, \"yield\": 82, \"selectivity\": null, \"unit\": \"%\"}"
-            "}}"
+            "}}\n"
+            "Rules:\n"
+            "- For CONDITIONS and METRICS: choose the OPTIMAL set (highest yield/conversion).\n"
+            "- For reaction_type, reactants, products, reactor: use the most informative/complete data (not necessarily from the optimal condition).\n"
+            "- If multiple conditions appear, output only ONE optimal condition set.\n"
+            "- Use null for unknown fields.\n"
         )
         summarized = []
         for _, row in df.iterrows():
             content = str(row['content' if 'abstract' not in df.columns else 'abstract'])
             content = self._clip(content, 2200)
-            prompt = self._create_prompt(system_prompt, user_prompt, content)
+            
+            # 使用新的 _get_chat_prompt 方法，自动选择格式
+            base_prompt = self._get_chat_prompt(system_prompt, user_prompt, content, stage='summarize')
+            
+            # 追加择优规则（但不要追加到 chat template 的 assistant 标记之后）
+            # 需要把 Rules 放在 Task 的 user_prompt 中
+            # ... 修改 user_prompt 包含 Rules ...
             model = self._get_stage_model('summarize')
-            # 追加择优规则：conditions和metrics必须最优，其他信息取最丰富的
-            prompt += (
-                "\nRules:\n"
-                "- For CONDITIONS and METRICS: choose the OPTIMAL set (highest yield/conversion).\n"
-                "- For reaction_type, reactants, products, reactor: use the most informative/complete data (not necessarily from the optimal condition).\n"
-                "- If multiple conditions appear, output only ONE optimal condition set.\n"
-                "- Use null for unknown fields.\n"
-            )
-            raw = self._safe_generate(model, prompt, max_tokens=260, temp=0.0)
+            raw = self._safe_generate(model, base_prompt, max_tokens=512, temp=0.0)
+            
             # 去围栏并抽取花括号块
+            
             import re as _re
             raw = _re.sub(r"```json\s*", "", raw, flags=_re.IGNORECASE)
             raw = _re.sub(r"```\s*", "", raw)
@@ -483,5 +514,3 @@ class LocalPipeline:
             # 兜底：使用摘要模型或任一可用
             name = self.model_abstract_name or self.model_summarize_name or self.model_filter_name
         return GPT4All(name, model_path=self.model_path, allow_download=False)
-
-

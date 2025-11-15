@@ -22,18 +22,23 @@ class QwenLLM(BaseLLM):
         self.model_name = model_name
 
     def generate(self, prompt: str, **kwargs: Any) -> str:
-        temperature = kwargs.get("temp", 0.0)
+        temperature = kwargs.pop("temperature", kwargs.get("temp", 0.0))
+        top_p = kwargs.pop("top_p", None)
         max_tokens = kwargs.get("max_tokens", 512)
 
         try:
-            response = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=[
+            request_kwargs = {
+                "model": self.model_name,
+                "messages": [
                     {"role": "user", "content": prompt}
                 ],
-                temperature=temperature,
-                max_tokens=max_tokens,
-            )
+                "temperature": temperature,
+                "max_tokens": max_tokens,
+            }
+            if top_p is not None:
+                request_kwargs["top_p"] = top_p
+
+            response = self.client.chat.completions.create(**request_kwargs)
             
             if response.choices and len(response.choices) > 0:
                 return response.choices[0].message.content.strip()

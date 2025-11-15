@@ -1,0 +1,32 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| residence_time | conversion | increase |
+| temperature | conversion | increase |
+| gas_flow_rate | residence_time | decrease |
+| liquid_flow_rate | residence_time | decrease |
+| liquid_flow_rate | conversion | decrease |
+| gas_flow_rate | conversion | unchanged |
+| liquid_segment_length | conversion | increase |
+| gas_segment_length | conversion | decrease |
+| mass_transfer_coefficient | conversion | increase |
+| temperature | selectivity | unchanged |
+| gas_segment_length | mass_transfer_coefficient | increase |
+| liquid_segment_length | mass_transfer_coefficient | decrease |
+| residence_time | selectivity | unchanged |
+| mass_transfer_coefficient | selectivity | unchanged |
+| temperature | activation_energy | unchanged |
+| gas_flow_rate | liquid_segment_length | decrease |
+| liquid_flow_rate | liquid_segment_length | increase |
+| gas_flow_rate | gas_segment_length | increase |
+| liquid_flow_rate | gas_segment_length | decrease |
+| Bayesian_optimization | conversion | increase |
+| Taylor_flow_regime | mass_transfer | increase |
+| Taylor_flow_regime | conversion | increase |
+| flow_regime | selectivity | unchanged |
+| microfluidic_synthesis | space_time_yield | increase |
+| microfluidic_synthesis | productivity | increase |
+| microfluidic_synthesis | catalyst_reuse | unchanged |
+| microfluidic_synthesis | reaction_time | decrease |
+| microfluidic_synthesis | acetylene_conversion | increase |

@@ -1,0 +1,44 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| residence_time | conversion | increase |
+| residence_time | yield | increase |
+| temperature | conversion | unchanged |
+| temperature | yield | decrease |
+| Br-feeding_rate | yield | decrease |
+| reactant_concentration | yield | decrease |
+| temperature | side_reactions | increase |
+| channel_size | thermal_runaway | increase |
+| channel_size | yield | increase |
+| reactant_concentration | product_concentration | increase |
+| reactant_concentration | energy_consumption | increase |
+| NaOH_usage | dehydrobromination_completion | increase |
+| NaOH_usage | yield | increase |
+| reaction_temperature | dehydrobromination_time | decrease |
+| microreactor_use | heat_transfer_efficiency | increase |
+| microreactor_use | mass_transfer_efficiency | increase |
+| microreactor_use | product_concentration | increase |
+| microreactor_use | reaction_time | decrease |
+| microreactor_use | yield | increase |
+| activation_energy_side_reaction | side_reactions | increase |
+| activation_energy_target_reaction | side_reactions | decrease |
+| complexation_temperature | separation_efficiency | decrease |
+| complexation_temperature | equilibrium_time | decrease |
+| decomplexation_temperature | decomplexation_efficiency | increase |
+| decomplexation_temperature | self_polymerization | increase |
+| flow_rate | mixing_efficiency | increase |
+| flow_rate | segregation_index | decrease |
+| channel_size | heat_removal_efficiency | increase |
+| channel_size | thermal_runaway | decrease |
+| channel_size | yield | increase |
+| reaction_temperature | thermal_runaway | increase |
+| reaction_temperature | yield | decrease |
+| Br2_concentration | yield | decrease |
+| Br2_overdose | bromination_efficiency | increase |
+| Br2_overdose | yield | decrease |
+| NaOH/Br_ratio | yield | increase |
+| reaction_temperature | dehydrobromination_time | decrease |
+| reaction_temperature | p-DEB_polymerization | increase |
+| microreactor_use | throughput | increase |
+| microreactor_use | scale-up_feasibility | increase |

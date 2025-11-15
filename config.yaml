@@ -1,4 +1,4 @@
-engine: qwen
+engine: local
 
 qwen_api:
   api_key_env_var: QWEN_API_KEY
@@ -11,7 +11,9 @@ gemini_api:
 local_model:
   filter: nous-hermes-llama2-13b.Q4_0.gguf
   abstract: nous-hermes-llama2-13b.Q4_0.gguf
-  summarize: meta-llama-3.1-8b-instruct-q4_k_m-2.gguf
+  summarize: My_Finetuned_Model_Q4_K_M1_para2json_2.gguf
+  # summarize: meta-llama-3.1-8b-instruct-q4_k_m-2.gguf
+  finetuned_trigger_name: 'My_Finetuned_Model' # <-- 明确告诉它触发器
   path: models/
 
 paths:

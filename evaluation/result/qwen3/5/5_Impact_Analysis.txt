@@ -1,0 +1,40 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| residence_time | yield | increase |
+| reaction_temperature | yield | increase |
+| initial_concentration_of_1 | yield | increase |
+| molar_ratio_of_2_to_1 | yield | increase |
+| reaction_temperature | conversion_of_1 | increase |
+| residence_time | conversion_of_1 | increase |
+| reaction_temperature | rate_constant | increase |
+| reaction_temperature | selectivity_of_3 | increase |
+| residence_time | selectivity_of_3 | unchanged |
+| reaction_temperature | activation_energy | unchanged |
+| reaction_temperature | pre_exponential_factor | unchanged |
+| molar_ratio | yield | increase |
+| reaction_time | yield | increase |
+| reaction_temperature | selectivity | increase |
+| residence_time | selectivity | unchanged |
+| reaction_order_of_1 | conversion_of_1 | - |
+| reaction_order_of_2 | conversion_of_1 | - |
+| temperature | reaction_rate_constant | increase |
+| reaction_time | conversion_of_1 | increase |
+| molar_ratio_of_2_to_1 | conversion_of_1 | increase |
+| initial_concentration_of_1 | conversion_of_1 | increase |
+| initial_concentration_of_2 | conversion_of_1 | increase |
+| reaction_temperature | conversion_of_1 | increase |
+| residence_time | conversion_of_1 | increase |
+| reaction_order_of_1 | reaction_rate | increase |
+| reaction_order_of_2 | reaction_rate | increase |
+| activation_energy | reaction_rate_constant | increase |
+| pre_exponential_factor | reaction_rate_constant | increase |
+| reaction_temperature | reaction_outcome_prediction_accuracy | decrease |
+| residence_time | reaction_outcome_prediction_accuracy | decrease |
+| reaction_temperature | bubble_formation | increase |
+| residence_time | bubble_formation | increase |
+| reaction_temperature | local_concentration_fluctuation | increase |
+| residence_time | local_concentration_fluctuation | increase |
+| reaction_temperature | reaction_outcome_accuracy | decrease |
+| residence_time | reaction_outcome_accuracy | decrease |

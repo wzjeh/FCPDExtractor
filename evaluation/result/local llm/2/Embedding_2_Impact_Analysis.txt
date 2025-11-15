@@ -1,0 +1,7 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| Residence time | conversion of TFMB | increase |
+| Temperature | yield | increase |
+| Temperature | production rate | - |

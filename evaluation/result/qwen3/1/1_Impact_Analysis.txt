@@ -1,0 +1,38 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| residence_time | conversion | increase |
+| residence_time | selectivity | unchanged |
+| residence_time | reaction_rate | increase |
+| catalyst_concentration | reaction_rate | increase |
+| catalyst_concentration | selectivity | increase |
+| substrate_concentration | reaction_rate | decrease |
+| substrate_concentration | selectivity | increase |
+| ethyl_acetate_proportion | reaction_rate | decrease |
+| ethyl_acetate_proportion | selectivity | increase |
+| flow_rate | residence_time | decrease |
+| flow_rate | conversion | decrease |
+| flow_rate | selectivity | unchanged |
+| tube_length | residence_time | increase |
+| tube_length | conversion | increase |
+| tube_length | selectivity | unchanged |
+| solvent_(ethyl_acetate) | PHA_reduction_difficulty | increase |
+| solvent_(ethyl_acetate) | redox_potential_of_PHA | increase |
+| two-phase_system | electron_transfer_rate | decrease |
+| two-phase_system | selectivity | increase |
+| flow_reactor | selectivity | increase |
+| flow_reactor | reaction_time | decrease |
+| flow_reactor | productivity | increase |
+| batch_reactor | selectivity | decrease |
+| batch_reactor | reaction_time | increase |
+| batch_reactor | productivity | decrease |
+| redox_potential_of_PHA | further_reduction | decrease |
+| condensation_suppression | selectivity | increase |
+| further_reduction_suppression | selectivity | increase |
+| light_path_length | photoreaction_efficiency | increase |
+| light_path_length | reaction_selectivity | increase |
+| mixing_efficiency | reaction_rate | increase |
+| mixing_efficiency | selectivity | increase |
+| Bayesian_optimization | experimental_efficiency | increase |
+| Bayesian_optimization | yield | increase |

@@ -1,0 +1,19 @@
+continuous flow conditions. The algorithm simultaneously optimized reaction yield and production rate
+
+Incorporation of continuous flow techniques enabled improved control over reaction parameters
+
+Scheme 1 Continuous flow synthesis setup and EDBO+ workflow. Initial seed reactions were conducted within the predefined input constraints. Subsequent rounds of experiments were performed in batch sizes of three unique reactions. The outputs were used to update EDBO+ and provide the next round of suggested experiments. Initially 10 rounds of experiments were perform followed by expansion of the up
+
+respectively, while semi-automated processing tended to reach lower values of 308 and 363% yield mmol mL−1 h−1 for the 400 MHz and 60 MHz data, respectively. Compared to the hyper- volume from the experimental data (330% yield mmol mL−1
+
+Temperature (°C) sres (min) cpyr Yield (%) Production rate (g h−1) Space-time yield (mmol mL−1 h−1)
+
+Summary
+ The paragraph discusses the development of a continuous flow synthesis process for pyridinium salts using Bayesian optimization with active learning. The reaction type is not mentioned explicitly but it involves the formation of pyridinium salts from various reactants such as amines and aldehydes in the presence of a catalyst. The solvent used is water, while the reactor details are not provided. The critical conditions include flow rates (A-C), residence time (t_res), temperature (T), and pressure (P). The outcomes reported are conversion, yield, and selectivity for the desired product.
+
+bromobutane illustrated the extension of continuous flow chemistry to synthesize functional materials.
+
+Flow-chemistry process development: Reaction type - not mentioned; Key reactants/solvent/catalyst - not mentioned; Products - not mentioned; Reactor details (type/ID) - stainless steel tube reactor (5 mL); Critical conditions (flow rate(s), residence time, temperature, pressure) - not mentioned; Outcomes (conversion/yield/selectivity): The paragraph discusses the expansion of the Pareto front and an improvement in yield from 90% to ∼97%, as well as a maximum production rate of 2.04 g h⁻¹ at higher temperatures, but also notes that line broadening in the 1H NMR spectrum indicates reaction decomposition is starting to occur, leading to greater uncertainty in quantification and product puriﬁcation challenges; therefore, the upper temperature limit for the reaction planner was set to 168 °C.
+
+compared to common batch chemistry processes, while providing a route towards future automated
+

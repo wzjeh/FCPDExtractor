@@ -1,0 +1,277 @@
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 236, height: 298, bpc: 8>
+
+Contents lists available at ScienceDirect
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 248, height: 271, bpc: 8>
+
+Chemical Engineering and Processing - Process Intensification
+
+journal homepage: www.elsevier.com/locate/cep
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 118, height: 117, bpc: 8>
+
+Prior knowledge-based multi-round multi-objective Bayesian optimization: continuous flow synthesis and scale-up of O-methylisourea
+
+Jiapeng Guo a, Kejie Chai a,b, Guihua Luo a, Weike Su a,*
+
+, An Su a,c,*
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 33, height: 33, bpc: 8>
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 33, height: 33, bpc: 8>
+
+a Key Laboratory of Pharmaceutical Engineering of Zhejiang Province, National Engineering Research Center for Process Development of Active Pharmaceutical Ingredients, Collaborative Innovation Center of Yangtze River Delta Region Green Pharmaceuticals, Zhejiang University of Technology, Hangzhou, 310014, China b College of Material, Chemistry and Chemical Engineering, Hangzhou Normal University, Hangzhou, Zhejiang, 311121, China c Zhejiang Key Laboratory of Green Manufacturing Technology for Chemical Drugs, College of Pharmaceutical Science, Zhejiang University of Technology, Hangzhou, Zhejiang, 310014, China
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords: Bayesian optimization Machine learning Transfer learning Continuous flow O-methylisourea Scale-up
+
+Optimizing and scaling up chemical reactions is a critical step in transitioning from laboratory to industrial production, often involving trade-offs between multiple objectives such as production efficiency and cost. Meanwhile, the traditional synthesis process for the key pharmaceutical intermediate O-methylisourea no longer meets the demands of modern smart and green production, requiring urgent improvement. This study demon- strates the use of multi-objective Bayesian optimization (MOBO) for the continuous flow synthesis of O-meth- ylisourea. By leveraging historical reaction data, we accelerated optimization as parameter ranges changed, enabling rapid inference and adjustment. Using a scaled-up continuous flow system equipped with MOBO and transfer learning capabilities, we identified optimal conditions along the Pareto front, achieving a production rate of up to 52.2 g/h and an E-factor as low as 0.557 during the third round of optimization, while maintaining a yield of approximately 75 %. These results highlight the scalability and efficiency of Bayesian optimization in accelerating reaction optimization and facilitating the transition from laboratory to industrial-scale production.
+
+1. Introduction
+
+reliable platform for reaction optimization [15,16]. This enables the use of methods such as one-factor-at-a-time (OFAT), design of experiments (DoE), and kinetic modeling [17]. However, these approaches often rely on the chemist's intuition [18–21] and may struggle to optimize mul- tiple competing objectives simultaneously [22,23]. The development of multi-objective Bayesian optimization (MOBO) has addressed these challenges by efficiently balancing conflicting objectives, as represented by the Pareto front [24–28]. For example, Kappa et al. used MOBO to optimize the Buchwald-Hartwig amination reaction for olanzapine synthesis, achieving a 91 % yield and a maximum space-time yield of 1.13 kg/(L*h) in just 12 h [29]. Similarly, in our previous work, MOBO successfully optimized heterogeneous catalytic reactions for pharma- ceutical intermediates, demonstrating its efficiency and effectiveness [30–32].
+
+O-Methylisourea is a crucial pharmaceutical intermediate widely used in the synthesis of fluorouracil-based antitumor drugs, their de- rivatives, as well as pesticides, herbicides, polymers, and antimicrobial agents [1,2]. It is typically produced via an acid-catalyzed addition re- action between cyanamide and methanol in the presence of concen- trated sulfuric acid (Scheme 1) [3]. However, the batch process for this reaction poses significant safety risks due to the toxicity of cyanamide and the use of concentrated sulfuric acid. Additionally, the highly exothermic nature of the reaction and the instability of cyanamide require strict temperature control at low levels in batch reactors, which limits the reaction rate and overall efficiency. In light of the growing emphasis on green and smart manufacturing in the chemical industry [4–6], the traditional process, characterized by safety hazards, high energy consumption, and low efficiency, urgently requires improvement.
+
+Traditional reaction optimization methods require significant re-
+
+sources when conditions change or scale up, whereas Bayesian optimi- zation (BO) offers scalability by leveraging prior knowledge for rapid optimization. For example, Lapkin et al. used multitask BO to optimize a palladium-catalyzed C–H activation reaction and successfully
+
+Compared with traditional batch reactions [7], continuous-flow re-
+
+actions offer significant advantages [8–14], providing a precise and
+
+* Corresponding authors.
+
+E-mail addresses: pharmlab@zjut.edu.cn (W. Su), ansu@zjut.edu.cn (A. Su).
+
+https://doi.org/10.1016/j.cep.2025.110376 Received 6 January 2025; Received in revised form 2 May 2025; Accepted 23 May 2025
+
+Available online 24 May 2025 0255-2701/© 2025 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+
+starting with a focused range for each parameter, and later expanding the ranges based on early results. This iterative strategy allows the optimization process to proceed efficiently while avoiding unnecessary waste. For our system, the initial temperature range was set to −5–10 ◦C to prevent cyanamide decomposition. The residence time was limited to 0.1–0.5 h, and the molar ratio of cyanamide to sulfuric acid was set between 1.5–2.3:1. In addition, due to cyanamide's limited solubility in methanol, its concentration was fixed at 0.6 mol/L.
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 1000, height: 160, bpc: 8>
+
+Scheme 1. Synthesis of O-methylisourea from cyanamide.
+
+transferred the results to synthesize an NK1 receptor antagonist with 82 % yield in just ten iterations [33]. MOBO further enhances versatility by optimizing multiple objectives simultaneously and expanding parameter ranges. Dunlap et al. used MOBO to optimize butylpyridinium bromide synthesis, generating a Pareto front and expanding the optimization space by increasing temperature limits [34]. Similarly, Slattery et al. improved yields in scalable, flow-based photochemical processes using MOBO [35]. Despite these advances, studies on extending MOBO results to new tasks or scale-up remain limited, highlighting the need for further research.
+
+The flowchart of MOBO is shown in Fig. 1. Initially, 10 experimental parameter sets were sampled using Latin Hypercube Sampling [37] (LHS) to efficiently cover the search space. In the iterative phase, a Gaussian process (GP) surrogate model was trained using the LHS data and corresponding experimental results. The acquisition function, q noisy expected hypervolume improvement (qNEHVI), was then used to identify the Pareto front and recommend the next experimental pa- rameters. qNEHVI was chosen for its superior efficiency and ability to handle noise compared to other methods (e.g., qEHVI and qNParEGO) [25,27,32,38]. The algorithm selected a batch of experiments that maximized expected improvement over the current Pareto front, and the results were fed back to update the GP model. This process was repeated until the predetermined number of experiments was completed.
+
+In this study, we optimized and scaled up the synthesis of O-meth-
+
+ylisourea in a continuous flow system using MOBO. The first round of optimization established a preliminary Pareto front, followed by a sec- ond round with an expanded parameter range to further extend the frontier. By equipping the MOBO model with transfer learning capa- bilities [36], we enabled continued optimization in a scaled-up contin- uous flow system. Leveraging optimization data from the microreactor system, the method demonstrated its ability to rapidly optimize, expand the Pareto front, and effectively apply transfer learning, offering valu- able guidance for reaction scale-up.
+
+Fig. 2a shows the parameter distributions and experimental results for the 10 initial conditions selected using LHS, which adequately cover the reaction space and provide a solid foundation for the subsequent optimization experiments. After 10 optimization experiments, the re- sults of the first round of MOBO were obtained (Fig. 2b). An initial Pareto front (red dashed line) was formed, balancing the trade-off be- tween E-factor and production rate. The Pareto front demonstrates that the production rate can be increased from 3.48 g/h to 14.9 g/h at the cost of raising the E-factor from 0.459 to 1.16. Detailed parameters and results are provided in Table S1.
+
+2. Results and discussion
+
+2.1. The first round of multi-objective Bayesian optimization
+
+Fig. 2c provides an intuitive parallel coordinate visualization illus-
+
+Multi-objective Bayesian optimizations (MOBO) were performed using the FlowBO platform developed by our group [30–32] to maxi- mize the production rate and minimize the environmental factor (E-factor) (Scheme 2). The ranges for reaction parameter-
+
+trating how each experimental variable—reaction time, temperature, and molar ratio—simultaneously impacts both production rate and E factor. This plot allows clear identification of trends and trade-offs: for example, shorter reaction times generally lead to increased production rates but are often associated with higher E-factors, indicating less efficient reagent usage. Similarly, higher reaction temperatures and carefully tuned sulfuric acid ratios can be seen to influence both opti- mization objectives at the same time. Additional details on the distri- butions of these experimental variables are provided in the supplementary figures (Fig. S1).
+
+s—temperature, residence time, and molar ratio—were initially defined based on preliminary investigations. If the parameter range is too nar- row, optimization may overlook valuable regions in the reaction space. If it is too broad, the optimization model requires more experiments and more raw materials, increasing resource consumption. To conserve materials and improve efficiency, we adopted a stepwise approach:
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 1350, height: 910, bpc: 8>
+
+Scheme 2. The workflow of continuous flow synthesis with Bayesian optimization.
+
+which quantifies the space covered by the Pareto front, was calculated after each iteration to visualize the progression of trade-off improve- ments (Fig. 3b). During the first round, hypervolume increased from 0 to 4.99 as the Pareto front developed, but plateaued as the parameter space constraints limited further outcomes. In contrast, the second round's broader parameter space enabled additional exploration, resulting in substantial hypervolume growth that stabilized as the extended Pareto front was populated. This pattern is consistent with previous multi-stage optimization studies, such as the work by Baldwin et al. on pyridinium salt synthesis [34], where modifications to the studied parameter range were similarly tracked by changes in hypervolume as the optimization process progressed. The detailed experimental conditions, results, and hypervolume data are summarized in Tables S2 and S3.
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 1000, height: 1502, bpc: 8>
+
+2.3. MOBO in scale-up devices
+
+2.3.1. Addressing mass transfer limitations in scale-up devices
+
+Following two rounds of optimization in a continuous flow micro-
+
+reactor system, a scaled-up reaction device was constructed (Scheme 3) to evaluate its potential for industrial production and achieve higher production capacity. However, increasing the reactor tube diameter from 1/16 inch to 1/8 inch reduced mass transfer efficiency, which limits the unit's capacity [39]. To address this, a simple and cost-effective static mixer was designed to enhance mixing efficiency. The impact of flow rate on reaction conversion was then assessed under two different mixing conditions (Fig. 4a and 4c).
+
+The evaluation was conducted at a reaction temperature of 10 ◦C. Using only the T-mixer, as shown in Fig. 4a, the effect of flow rate on conversion was assessed (Fig. 4c). Even at flow rate of 686 mL/h, the conversion did not stabilize at a plateau, indicating unresolved mass transfer limitations. In contrast, with our homemade static mixer (a 1/4 inch mixing coil filled with SiO2 beads, Fig. 4b), the conversion pla- teaued once the total flow rate exceeded 201 mL/h (Fig. 4d), demon- strating the elimination of mass-transfer limitations. This improvement in mixing efficiency is attributed to the mixer's design, which in- corporates double reverse rotating vortices [40,41], generated by the helical coils and turbulence induced by obstacles within the channel [42, 43].
+
+Fig. 1. The flowchart of MOBO in this study.
+
+2.2. Extending the reaction space for a second round of optimization
+
+2.3.2. MOBO based on prior knowledge
+
+In the first round of optimization experiments, reaction time and sulfuric acid molar ratio were found to significantly impact the pro- duction rate. To further explore the reaction space and extend the Pareto front, the parameter ranges were expanded. During our initial investi- gation, we observed that the material remains more stable at lower temperatures, and that the reaction conversion drops when the tem- perature exceeds 10 ◦C. Therefore, we kept the upper temperature limit at 10 ◦C to maintain product stability and conversion. By contrast, the reaction time range was increased from 0.1–0.5 h to 0.1–3 h, and the molar ratio from 1.5–2.3 to 0.5–2.3, aiming to achieve a lower E-factor and a higher production rate.
+
+When the reaction was scaled up, the optimization task changed, and the previous MOBO model could not be directly reused without adap- tation. To address this, we enhanced the optimization model to incor- porate learning from prior data, thus enabling transfer of relevant knowledge from small-scale experiments to the scaled-up system. This approach, similar to transfer learning in BO [33,44], allows the model to selectively extract and use previous results, thereby accelerating opti- mization on the larger-scale system. This methodology is closer to common industrial workflows, where reactions are first optimized at small scale and then further refined during scale-up. Our model required only three new experimental runs to initialize the scaled-up optimiza- tion, significantly reducing the experimental effort required. Using this enhanced model and the prior optimization datasets, a third round of optimization was conducted (Scheme 4), incorporating the homemade static mixer. The time ranges and molar ratios maintained the expanded parameter ranges in the second round of optimization, i.e., a time range of 0.1–3 h, a molar ratio of cyanamide to H2SO4 of 0.5–2.3, and a temperature range of −5–10 ◦C.
+
+The Pareto front expands as the ranges for reaction time and mole ratios increase, resulting higher production rates and E-factors (Fig. 3a). In the second round of 10 MOBO iterations, equipped with the prior knowledge from the first round, the E-factor reached a minimum of 0.381 in the 17th experiment, while the production rate peaked at 17.5 g/h in the 19th experiment. However, production rates above 15 g/h resulted in E-factors exceeding 1.4 due to insufficient reaction time and excessive sulfuric acid using, highlighting the trade-off between pro- duction rate and E-factor.
+
+Fig. 5a shows the Pareto front for the third round of optimization, which has shifted significantly from the previous two rounds due to the increased production rate achieved by scaling up the device. The new Pareto front shifted away from the original one, with a minimum E factor of 0.557 and a production rate of 39.9 g/h, and a maximum production rate of 52.2 g/h with an E-factor of 0.686. This shift reflects the Bayesian optimization model's ability to learn from prior rounds, focusing on low E-factor, high production rate conditions while avoiding
+
+The second round of optimization was performed with expanded parameter ranges compared to the first round, leading to a larger feasible search space and a corresponding increase in hypervolume. Therefore, the observed rise in hypervolume between rounds primarily illustrates the effect of expanding the parameter space, rather than simply the efficiency of the optimization algorithm. The hypervolume,
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 2100, height: 1597, bpc: 8>
+
+Fig. 2. (a) The first round of optimization: LHS sampling stage. (b) Results of the first round of optimization (red dotted line denotes the Pareto front) (c) Parallel coordinate plot showing the integrated effects of reaction time, temperature, and molar ratio on both production rate and E-factor.
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 1750, height: 631, bpc: 8>
+
+Fig. 3. (a) The second round of optimization results. (The red dotted line is the Pareto front.) (b) Expansion of the hypervolume of all solutions to the Pareto front. All the hypervolume were scaled according to Eq. (5) in the section of Materials and Methods.
+
+high E-factor, high production rate or low E-factor, low production rate scenarios.
+
+minimizing sulfuric acid usage to reduce the E-factor. Although the E factor was slightly higher than the lowest value in the second round (remaining between 0.5–0.6, Fig. 5e), the production rate improved significantly, consistently exceeding about 40 g/h (Fig. 5f).
+
+As shown in Fig. 5b-d, reaction time was concentrated between 0.260–0.326 h, favoring shorter time for higher production rate. The reaction temperature consistently remained at its upper limit to accel- erate the reaction, while the molar ratio ranged from 1.82:1–2.30:1,
+
+Compared to optimized result in the first-round optimization, the final optimized results in the scaled-up device achieved a more than
+
+3. Conclusion
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 1000, height: 514, bpc: 8>
+
+In this work, we demonstrated the effectiveness of multiple rounds of MOBO in the continuous flow synthesis of O-methylisourea, both at the small-scale and in a scaled-up device. By iteratively refining the compromise between higher production rates and lower E-factors, we achieved an ever-improving Pareto front, culminating in optimized scaled-up production conditions with a maximum production rate of 52.2 g/h, a minimum E-factor of 0.557, and a maintained yield of approximately 75 %.
+
+The MOBO model proved highly adaptable, responding efficiently to changes in parameter ranges and advancing the Pareto front into pre- viously inaccessible regions. Moreover, the incorporation of transfer learning capabilities allowed the model to leverage historical optimi- zation data, enabling seamless transitions from laboratory-scale to industrial-scale optimization. This approach significantly reduced the time required for reaction optimization while achieving a completely new Pareto front tailored to the scaled-up system. The application of this method provides a powerful and efficient framework for optimizing complex chemical processes and holds great promise for guiding the large-scale production of pharmaceutical intermediates and other fine chemicals.
+
+Scheme 3. Continuous flow synthesis setup for scale-up.
+
+tenfold increase in production rate, with only a slight E-factor increase of about 0.2, which remained at a low level. The high consistency of reaction parameters and results in this round indicates a well-balanced trade-off between the E-factor and production rate, with an average yield of 75 %. Additionally, the optimized process features a signifi- cantly shorter reaction time and is intrinsically safer than the original process [45]. Detailed parameters and results are provided in Table S4.
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 2100, height: 1570, bpc: 8>
+
+Fig. 4. Two mixing setups: (a) a T-mixer and (b) a T-mixer combined with a homemade static mixer, and the effect of the two mixing setups on the mixing process; (c) the T-mixer and (d) the T-mixer plus the homemade static mixer effect of flow rate on conversion. Reaction conditions: residence time t = 0.1 h, reaction temperature T = 10 ◦C, molar ratio of cyanamide to H2SO4 = 0.5:1, Initial concentration of reactants ccyanamide = 0.6 mol/L.
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 1350, height: 1058, bpc: 8>
+
+Scheme 4. Continuous flow synthesis setup and Bayesian optimization workflow for scale-up.
+
+4. Materials and methods
+
+4.3. Scale-up of continuous flow system
+
+4.1. Chemicals
+
+The Scale-up of continuous flow system is shown in Scheme 3 and Scheme 4 (Scheme 4 is identical to Scheme 3 only with the addition of a homemade static mixer.). Solutions A and B were stored in four separate syringes (50 mL, Shanghai Kindly Medical Instruments Co., Ltd.) and pumped by four syringe pumps (Pump A, Pump B, and Pump C, Pump D, ZD-50C6, Suzhou Zede Medical Instrument Co., Ltd.) into the infusion tubing (PTFE, 1/8inch diameter, Wuxi Hongxin Special Material Tech- nology Co.). The reactants into a sufficiently long (1 m) disk-shaped stainless steel metal tube (SS316L, 1/8inch diameter, Beijing Xiong- chuan Technology Co., Ltd.) to be preheated to the reaction tempera- ture, and mixed in a T-mixer (SS316L, 1/8inch to 1/4inch, Beijing Xiongchuan Technology Co., Ltd.). The reaction solution enters a homemade static mixer (SiO2 beads, 3 mm diameter; piping, 1/4-inch diameter, 30 cm length, Wuxi Hongxin Special Material Technology Co.) for further mixing. The reaction coil (PTFE, 1/4inch diameter, Wuxi Hongxin Special Material Technology Co.) was connected directly to the outlet of the T-mixer. The reaction taken placed in the reaction coil, and the residence time can be precisely controlled by varying the flow rate of the reaction mixture or the length of the reaction coil. All preheat tubes, T-mixer, and reaction coils were immersed in the same ethanol bath to maintain a constant temperature. Finally, when the required residence time was reached, the reaction was terminated by pumping an excess of purified water through a high-pressure PTFE pump (Pump E, JJRZ 10004F, Hangzhou JingJin Technology Co., Ltd.) into a second T-mixer.
+
+Cyanamide (95 %) purchased from Shanghai Macklin Biochemical Technology Co., Ltd.; Methanol (99.9 %) purchased from Sinopharm Chemical Reagent Co., Ltd.; H2SO4 (98 %, Sinopharm Chemical Reagent Co., Ltd.); pure water (AR, Hangzhou Wahaha Group Co., Ltd.); All re- agents were used without further purification.
+
+Solution A: Cyanamide (0.02 mol, 2.382 g) was dissolved in Meth-
+
+anol (50 mL).
+
+Solution B: H2SO4 (concentration adjusted to conditions) was dis-
+
+solved in stirred under ice bath conditions Methanol (50 mL).
+
+4.2. Continuous flow microreactor system
+
+The continuous flow microreactor system is shown in Scheme 2. Solutions A and B were stored in two separate syringes (50 mL, Shanghai Kindly Medical Instruments Co., Ltd.) and pumped by two syringe pumps (Pump A, Pump B, ZD-50C6, Suzhou Zede Medical Instrument Co., Ltd.) into the infusion tubing (PTFE, 1/8inch diameter, Wuxi Hongxin Special Material Technology Co.). The reactants passed through an adapter (PEEK, 1/8inch to 1/16inch, Hangzhou Weimipai Technology Co.) into a sufficiently long (1 m) disk-shaped PTFE capil- lary tube (PTFE, 1/16inch diameter, Wuxi Hongxin Special Material Technology Co.) to be preheated to the reaction temperature, and mixed in a T-mixer (PEEK, 1/16inch to 1/8inch, Hangzhou Weimipai Tech- nology Co.). The reaction coil (PTFE, 1/8inch diameter) was connected directly to the outlet of the Tmixer. The addition reaction taken placed in the reaction coil, and the residence time can be precisely controlled by varying the flow rate of the reaction mixture or the length of the reaction coil. All preheat tubes, T-mixer, and reaction coils were immersed in the same water bath to maintain a constant temperature. Finally, when the required residence time was reached, the reaction was terminated by pumping an excess of purified water through a syringe pump (Pump C, ZD-50C6, Suzhou Zede Medical Instrument Co., Ltd.) into a second T mixer.
+
+4.4. Sample analysis
+
+The reaction solutions were collected for quenching at appropriate times and analyzed by high-performance liquid chromatography (HPLC, ThermoFisher Ulcel3000). The conversion rate of the samples was ob- tained by constructing the regression equation of the standard curve by the external standard method. HPLC detection conditions C18 column (10 μm, 4.6 × 250 mm, Welch Materials (Shanghai, China), USA), the mobile phase was 15 % acetonitrile, 85 % ultrapure water and 600 mmol/L phosphoric acid at a flow rate of 0.8 mL/min, and the detection wavelength was 200 nm. The E-Factor was calculated by the following
+
+<image: ICCBased(RGB,sRGB v4 ICC preference perceptual intent beta), width: 2100, height: 1967, bpc: 8>
+
+Fig. 5. (a) The third round of optimization LHS sampling stage and optimization results. (The data in the green dashed box have been scaled for easier viewing, the red dotted line and gray dotted line are the Pareto front.) (b-d) The third round of optimization exploration of three decision variables. (e) E-factor results for the second and third optimization stages. (f) Production rate results for the second and third optimization stages.
+
+equation [46]:
+
+Production rate = mproduct
+
+(2)
+
+E − Factor = ( mwaste
+
+) (1)
+
+tres
+
+mproduct
+
+where tres is the residence time of reaction.
+
+Samples were tested three times under the same conditions and averaged to minimize errors.
+
+where mwaste is the mass of the wasted raw material and mproduct is the mass of the product.
+
+Separation and purification are important aspects of evaluating re-
+
+action sustainability, and the waste produced during these steps can significantly contribute to the overall E-factor, particularly in processes with lower yields. However, most post-processing operations are time consuming and would slow down the feedback loop needed for effi- cient optimization. Therefore, in this study, the E-factor calculation only includes the mass of wasted raw materials, in order to maintain a rapid and efficient optimization process.
+
+4.5. Bayesian optimization and transfer learning
+
+The BO model is composed of three core components: initial sam-
+
+pling, a surrogate model, and an acquisition function [37,47]. For initial sampling, LHS is employed to prevent the over-aggregation of data that can occur with simple random sampling. LHS divides the sampling space into distinct strata based on specific characteristics or rules, and samples are then drawn independently and randomly from each stratum.
+
+The Production rate was calculated by the following equation [34]:
+
+Notably, LHS requires fewer samples to achieve the same level of ac- curacy compared to traditional methods such as One-Factor-At-a-Time (OFAT) or Design of Experiments (DoE), thereby reducing computa- tional complexity.
+
+acquisition function for the target campaign. This approach combines a meta-learning strategy [54] with Bayesian optimization, enabling the transfer of knowledge from source campaigns to the target campaign. Further details about the algorithm can be found in previous studies [40, 41].
+
+Bayesian Optimization (BO) is an uncertainty-guided response sur-
+
+face method, where the performance of the surrogate model reflects the optimizer's prediction accuracy. The effectiveness of a surrogate model is demonstrated only when its expectation and variance estimates closely approximate the true response surface [48]. The Gaussian Pro- cess (GP), an infinite-dimensional extended function distribution, is commonly used as a surrogate model [44]. GP enables the construction of joint probability distributions for variables, allowing the estimation of both the mean and variance of predicted data based on the available data. The Mat´ern class is a widely used class of covariance functions in GP, as described by Eq. (3) [49]:
+
+CRediT authorship contribution statement
+
+Jiapeng Guo: Writing – original draft, Visualization, Validation, Investigation, Formal analysis, Data curation, Conceptualization. Kejie Chai: Writing – review & editing, Investigation. Guihua Luo: Writing – review & editing, Software. Weike Su: Writing – review & editing, Su- pervision, Resources, Project administration, Conceptualization. An Su: Writing – review & editing, Supervision, Resources, Project adminis- tration, Funding acquisition, Conceptualization.
+
+( ̅̅̅̅̅ 2ν
+
+√ ‖ x − y ‖ )ν
+
+√ ‖ x − y ‖ ) (3)
+
+( ̅̅̅̅̅ 2ν
+
+MMat`ern(x, y) = 21−νσ2
+
+Kν
+
+Declaration of competing interest
+
+Γ(ν)
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+Where, σ2 > 0, ν > 0; ν, σ2, Γ(ν), ‖ x − y ‖ and Kν represent non-negative parameters, output variance, Gamma function, distance between two points and Bessel function, respectively.
+
+In addition, the acquisition function is crucial for the desired opti-
+
+mization performance. Among others, probabilistic improvements, ex- pected improvements, and confidence upper bounds are often used to tune the hyperparameters. The q noisy expected hypervolume improvement (qNEHVI) function was used as the acquisition function, via Eq. (4) [50]:
+
+Acknowledgments
+
+This research was supported by the Joint Funds of the Zhejiang Provincial Natural Science Foundation of China under Grant No. LHDMZ23B060001, Zhejiang Province Science and Technology Plan Project under Grant No. 2022C01179, and the National Natural Science Foundation of China under Grant No. 22108252.
+
+∑ ˜N
+
+αqNEHVI(χcand|P ) = 1 ̃N
+
+HVI(̃ft(χcand|P )) (4)
+
+t=1
+
+Supplementary materials
+
+Where, ̃N, HVI,̃ft, χcand and P stand for the number of samples, hyper- volume improvement, Black-box objective function, candidate sample, and Pareto front, respectively.
+
+Supplementary material associated with this article can be found, in the online version, at doi:10.1016/j.cep.2025.110376.
+
+In this experiment, the E-factor of the product and the production rate were selected as the optimization objectives for MOBO. Using MOBO, the Pareto front for the continuous flow synthesis of O-methyl- isourea was rapidly obtained to optimize the reaction process.
+
+Data availability
+
+No data was used for the research described in the article.
+
+The reference point is a critical parameter in hypervolume calcula-
+
+tion for multi-objective optimization. In this study, following the methodology reported by Baldwin et al. in EDBO+ [34], we dynamically define the reference point as the vector of minimum observed values for each objective (e.g., yield and space-time yield) obtained in the exper- iments. Because the optimization is performed as a black-box procedure without a fixed, predefined reference, this dynamic approach ensures the reference point always reflects the most current results, and is updated after each iteration accordingly.

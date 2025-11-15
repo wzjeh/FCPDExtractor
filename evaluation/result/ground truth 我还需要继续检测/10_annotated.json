@@ -1,0 +1,38 @@
+{
+  "reaction_summary": {
+    "reaction_type": "Pinnick oxidation",
+    "reactants": [
+      "crotonaldehyde",
+      "sodium chlorite (NaClO2)",
+      "hydrogen peroxide (H2O2)",
+      "hydrochloric acid (HCl)"
+    ],
+    "products": [
+      "crotonic acid"
+    ],
+    "conditions": [
+      {
+        "type": "temperature",
+        "value": "120 °C"
+      },
+      {
+        "type": "residence_time",
+        "value": "3 min"
+      },
+      {
+        "type": "pressure",
+        "value": "4.0 MPa"
+      }
+    ],
+    "reactor": {
+      "type": "microchannel reactor",
+      "inner_diameter": "0.25 mm"
+    },
+    "metrics": {
+      "conversion": null,
+      "yield": 95.6,
+      "selectivity": 98.1,
+      "unit": "%"
+    }
+  }
+}

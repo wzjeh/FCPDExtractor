@@ -1,0 +1,34 @@
+{ "reaction_summary": {  "reaction_type":"...",   "reactants":[{"name":"...","role":"reactant|catalyst|solvent"}],   "products":[{"name":"...","yield_optimal":95,"unit":"%"}],   "conditions":[    {"type":"temperature","value":"..."},    {"type":"residence_time","value":"..."},    {"type":"flow_rate_reactant_A","value":"..."},    {"type":"flow_rate_total","value":"..."},    {"type":"pressure","value":"..."}  ],   "reactor":{"type":"...","inner_diameter":"..."},   "metrics":{"conversion":...,"yield":...,"selectivity":...,"unit":"%"}}}
+
+Task
+Only use the provided paragraph; do not infer across other paragraphs.
+STRICT EXTRACTION POLICY:
+- Deduplicate case-insensitively: prefer singular names, keep explicit abbreviations (e.g. BA, ACMO, DMF, DoPAT, HDDA).
+- If conflicting info exists: choose null and output ONLY entities that appear consistently throughout the paragraph.
+- Otherwise: STRICT EXTRA POLICY:
+ – Deduplicate across all paragraphs; do not guess or infer across other paragraphs.
+ – If role for a chemical is not explicitly stated near its name, output null and an empty list (e.g. []).
+ – Use original case when present near a chemical's name; otherwise normalize: e.g. BA, ACMO, DMF, DoPAT, HDDA, DDT, IBDT, CBMMO.
+ – Deduplicate case-insensitively: prefer singular names, keep explicit abbreviations (e.g. Monomer(s), Reactant(s), Feedstock(s), Mixtures).
+ – If conflicting info exists for a chemical, output null and an empty list (e.g. []).
+ – Otherwise: output the following entities (no extra text):
+   – Chemical(s): [...]
+   – Reaction Type: ...
+   – Reactor: ...
+
+{ "reaction_summary": {  "reaction_type":"...","reactants":[{"name":"BA","role":"reactant"},{"name":"DPMO","role":"catalyst"}],   "products":[{"name":"PBA","yield_optimal":95,"unit":"%"}
+
+{ "reaction_summary": {  "reaction_type":"...",   "reactants":[{"name":"...","role":"reactant|catalyst|solvent"}],   "products":[{"name":"...","yield_optimal":95,"unit":"%"}],   "conditions":[    {"type":"temperature","value":"..."},    {"type":"residence_time_reactant_A","value":"..."},    {"type":"residence_time_total","value":"..."},    {"type":"flow_rate_reactant_A","value":"..."},    {"type":"flow_rate_total","value":"..."},    {"type":"pressure","value":"..."}  ],   "reactor":{"type":"...","inner_diameter":"..."},   "metrics":{"conversion":...,"yield":...,"selectivity":...,"unit":"%"}}}
+
+{ "reaction_summary": {  "reaction_type":"...",   "reactants":[{"name":"BA","role":"reactant"},{"name":"ACMO","role":"reactant"}],   "products":[    {"name":"linear arms","yield_optimal":null,"unit":"%"},    {"name":"miktoarm star polymers","yield_optimal":null,"unit":"%"}  ],   "conditions":[{"type":"temperature","value":"..."},{"type":"residence_time","value":"..."},    {"type":"flow_rate_reactant_A","value":"..."},{"type":"flow_rate_total","value":"..."},    {"type":"pressure","value":"..."}],   "reactor":{"type":"coil","inner_diameter":"0.5 mm"},"metrics":{"conversion":...,"yield":...,"selectivity":...,"unit":"%"}}
+
+{ "reaction_summary": {  "reaction_type":"...",   "reactants":[{"name":"...","role":"reactant|catalyst|solvent"}
+
+{ "reaction_summary": {  "reaction_type":"...",   "reactants":[{"name":"...","role":"reactant|catalyst|solvent"}],   "products":[{"name":"...","yield_optimal":95,"unit":"%"}],   "conditions":[    {"type":"temperature","value":"..."},    {"type":"residence_time","value":"..."},    {"type":"flow_rate_reactant_A","value":"..."},    {"type":"flow_rate_total","value":"..."},    {"type":"pressure","value":"..."}  ],   "reactor":{"type":"...","inner_diameter":"..."},   "metrics":{"conversion":...,"yield":...,"selectivity":...,"unit":"%"}}}
+
+{ "reaction_summary": {  "reaction_type":"...",   "reactants":[{"name":"...","role":"reactant|catalyst|solvent"}],   "products":[{"name":"...","yield_optimal":95,"unit":"%"}],   "conditions":[    {"type":"temperature","value":"..."},    {"type":"residence_time","value":"..."},    {"type":"flow_rate_reactant_A","value":"..."},    {"type":"flow_rate_total","value":"..."},    {"type":"pressure","value":"..."}  ],   "reactor":{"type":"...","inner_diameter":"..."},   "metrics":{"conversion":...,"yield":...,"selectivity":...,"unit":"%"}}}
+
+{ "reaction_summary": {  "reaction_type":"...",   "reactants":[{"name":"...","role":"reactant|catalyst|solvent"}],   "products":[{"name":"...","yield_optimal":95,"unit":"%"}],   "conditions":[    {"type":"temperature","value":"..."},    {"type":"residence_time_reactant_A","value":"..."},    {"type":"flow_rate_total","value":"..."},    {"type":"pressure","value":"..."}  ],   "reactor":{"type":"...","inner_diameter":"..."},   "metrics":{"conversion":...,"yield":...,"selectivity":...,"unit":"%"}}}
+
+{ "reaction_summary": {  "reaction_type":"...",   "reactants":[{"name":"...","role":"reactant|catalyst|solvent"}],   "products":[{"name":"...","yield_optimal":95,"unit":"%"}],   "conditions":[    {"type":"temperature","value":"..."},    {"type":"residence_time","value":"..."},    {"type":"flow_rate_reactant_A","value":"..."},    {"type":"flow_rate_total","value":"..."},    {"type":"pressure","value":"..."}  ],   "reactor":{"type":"...","inner_diameter":"..."},   "metrics":{"conversion":...,"yield":...,"selectivity":...,"unit":"%"}}}
+

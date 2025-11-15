@@ -1,0 +1,41 @@
+{
+  "reaction_summary": {
+    "reaction_type": "nucleophilic substitution",
+    "reactants": [
+      "O-methyl-N-nitroisourea",
+      "methylamine",
+      "NaHCO3"
+    ],
+    "products": [
+      "N,O-dimethyl-N'-nitroisourea"
+    ],
+    "conditions": [
+      {
+        "type": "temperature",
+        "value": "40 °C"
+      },
+      {
+        "type": "residence_time",
+        "value": "240 min"
+      },
+      {
+        "type": "molar_ratio",
+        "value": "5:1"
+      },
+      {
+        "type": "concentration",
+        "value": "0.2 mol/L (O-methyl-N-nitroisourea)"
+      }
+    ],
+    "reactor": {
+      "type": "continuous flow microreactor",
+      "inner_diameter": "1/16 in. (disk-shaped PTFE capillary tube)"
+    },
+    "metrics": {
+      "conversion": null,
+      "yield": 83.7,
+      "selectivity": null,
+      "unit": "%"
+    }
+  }
+}

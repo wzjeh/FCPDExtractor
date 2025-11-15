@@ -12,30 +12,38 @@ class GeminiLLM(BaseLLM):
         if not api_key:
             raise ValueError(f"Environment variable {api_key_env_var} not set.")
         genai.configure(api_key=api_key)
-        
-        # 放宽安全过滤器，避免学术论文被误拦截
-        safety_settings = {
-            genai.types.HarmCategory.HARM_CATEGORY_HARASSMENT: genai.types.HarmBlockThreshold.BLOCK_NONE,
-            genai.types.HarmCategory.HARM_CATEGORY_HATE_SPEECH: genai.types.HarmBlockThreshold.BLOCK_NONE,
-            genai.types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: genai.types.HarmBlockThreshold.BLOCK_NONE,
-            genai.types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: genai.types.HarmBlockThreshold.BLOCK_NONE,
-        }
-        
-        self.model = genai.GenerativeModel(model_name, safety_settings=safety_settings)
+        # 放宽安全过滤器，避免学术论文被误拦截（使用官方支持的列表写法）
+        self.safety_settings = [
+            {"category": "HARM_CATEGORY_DANGEROUS", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+            {"category": "HARM_CATEGORY_SEXUAL", "threshold": "BLOCK_NONE"},
+        ]
+        self.model_name = model_name
+        self.model = genai.GenerativeModel(
+            model_name=self.model_name,
+            safety_settings=self.safety_settings,
+        )
 
     def generate(self, prompt: str, **kwargs: Any) -> str:
-        temperature = kwargs.get("temp", 0.0)
+        temperature = kwargs.pop("temperature", kwargs.get("temp", 0.0))
+        top_p = kwargs.pop("top_p", None)
         max_output_tokens = kwargs.get("max_tokens", 512)
 
-        generation_config = genai.types.GenerationConfig(
-            temperature=temperature,
-            max_output_tokens=max_output_tokens,
-        )
+        generation_kwargs = {
+            "temperature": temperature,
+            "max_output_tokens": max_output_tokens,
+        }
+        if top_p is not None:
+            generation_kwargs["top_p"] = top_p
+
+        generation_config = genai.types.GenerationConfig(**generation_kwargs)
 
         try:
             response = self.model.generate_content(
                 prompt,
                 generation_config=generation_config,
+                safety_settings=self.safety_settings,
             )
             
             # 检查安全过滤器阻止

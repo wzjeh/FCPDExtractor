@@ -1,0 +1,10 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| residence_time | conversion | decrease |
+| temperature | conversion | unchanged |
+| temperature | selectivity | decrease |
+| flow_rates_ratio | conversion | decrease |
+| DHAA_initial_concentration | conversion | decrease |
+| micro-photosensitizer_concentration | conversion | increase |

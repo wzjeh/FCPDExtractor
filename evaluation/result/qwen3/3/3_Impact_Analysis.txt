@@ -1,0 +1,20 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| residence_time | conversion | increase |
+| residence_time | E_factor | decrease |
+| residence_time | production_rate | increase |
+| temperature | conversion | decrease |
+| temperature | E_factor | increase |
+| temperature | production_rate | decrease |
+| molar_ratio | E_factor | increase |
+| molar_ratio | production_rate | decrease |
+| flow_rate | conversion | increase |
+| mixing_device | conversion | increase |
+| mixing_device | E_factor | decrease |
+| mixing_device | production_rate | increase |
+| reaction_time | production_rate | increase |
+| reaction_time | E_factor | decrease |
+| sulfuric_acid_molar_ratio | E_factor | increase |
+| sulfuric_acid_molar_ratio | production_rate | decrease |

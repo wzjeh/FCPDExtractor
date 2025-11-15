@@ -1,0 +1,20 @@
+continuous flow conditions. The algorithm simultaneously optimized reaction yield and production rate
+
+Incorporation of continuous flow techniques enabled improved control over reaction parameters
+
+Scheme 1 Continuous flow synthesis setup and EDBO+ workflow. Initial seed reactions were conducted within the predefined input constraints. Subsequent rounds of experiments were performed in batch sizes of three unique reactions. The outputs were used to update EDBO+ and provide the next round of suggested experiments. Initially 10 rounds of experiments were perform followed by expansion of the upper temperature constraint to 168 °C and another 5 rounds.
+
+respectively, while semi-automated processing tended to reach lower values of 308 and 363% yield mmol mL−1 h−1 for the 400 MHz and 60 MHz data, respectively. Compared to the hyper- volume from the experimental data (330% yield mmol mL−1
+
+Temperature (°C) sres (min) cpyr Yield (%) Production rate (g h−1) Space-time yield (mmol mL−1 h−1)
+
+Continuous ow chemistry oﬀers a number of advantages including scalability and reproducibility as a result of auto- mated liquid handling.19 These systems ensure that reagents ow at constant rates to maintain steady state conditions, and allow the reaction to run indenitely if continuous manufacturing is desired.20 As a result of the high surface area- to-volume ratio of the millimeter size tubing, nearly instanta- neous heat and mass transfer occurs, ensuring that reactions with hazardous intermediates can be safely controlled.21–23
+
+Continuous flow synthesis of pyridinium salts accelerated by multi-objective Bayesian optimization with active learning†
+
+bromobutane illustrated the extension of continuous flow chemistry to synthesize functional materials.
+
+During the 10-round campaign, we observed that the majority of suggested experiments tended to favor higher temperatures (namely 138 °C) as part of the EDBO+ exploration and exploi- tation policies. This is likely due to the high yields and moderate production rates achieved with mid-range residence times (see Table S1†). At this point, traditional closed-loop autonomous workows would likely terminate the campaign due to campaign convergence. But our human-in-the-loop workow helped identify that 19 of the 30 reactions had been conducted at 138 °C (the upper bound). While our initial reac- tions were limited to 138 °C because of the PFA tubing (which tends to be more aﬀordable and is common in microuidic setups), stainless steel tube reactors enable temperatures up to 250 °C. In an eﬀort to expand the Pareto front, the upper temperature bound was in turn increased, and the reactor replaced with a 5 mL stainless steel tube reactor. Since higher temperatures may lead to reaction decomposition, a systematic temperature sweep of the optimal condition (21 min sres and 0.66 cpyr) was rst performed. Upon manual elevation of the temperature from 138 °C to 160 °C, an improvement in the yield from 90% to ∼97% was observed (Fig. S8†), before plateauing between 160–170 °C. A similar trend was noted for production rates, with a maximum of 2.04 g h−1. At higher temperatures however, line broadening in the 1H NMR spectrum was observed (Fig. S9†) that signied reaction decomposition was starting to occur. This line broad- ening could lead to greater uncertainty in quantication and product purication challenges; therefore, the upper tempera- ture limit for the reaction planner was set to 168 °C. With the expansion of the temperature bounds to 168 °C and concomitant increase in yield and production rate, a shi in the Pareto front occurred (Fig. 2A). By performing an additional ve iterations of EDBO+ (using data from the pre-existing 10 round campaign) a production rate (PR) above 5 g h−1 could be ob- tained (PR: 5.60; STY: 5.18), as listed in Table 1. While higher
+
+compared to common batch chemistry processes, while providing a route towards future automated
+

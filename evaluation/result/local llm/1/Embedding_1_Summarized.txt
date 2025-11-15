@@ -1,0 +1,50 @@
+{"reaction_summary": {"reaction_type": "batch", "reactants": [{"name": null, "role": null}], "products": [{"name": null, "yield_optimal": 89, "unit": "%"}], "conditions": [{"type": "temperature", "value": null}, {"type": "residence_time", "value": null}, {"type": "flow_rate_total", "value": null}], "reactor": {"type": "batch reactor", "inner_diameter": null}, "metrics": {"conversion": null, "yield": 89, "selectivity": null, "unit": "%"}}}
+
+{"reaction_summary": {"reaction_type": null, "reactants": [], "products": [{"name": null, "yield_optimal": 82, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "0.5 mm"}, "metrics": {"conversion": null, "yield": 82, "selectivity": null, "unit": "%"}}}
+
+{"name": None, "yield_optimal": int(yield_optimal), "unit": "%"}
+
+- Temperature is in °C; residence_time and flow_rate are normalized to min and mL/min respectively.
+
+python
+import re
+
+def parse_reaction(input_str):
+    # Parse reaction type (if present)
+    match = re.search(r'(\w+)-', input_str, flags=re.IGNORECASE)
+    if match:
+        reaction_type = match.group(1).lower()
+    
+    # Parse reactants and products
+    words = input_str.split()
+    for i in range(len(words)):
+        word = words[i]
+        
+        # Reactant or catalyst (if present)
+        if re.search(r'(\w+)-', word, flags=re.IGNORECASE):
+            name = re.sub(r'-.*$', '', word).lower()  # Remove suffix
+            role = 'reactant'
+            
+            # Check for solvent
+            if i < len(words) - 1 and words[i + 1].endswith('solvent'):
+                role = 'solvent'
+        
+        elif re.search(r'(\w+)-', word, flags=re.IGNORECASE):
+            name = re.sub(r'-.*$', '', word).lower()  # Remove suffix
+            role = 'catalyst'
+            
+            # Check for solvent
+            if i < len(words) -
+
+{"reaction_summary": {"reaction_type": null, "reactants": [], "products": [{"name": null, "yield_optimal": 82, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "0.5 mm"}, "metrics": {"conversion": null, "yield": 82, "selectivity": null, "unit": "%"}}}
+
+{"reaction_summary": {"reactants": [{"name": "4-chlorophenylhydroxylamine", "role": "product"}], "products": [{"name": "4-chlorophenylhydroxylamine", "yield_optimal": null, "unit": ""}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "residence_time", "value": "10 min"}, {"type": "flow_rate_reactant_A", "value": "2 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "5 mm"}, "metrics": {}}}
+
+{}
+
+{"name": None, "yield_optimal": int(product_match.group(1)), "unit": "%"}
+
+{"reaction_summary": {"reaction_type": "flow microreactor", "reactants": [{"name": "nitrobenzene", "role": "reactant"}], "products": [{"name": "PHA", "yield_optimal": 96, "unit": "%"}], "conditions": [{"type": "temperature", "value": "..."}, {"type": "residence_time", "value": "..."}, {"type": "flow_rate_reactant_A", "value": "..."}, {"type": "pressure", "value": "..."}], "reactor": {"type": "microreactor", "inner_diameter": null}, "metrics": {"conversion": null, "yield": 96, "selectivity": null, "unit": "%"}}}
+
+{"reaction_summary": {"reaction_type": "...", "reactants": [{"name": "...", "role": "..."}], "products": [{"name": "...", "yield_optimal": 95, "unit": "%"}], "conditions": [{"type": "temperature", "value": "80 °C"}, {"type": "flow_rate_total", "value": "0.1 mL/min"}], "reactor": {"type": "coil", "inner_diameter": "2 mm"}, "metrics": {"conversion": null, "yield": 95, "selectivity": null, "unit": "%"}}}
+

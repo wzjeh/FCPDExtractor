@@ -1,0 +1,38 @@
+{
+  "reaction_summary": {
+    "reaction_type": "acid-catalyzed addition",
+    "reactants": [
+      "cyanamide",
+      "methanol",
+      "sulfuric acid (H2SO4)"
+    ],
+    "products": [
+      "O-methylisourea"
+    ],
+    "conditions": [
+      {
+        "type": "temperature",
+        "value": "10 °C"
+      },
+      {
+        "type": "residence_time",
+        "value": "0.1 h"
+      },
+      {
+        "type": "molar_ratio",
+        "value": "cyanamide:H2SO4 = 1.82:1–2.30:1"
+      }
+    ],
+    "reactor": {
+      "type": "continuous flow (packed bed/static mixer)",
+      "inner_diameter": "1/8 inch",
+      "length": "1 m"
+    },
+    "metrics": {
+      "conversion": null,
+      "yield": 75,
+      "selectivity": null,
+      "unit": "%"
+    }
+  }
+}
