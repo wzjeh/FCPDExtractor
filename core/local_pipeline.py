@@ -276,20 +276,28 @@ class LocalPipeline:
         import re, json
         # 优先使用段落级JSON（列名为 summarized）
         if 'summarized' in df_abstract.columns:
-            json_items = [t for t in df_abstract['summarized'].fillna("").tolist() if t.strip()]
+            # 仅收集包含花括号的候选 JSON 行，逐条拼接到 Context
+            raw_items = df_abstract['summarized'].fillna("").tolist()
+            json_items = []
+            for t in raw_items:
+                s = str(t).strip()
+                if not s:
+                    continue
+                if "{" in s and "}" in s:
+                    json_items.append(s)
             # 为防止超长，限制串接长度
             combined = "\n\n".join(json_items)
             if len(combined) > 12000:
                 combined = combined[:12000]
             system_prompt = "You output ONLY valid JSON. No explanations."
             user_prompt = (
-                "You are given multiple JSON objects, each with the same schema under key reaction_summary.\n"
-                "Merge them into ONE best JSON by selecting the optimal condition set (highest yield/conversion).\n"
-                "Rules:\n"
-                "- Keep only ONE optimal condition set.\n"
-                "- For reaction_type, reactants, products, reactor: choose the most informative/complete values across inputs.\n"
-                "- Metrics must be numeric when present; use null if unknown.\n"
-                "- Output ONLY the merged JSON object, no markdown, no comments.\n"
+                "Extract the OPTIMAL condition set from the following JSON candidates. Output ONE JSON:\n"
+                "{\"reaction_summary\":{\"reaction_type\":\"hydrogenation\",\"reactants\":[\"furfural\",\"H2\",\"Pd/C catalyst\"],"
+                "\"products\":[\"furfuryl alcohol\"],"
+                "\"conditions\":[{\"type\":\"temperature\",\"value\":\"80 °C\"},{\"type\":\"residence_time\",\"value\":\"5 min\"},{\"type\":\"pressure\",\"value\":\"2 MPa\"}],"
+                "\"reactor\":{\"type\":\"packed bed\",\"inner_diameter\":\"5 mm\"},"
+                "\"metrics\":{\"conversion\":95.2,\"yield\":89.5,\"selectivity\":94.1,\"unit\":\"%\"}}}\n"
+                "Choose best yield/conversion. Use null if unknown. Numbers for metrics.\n"
             )
         else:
             # 回落：基于抽象/原文进行一次整体抽取
@@ -308,7 +316,7 @@ class LocalPipeline:
             )
         # 使用 overall 阶段模型与对应的 chat template（若为微调模型）
         prompt = self._get_chat_prompt(system_prompt, user_prompt, combined, stage='overall')
-        raw = self._safe_generate(self._get_stage_model('overall'), prompt, max_tokens=900, temp=0.05)
+        raw = self._safe_generate(self._get_stage_model('overall'), prompt, max_tokens=900, temp=0.0)
         # 去围栏并抽取最大花括号块
         raw = re.sub(r"```json\s*", "", raw, flags=re.IGNORECASE)
         raw = re.sub(r"```\s*", "", raw)
