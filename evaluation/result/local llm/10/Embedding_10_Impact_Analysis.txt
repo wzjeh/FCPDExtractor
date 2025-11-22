@@ -1,0 +1,23 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| Temperature | Reaction Rate | increase |
+| Residence Time | Conversion of TFMB | decrease |
+| pH | Reaction Rate | increase |
+| pH | Reaction Rate | decrease |
+| Equivalent Oxygen | Concentration of ClO2 | increase |
+| Amount of HCl | Reaction Rate | increase |
+| Temperature | Reaction Rate | increase |
+| Residence Time | Concentration of Reactants | decrease |
+| Mixing Efficiency | Residence Time | unchanged |
+| pH | Reaction Rate | increase |
+| Equivalent Oxygen | Concentration of ClO2 | decrease |
+| Amount of HCl | Reaction Rate | unchanged |
+| Format: Cause | Effect | - |
+| Temperature Increase | Reaction | increase |
+| Residence Time Decrease | Conversion | decrease |
+| pH Increase | Reaction | increase |
+| pH Decrease | Reaction | increase |
+| Equivalent Oxygen Generation | Concentration of ClO2 Dilution | - |
+| Amount of HCl Insufficiency | Reaction | decrease |

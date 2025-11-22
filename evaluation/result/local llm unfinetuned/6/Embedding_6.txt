@@ -1,0 +1,30 @@
+parallel to optimize the reaction conditions. Remarkably, the MOBO approach achieved an optimal AMA yield of 99% and a productivity of 0.64 g/hour within a limited collection and equation fitting, the intrinsic kinetic modeling approach yielded a similar
+
+optimal AMA yield but a higher productivity of 1.13 g/hour, attributed to increased catalyst usage. Our findings indicate that while MOBO offers a more efficient route
+
+concentrations of MNA and AMA through the ANN model. The conversion of the MNA (ConversionMNA), the yield of the AMA (YieldAMA), and the productivity of the AMA (ProductivityMNA) in the continuous flow hydrogenation system were calculated
+
+MOBO was applied to optimize four key reaction parameters (Figure 2): reaction MNA solution flow rate (𝐹MNA), to maximize yield and productivity. Initially, Latin Hypercube Sampling (LHS) was used to create four sets of experimental conditions,
+
+continued to make further recommendations. This process was repeated iteratively until the desired levels of yield and productivity were reached. Ultimately, this method led to the identification of the optimal experimental parameters located on the Pareto Front,
+
+crucial for reaction completion, was adjusted by modulating the solution's flow rate. An excessively high flow rate could result in undue pressure build-up within the reactor tubes, while a markedly low flow rate might increase the gas phase's proportion,
+
+points in the upper right corner indicate the best balance between yield and productivity, showing nearly 99% yield and 0.64 g/hour productivity. The conclusive set of experimental parameters and results, which includes three sets capable of attaining
+
+the preferred reaction parameter values as determined by MOBO for enhancing both yield and productivity. Notably, optimal reaction temperatures are concentrated around the upper boundary of 100 ˚C, suggesting a preference for higher temperatures to
+
+parameters obtained in the previous round as the initial training set. The reaction temperature and hydrogen pressure were fixed at 100 ˚C and 0.5 MPa, respectively, acknowledging the positive correlation of high temperature and the optimization
+
+objectives and the negligible impact of hydrogen pressure. The exploration ranges for concentration and flow rate were narrowed to 0.0770-0.0884 mol/L and 0.8036-0.9227 mL/min, aiming for a thorough investigation of this refined reaction space. After 10
+
+iterations, the results (Table S3) show that an additional four sets of experimental parameters are able to achieve the same optimal yield and productivity as the original three sets. Mapping these seven optimal sets of experimental data onto the reaction
+
+represented on the Z axis and the productivity illustrated through a color map (Figure 8). While it is feasible to attain a yield nearing 99% at a lower concentration and reduced the yellow area in Figure 8—requires an increase in both the mean residence time and
+
+MNA concentration. Under these optimized conditions, it is possible to achieve both a yield and productivity of up to 99% and 1.13 g/hour, respectively. The results predicted by the kinetic model at the optimized conditions were all confirmed by experimental
+
+productivity of 0.64 g/hour, respectively. Conversely, kinetic modeling achieved a similar optimal yield (~99%) but attained higher productivity (1.13 g/hour). The variation in optimal productivity was attributed to the distinct strategies for
+
+approach provided a comprehensive understanding of how variations in parameters affect the reaction results. Simultaneous optimization of yield and productivity was also achieved by leveraging the response surfaces generated from the kinetic model.
+

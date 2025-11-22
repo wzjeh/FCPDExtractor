@@ -1,0 +1,37 @@
+Similar reaction mixtures were prepared for both the experi- ment in batch and flow conditions. 1,4-diiodobuta-1,3-diene, 2 g (10.75 mmol) of NaI·2H2O, and 1.8 g of crystalline iodine were dissolved in distilled water to give a 10 mL solution. The solution was stirred for 60 min at 400 rpm on a magnetic stirrer. Then, 0.034 g (699.5 mmol) of K2PtCl6 was added.
+
+entire system was purged with a 10% C2H2/Ar gas mixture and pressurized to 3 bar. The capillary reactor, immersed in an oil bath, was then heated to the target temperature (e.g., 80 °C). At this stage, a reference mass spectrometry signal (Ig) was acquired for the pure acetylene/argon mixture to establish the baseline for zero conversion. Subsequently, the liquid catalyst was introduced by a syrin
+
+S3, ESI†). Reaction mixture was purged with 10% C2H2/Ar mixture for 20 min with gas flow rate in the range 1.6–3.2 mL/min via the tube immersed right down to the bottom of the test tube (total volume of test tube was 2.5 mL; height of liquid column was ca. 5 cm). bration, transition mode and saturation of acetylene signal (Fig. 2). Since the dead volume of the microfluidic setup is much smaller, t
+
+(trans) = 15.5, 7.7 Hz, 1H); Hb 6.65 (dd, J3 conversion was determined by monitoring the decay of its characteristic MS signal intensity (Eq. 2):
+
+To verify the performance of the catalyst, the first experi- ment was carried out under batch conditions at gas flow rate of 2 mL/min during 90 min (Fig. S4, ESI). The total conver- sion equal 9.4 ± 0.5% C2H2 was reached. We collected in total 3 mg of vinyl iodide during the experiment and verified the purity by 1H and 13C{1H} NMR in acetone-D6 solution using benzene as an internal weight standard
+
+common, faces some limitations. Gas bubbles in the bulk volume have different sizes and nonuniform concentration in the liquid. At higher gas flow rate the bubbles tend to coalescence, thus lowering reaction rates and making dif- ficult quantitative analysis of reaction kinetics [26]. Batch synthesis Instead of capillary reactor (5) shown in Fig. 5, a test tube filled with reaction mixture was use
+
+the tasks at hand. Microfluidic gas lines can be integrated into multichannel arrays, enabling increased synthesis throughput. Microfluidic technologies scale well provided the setup is optimized and key synthesis parameters (pres- sure, temperature) are maintained. Parallel microreactors with slightly larger tube diameters can serve as a good scaling model for gas-liquid systems. A photo of the w
+
+column limitations by enabling precise gas-liquid inter- face. Segmented gas-liquid flow improves solubility [27], enhances mass transfer, and thus increase conversion rates [28]. This work aims to optimize the conditions of gas-liq- uid catalytic reaction within capillary microreactor.
+
+Microfluidic synthesis A scheme of the flow setup is shown in Fig. 5. The reaction mixture (5.5 mL) was loaded into glass syringes installed into syringe pumps (1) (see also Fig. S1, ESI†). Then, reaction mixture (flow rates 0.06–0.18 mL/min) was injected into the flow of 10% C2H2/Ar (1.6–3.2 mL/min), dosed by mass flow controller (2, 3), using PEEK T-junction for gas-liquid segmented flow generat
+
+Flow-chemistry process development: Acetylene hydroiodination reaction was conducted in a microreactor with liquid phase flow rate of 0.045 mL/min and gas flow rate of 2 mL/min at 3 bar pressure. The reaction temperature varied from 60°C to 100°C, with the optimal temperature set at 80°C for high acetylene conversion (90%) and vinyl iodide selectivity (100%). The apparent activation energy was determined as 27.3±1.9 kJ/mol.
+
+Summary
+ The paragraph discusses the influence of Taylor flow on reaction efficiency in microfluidic synthesis. It highlights that gas and liquid flow rates can be varied independently to control segment length and achieve optimal mass transfer for a given reaction type. No specific reaction type, reactants/solvent/catalyst, products or reactor details are mentioned in this context.
+
+and gas segments with conversion is shown in Fig. 8a. The optimal parameters can be determined by the size of orange circles that are proportional to the conversion. Amount of vinyl iodide in the gas phase increases along with the length of liquid segments and for shorter gas segments. The high- est achieved conversion corresponds to the flow pattern with 3 mm liquid segments and 10 mm gas bubbles
+
+where KL0 = 4.03 × 10− 1 m/s; ρ is the density of water phase, 1356 kg/m3 at 20 ◦C; d is the hydrodynamic diameter, m; u is the velocity of the superficial velocity of the liquid calculated by liquid flow rate QL, m/s; gas flow rate QG, m/s; γ is interfacial tension between gas and liquid phase. work in the modes of search or refinement, empirically selected for some balance between the modes, σ(x
+
+transfer and residence time. The point with lowest conver- sion 2.33% in panel a) is characterized by smallest mass transfer coefficient. On contrary experiments with highest conversion can be characterized with optimal mass transfer values. Results in Fig. 8 indicate that shorter gas segments provided highest efficiency. This can be explained both by the increased residence time and better replac
+
+primary objectives: systematic reduction of experimental iterations while maintaining convergence to optimal con- ditions, and efficient maximization of the target objective function. This machine learning strategy achieves these goals through intelligent balancing of exploration of uncer- tain parameter spaces and exploitation of known high-per- formance regions. Using such an approach for liquid
+
+tant exposure within the reactor, serves as a parameter gov- erning conversion efficiency. It is influenced by both the liquid and gas flow rates. As evidenced by the flow rate dependence studies (see Sect. 4, ESI †) conversion effi- ciency decreases systematically with increasing liquid flow rate due to reduced contact time. The optimal flow rates are those that achieve a balance between maximizi
+
+Response: The paragraph discusses the optimization of a liquid-gas flow process using Bayesian approach. The reaction type is not mentioned, but it seems to be related to conversion mapping. Key reactants, solvent and catalyst are not specified either. However, the products are mentioned as "maximum conversion" without further details. The reactor details include gas flow rate (2 mL/min), which is maintained constant in the first step of optimization. In the second step, uniformly distributed sampling points across both liquid and gas flows are generated using Improved Latin Hypercube Sampling (IHS). Finally, Bayesian optimization algorithm is used to discover the optimal parameters for maximum conversion. The source code for the Bayesian optimization is included in ESI (Sect. 3), with Upper Confidence Bound (UCB) as the acquisition function.
+
+The synthesis of vinyl iodide and (E, E)-1,4-diiodobuta- 1,3-diene has been successfully transferred into microflu- idic regime. The implementation of Bayesian optimization provided efficient optimization of the reaction parameters inside coil reactor and increased overall acetylene con- version to 23.5 ± 0.8% for vinyl iodide within less than 10 min. C2H2 conversion increased with larger liquid s
+

@@ -1,0 +1,14 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| Q2/Q1 | reaction rate | increase |
+| CDHAA0 | reaction rate | decrease |
+| CMphtz | reaction rate | increase |
+| Q2/Q1 | reaction rate | increase |
+| CDHAA0 | reaction rate | decrease |
+| CMphtz | reaction rate | increase |
+| Q2/Q1 | reaction rate | increase |
+| CDHAA0 | reaction rate | decrease |
+| CMphtz | reaction rate | increase |
+| Q2/Q1 | reaction rate | increase |

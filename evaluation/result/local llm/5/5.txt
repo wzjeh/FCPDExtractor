@@ -1,0 +1,263 @@
+Article pubs.acs.org/IECR
+
+Continuous Flow Synthesis of N,O‑Dimethyl‑N′‑nitroisourea Monitored by Inline Fourier Transform Infrared Spectroscopy: Bayesian Optimization and Kinetic Modeling
+
+Jiapeng Guo, Guihua Luo, Kejie Chai, Weike Su,* and An Su*
+
+Cite This: Ind. Eng. Chem. Res. 2024, 63, 10162−10171 Read Online
+
+ACCESS Metrics & More Article Recommendations * sı Supporting Information
+
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ABSTRACT: The synthesis of N,O-dimethyl-N′-nitroisourea, crucial intermediates in pesticide manufacturing, was explored through a substitution reaction between O-methyl-N-nitroisourea and methylamine within a novel continuous flow microreactor system, featuring Fourier transform infrared (FTIR) in-line analysis for real-time monitoring. In this paper, the reaction is investigated using two optimization methods: the contemporary machine learning-based Bayesian optimization and the traditional kinetic modeling. Remarkably, both strategies obtained a similar yield of approximately 83% under equivalent reaction parameters� specifically, an initial reactant concentration of 0.2 mol/L, a reaction temperature of 40 °C, a molar ratio of reactants at 5:1, and a residence time of 240 min. The Bayesian optimization method demonstrated a notable efficiency, achieving optimal conditions within a mere 20 experiments, in contrast to the kinetic modeling approach, which required a more laborious effort for model formulation and validation. However, kinetic modeling allows for a more comprehensive understanding of the reaction, and the two optimization methods fully demonstrate their respective strengths and weaknesses. This study not only highlights the potential of integrating advanced machine learning methods into chemical process optimization but also sets the stage for further exploration into efficient, data-driven approaches in chemical synthesis.
+
+<image: ICCBased(RGB,sRGB IEC61966-2.1), width: 997, height: 557, bpc: 8>
+
+Downloaded via HOKKAIDO UNIV on November 12, 2025 at 00:12:34 (UTC).
+
+ditions.19−22 For example, Su et al. demonstrated the practical application of kinetic modeling to the reaction of m- phenylenediamine and benzoic anhydride.23 By adjusting key parameters such as initial concentration, reaction temperature, and molar ratio, they fine-tuned the selectivity of the reaction to 96.9%.23 Moreover, kinetic models possess the distinct advantage of being extrapolative, enabling the prediction of reaction outcomes beyond the initially explored parameter space, a feature particularly beneficial for scaling up processes. Chamberlain et al. showcased the utility of kinetic modeling in the context of scaling up by studying the aqueous reduction of 4-nitrophenol to 4-aminophenol, facilitated by gold nano- particles (AuNPs) and sodium borohydride (NaBH4). Their work successfully predicted the optimal conditions for effectively scaling up this reaction.24 While kinetic modeling has been applied to nucleophilic substitution reactions involving aromatic compounds,25−27 its application to
+
+1. INTRODUCTION
+
+Neonicotinoid insecticides are a class of highly efficient, broad- spectrum, and environmentally friendly insecticides. They are known for their rapid killing of pests and long-lasting control and are widely used in agriculture, horticulture, forests, and other fields with a high production application value.1 N,O- dimethyl-N′-nitroisourea (3) and 1-methyl-3-nitroguanidine (4) are crucial intermediates in neonicotinoid insecticides, produced through the nucleophilic substitution of O-methyl- N-nitroisourea (1) with methylamine (2).2−6 Traditional batch synthesis of these intermediates often struggles with incon- sistent reaction conditions, potential safety risks, and long reaction times.7 In contrast, continuous flow microreactors have been recognized for their superior mixing efficiency,8,9
+
+precise control over reaction parameters,10 and safety benefits,11−14 showing potential for improving reaction selectivity.15−18 However, their application in synthesizing these specific intermediates remains unexplored. Kinetic modeling is a traditional approach to optimizing chemical reactions that is deeply rooted in the principles of physical organic chemistry. This approach effectively quantifies the effects of various reaction parameters on conversion and selectivity through mathematical formulas, thus providing direct, actionable guidance for manipulating reaction con-
+
+<image: DeviceRGB, width: 298, height: 397, bpc: 8>
+
+Received: March 14, 2024
+
+Revised: May 21, 2024
+
+Accepted: May 23, 2024
+
+Published: May 30, 2024
+
+reactions concerning aliphatic compounds remains relatively underexplored. In recent years, the application of machine learning, particularly Bayesian optimization, has significantly advanced the optimization of continuous flow reactions.28−31 This method enables the rapid identification of optimal reaction conditions with a minimal number of experiments.32−35 For instance, Fuse et al. utilized Bayesian optimization to efficiently navigate a search space of 10,500 potential reaction condition combinations, successfully identifying the desired conditions for unsymmetrical sulfamide synthesis in just 29 experiments.36
+
+Hangzhou Wahaha Group Co., Ltd.); all reagents were used without further purification. Solution A (1): 1 (0.02 mol, 2.382 g) was dissolved in pure water (60 mL); solution B (2 + NaHCO3): 2 (0.04 mol, 2.701 g) and NaHCO3 (0.003 mol, 0.252 g) were dissolved in pure water (40 mL). 2.2. Continuous Flow Microreactor System. The continuous flow microreactor system is shown in Figure 1.
+
+<image: ICCBased(RGB,sRGB IEC61966-2.1), width: 998, height: 400, bpc: 8>
+
+The efficiency of Bayesian optimization is notably enhanced when integrated with automated platforms. Bourne et al. demonstrated this by developing an automated continuous flow platform for the multistep synthesis of 1-methyl tetrahydroisoquinoline C5 functionalization, achieving 81% of the total yield within 14 h through Bayesian optimization.37
+
+Similarly, Doyle et al. applied Bayesian optimization in conjunction with high-throughput screening to optimize multiple reactions, showcasing superior optimization efficiency and consistency compared to traditional human-led decision- making processes.38 Bayesian optimization uniquely ensures a balance between exploring the chemical space and exploiting the best-known performance conditions.39,40
+
+Figure 1. Schematic diagram of the continuous flow microreactor system.
+
+Solutions A and B were stored in two separate syringes (50 mL, Shanghai Kindly Medical Instruments Co., Ltd.) and pumped by two syringe pumps (pump A, pump B, ZD-50C6, Suzhou Zede Medical Instrument Co., Ltd.) into the infusion tubing (PTFE, 1/8 in. diameter, Wuxi Hongxin Special Material Technology Co.). The reactants passed through an adapter (PEEK, 1/8 to 1/16 in., Hangzhou Weimipai Technology Co.) into a sufficiently long (1 m) disk-shaped PTFE capillary tube (PTFE, 1/16 in. diameter, Wuxi Hongxin Special Material Technology Co.) to be preheated to the reaction temperature and mixed in a T-mixer (PEEK, 1/8 to 1/ 16 in., Hangzhou Weimipai Technology Co.). The reaction coil (PTFE, 1/8 in. diameter) was connected directly to the outlet of the T-mixer. The substitution reaction took place in the reaction coil, and the residence time could be precisely controlled by varying the flow rate of the reaction mixture or the length of the reaction coil. All preheat tubes, T-mixer, and reaction coils were immersed in the same water bath to maintain a constant temperature. Finally, when the residence time was reached, the reaction was terminated by pumping an excess of purified water through a syringe pump (Pump C, ZD- 50C6, Suzhou Zede Medical Instrument Co., Ltd.) into a second T-mixer. 2.3. FTIR Inline Analysis for Real-Time Monitoring. When the continuous flow system was operated to a steady state (after 2−3 times the residence time), the reaction solution was quenched and diluted with pure water from the reaction system outlet. The quenched reaction solution was piped into the flow cell for inline infrared detection (METTLER TOLEDO ReactIR 702L) and then flowed to the outlet. After completion of the detection, pumps A and B were stopped and the flow cell was rinsed with high-flow-rate pure water using pump C. After the flow cell was cleaned, pumps A and B were turned on to continue the subsequent reactions and data collection. Midinfrared (MIR) band spectra (650−3000 cm−1) were collected by an attenuated total reflection sensor (ATR; diamond, silicon). Discarding the band spectra containing the absorption bands of the diamond sensor and the region showing poor correlation to the concentration change of the components, we selected 1048− 1582 cm−1 band spectra for qualitative and quantitative
+
+Inline analytical methodologies have markedly enhanced the efficiency of monitoring chemical reactions.41 Kappe et al. used four inline analytical tools (NMR, UV/vis, IR, and UHPLC) in the multistep synthesis of mesalazine, where qualitative and quantitative analyses of the intermediates and products were carried out taking the advantages of different inline analysis instruments.42 The main advantage of inline NMR is to detect the appearance of impurities in real-time, while inline Fourier transform infrared (FTIR) is more commonly used for chemical kinetic analysis.43 Notably, Jensen et al. have innovated a microfluidic platform that integrates inline FTIR to accurately quantify reaction conversions while simulta- neously characterizing the enthalpy and kinetics of chemical reactions.44 The noninvasive nature and capability for real-time feedback render inline FTIR an indispensable instrument in the realm of automated synthesis platforms. A recent exemplary study conducted by Jensen and Jamison et al. demonstrates the application of an inline FTIR module within an automated robotic flow platform, facilitating the steady-state monitoring of various reaction phases, including SNAr reactions, nitro reductions, and ester activations.45 This underscores the significant role of in-line FTIR in advancing the precision and efficiency of chemical synthesis monitoring. In this study, we developed a continuous flow microreactor system integrated with an inline FITR system designed to optimize the conditions for 1 and 2 nucleophilic substitution reactions. Bayesian optimization and kinetic modeling were performed in parallel to refining the reaction conditions, and this provides valuable insights into this continuous flow synthesis. Additionally, the efficiency and scalability of these two approaches in reaction optimization were carefully compared to identify their respective strengths and limitations.
+
+2. MATERIALS AND METHODS
+
+2.1. Chemicals. O-Methyl-N-nitroisourea (1, 95%) was purchased from Qingdao Dexin Chemical Co; methylamine hydrochloride (2, 98.0%) was purchased from Shanghai Macklin Biochemical Technology Co., Ltd.; NaHCO3 (99%, Sinopharm Chemical Reagent Co., Ltd.); pure water (AR,
+
+Scheme 1. Synthesis of 3 from 1 and 2
+
+<image: ICCBased(RGB,sRGB IEC61966-2.1), width: 1255, height: 155, bpc: 8>
+
+analyses (Figure S1). Quantitative infrared analysis was performed via METTLER TOLEDO iC Quant, and each experimental data point was repeated three times and averaged, where each measurement consisted of 128 scans. ConcIRT Live software was used to build a multivariate analytical model for qualitative and quantitative analysis of the different components.46
+
+This iteration of obtaining experimental values, updating the GP model, and recommending new parameter values continues until a predetermined number of experiments is reached. The optimization was conducted on the FlowBO framework developed in our previous work.28,49
+
+2.6. Kinetic Modeling Optimization Process. The first step in kinetic modeling involves determining the reaction conditions, including the temperature, time, concentration, and molar ratio. Subsequently, the reaction order of the kinetic equations is experimentally determined using the classical integral method.23 This method involves assuming the order of one of the reactants and substituting this assumption into the kinetic integral equation for verification. Following this, the least-squares method is employed to fit the kinetic data collected at various temperatures and times, thereby obtaining the pre-exponential factors and activation energies of the reaction. The modeling process is then considered complete. Finally, the accuracy of the kinetic model is validated through a series of experiments.
+
+The conversion of 1 was calculated by the following equation
+
+i
+
+jjjjj y
+
+zzzzz = + + x C C C C
+
+k
+
+{
+
+(1)
+
+where x1 is the conversion of 1 and C is the molar concentration of the substances in the sample. The selectivity to 3 was calculated by the following equations
+
+= + S C
+
+C C
+
+(2)
+
+3. RESULTS AND DISCUSSION In this section, we parallelly perform Bayesian optimization and kinetic modeling for the continuous-flow synthesis of 3 from 1 and 2 (Scheme 1). A comparison of these two optimization methods is then discussed. 3.1. Bayesian Optimization. The Bayesian optimization workflow is shown in Figure 2.
+
+where S is the selectivity to 3. The residence time was calculated as follows
+
+= + t V Q Q (3)
+
+where t is the reaction residence time and V is the volume of the microchannel. Q1 and Q2 are the volume flow rates of the raw material's aqueous solution, respectively. 2.4. High-Performance Liquid Chromatography Anal- ysis Conditions. In building the analytical model of FTIR, the concentration of the components was determined by high- performance liquid chromatography (HPLC, Thermo Fisher Ulcel3000) using the external standard method. HPLC detection conditions are as follows: C18 column [10 μm, 4.6 × 250 mm, Welch Materials (Shanghai, China), USA], the mobile phase was 80% MeOH, 20% ultrapure water at a flow rate of 1 mL/min, and the detection wavelength was 270 nm. Samples were tested three times under the same conditions and averaged to minimize errors. 2.5. Bayesian Optimization Workflow. The Bayesian optimization begins by defining the search space of the experimental parameters to optimize. After that, an initial set of experimental parameter values is sampled using the latin hypercube sampling (LHS) method.47 A sufficient number of LHS samples are needed to cover the search space for the search efficiency of the subsequent iteration phase. In our study, we used LHS to sample 10 combinations of experimental parameters in the initialization phase. In the iteration phase, the Gaussian process (GP) surrogate model was first trained on the LHS-sampled parameter values and the associated experimental results. The acquisition function then identifies the next set of variable values for experimentation. In this study, we selected batch noisy expected improvement (qNEI), as the acquisition function as qNEI was reported to have higher optimization efficiency and tolerance to experimental noises than other existing methods.48
+
+<image: ICCBased(Gray,Dot Gain 20%), width: 1650, height: 1747, bpc: 8>
+
+Figure 2. Flowchart of Bayesian optimization in this study.
+
+The optimization objective was defined as maximizing the yield of principal product 3. The variable ranges were determined based on the volatility and solubility of the reactants, as well as the measurement capabilities of the ReactIR instrument. There was a risk of sediment when the temperature was too low or when the concentration was too
+
+<image: ICCBased(Gray,Dot Gain 20%), width: 3513, height: 1367, bpc: 8>
+
+Figure 3. Bayesian optimization results in (a) the LHS sampling stage and (b) optimization stage.
+
+3.2. Kinetic Modeling and Optimization Using the Kinetic Model. The workflow of the kinetic modeling is shown in Figure 4.
+
+high. In contrast, air bubbles were easily formed in the pipe content when the temperature was too high, and the detection accuracy had the possibility getting damaged when the concentration was too low. Consequently, the reaction temperature was constrained to 20−40 °C, while reactant concentrations were set to 0.05−0.2 mol/L for 1 and 0.04−1 mol/L for 2. The residence time was limited to 10−240 min to simplify the reaction process.
+
+<image: ICCBased(Gray,Dot Gain 20%), width: 631, height: 1407, bpc: 8>
+
+Figure 3 shows the yield of 3 under the experimental variables sampled by the LHS stage (a) and the optimization stage (b). After ten experiments, an optimized yield of 83.7% was found from the seventh iteration of the optimization stage. The corresponding values of the reaction variables are shown in Table 1. We found that the model not only exploits around the current optimum but also explores the high-uncertainty areas even if they are distant from the current optimum, which escaped the optimization from falling into a local optimum.
+
+Table 1. Iterative Optimization Data and Resultsa
+
+Figure 4. Workflow of kinetic modeling in this study.
+
+data type entry time (min) temp (°C) 1 (mol/L) 2 molar ratio yield (%)
+
+Initial screening experiments established the experimental conditions of kinetic modeling, setting the maximum concentration of the stock solution of 1 at 0.4 mol/L to avoid precipitation based on its solubility of 0.5 mol/L in water at 20 °C. The molar ratio of 2 to 1 was 2:1 as no further improvements in the conversion of 1 or the selectivity of 3 were observed beyond this ratio (Figure S2). The liquid flow rate was set at 5 mL/h since lower rates significantly reduced the conversion of 1. The reaction orders for 1 and 2 were determined in the continuous flow microreactor system (Figure S3). The initial concentration of 2 was five times that of 1, resulting in an excessive presence of 2. Consequently, eq 4 was reformulated to depend on α (the reaction order of 1) and the apparent rate constant Kβ. The reaction time and conversion were correlated with first-order (eq 5) and second-order (eq 6) reaction laws. The results of these fittings are given in Figure 5a for the first- order reaction and Figure 5b for the second-order reaction. The higher R2 value observed in Figure 5a confirms that the reaction order for 1 is indeed first-order.
+
+LHS sampled data 21.0 0.0575 2.27 0.093 67.5 37.0 0.163 1.43 0.192 27.0 0.118 4.79 0.371 44.5 39.0 0.0725 3.53 0.180 35.0 0.0875 3.11 0.497 29.0 0.132 2.69 0.315 31.0 0.192 3.95 0.589 21.5 33.0 0.147 1.85 0.0503 25.0 0.102 1.01 0.0684 90.5 23.0 0.177 4.37 0.311 acquisition function suggested data
+
+35.5 0.168 4.63 0.789 35.1 0.200 3.56 0.762 40.0 0.200 4.31 0.811 40.0 0.164 3.34 0.783 40.0 0.154 5.00 0.799 40.0 0.112 5.00 0.801 40.0 0.200 5.00 0.837 40.0 0.200 5.00 0.782 32.5 0.200 5.00 0.798 40.0 0.200 2.04 0.691
+
+C = t kC C K C d d
+
+(4)
+
+aDuring the experiment, we rounded some of the parameters due to the limited precision of the instrument.
+
+<image: ICCBased(RGB,sRGB IEC61966-2.1), width: 1829, height: 1412, bpc: 8>
+
+Figure 5. Determination of the reaction orders for 1 (a) ln(1 − x1) versus t; (b) x 1 versus t; and 2 (c) ln(1 − x1) versus t; (d) ( ) ln C C x x
+
+versus t. Determination of 1 reaction order conditions: reaction temperature (T) = 30 °C; initial concentration of reactants in reaction mixture: C10 = 0.2 mol/L, C20 = 1 mol/L and CNaHCO d3 = 0.03 mol/L. Determination of 2 reaction order conditions: reaction temperature (T) = 30 °C; initial concentration of reactants in reaction mixture: C10 = 0.3 mol/L, C20 = 0.6 mol/L, CNaHCO d3 = 0.045 mol/L. The reaction orders for both 1 and 2 were determined in a continuous flow microreactor.
+
+i
+
+jjjjj y
+
+zzzzz = C C x x kt ln 1
+
+= x K t ln(1 1) (5)
+
+k
+
+{
+
+(9)
+
+= x K t (6)
+
+where k is the rate constant for the consumption of 1, C1 and C2 are the concentrations of 1 and 2, respectively, β is the reaction order of 2, C10 and C20 are the initial concentrations of 1 and 2, respectively, x1 = 1 − C1/C10, x2 = 1 − C2/C20, and t is the reaction time in the batch reactor. With the reaction order determined, the following experi- ments were performed in a continuous flow reactor. Equation 9 was reformulated as eq 10.
+
+where k is the rate constant for the consumption of 1, C1 and C2 are the concentrations of 1 and 2, α and β are reaction orders of 1 and 2, Kβ is the apparent reaction rate constant when 2 is excessive, x1 = 1 − C1/C10, where C10 is the initial concentration of 1, and t is the reaction time in the continuous flow microreactor system. Given the reaction order of 1 was first-order, eq 4 was transformed into eq 7. Considering that a total reaction order exceeding two is uncommon for bimolecular reactions, we limited our investigation to scenarios where the reaction order of 2, denoted as β, could be 0 or 1. This was done by fitting the reaction data to eqs 8 and 9. The R2 of 0.999 for the first-order assumption (Figure 5d) surpasses the R2 of 0.992 for the second-order assumption (Figure 5c). Therefore, the reaction order for 2 was also first-order.
+
+Ä
+
+É
+
+ÅÅÅÅÅÅÅÅÅÅ
+
+ÑÑÑÑÑÑÑÑÑÑ
+
+= M x M x K ln (1 )
+
+Ç
+
+Ö
+
+(10)
+
+where M = C20/C10 and K = (M − 1) C10k, C10 and C20 are the initial concentrations of 1 and 2, x1 = 1 − C1/C10, and τ is the residence time in the continuous flow reactor.
+
+Figure 6a displays the temperature-dependent conversion of 1 with the residence time. The rate constants (k) at varying temperatures were determined by fitting eq 10, with all fits showing R2 values above 0.99 (Figure 6b). The activation energy Ea and pre-exponential factor A were calculated from these k values using the Arrhenius equation (eq 11). The
+
+C = t kC C d d
+
+(7)
+
+= x kt ln(1 1) (8)
+
+<image: ICCBased(RGB,sRGB IEC61966-2.1), width: 2000, height: 2200, bpc: 8>
+
+Figure 6. (a) Conversion of 1 at different temperatures and residence times. (b) Determination of K at different temperatures. (c) Arrhenius plot of ln k versus 1/T. (d) Conversion of 4 at different temperatures and residence times. (e) Arrhenius plots of ln k versus 1/T for forming 3 and 4. (f) Comparison of the experimental (data points) and predicted (dotted lines) values for 3 yields at different temperatures. Collection of kinetic data reaction conditions; initial concentration of reactants in reaction mixture: C10 = 0.2 mol/L, C20 = 0.4 mol/L, and CNaHCO d3 = 0.03 mol/L; the flow rate: solution A (QA) = 3 mL/h, solution B (QB) = 2 mL/h, and quenched H2O solution C (Qc) = 100 mL/h; the residence time was controlled by changing the length of reacting tubes. The reaction conversion rate and yield were monitored in real time by inline infrared.
+
+Arrhenius plot of ln k versus 1/T is depicted in Figure 6c, from
+
+where k is the rate constant, Ea is the activation energy, A is the pre-exponential factor, R is the molar gas constant, and T denotes the Kelvin temperature. Assuming that the production of 3 and 4 occurs via competitive parallel pathways, each adhering to identical reaction kinetics but with distinct rate constants, the overall reaction rate constant k can be disaggregated into k3 and k4 for
+
+which Ea and ln A were obtained (Table 1).
+
+k = A E RT ln ln a
+
+(11)
+
+Table 2. Values of the Pre-exponential Factors and Activation Energies of the Overall Reaction and Two Parallel Reactions
+
+factors Ea (J/mol) ln A Ea d3 (J/mol) ln A3 Ea d4 (J/mol) ln A4
+
+values 47,605.33 14.31 47,786.04 14.28 45,939.65 11.33
+
+<image: ICCBased(RGB,sRGB IEC61966-2.1), width: 2099, height: 781, bpc: 8>
+
+Figure 7. Response surfaces of kinetic modeling from two perspectives. The molar ratio of the surfaces from top to bottom are 5:1, 3:1, and 2:1.
+
+<image: ICCBased(RGB,sRGB IEC61966-2.1), width: 2098, height: 896, bpc: 8>
+
+Figure 8. Comparison of response surface predicted by the kinetic model and the experimentally determined values (red dots).
+
+3 and 4, respectively, as delineated in eq 12. Consequently, the selectivity toward 3 (S3) can be described by eq 13
+
+activation energies (Ea d3, Ea d4) and pre-exponential factors for the concurrent synthesis of 3 and 4 were determined in the same way as in eq 11 (Figure 6e), and the corresponding values of these constants are presented in Table 2. A series of validation experiments were conducted with a temperature range of 20−35 °C and a residence time of 27− 240 min (Figure 6f). The yields of 3 predicted from the kinetic model were in good agreement with the experimental data, thereby confirming the validity of the kinetic model. With the kinetic model constructed, we plot the response surface at three different levels of the molar ratio (Figure 7). A high temperature is more favorable for the formation of 3 since Ea d3 is higher than Ea d4. In addition, higher molar ratios and reaction times are also preferred for a higher yield. Consequently, the optimized reaction conditions for synthesiz-
+
+= + k k k (12)
+
+= + = + S k C C
+
+k
+
+k
+
+k
+
+k C C k C C
+
+k k
+
+(13)
+
+where k is the overall rate constant, k3 and k4 are rate constant for the production of 3 and 4, respectively, S3 is the selectivity of 3, and C1 and C2 are the concentrations of 1 and 2. Our observations indicate that the selectivity toward 3 remains unaffected by the residence time (Figure S4). Therefore, the selectivity of 3 at varying temperatures was investigated (Figure 6d). Utilizing these data, the correspond- ing values of k3 and k4 were computed according to eq 13. The
+
+ing 3, as determined by kinetic modeling, were as follows: an initial concentration of 1 at 0.2 mol/L, a reaction temperature of 40 °C, a molar ratio of 5:1, and a reaction time of 240 min. Under these conditions, the experimentally measured yield of 3 was 82.9%. 3.3. Efficiency and Scalability of Bayesian Optimiza- tion and Kinetic Modeling. In this study, Bayesian optimization obtained an optimization result similar to that of kinetic modeling within only 20 experiments. Conversely, constructing a kinetic model requires a significantly longer process, including 30 experiments to determine the reaction orders, 20 experiments to calculate the kinetic parameters, and 16 experiments to validate the kinetic model. We must note that the validation step required in the kinetic modeling is not necessary for Bayesian optimization. The fitting of the surrogate model in Bayesian optimization is to suggest potential optimal reaction conditions instead of prediction of reaction outcomes. Therefore, all data points obtained from Bayesian optimization are experimental results, instead of predicted values. The optimization approach that relies solely on experimental results allows Bayesian optimization to exhibit better scalability than the kinetic modeling in this study. The predictive accuracy of the kinetic model's yield diminished when the variables deviated from the range used for modeling, as shown in Figure 8. For example, the yield predicted to be 82.0% for a residence time of 468 min and a reaction temperature of 35 °C was experimentally determined to be 77.1%. Similarly, the yield was predicted to be 55.3% for a residence time of 506 min and a reaction temperature of 25 °C, whereas the experimentally determined yield was only 49.8%. It is crucial to acknowledge that the limitations observed in kinetic modeling may not be universally applicable. The discrepancies noted may not solely come from the modeling technique itself but could also be due to using water as a solvent in our experiments. As the reaction temperature and residence time increased, the water vaporized, leading to bubble formation within the tube. This caused fluctuations in local concentrations and altered the residence time of the reaction solution, thereby affecting the accuracy of the model's predictions. A similar issue was observed in the study by Kappe et al., where ethanol and chlorobenzene were used as the solvent and significant discrepancies between predicted and actual values emerged as the residence time increased.50
+
+optimization methods, which is highly instructive for future reaction optimization. ■ ASSOCIATED CONTENT * sı Supporting Information The Supporting Information is available free of charge at https://pubs.acs.org/doi/10.1021/acs.iecr.4c01003.
+
+Inline infrared detection spectra, effect of molar ratio on conversion and selectivity, determination of reaction orders, effect of reaction residence time on selectivity at different temperatures (PDF)
+
+■ AUTHOR INFORMATION
+
+Corresponding Authors
+
+Weike Su − Key Laboratory of Pharmaceutical Engineering of Zhejiang Province, Key Laboratory for Green Pharmaceutical Technologies and Related Equipment of Ministry of Education, Collaborative Innovation Center of Yangtze River Delta Region Green Pharmaceuticals, Zhejiang University of Technology, Hangzhou 310014, P. R. China; Email: pharmlab@zjut.edu.cn
+
+An Su − State Key Laboratory Breeding Base of Green Chemistry-Synthesis Technology, Key Laboratory of Green Chemistry-Synthesis Technology of Zhejiang Province, College of Chemical Engineering, Zhejiang University of Technology, Hangzhou, Zhejiang 310014, China; orcid.org/0000- 0002-6544-3959; Email: ansu@zjut.edu.cn
+
+Authors
+
+Jiapeng Guo − Key Laboratory of Pharmaceutical Engineering of Zhejiang Province, Key Laboratory for Green Pharmaceutical Technologies and Related Equipment of Ministry of Education, Collaborative Innovation Center of Yangtze River Delta Region Green Pharmaceuticals, Zhejiang University of Technology, Hangzhou 310014, P. R. China Guihua Luo − Key Laboratory of Pharmaceutical Engineering of Zhejiang Province, Key Laboratory for Green Pharmaceutical Technologies and Related Equipment of Ministry of Education, Collaborative Innovation Center of Yangtze River Delta Region Green Pharmaceuticals, Zhejiang University of Technology, Hangzhou 310014, P. R. China Kejie Chai − Key Laboratory of Pharmaceutical Engineering of Zhejiang Province, Key Laboratory for Green Pharmaceutical Technologies and Related Equipment of Ministry of Education, Collaborative Innovation Center of Yangtze River Delta Region Green Pharmaceuticals, Zhejiang University of Technology, Hangzhou 310014, P. R. China Complete contact information is available at: https://pubs.acs.org/10.1021/acs.iecr.4c01003
+
+4. CONCLUSIONS In this study, we developed a continuous flow microfluidic system equipped with FTIR inline analysis for the mono- substitution reactions of O-methyl-N-nitroisourea and methyl- amine. The reaction was optimized using machine learning- based Bayesian optimization and kinetic modeling. Bayesian optimization obtained optimized reaction conditions and a main-product yield of 83.7% within only 20 experiments. In contrast, kinetic modeling required a significantly larger experimental effort to reach similar optimal conditions and yield. Moreover, kinetic modeling faced challenges in accuracy when reaction variables extended beyond the initial model construction space, highlighting the need for additional data to improve yield estimations. However, kinetic modeling's traditional advantage is in providing a detailed description of the reaction space, which contributes to a deeper under- standing of the reaction. It can be applied more flexibly according to the different characteristics of the two
+
+Notes The authors declare no competing financial interest. ■ ACKNOWLEDGMENTS This research was supported by the Joint Funds of the Zhejiang Provincial Natural Science Foundation of China under grant no. LHDMZ23B060001, Zhejiang Province Science and Technology Plan Project under grant no. 2022C01179, and the National Natural Science Foundation of China under grant no. 22108252. This manuscript was previously deposited in a preprint server with the following
+
+(20) Chen, W.; Fu, W.; Duan, X.; Chen, B.; Qian, G.; Si, R.; Zhou, X.; Yuan, W.; Chen, D. Taming Electrons in Pt/C Catalysts to Boost the Mesokinetics of Hydrogen Production. Engineering 2022, 14, 124−133. (21) Chen, W.; Qian, G.; Wan, Y.; Chen, D.; Zhou, X.; Yuan, W.; Duan, X. Mesokinetics as a Tool Bridging the Microscopic-to- Macroscopic Transition to Rationalize Catalyst Design. Acc. Chem. Res. 2022, 55 (22), 3230−3241. (22) Willis, M. J.; Stosch, M. v. Inference of chemical reaction networks using mixed integer linear programming. Comput. Chem. Eng. 2016, 90, 31−43. (23) Xu, Q.; Fan, H.; Yao, H.; Wang, D.; Yu, H.; Chen, B.; Yu, Z.; Su, W. Understanding monoacylation of symmetrical diamines: A kinetic study of acylation reaction of m-phenylenediamine and benzoic anhydride in microreactor. Chem. Eng. J. 2020, 398, 125584. (24) Hall, B. L.; Taylor, C. J.; Labes, R.; Massey, A. F.; Menzel, R.; Bourne, R. A.; Chamberlain, T. W. Autonomous optimisation of a nanoparticle catalysed reduction reaction in continuous flow. Chem. Commun. 2021, 57 (40), 4926−4929. (25) Asghar, B. H. Kinetic study of nucleophilic reactivity of heterocyclic amines with 4,6-dinitrobenzofuroxan in acetonitrile. Arabian J. Chem. 2019, 12 (8), 2476−2483. (26) Hsu, H.-L.; Yang, C.-C.; Chiu, W.-C.; Hou, S.-S.; Lin, C.-Y.; Lin, C.-L. Kinetic model, recycling, regeneration, and reusing of tri- phase catalytic nucleophilic substitution esterification. Mol. Catal. 2022, 531, 112657. (27) Bhargavi, K.; Shyamala, P.; Padma, M.; Nagalakshmi, K. V. Kinetic study of SN2 reaction between paranitrophenyl benzoate and hydrazine in the presence of CTAB reverse micelles. Bull. Chem. React. Eng. Catal. 2021, 16 (4), 744−751. (28) Qi, T.; Luo, G.; Xue, H.; Su, F.; Chen, J.; Su, W.; Wu, K.-J.; Su, A. Continuous heterogeneous synthesis of hexafluoroacetone and its machine learning-assisted optimization. J. Flow Chem. 2023, 13 (3), 337−346. (29) Karan, D.; Chen, G.; Jose, N.; Bai, J.; McDaid, P.; Lapkin, A. A. A machine learning-enabled process optimization of ultra-fast flow chemistry with multiple reaction metrics. React. Chem. Eng. 2024, 9 (3), 619−629. (30) Taylor, C. J.; Felton, K. C.; Wigh, D.; Jeraal, M. I.; Grainger, R.; Chessari, G.; Johnson, C. N.; Lapkin, A. A. Accelerated chemical reaction optimization using multi-task learning. ACS Cent. Sci. 2023, 9, 957−968. (31) Kershaw, O. J.; Clayton, A. D.; Manson, J. A.; Barthelme, A.; Pavey, J.; Peach, P.; Mustakis, J.; Howard, R. M.; Chamberlain, T. W.; Warren, N. J.; Bourne, R. A. Machine learning directed multi- objective optimization of mixed variable chemical systems. Chem. Eng. J. 2023, 451, 138443. (32) Clayton, A. D.; Manson, J. A.; Taylor, C. J.; Chamberlain, T. W.; Taylor, B. A.; Clemens, G.; Bourne, R. A. Algorithms for the self- optimisation of chemical reactions. React. Chem. Eng. 2019, 4 (9), 1545−1554. (33) Sagmeister, P.; Ort, F. F.; Jusner, C. E.; Hebrault, D.; Tampone, T.; Buono, F. G.; Williams, J. D.; Kappe, C. O. Autonomous Multi- Step and Multi-Objective Optimization Facilitated by Real-Time Process Analytics. Adv. Sci. 2022, 9 (10), 2105547. (34) Zhang, J.; Sugisawa, N.; Felton, K. C.; Fuse, S.; Lapkin, A. A. Multi-objective Bayesian optimisation using q-noisy expected hyper- volume improvement (qNEHVI) for the Schotten−Baumann reaction. React. Chem. Eng. 2024, 9 (3), 706−712. (35) Jorayev, P.; Russo, D.; Tibbetts, J. D.; Schweidtmann, A. M.; Deutsch, P.; Bull, S. D.; Lapkin, A. A. Multi-objective Bayesian optimization of a two-step synthesis of p-cymene from crude sulphate turpentine. Chem. Eng. Sci. 2022, 247, 116938. (36) Sugisawa, N.; Sugisawa, H.; Otake, Y.; Krems, R. V.; Nakamura, H.; Fuse, S. Rapid and Mild One-Flow Synthetic Approach to Unsymmetrical Sulfamides Guided by Bayesian Optimization. Chemistry�Methods 2021, 1 (11), 484−490. (37) Clayton, A. D.; Pyzer-Knapp, E. O.; Purdie, M.; Jones, M. F.; Barthelme, A.; Pavey, J.; Kapur, N.; Chamberlain, T. W.; Blacker, A.
+
+Digital Object Identifier (DOI): https://doi.org/10.26434/ chemrxiv-2024-dzrcd. ■ REFERENCES (1) Elbert, A.; Haas, M.; Springer, B.; Thielert, W.; Nauen, R. Applied aspects of neonicotinoid uses in crop protection. Pest Manage. Sci. 2008, 64 (11), 1099−1105. (2) Uneme, H.; Kamiya, Y.; Konobe, M.; Yamada, J. Method for producing isoureas. WO 9933809 A1, 1999. (3) Matsuno, H.; Arai, K.; Oura, T.; Kodaka, K. Nitroisourea derivatives. EP 0974579 A1, 2000. (4) Maienfisch, P.; Huerlimann, H.; Haettenschwiler, J. A novel method for the preparation of N,N'-disubstituted N''-nitroguanidines, including a practical synthesis of the neonicotinoid insecticide clothianidin. Tetrahedron Lett. 2000, 41 (37), 7187−7191. (5) Kamekawa, H.; Miyashita, T.; Katsuta, H.; Kitashima, T. Improved method for producing nitroguanidine derivative. WO 2007091391 A1, 2007. (6) Wang, Q.; Wu, Y.; Wang, K.; Sun, Y.; Zhu, H.; Yu, J.; Xu, C. Process improvements for the preparation of insecticide clothianidin. Asian J. Chem. 2014, 26 (10), 2815−2819. (7) Copelli, S.; Barozzi, M.; Maestri, F.; Rota, R. Safe optimization of potentially runaway reactions: From fedbatch to continuous stirred tank type reactor. J. Loss Prev. Process Ind. 2018, 55, 289−302. (8) Yoshida, J. I.; Kim, H.; Nagaki, A. Green and Sustainable Chemical Synthesis Using Flow Microreactors. ChemSusChem 2011, 4 (3), 331−340. (9) Schwalbe, T.; Autze, V.; Hohmann, M.; Stirner, W. Novel Innovation Systems for a Cellular Approach to Continuous Process Chemistry from Discovery to Market. Org. Process Res. Dev. 2004, 8 (3), 440−454. (10) Neyt, N. C.; Riley, D. L. Application of reactor engineering concepts in continuous flow chemistry: a review. React. Chem. Eng. 2021, 6 (8), 1295−1326. (11) Köckinger, M.; Wyler, B.; Aellig, C.; Roberge, D. M.; Hone, C. A.; Kappe, C. O. Optimization and Scale-Up of the Continuous Flow Acetylation and Nitration of 4-Fluoro-2-methoxyaniline to Prepare a Key Building Block of Osimertinib. Org. Process Res. Dev. 2020, 24 (10), 2217−2227. (12) Kockmann, N.; Thenée, P.; Fleischer-Trebes, C.; Laudadio, G.; Noël, T. Safety assessment in development and operation of modular continuous-flow processes. React. Chem. Eng. 2017, 2 (3), 258−280. (13) Du, C.; Hu, Y.; Zhang, J.; Luo, G. Ultra-low formation of octahydrophenazine in the Beckmann rearrangement of cyclo- hexanone oxime using a microreactor. React. Chem. Eng. 2019, 4 (11), 1991−1999. (14) Yan, Z.; Ma, Z.; Deng, J.; Luo, G. Mechanism and kinetics of epoxide ring-opening with carboxylic acids catalyzed by the corresponding carboxylates. Chem. Eng. Sci. 2021, 242, 116746. (15) Bukhtiyarova, M. V.; Nuzhdin, A. L.; Bukhtiyarova, G. A. Comparative Study of Batch and Continuous Flow Reactors in Selective Hydrogenation of Functional Groups in Organic Com- pounds: What Is More Effective? Int. J. Mol. Sci. 2023, 24 (18), 14136. (16) Naik, P.; Garcia-Lacuna, J.; Oneill, P.; Baumann, M. Continuous Flow Oxidation of Alcohols Using TEMPO/NaOCl for the Selective and Scalable Synthesis of Aldehydes. Org. Process Res. Dev. 2024, 28, 1587. (17) Mouhsine, B.; Saint Pol, A.; Karim, A.; Penhoat, M.; Dumont, C.; Suisse, I.; Sauthier, M. Sustainable and selective Ni-catalyzed allylation of 2-oxindoles and 2-coumaranones in batch and flow chemistry. React. Chem. Eng. 2023, 8 (10), 2549−2556. (18) Xie, X.; Xie, S.; Yao, H.; Ye, X.; Yu, Z.; Su, W. Green and catalyst-free synthesis of deoxyarbutin in continuous-flow. React. Chem. Eng. 2019, 4 (5), 927−931. (19) Taylor, C. J.; Pomberger, A.; Felton, K. C.; Grainger, R.; Barecka, M.; Chamberlain, T. W.; Bourne, R. A.; Johnson, C. N.; Lapkin, A. A. A Brief Introduction to Chemical Reaction Optimization. Chem. Rev. 2023, 123 (6), 3089−3126.
+
+J.; Bourne, R. A. Bayesian Self-Optimization for Telescoped Continuous Flow Synthesis. Angew. Chem., Int. Ed. 2023, 62 (3), No. e202214511. (38) Shields, B. J.; Stevens, J.; Li, J.; Parasram, M.; Damani, F.; Alvarado, J. I. M.; Janey, J. M.; Adams, R. P.; Doyle, A. G. Bayesian reaction optimization as a tool for chemical synthesis. Nature 2021, 590 (7844), 89−96. (39) Shahriari, B.; Swersky, K.; Wang, Z.; Adams, R. P.; de Freitas, N. Taking the Human Out of the Loop: A Review of Bayesian Optimization. Proc. IEEE 2016, 104 (1), 148−175. (40) Bradford, E.; Schweidtmann, A. M.; Lapkin, A. Efficient multiobjective optimization employing Gaussian processes, spectral sampling and a genetic algorithm. J. Glob. Optim. 2018, 71 (2), 407− 438. (41) Cortés-Borda, D.; Wimmer, E.; Gouilleux, B.; Barré, E.; Oger, N.; Goulamaly, L.; Peault, L.; Charrier, B.; Truchet, C.; Giraudeau, P.; Rodriguez-Zubiri, M.; Le Grognec, E.; Felpin, F.-X. An Autonomous Self-Optimizing Flow Reactor for the Synthesis of Natural Product Carpanone. J. Org. Chem. 2018, 83 (23), 14286−14299. (42) Sagmeister, P.; Lebl, R.; Castillo, I.; Rehrl, J.; Kruisz, J.; Sipek, M.; Horn, M.; Sacher, S.; Cantillo, D.; Williams, J. D.; Kappe, C. O. Advanced Real-Time Process Analytics for Multistep Synthesis in Continuous Flow. Angew. Chem., Int. Ed. 2021, 60 (15), 8139−8148. (43) Fath, V.; Lau, P.; Greve, C.; Kockmann, N.; Röder, T. Efficient Kinetic Data Acquisition and Model Prediction: Continuous Flow Microreactors, Inline Fourier Transform Infrared Spectroscopy, and Self-Modeling Curve Resolution. Org. Process Res. Dev. 2020, 24 (10), 1955−1968. (44) Ładosz, A.; Kuhnle, C.; Jensen, K. F. Characterization of reaction enthalpy and kinetics in a microscale flow platform. React. Chem. Eng. 2020, 5 (11), 2115−2122. (45) Nambiar, A. M. K.; Breen, C. P.; Hart, T.; Kulesza, T.; Jamison, T. F.; Jensen, K. F. Bayesian Optimization of Computer-Proposed Multistep Synthetic Routes on an Automated Robotic Flow Platform. ACS Cent. Sci. 2022, 8 (6), 825−836. (46) Fath, V.; Kockmann, N.; Röder, T. In Situ Reaction Monitoring of Unstable Lithiated Intermediates through Inline FTIR Spectros- copy. Chem. Eng. Technol. 2019, 42 (10), 2095−2104. (47) Navid, A.; Khalilarya, S.; Abbasi, M. Diesel engine optimization with multi-objective performance characteristics by non-evolutionary Nelder-Mead algorithm: Sobol sequence and Latin hypercube sampling methods comparison in DoE process. Fuel 2018, 228, 349−367. (48) Letham, B.; Karrer, B.; Ottoni, G.; Bakshy, E. Constrained Bayesian Optimization with Noisy Experiments. Bayesian Anal. 2019, 14 (2), 495−519. (49) Luo, G.; Yang, X.; Su, W.; Qi, T.; Xu, Q.; Su, A. Optimizing telescoped heterogeneous catalysis with noise-resilient multi-objective Bayesian optimization. ChemRxiv 2024. (50) Wagner, F.; Sagmeister, P.; Jusner, C. E.; Tampone, T. G.; Manee, V.; Buono, F. G.; Williams, J. D.; Kappe, C. O. A Slug Flow Platform with Multiple Process Analytics Facilitates Flexible Reaction Optimization. Adv. Sci. 2024, 11 (13), 2308034.
+
+<image: DeviceRGB, width: 1028, height: 1382, bpc: 8>

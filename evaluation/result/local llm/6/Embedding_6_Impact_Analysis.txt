@@ -1,0 +1,16 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| temperature | reaction_rate | increase |
+| residence_time | conversion_rates | increase |
+| residence_time | product_selectivity | unchanged |
+| catalyst_loading | yield | increase |
+| catalyst_loading | productivity | decrease |
+| pattern = r"(\w+)\s+will\s+(result | lead)\sto\s+a\s+(\w+)" | - |
+| temperature | reaction_rate | increase |
+| residence_time | conversion_rates | increase |
+| residence_time | product_selectivity | unchanged |
+| catalyst_loading | yield | increase |
+| catalyst_loading | productivity | decrease |
+| pattern = r"(\w+)\s+will\s+(result | lead)\sto\s+a\s+(\w+)" | - |

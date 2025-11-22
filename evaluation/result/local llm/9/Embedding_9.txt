@@ -1,0 +1,32 @@
+trial production of p-DEB consists of bromination and dehydrobromination in a semi- batch reactor, state of the art yield from which is only 70%–75%. Herein, a combined effort of byproduct characterization and density functional theory calculations rev-
+
+Technologies) equipped with a mass spectrometer (MS) using a HP-5 studied the effect of temperature on the yield of target product in a perature of the GC oven was held at 40�C for 3 min. Then, the tem-
+
+size and flow rate, after which the influence of operating conditions on the conversion and yield was systematically investigated. As a volume three-necked flask with a water jacket at a temperature range
+
+of 5–25�C. During the feeding and reaction, the stirring rate was kept result, an unprecedented p-DEB yield of 99.2% could be achieved within only a few seconds under optimized conditions through contin-
+
+tem as mentioned previously. In the current study, all yields refer to the GC yield which was calculated by external standard method.
+
+and bond energy analysis were performed at DFT/B3LYP level with A two-stage microreactor system was used in the current study for microreactor system. The two micro T-mixers and all coils were
+
+reaction pathways and guide the design of reaction system. In the cur- perature range of 5–25�C, among which the highest yield (70.1%) of the solution of which then underwent GC-MS analysis. The results
+
+DVB-Br4 reached 99% at 25�C (Figure 6A, red line). Further increasing � 0.6676 � 202.4 kJ/min = 90.1 J/s, where the total flow rate qv is 40 ml/min and the tube length is 4 m. Then, the Reynolds number
+
+differences of the fluid flow (ΔTm) to equate heat production rate with of microreactor system changes dramatically with its channel size. In heat removal rate (Qprod = Qrem = αAΔTm) is 4.6�C, suggesting a much
+
+geneous mixing. The mixing quality was described under various total results suggest that properly tuning the channel size of microreactor liquid flow rates using segregation index (Xs). The smaller Xs suggests
+
+Here, we demonstrated that the yield of p-DVB-Br4 reach 99% at conditions of total flow rate of 20–40 ml/min, CDVB = 20–50 wt%, tion was established using a power law-type model (Equation 1),
+
+Note: For microreactor, p-DVB-Br4 solution was obtained from continuous bromination at CDVB = 20 wt%, CBr = 50 wt%, T = 25�C, residence time of 4.7 s. Abbreviations: p-DEB, p-diethynylbenzene; p-DVB, p-divinylbenzene. aBatch reactor: NaOH/Br mole ratio of 2.5, reaction time of 3 h, p-DVB-Br4 reactant was obtained from semi-batch operation at CDVB = 20 wt%, CBr = 50 wt%, FdBr = 1 ml/min, T = 10�C. bMicroreactor: T-mixer channel size of 0.3 mm, NaOH/Br mole ratio of 2.5, total flow rate of 79.5 ml/min (1.69 m/s), residence time of 11.8 s (copper coil length = 20 m, 1 mm i.d.). cMicroreactor: T-mixer channel size of 0.3 mm, NaOH/Br mole ratio of 2.5, total flow rate of 79.5 ml/min (1.69 m/s), residence time of 14.7 s (copper coil length = 25 m, 1 mm i.d.).
+
+Note: Bromination condition: CDVB = 50 wt%, CBr = 50 wt%, Br2/C═C bond mole ratio = 1.02, T = 25�C, residence time = 4.7 s, total flow rate of 39.5 ml/min (0.84 m/s); dehydrobromination condition: CNaOH/ EtOH = 30%, NaOH/Br mole ratio = 2.5, T = 90�C, residence time = 8.8 s, total flow rate of 79.5 ml/min (1.69 m/s). Abbreviations: p-DEB, p-diethynylbenzene; p-DVB, p-divinylbenzene. suggest that extra amount of NaOH is beneficial to complete
+
+Ideally, the scale-up design of microreactor system needs to keep system, from which a 99.2% yield of p-DEB was achieved with a identical to its laboratory scale. Given the strong exothermic fea-
+
+up the single unit is recommended as a facile route to increase the microreactor system not only achieved a much higher p-DEB yield
+
+throughput of the p-DEB production. Sizing up could also be con- than state of the art yield (70%–75%)1 from semi-batch operations, sidered to decrease the cost of the reactors, but the unit should be
+

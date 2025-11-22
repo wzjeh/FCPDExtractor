@@ -1,0 +1,1031 @@
+DOI: 10.1002/aic.17498
+
+R E A C T I O N E N G I N E E R I N G , K I N E T I C S A N D C A T A L Y S I S
+
+High-yield production of p-diethynylbenzene through consecutive bromination/dehydrobromination in a microreactor system
+
+Zhirong Yang | Yue Yang | Xuefeng Zhang | Wei Du | Jing Zhang | Gang Qian | Xuezhi Duan | Xinggui Zhou
+
+State Key Laboratory of Chemical Engineering, East China University of Science and Technology, Shanghai, China
+
+Abstract
+
+Polyarylacetylene resins have received great attention due to their outstanding heat
+
+resistance, while the absence of an efficient method to produce their monomer,
+
+Correspondence Jing Zhang, State Key Laboratory of Chemical Engineering, East China University of Science and Technology, Shanghai 200237, China. Email: jingzhang8507@ecust.edu.cn
+
+p-diethynylbenzene (p-DEB), has discouraged their commercial development. Indus-
+
+trial production of p-DEB consists of bromination and dehydrobromination in a semi-
+
+batch reactor, state of the art yield from which is only 70%–75%. Herein, a combined
+
+effort of byproduct characterization and density functional theory calculations rev-
+
+Xinggui Zhou, State Key Laboratory of Chemical Engineering, East China University of Science and Technology, Shanghai 200237, China. Email: xgzhou@ecust.edu.cn
+
+ealed that side reactions mainly consisted of aromatic substitution which would be
+
+promoted by thermal runaway derived from exothermic bromination due to higher
+
+activation energy of side reactions. From these considerations, we developed a
+
+microreactor system to enhance heat transfer thereby mitigating byproduct forma-
+
+Funding information China Postdoctoral Science Foundation, Grant/ Award Numbers: 2019TQ0093, 2020M671025; Natural Science Foundation of Shanghai, Grant/Award Number: 20ZR1415700; National Natural Science Foundation of China, Grant/Award Numbers: 21991103, 21991104, 22008072, 22008074
+
+tion, from which a p-DEB yield of 99.2% could be achieved. Moreover, the high heat
+
+removal efficiency avoided the use of slow feeding and reactant dilution required in
+
+semi-batch operation, thereby shortening the reaction time to 14 s while generating
+
+more concentrated product.
+
+K E Y W O R D S
+
+bromination, heat transfer, microreactor, p-diethynylbenzene, process intensification
+
+| INTRODUCTION
+
+Therefore, PAA resins have been regarded as the next generation
+
+ablative materials favorable in aerospace/military field and potentially
+
+useful new materials of optoelectronic devices for applications in
+
+Polyarylacetylene (PAA) resins have been the subject of extensive
+
+solar-to-fuel energy conversions.6–15 However, their full commercial
+
+research due to their outstanding heat resistance and excellent pro-
+
+cess properties.1,2 One major drawback of traditional high tempera-
+
+development has been discouraged by the absence of an efficient and
+
+safe method to produce the PAA monomer, p-diethynylbenzene (p-
+
+ture resins, for example, phenolic resins, is the evolution of volatiles,
+
+DEB).16
+
+such as water or ammonia, that cause void formation during
+
+processing, limiting their utilization in many applications.3,4 In con-
+
+Three syntheses routes: aromatics acylation,17,18 trimethylsilylacetylene
+
+method,19 and halogenation/dehydrohalogenationof divinylbenzene1,20
+
+trast, PAA resins can be shaped without gas evolution since their ther-
+
+mal cure is through addition reactions rather than condensation
+
+have been developed to produce p-DEB. However, the first two methods
+
+reactions, making PAA suitable to many important low pressure pro-
+
+have not been used industrially due to their operational complexities,
+
+cess techniques. Moreover, PAA resins have good electrical and opti-
+
+expensive reagents, difficulty and high risk in separation/purification, and
+
+cal properties, such as high conductivity, high charge/weight storage
+
+so forth. The third route was first reported by Allan S. Hay in 1960 and has
+
+capability, and large third-order nonlinear optical susceptibility.5
+
+become the dominant method for industrial production of p-DEB
+
+bromination and dehydrobromination. Moreover, the microreactor
+
+(e.g., Hercules Incorporated, General Electric Company, etc.), which consists
+
+system overcame the restrictions of feeding rates and reactant con-
+
+of bromine addition of p-divinylbenzene (p-DVB) and consecutive
+
+dehydrobromination in alkaline solution (Scheme 1).1,21 However, severe
+
+centrations associated with semi-batch operation, allowing more con-
+
+centrated product to be obtained. To the best of our knowledge, this
+
+challenges in reaction temperature control and separation significantly
+
+work demonstrates, for the first time, the use of a microreactor sys-
+
+affect the production efficiency of p-DEB. The reactant, DVB, is produced
+
+tem for rapid and high-yield production of p-DEB, which reveals a
+
+through dehydrogenation of diethylbenzene, which results in a mixture
+
+new avenue to boost commercial development of its polymer, PAA
+
+containing m-DVB, p-DVB, m-ethyl-vinylbenzene (m-EVB), and p-EVB.
+
+resins.
+
+These four chemicals are difficult to separate due to their similar boiling
+
+points. Owing to the absence of high purity p-DVB, the isomer containing
+
+p-DEB product needs to undergo rigorous separation. Instead, purification
+
+| EXPERIMENTAL
+
+of the reactant (p-DVB) prior to reaction seems more economical; however,
+
+the method for doing so is currently lacking. More importantly, the exother-
+
+2.1 | Purification of p-DVB
+
+mic bromination was proposed to favor side reactions, although limited
+
+work has been reported to unravel their pathways. It was reported that the
+
+temperature should be limited in the range of 10–15�C during the bromina-
+
+Commercial DVB mainly contains four compounds, m-DVB (50.6 wt
+
+tion in a batch reactor, which requires slow feeding rate of bromine and
+
+%), p-DVB (29.7 wt%), m-EVB (11.9 wt%), and p-EVB (7.8 wt%). In the
+
+diluted reactants.1,20 Even with careful control of the feeding rates and con-
+
+current study, π-complexation method was used to obtain high purity
+
+centrations, state of the art yield of the p-DEB can only reach 70%–
+
+p-DVB from its commercial crude. In a typical experiment, 6.8 g CuCl
+
+75%.1,20 In this regard, design and fabrication of a reactor system capable
+
+powder was ultrasonically dispersed in 50 ml 2 wt% methanol/toluene
+
+solution. Then, 10 g crude DVB was added into the solution to react
+
+of efficient heat removal thereby avoiding side reactions, shortening feed-
+
+with the CuCl for 0.75–3 h at a temperature range of 10–35�C. The
+
+ing/reaction time, and improving product concentration is highly desirable.
+
+To address the above issues, we explored a π-complexation
+
+yellow complex compound was filtered and washed twice with tolu-
+
+method22–25 using CuCl to purify the p-DVB from its commercial
+
+ene, after which the complex compound was mixed with toluene with
+
+a 1:5 ratios by volume at 60–95�C and filtered once the
+
+crude which contains large amounts of isomers and impurities. The
+
+relationship between complexation/decomplexation temperature and
+
+decomplexation was completed. The p-DVB rich filtrate was then con-
+
+separation efficiency has been built, based on which a p-DVB purity
+
+centrated using a rotary evaporator. The chemical composition of the
+
+higher than 99% was achieved after two consecutive complexation/
+
+filtrate was analyzed by a gas chromatograph (GC; 4890D; Agilent
+
+decomplexation and was used as the reactant thereafter. Then, we
+
+Technologies) equipped with a mass spectrometer (MS) using a HP-5
+
+studied the effect of temperature on the yield of target product in a
+
+capillary column. For temperature ramping program, the initial tem-
+
+batch reactor and identified chemical structures of byproducts. Subse-
+
+perature of the GC oven was held at 40�C for 3 min. Then, the tem-
+
+quent density functional theory (DFT) calculations revealed that the
+
+perature was ramped to 250�C with a rate of 5�C/min, after which
+
+side reactions mainly consisted of aromatic substitution and the ther-
+
+the temperature was held at 250�C for 10 min.
+
+mal runaway would favor the side reaction due to its much higher
+
+activation energy compared to that of target reaction. From these
+
+2.2 | Synthesis of p-DEB in a semi-batch reactor
+
+considerations, we developed and fabricated a microreactor system to
+
+intensify heat transfer thereby mitigating the thermal runaway derived
+
+For bromination, a certain amount of Br2/CCl4 solution (20–50 wt%,
+
+byproduct formation. According to heat and mass transfer evaluation,
+
+5–15 ml) was added dropwise with a feeding rate of 0.1–2.5 ml/min
+
+efficient mixing and heat removal can be achieved by tuning reactor
+
+into the p-DVB/toluene solution (10–60 wt%, 10–20 ml) in a 100 ml
+
+size and flow rate, after which the influence of operating conditions
+
+on the conversion and yield was systematically investigated. As a
+
+volume three-necked flask with a water jacket at a temperature range
+
+of 5–25�C. During the feeding and reaction, the stirring rate was kept
+
+result, an unprecedented p-DEB yield of 99.2% could be achieved
+
+within only a few seconds under optimized conditions through contin-
+
+at 600 rpm. Heat transfer fluid flowed around the external jacket of
+
+uous synthesis in the two-stage microreactor system consisting of
+
+the reactor for temperature control. After a certain time, the reaction
+
+SCHE ME 1 Synthesis route of p-DEB from bromination of p- DVB followed by dehydrobromination. p-DEB, p- diethynylbenzene; p-DVB, p- divinylbenzene
+
+was terminated by adding proper amount of NaOH/ethanol(EtOH) to
+
+09 (Revision D.01). Geometry optimizations were performed at
+
+consume the residue Br2. The postreaction solution after the bromina-
+
+DFT/wb97xd level with the 6-31G* (d, p) basis set. Frequency analy-
+
+tion was filtrated and concentrated to (partially) remove precipitates
+
+sis was conducted at the same level of theory to verify the stationary
+
+and toluene solvent. Then, a certain amount of preheated 30 wt%
+
+points to be minima (no imaginary frequencies) or transition states
+
+NaOH/EtOH solution was added to the 1,4-bis(1,2-dibromoethyl)
+
+(only one imaginary frequency). The relative energies with ZPE correc-
+
+benzene (p-DVB-Br4) solution to accelerate the dehydrobromination.
+
+tions and free energies are in kJ/mol. The single-point energies were
+
+computed with M062X/def2tzvp basis sets. Conductor-like polariz-
+
+The dehydrobromination was performed at a temperature range of
+
+70–95�C, during which a reflux condenser was used to capture the
+
+able continuum model for toluene was used in both geometry optimi-
+
+zations and computation of single-point energies.27 In addition, the
+
+volatiles. The product analysis was performed using the GC-MS sys-
+
+tem as mentioned previously. In the current study, all yields refer to
+
+π-complexation binding energy was calculated using Gaussian
+
+the GC yield which was calculated by external standard method.
+
+09 (Revision D.01) software, during which the geometry optimization
+
+and bond energy analysis were performed at DFT/B3LYP level with
+
+the 6-311G** basis set and menthol–toluene as solvent.22–25
+
+2.3 | Synthesis of p-DEB in a microreactor system
+
+| RESULTS AND DISCUSSION
+
+A two-stage microreactor system was used in the current study for
+
+continuous production of p-DEB through bromination and
+
+dehydrobromination.26 Figure 1A shows the configuration of the
+
+3.1 | Purification of p-DVB
+
+microreactor system. The two micro T-mixers and all coils were
+
+completely immersed in a waterbath. The micro T-mixer has two identical
+
+Table 1 shows the results of p-DVB purification through complexation
+
+opposed inlet channels of 0.3-mm wide and 0.1-mm deep, the outlet chan-
+
+and decomplexation at different temperatures. The p-DVB content
+
+nel of which is 0.3 mm in diameter (Figure 1B). All coils have an inner diam-
+
+among total DVB in the precipitate after the complexation is about
+
+89% at temperatures of 10–20�C. Further increasing the complexa-
+
+eter of 1 mm and the lengths of the preheat coils were determined by heat
+
+transfer calculation. First, the DVB/toluene solution was brought into con-
+
+tion temperature shortened the equilibrium time at the expense of
+
+separation efficiency. Therefore, 18–20�C is the optimal complexation
+
+tact with Br2/CCl4 solution in the micro T-mixer, the effluent of which was
+
+then mixed with 30 wt% NaOH/EtOH solution in the second micro T-
+
+temperature when the measured complex equilibrium constant for p-
+
+mixer. The reaction temperatures of bromination and dehydrobromination
+
+DVB is two orders of magnitude higher than the one for m-DVB,
+
+were in the range of 10–50�C and 70–90�C, respectively. Titanium coils
+
+which is consistent with the stronger complexation binding energy of
+
+the former than that of the latter (Figure S1). During the
+
+were used to transfer Br2 containing fluid due to their high corrosion resis-
+
+decomplexation, higher temperature is conducive to decomplexation
+
+tance. For the dehydrobromination process, copper coils were used due to
+
+but tends to trigger self-polymerization of DVB. In this regard, the
+
+their high thermal conductivity and lower cost. The product analysis was
+
+optimal decomplexation temperature is 80�C under which a total
+
+performed using the GC-MS system as mentioned previously.
+
+DVB yield of 95.5% was achieved. In general, thorough separation of
+
+p-DVB from m-DVB needs twice complexation/decomplexation. As
+
+2.4 | DFT calculations
+
+shown in Scheme 2, 89.0% p-DVB was obtained after the first com-
+
+plexation/decomplexation without consideration of solvents, while
+
+the value went up to 99.6% after the second complexation/
+
+The activation energy Ea and reaction enthalpy H of bromine addition
+
+decomplexation.
+
+and side reaction (aromatic substitution) were estimated by Gaussian
+
+(A) (B)
+
+<image: DeviceRGB, width: 841, height: 474, bpc: 8>
+
+<image: DeviceRGB, width: 780, height: 502, bpc: 8>
+
+FIGURE 1 (A) Continuous synthesis of p-DEB in the microreactor system. (B) Configuration of the T-mixer with inlet/outlet (1), mixing plate (2), cover plate (3), and fixing bolt (4). p-DEB, p-diethynylbenzene
+
+TABLE 1 Effect of temperature on separation efficiency through complexation and decomplexation
+
+Complexationa Decomplexationa
+
+Temperature (�C) Equilibrium time (min) p-DVB yield (%)b p-DVB (%)c m-DVB (%)c Temperature (�C) p-DVB yield (%)d
+
+91.2 89.0 11.0 32.5
+
+91.1 88.9 11.1 69.4
+
+90.5 89.1 10.9 85.7
+
+90.3 89.0 11.0 95.5
+
+79.5 87.6 12.4 90.4
+
+75.3 83.3 16.7 89.8
+
+70.2 80.2 19.8 80.2
+
+Abbreviations: p-DVB, p-divinylbenzene; GC, gas chromatograph. aAll yields refer to GC yield. bAmount of p-DVB in the precipitate after complexation divided by amount of p-DVB prior to complexation. cAmount of DVB isomers in the precipitate divided by total amount of DVB in the precipitate. dAmount of p-DVB in the decomplexation solution divided by amount of p-DVB prior to the decomplexation.
+
+SCHEME 2 Purification of p- DVB from commercial DVB crude through complexation and decomplexation. p-DVB, p- divinylbenzene
+
+3.2 | Bromination of p-DVB in a semi-batch reactor
+
+mass spectra information of brominated aromatic compounds in NIST
+
+database. However, byproduct identification is important to unravel
+
+reaction pathways and guide the design of reaction system. In the cur-
+
+rent study, byproduct characterization was performed by dissolving
+
+Figure 2A shows almost complete conversion of p-DVB over a tem-
+
+perature range of 5–25�C, among which the highest yield (70.1%) of
+
+the precipitated byproducts from the semi-batch p-DVB bromination,
+
+the solution of which then underwent GC-MS analysis. The results
+
+target product, p-DVB-Br4, was achieved at 10�C. It is important to
+
+were shown in Figure 3 where the five major peaks were identified
+
+note that the abovementioned temperature only refers to waterbath
+
+through molecular ion analysis utilizing the unique isotopic pattern of
+
+temperature. The byproducts are in the form of white precipitate.
+
+bromine: the abundances of 79Br and 81Br are 51% and 49%, respec-
+
+Effects of reactant feeding rate and concentration were also investi-
+
+gated. Figure 2B–D shows the p-DVB-Br4 yield decreased with
+
+tively. For Peak 1, an approximately 1:1 ratio of molecular ion
+
+208–210 (Figure S2[1]) suggests a chemical structure of 2-bromo-1,-
+
+increasing Br-feeding rate and reactant concentrations. These results
+
+4-divinylbenzene. Moreover, an approximately 1:2:1 ratio of molecu-
+
+are consistent with literature that the bromination temperature should
+
+be controlled between 10–15�C and low feeding rate and reactant
+
+lar ion 286:288:290 and an approximately 1:1 ratio of m/z 207:209
+
+concentration are desired to maximize the yield of p-DVB-Br4.1,20,21
+
+(Figure S2[3–5]) suggest Peak 3–5 being three isomers of dibromo-p-
+
+divinylbenzene. Similarly, an approximately 1:2:1 ratio of molecular
+
+Since thermal runaway derived from the exothermic bromine addition
+
+was reported as the cause for side reactions,1,21 time on stream reac-
+
+ion 288:290:292 and an approximately 1:1 ratio of m/z 209:211
+
+(Figure S2[2]) suggest Peak being 1-(1,2-dibromoethyl)-4-
+
+tion temperature was recorded at different water-batch temperatures
+
+vinylbenzene, the presence of which may be caused by insufficient
+
+and feeding rates. As shown in Figure 2E,F, severe thermal runaway
+
+(15–20�C) was observed even at a Br2 feeding rate as low as
+
+Br2 for complete bromine addition due to Br2 evaporation during
+
+0.5 ml/min, and the degree of thermal runaway increased with the
+
+feeding. The characterization results revealed that side reactions
+
+feeding rate accompanied by lower yield of p-DVB-Br4. In the current
+
+during the bromination of p-DVB mainly consist of aromatic substitu-
+
+tion with bromine.
+
+batch operation, the p-DVB-Br4 yield can reach up to 85.0% within
+
+The Gibbs free energy of each state involved in bromine addition
+
+10�C water-batch using very low reactant concentrations (CBr = 10 wt%, CDVB = 20 wt%) and Br2 feeding rate (1 ml/min), where
+
+and aromatic substitution was obtained using DFT calculations, as
+
+illustrated in Figure 4. The optimized geometries of each state are
+
+the reaction rates were limited by the feeding rates and the use of
+
+shown in Figure S3. The computational results reveal that the second
+
+diluted reactants would raise energy consumption in downstream
+
+aromatic substitution with bromine to produce a bromine substituted
+
+separation.
+
+intermediates (TS-2) is the rate-limiting step for aromatic substitution,
+
+Surprisingly, chemical structures of the byproducts from p-DVB
+
+while the second bromine addition to produce a bromide intermediate
+
+bromination have been seldomly reported, possibly due to a lack of
+
+(A) (B) (C)
+
+<image: DeviceRGB, width: 538, height: 449, bpc: 8>
+
+<image: DeviceRGB, width: 552, height: 449, bpc: 8>
+
+<image: DeviceRGB, width: 552, height: 447, bpc: 8>
+
+Conversion and yield (%)
+
+Conversion and yield (%)
+
+Conversion and yield (%)
+
+DVB conversion
+
+DVB conversion
+
+DVB conversion
+
+DVB-Br4 yield
+
+DVB-Br4 yield
+
+DVB-Br4 yield
+
+0.5 1.5 2.5
+
+Br-feedingrate (ml/min)
+
+Waterbath temperature (oC)
+
+Br2 concentration (%)
+
+(D) (E) (F)
+
+<image: DeviceRGB, width: 538, height: 447, bpc: 8>
+
+<image: DeviceRGB, width: 542, height: 450, bpc: 8>
+
+<image: DeviceRGB, width: 548, height: 448, bpc: 8>
+
+Br2 feeding rate 0.5 ml/min
+
+Br2 feeding rate 1.0 ml/min
+
+Reaction temperature (oC)
+
+Reaction temperature (oC)
+
+Conversion and yield(%)
+
+DVB conversion
+
+DVB-Br4 yield
+
+DVB concentration (%)
+
+Time in stream (s)
+
+Time in stream (s)
+
+FIGURE 2 Effects of (A) temperature, (B) Br-feeding rate, FdBr, (C) Br2 concentration, CBr, and (D) p-DVB concentration, CDVB, on p-DVB bromination in a semi-batch reactor. (E and F) Time on stream reaction temperature under different Br-feeding rate at waterbath temperatures of 10�C, 20�C and 25�C. Conditions: (A) FdBr = 1 ml/min, CBr = 50 wt%, CDVB = 20 wt%; (B) T = 10�C, CBr = 50 wt%, CDVB = 20 wt%; (C) FdBr = 1 ml/min, T = 10�C, CDVB = 20 wt%; (D) FdBr = 1 ml/min, T = 10�C, CBr = 50 wt%; (E and F) CBr = 50 wt%, CDVB = 20 wt%. For all experiments, the Br2/C═C bond mole ratio was controlled at 1.02. Analysis was performed at 15 min after dropwise feeding of Br2 to ensure complete bromination. p-DVB, p-divinylbenzene
+
+FIGURE 3 Characterization of byproducts using GC-MS. Mass spectrometer ion fragmentations of Peaks 1–5 were listed in Figure S2. GC-MS, gas chromatograph–mass spectrometer
+
+Total Ion Chromatograph of precipitates from p-DVB bromination
+
+Counts (%)
+
+Acquisition time (min)
+
+(TS-2) is the rate-limiting step for bromine addition. Figure 4 shows
+
+According to the above analysis, microreaction technology should
+
+that the calculated activation energy (Ea) for aromatic substitution is
+
+be a desired strategy to mitigate the side reactions caused by thermal
+
+244.8 kJ/mol, which is much higher than the Ea of bromine addition
+
+runaway, due to the excellent heat transfer efficiency derived from
+
+high surface area to volume ratio of the microreactor. The ΔHm for
+
+(59.9 kJ/mol). Therefore, the DFT calculations suggest that an
+
+increase of reaction temperature would promote aromatic substitu-
+
+bromine addition of p-DVB is �202.4 kJ/mol, according to DFT calcu-
+
+tion to a much higher degree than bromine addition, which unravels
+
+lations (Figure S4). The heat removal capacity of the microreactor was
+
+estimated using heat transfer calculations.31 The wall temperature of
+
+the relationship between thermal runaway and side reactions. The
+
+reaction enthalpy of bromine addition and aromatic substitution were
+
+the microreactor was assumed to be constant and equal to the water
+
+also obtained using DFT calculations (Figure S4), which was used for
+
+bath temperature since the heat transfer resistance of the tube wall is
+
+heat transfer calculations to estimate the degree of thermal runaway
+
+negligible compared to that inside the tube. In typical reaction condi-
+
+during synthesis of p-DVB-Br4 in the following microreactor system.
+
+tions, the heat production rate of complete bromine addition within
+
+0.05
+
+<image: DeviceRGB, width: 662, height: 506, bpc: 8>
+
+Segregationindex Xs
+
+0.04
+
+0.03
+
+0.02
+
+0.01
+
+0.00
+
+Total volume flow (mL min-1)
+
+FIGURE 5 Effect of total flow rate on Xs
+
+FIGURE 4 Relative Gibbs free energy (kJ/mol) of each state involved in bromine addition of p-DVB to produce p-DVB-Br4 (target product) and aromatic substitution of p-DVB to produce 1,4-dibromo- 2,5-divinylbenzene (byproduct). The activation energy was determined by energy difference of rate-limiting step.28–30 p-DVB, p- divinylbenzene
+
+subsequent dehydrobromination due to formation of NaBrO to pro-
+
+duce disodium terephthalate byproduct by reacting with 1,4-bis
+
+(1-bromovinyl) benzene. Furthermore, the effects of temperature and
+
+channel size were investigated in a microreactor system with T-mixer
+
+size of 0.3 mm and outlet coil of 1 mm in diameter. The yield of p-
+
+the microreactor is Qprod = qvC0(�ΔHm) = 40 � 10�3
+
+DVB-Br4 reached 99% at 25�C (Figure 6A, red line). Further increasing
+
+temperature lowered the p-DVB-Br4 yield accompanied by appear-
+
+� 0.6676 � 202.4 kJ/min = 90.1 J/s, where the total flow rate qv is
+
+40 ml/min and the tube length is 4 m. Then, the Reynolds number
+
+ance of white precipitates due to occurrence of side reactions, which
+
+was calculated as follows, Re = duρ/μ = 10�3 � 0.8488 � 1312/
+
+is consistent with batch operations. Even at temperature as low as
+
+10�C, the p-DVB-Br4 yield can reach 99% by slightly prolonging the
+
+0.000787 = 1415, suggesting a turbulence flow profile given an early
+
+transition from laminar to turbulent flow in microreactor system.32–34
+
+residence time. In contrast, when the channel size increased to 2 mm
+
+for the T-mixer and outlet coil (Figure 6A, black line), the maximum p-
+
+Thus, the heat transfer coefficient can be calculated as α = 0.023(λ/d)
+
+Re0.8(Cpμ/λ)0.3 = 1538W m�2 K�1,where the average thermal conduc-
+
+DVB-Br4 yield can only reach 70% at 35�C due to severe side reac-
+
+tivity of the solvent λ is 0.1121 W m�1 K�1 and the heat capacity Cp is 1109 J kg�1 K�1. So, the required logarithmic mean temperature
+
+tions as suggested by formation of white precipitates.
+
+We assumed the different reaction performance was mainly due
+
+to different heat removal capability as "surface area to volume ratio"
+
+differences of the fluid flow (ΔTm) to equate heat production rate with
+
+of microreactor system changes dramatically with its channel size. In
+
+heat removal rate (Qprod = Qrem = αAΔTm) is 4.6�C, suggesting a much
+
+this regard, we estimated the degree of "thermal runaway" by calcu-
+
+lower degree of thermal runaway compared to that of batch reactor
+
+lating logarithmic mean temperature difference (ΔTm) of the fluid flow
+
+shown in Figure 2E,F.
+
+under reaction conditions using the same method as previous section.
+
+The detailed calculations are shown in Table S2. The calculated ΔTm for the narrower microreactor is only approximately 5�C, in contrast
+
+3.3 | Bromination of p-DVB in microreactor
+
+to approximately 25�C for its counterpart. Interestingly, the approxi-
+
+mately 25�C ΔTm for reactor with larger channel is similar as the tem-
+
+Mixing efficiency of the T-mixer microreactor was evaluated using the
+
+Villermaux/Dushman reaction which is known to characterize homo-
+
+perature rise in previous semi-batch operations (Figure 2E,F). The
+
+geneous mixing. The mixing quality was described under various total
+
+results suggest that properly tuning the channel size of microreactor
+
+liquid flow rates using segregation index (Xs). The smaller Xs suggests
+
+system can mitigate the thermal runaway to an extent that not trig-
+
+better mixing performance. The details of which calculation process
+
+gering side reactions during the bromination. Figure S6 shows the
+
+were listed in the Supporting information.26,35,36 Figure 5 shows the
+
+yield of p-DVB-Br4 maintained over 99% even at a p-DVB concentra-
+
+value of Xs reduce to zero when the total flow rate is higher than
+
+tion of 70%. Therefore, with the intensified heat/mass transfer
+
+8 ml/min, suggesting the mixing is rapid and almost instantaneous in
+
+brought by the microreactor system, the restrictions of reactant con-
+
+this flow range. In the following studies, the total flow rates were kept
+
+centrations and feeding rates associated with semi-batch operations
+
+well above 8 ml/min to ensure a good mixing performance.37
+
+can be overcome, thereby improving product concentration and low-
+
+ering energy consumption in separation. Nevertheless, during the con-
+
+Then, the influence of operating conditions on the bromination of
+
+tinuous production in the microreactor system, a p-DVB
+
+p-DVB in microreactor system was investigated. As shown in
+
+concentration lower than 60% is suggested to prevent precipitation of
+
+Figure S5, a slight overdose (2%) of Br2 is desired to promote the bro-
+
+p-DVB-Br4. In order to estimate the apparent reaction rate constant
+
+mination, possibly due to inhibition of HBr removal from the p-DVB-
+
+Br4. However, excessive amount of Br2 would negatively affect the
+
+and reaction orders of bromine addition, we recorded conversion of
+
+(A) (B)
+
+<image: DeviceRGB, width: 681, height: 542, bpc: 8>
+
+<image: DeviceRGB, width: 680, height: 524, bpc: 8>
+
+(C) (D)
+
+<image: DeviceRGB, width: 717, height: 551, bpc: 8>
+
+<image: DeviceRGB, width: 682, height: 522, bpc: 8>
+
+Ea
+
+FIGURE 6 (A) Effect of temperature and channel size on product yield, (B) effect of channel size on degree of thermal runaway (represented by ΔTm), (C) p-DVB concentrations at different conditions: experimental (symbols) and kinetic model (dash lines), (D) Arrhenius plot of bromine addition during the bromination of p-DVB in microreactor system. Characteristic size of the T-mixers: 2 mm for black line and column in (A) and (B), 0.3 mm for all other cases. Inner diameter of capillary coil at the T-mixer outlet: 2 mm for black line and column in (A) and (B), 1 mm for all other cases. ΔTm: logarithmic mean temperature difference of the fluid flow. Conditions: (A and B) total flow rate of 20 ml/min, CDVB = 20 wt%, CBr = 50 wt%, residence time = 7 s, Br2/C═C bond mole ratio = 1.02; (C) Exp_run1: total flow rate = 20 ml/min, CDVB = 20 wt%, CBr = 50 wt%, Br2/C═C bond mole ratio = 1.02, temperature = 25�C, residence time was changed by tuning the coil length; Exp_run 2: CDVB = 30 wt%, CBr = 50 wt%, Br2/C═C bond mole ratio = 1.02, temperature = 20�C, coil length = 4 m, residence time was changed by tuning the total flow rates from 50 to 10 ml/min; (D) reaction rate constants at 10–25�C were obtained from product yields in red line (A) and kinetic model in (C). p-DVB, p-divinylbenzene
+
+high heat removal efficiency, from which high-yield of p-DVB-Br4 was achieved with a reaction residence time of only a few seconds.
+
+p-DVB at different residence times and reactant temperatures in
+
+the microreactor system where the thermal runaway could be miti-
+
+gated to not causing side reactions. The kinetics of bromine addi-
+
+Here, we demonstrated that the yield of p-DVB-Br4 reach 99% at
+
+conditions of total flow rate of 20–40 ml/min, CDVB = 20–50 wt%,
+
+tion was established using a power law-type model (Equation 1),
+
+which was solved by Runge–Kutta method. The apparent reaction
+
+CBr = 50 wt%, residence time of more than 7 s, and Br2/C═C bond
+
+orders and reaction rate constant were determined by fitting the
+
+mole ratio = 1.02.
+
+experimental data using a Levenberg–Marquardt algorithm that
+
+�dCDVB dt ¼ kDVBCm DVBCn Br ð1Þ
+
+minimizes the sum of the squared residuals between experimental
+
+and fitted concentrations (Figure 6C). The apparent activation
+
+energy of bromine addition was then obtained by the Arrhenius
+
+3.4 | Dehydrobromination of p-DVB-Br4 in a batch reactor versus a microreactor
+
+equation using reaction rate constants at different temperatures
+
+(Figure 6D), the value of which is close to the one from DFT calcu-
+
+lations. The representative Matlab® codes are provided in the
+
+Supporting information. In summary, the results of microreactor
+
+The effect of NaOH usage during the dehydrobromination was inves-
+
+system verified that the precise temperature control is essential to
+
+tigated (Figure S7), which shows that the maximum p-DEB yield was
+
+direct reaction pathways during the p-DVB bromination. Adjust-
+
+obtained when NaOH/Br mole ratio reached 2.5 for both semi-batch
+
+ment of the microreactor channel size plays a key role to ensure
+
+operation and continuous operation in microreactor. The results
+
+TABLE 2 Effect of temperature on dehydrobromination of p-DVB in the batch reactor and microreactor
+
+Batch reactor (yield, %)a Microreactor (yield, %)
+
+p-DVB-Br4 p-DVB-Br2 p-DEB p-DVB-Br4 p-DVB-Br2 p-DEB
+
+Temperature (�C)
+
+48.2 50.8 24b 0b 76b
+
+10.3 89.7 3.6b 2.2b 94.2b
+
+0.8 99.2 0.6b/0c 1.2/0.5c 98.2b/99.5c
+
+Note: For microreactor, p-DVB-Br4 solution was obtained from continuous bromination at CDVB = 20 wt%, CBr = 50 wt%, T = 25�C, residence time of 4.7 s. Abbreviations: p-DEB, p-diethynylbenzene; p-DVB, p-divinylbenzene. aBatch reactor: NaOH/Br mole ratio of 2.5, reaction time of 3 h, p-DVB-Br4 reactant was obtained from semi-batch operation at CDVB = 20 wt%, CBr = 50 wt%, FdBr = 1 ml/min, T = 10�C. bMicroreactor: T-mixer channel size of 0.3 mm, NaOH/Br mole ratio of 2.5, total flow rate of 79.5 ml/min (1.69 m/s), residence time of 11.8 s (copper coil length = 20 m, 1 mm i.d.). cMicroreactor: T-mixer channel size of 0.3 mm, NaOH/Br mole ratio of 2.5, total flow rate of 79.5 ml/min (1.69 m/s), residence time of 14.7 s (copper coil length = 25 m, 1 mm i.d.).
+
+TABLE 3 Composition of postreaction solution and p-DEB yield from continuous synthesis of p-DEB from p-DVB in the two-stage microreactor system
+
+Mass fraction of each component (wt%) Yield (%)
+
+Ethanol NaBr CCl4 NaOH Toluene p-DEB H2O p-DEB
+
+32.0 21.8 16.8 12.7 6.8 6.6 3.3 99.2%
+
+Note: Bromination condition: CDVB = 50 wt%, CBr = 50 wt%, Br2/C═C bond mole ratio = 1.02, T = 25�C, residence time = 4.7 s, total flow rate of 39.5 ml/min (0.84 m/s); dehydrobromination condition: CNaOH/
+
+EtOH = 30%, NaOH/Br mole ratio = 2.5, T = 90�C, residence time = 8.8 s, total flow rate of 79.5 ml/min (1.69 m/s). Abbreviations: p-DEB, p-diethynylbenzene; p-DVB, p-divinylbenzene.
+
+suggest that extra amount of NaOH is beneficial to complete
+
+postreaction solution, which is beneficial to the downstream
+
+dehydrobromination. Table 2 compares the dehydrobromination
+
+separation.
+
+behavior in batch reactor and microreactor. In the batch reactor, elimi-
+
+For production scale-up, issues of large-scale use of Br2 need
+
+nation of the first two moles of HBr to form p-DVB-Br2 easily
+
+to be addressed due to its high volatility, corrosivity, and toxicity.
+
+Continuous in situ Br2 generators consisting of a bromide ion
+
+occurred even at 70�C, but complete dehydrobromination required
+
+higher temperature (90�C) and long reaction time (3 h). In contrast, a
+
+source combined with an oxidant under acidic conditions, as
+
+reported by Kappe et al.,38 can be considered to overcome the
+
+98.2% yield of p-DEB was achieved within only 12 s of reaction resi-
+
+dence time in the microreactor system, although a reaction tempera-
+
+drawbacks of large-scale use of Br2. Alternatively, the Br2/CCl4 solution used in the current study could be sealed by a small
+
+ture of 90�C was also required. It should be noted that for both
+
+reaction systems, a reaction temperature higher than 90�C would lead
+
+amount of water as the upper layer to mitigate evaporation of Br2 during its large-scale use and storage. It should be noted that the
+
+to the formation of brown precipitate, possibly due to polymerization
+
+of the p-DEB. Given the removal of last two moles of HBr to form the
+
+use of corrosion resistant materials with high thermal conductivity
+
+p-DEB is strongly endothermic,1 the much shorter reaction time for
+
+(Hastelloy, SiC, etc.) for microreactors and their pumping systems
+
+is crucial to enable this technology to succeed on large-scale prep-
+
+complete dehydrobromination in the microreactor is possibly due to
+
+arations. Typical scale-up strategies for a microreactor based pro-
+
+its superior heat/mass transfer efficiency compared to that of batch
+
+cess include numbering up, sizing up and their combinations.39
+
+reactor.
+
+Table 3 shows the composition of postreaction solution from
+
+Ideally, the scale-up design of microreactor system needs to keep
+
+the continuous synthesis of p-DEB in the two-stage microreactor
+
+the mixing, residence time (and distribution), and heat transfer
+
+system, from which a 99.2% yield of p-DEB was achieved with a
+
+identical to its laboratory scale. Given the strong exothermic fea-
+
+total residence time of approximately 14 s under optimized reaction
+
+ture of the reaction and its high temperature sensitivity, numbering
+
+conditions, corresponding to a throughput of 0.25 kg/h p-DEB. The
+
+up the single unit is recommended as a facile route to increase the
+
+microreactor system not only achieved a much higher p-DEB yield
+
+throughput of the p-DEB production. Sizing up could also be con-
+
+than state of the art yield (70%–75%)1 from semi-batch operations,
+
+sidered to decrease the cost of the reactors, but the unit should be
+
+reoptimized through reactor modeling and simulation where
+
+but shortened the reaction time by three orders of magnitude.
+
+effects of back-mixing and radial temperature gradient need to be
+
+Moreover, without restriction on reactant concentrations, the
+
+reevaluated.
+
+microreactor operation can lead to more concentrated p-DEB in the
+
+| CONCLUSION
+
+ORCID
+
+Zhirong Yang https://orcid.org/0000-0003-4417-4814
+
+PAA resins have wide applications due to their outstanding heat resis-
+
+Jing Zhang https://orcid.org/0000-0002-8213-4314
+
+tance, excellent process properties as well as good electrical/optical
+
+Gang Qian https://orcid.org/0000-0001-5258-1319
+
+properties. However, their full commercial development has been
+
+Xuezhi Duan https://orcid.org/0000-0002-5843-5950
+
+impeded by the absence of an efficient synthesis and separation
+
+Xinggui Zhou https://orcid.org/0000-0002-4736-3672
+
+method of their monomer, p-DEB. In the current study, we explored a

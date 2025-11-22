@@ -1,0 +1,253 @@
+Journal of Flow Chemistry (2025) 15:137–143 https://doi.org/10.1007/s41981-025-00351-6
+
+COMMUNICATIONS
+
+<image: DeviceRGB, width: 29, height: 30, bpc: 8>
+
+Selective synthesis of phenylhydroxylamine under slug flow conditions using Bayesian optimization
+
+Asami Yoshii1 · Akira Fujii1 · Yasuhiro Nishiyama1 · Hajime Mori1
+
+Received: 6 March 2025 / Accepted: 9 April 2025 / Published online: 22 April 2025 © Akadémiai Kiadó Zrt 2025
+
+Abstract Phenylhydroxylamine (PHA) derivatives are key chemical intermediates of nitrogen-containing organic compounds, however, their selective synthesis is challenging. Using Bayesian optimization, we attempted to streamline the reaction conditions for synthesizing PHAs in a microreactor to improve the yield of the target compound. Based on the results obtained in our previous work, the photoreduction of nitrobenzene was used for the selective synthesis of PHA under slug flow conditions. Furthermore, we examined the key factors responsible for the high synthetic selectivity. The optimiza- tion method helped us to optimize the experimental conditions required to achieve a yield of over 90% with only seven synthetic experiments. These results suggest that it is important to achieve a high reaction rate. Furthermore, additional experiments, cyclic voltammetry measurements, and calculations indicated that it is crucial to maintain the high redox potential of PHA under slug flow conditions with ethyl acetate. Finally, a batch reaction of the two phases was attempted to synthesize the target compound in comparison with the results of the flow reaction. Although the target compound was obtained in moderate yield with few byproducts, a prolonged reaction time was required. The flow reaction of the two phases slightly improved the synthesis selectivity and shortened the reaction time. We expect this reaction achieved by the merits of flow reactions to be useful for the synthesis of unstable PHAs.
+
+Graphical Abstract
+
+<image: ICCBased(RGB,sRGB IEC61966-2.1), width: 1524, height: 600, bpc: 8>
+
+Keywords N-phenylhydroxylamine · Nitrobenzene photoreduction · Microreactor · Slug flow · Bayesian optimization
+
+Introduction
+
+Asami Yoshii
+
+yoshii@wakayama-kg.jp
+
+Yasuhiro Nishiyama
+
+Phenylhydroxylamine (PHA) derivatives have attracted con- siderable attention because of their biological and pharma- cological properties [1, 2] as well as their role as precursors for nitrogen-containing organic products [3–10]. Although
+
+y-west@wakayama-kg.jp
+
+Department of Chemical Engineering, Industrial Technology Center of Wakayama Prefecture, 60 Ogura, Wakayama 649-6261, Japan
+
+Journal of Flow Chemistry (2025) 15:137–143
+
+functionalization via PHAs has been recently explored [11–13], PHAs-intermediates in the synthesis of aniline via the reduction of nitrobenzene [14, 15], are unstable prod- ucts. Their instability makes their synthesis laborious. A few reports describe selective synthetic methods to obtain PHAs from nitroarenes, including those using metal catalysts with hydrogen [16–19], metal catalysts with reducing agents [12, 20–24], Zn with ultrasound [25], and enzyme catalysts [26]. Therefore, alternative synthetic techniques are required.
+
+few experiments, as it enables the prediction of subsequent experimental conditions [46, 47]. This optimization method is attractive because of its applicability [48–52] to synthe- sis in a flow reactor. Although there are a few examples of Bayesian optimization or machine-learning techniques in flow photoreactions [53, 54], we are not aware of any reports concerning the reduction of nitrobenzene.
+
+Results and discussion
+
+Photoreactions are a key trend in organic synthesis;
+
+they offer clean and simple reaction methods because they proceed only by using photoirradiation instead of heating energy [27–37]. New methods have been reported for syn- thesizing PHAs via photoreactions. Photoreduction with methylhydrazine has been reported to reduce nitrobenzene to achieve selective PHAs in noncatalytic procedures [38]. However, the efficiency of photoreaction process is influ- enced by the length of the light path. Low photoreaction efficiency occurs in large reaction apparatuses with long path length, owing to the Beer–Lambert law. Using a flow reactor with a micrometer tube solves this challenge, as the short light path enables light irradiation of the entire solu- tion [39].
+
+Utilization of bayesian optimization
+
+First, we performed Bayesian optimization of this photore- duction using a slug-flow reaction. The synthesis of 4-chlo- rophenylhydroxylamine (2) from 4-chloro nitrobenzene (1) was carried out in two phases using water and ethyl acetate. The substrate, catalyst (Eosin Y), and triethanolamine were dissolved separately in each solvent (Fig. 1). Five experi- mental parameters were set: substrate concentration, Eosin Y concentration, the proportion of ethyl acetate to solvent, flow rate, and tube length. The program code previously reported by Fuse et al. was used to perform the Bayesian optimization [48]. Experimental parameters were input into a program code after setting the ratio and interval of each parameter, considering solubility, conditions for slug flow, and reaction time (Table 1). We used continuous discrete variables in the optimization campaign to ease the experi- mental preparation. The goal of this optimization was to achieve 90% yield of 2. Using the prepared program, the computer outputted five initial reaction conditions with Latin hypercube sampling (LHS) [55] (Table 2, entries 1–5).
+
+Recently, we reported a new photoreduction method
+
+for producing PHA in a microreactor [40]. This method is based on previous reports describing the efficient photore- duction of nitrobenzene to azoxybenzene with high selec- tivity under flow conditions in a microreactor [41, 42]. The high efficiency and selectivity of the reaction are attributed to the short irradiation distance in the reactor and high mix- ing efficiency, achieved through flow reactions instead of batch-type photoreduction [43]. Furthermore, highly effi- cient production of azoxybenzene was achieved using slug flow with water/ethanol and fluorous solvents because of the high mixing and light confinement effect. In this pro- cess, induced photons are trapped in the segments contain- ing the reactants due to the difference in the refractive index of each solvent [44, 45]. Hence, we attempted to perform slug flow with an organic solvent and water to synthesize the product with high efficiency thorough mixing and light confinement. In addition, we aimed to easily separate the products into organic solvents and the catalysts into water using a separator connected to the end of the flow reactor. Unexpectedly, this reaction under slug flow produced PHA as the main product.
+
+We then performed the experiments under the selected
+
+initial conditions and analyzed the crude material using 1H NMR spectroscopy. The products obtained were 2, 1, 4,4′- bis (chloro) azoxybenzene (3) and 4-chloroaniline (4). Since the sum of the yields was less than 100%, other byprod- ucts were generated, as indicated by various small peaks in the aromatic region. The initial five conditions yielded 2 in varying amounts (8–83%), with highest yield of 83% was obtained, (entry 3), and did not reach the desired yield (90%).
+
+Next, Gaussian process regression (GPR) [56] was per-
+
+formed with the data obtained from the initial conditions to predict the next experimental conditions aimed at achieving a yield greater than 90% (Table 2, entries 6 and 7). Although the reaction performed under the conditions proposed by the first GPR, yielded 2 at 56%, the reaction proposed by GPR using data from entries 1–6 predicted a 97% yield. Only seven experiments were conducted to achieve the desired yield. Considering that five parameters needed to be opti- mized, this result demonstrated that previous optimization
+
+Therefore, in this study, we optimized the reaction condi-
+
+tions for obtaining PHAs in a microreactor under slug flow to improve the yield of the target compound. Moreover, we elucidated the reason for synthesizing PHAs with high selectivity through additional experiments, measurements, and calculations. Furthermore, to optimize the appropriate reaction conditions, Bayesian optimization was applied in a
+
+Journal of Flow Chemistry (2025) 15:137–143
+
+<image: Indexed(255,ICCBased(RGB,sRGB IEC61966-2.1)), width: 1572, height: 902, bpc: 8>
+
+Fig. 1 Photoreduction of 4-chloro nitrobenzene (1) in flow microreactor
+
+Table 1 The set range and interval of each parameter conditions range interval number
+
+under the optimized conditions, led to the formation of PHA (Scheme S1). The key points for the selective synthesis of PHA are: (i) preventing the condensation of nitrosobenzene and PHA to form azoxybenzene and (ii) suppressing the fur- ther reduction of PHA to aniline. Firstly, we carefully exam- ined the reaction conditions necessary to obtain the desired yield of 2 (Table 2, entry 7). The conditions were as follows: (1) the lowest concentration of 1, (2) highest concentration of Eosin Y, and (3) lowest proportion of ethyl acetate. Thus, a high catalyst-to-substrate ratio is critical for increasing the reaction rate. Under these reaction conditions, nitrosoben- zene was smoothly converted into PHA; effectively pre- venting condensation and the formation of azoxybenzene.
+
+concentration of 1 40–80 mM 10 mM
+
+concentration of Eosin Y 0.40–16.00 mM
+
+1.56 mM
+
+proportion of ethyl acetate to solvent
+
+0.2–0.9 0.1
+
+flow rate 7.1–33.0 ml/h 0.2 ml/h
+
+tube length 7/14/27 m -
+
+reached the target value extremely efficiently. Thus, Bayes- ian optimization facilitated the optimization of the photo- chemical synthetic conditions.
+
+.
+
+In addition, we examined the suppression of the further
+
+Necessary conditions for selective synthesis
+
+reduction of PHA. Since aniline was synthesized from nitro- benzene in ethanol and water in a previous study [43], we attempted to reduce 2 using fresh catalyst, but were unsuc- cessful (Scheme S2). These results indicated that the exper- imental conditions were not suitable for the reduction of PHA. We hypothesized that the key to suppressing further
+
+Next, we attempted to elucidate why this reaction enables the selective production of PHA. The proposed reaction mechanism (Scheme 1) suggests that PHA was directly obtained from nitrosobenzene. Nitrosobenzene was reduced
+
+Table 2 The selected initial conditions and the results entry conc. of 1 (mM)
+
+conc. of Eosin Y (mM)
+
+proportion of EtOAc to solvent
+
+tube length (m)
+
+flow rate (ml/h)
+
+yield of 2 (%)a recov. of 1 (%)a yield of 3 (%)a yield of 4 (%)a
+
+3.52 0.9 9.7
+
+9.76 0.2 25.1
+
+14.44 0.3 22.5
+
+0.40 0.6 29.9
+
+9.76 0.5 13.5
+
+14.44 0.7 7.1
+
+14.44 0.2 32.9
+
+aDetermined by 1H-NMR measurement using 1,3,5-trimethoxybenzene as an internal standard
+
+Journal of Flow Chemistry (2025) 15:137–143
+
+<image: Indexed(255,ICCBased(RGB,sRGB IEC61966-2.1)), width: 1654, height: 620, bpc: 8>
+
+Scheme 1 Synthetic mechanism of aniline from nitrobenzene
+
+selectively synthesize azoxybenzene [41]; and ethanol was selected as it is used to produce aniline in batch reactions [43] (Table S1). The PCM solvation model represents inter- actions between a PHA molecule and the solvent by placing the molecule in a solvent cavity with a specific dielectric constant [58]. Generally, redox potentials are estimated based on the lowest unoccupied molecular orbital (LUMO) levels [59]; thus, we checked the LUMO levels of PHA in each solvent set using the PCM model. The calculated results show that PHA has higher LUMO levels in ethyl ace- tate than in water, methanol, or ethanol, implying that the reduction of PHA is more difficult in ethyl acetate as com- pared to other solvents. In addition, because the catalyst and substrate were separated by the two-phase solution, electron transfer from Eosin Y to PHA at the solution interface was expected to be slow [60, 61]. Based on these results, the suppression of condensation and further reduction through this reaction method resulted in highly selective synthesis of PHA.
+
+<image: Indexed(255,ICCBased(RGB,sRGB IEC61966-2.1)), width: 993, height: 1009, bpc: 8>
+
+Comparison with batch reaction
+
+Fig. 2 Redox potentials (E1/2) of each compound obtained by CV mea- surements in acetonitrile
+
+To confirm the advantages of the flow reactor, a compari- son was made between the flow reactor and batch reactor. Glass flasks were used as batch reactors, and the experiment was conducted under the optimal conditions used in the flow reactor (Scheme 2). The target compound was obtained in 89% yield with 5% azoxybenzene and 5% aniline as byprod- ucts. Considering that the product was synthesized with a 96% yield in the flow reactor, the synthetic selectivity in the batch reactor was slightly lower than that in the flow reac- tor. Additionally, we compared the productivity of flow and batch reactors. The production rate in the flow reactor was 36.7 mg/h, whereas in the batch reactor it was 16.9 mg/h. This indicates that the reaction rate in the batch reactor was slower than that in the flow reactor, with a high slug flow mixing efficiency.
+
+reduction lies in the effect of the slug flow, consisting of water and ethyl acetate.
+
+To verify our hypothesis, the cyclic voltammetry of each
+
+compound was first performed in acetonitrile, an organic solvent suitable for the measurement of the redox poten- tials (Fig. 2, Figure S1). Commercially available unsubsti- tuted compounds were used for the comparison of the redox potentials. Although nitrobenzenes and nitrosobenzene have similar redox potentials, PHAs have higher redox poten- tials. This indicates that reducing PHA is more difficult than reducing nitrobenzene and nitrosobenzene. Further, DFT calculations with a polarizable continuum solvation model (PCM) [57] were conducted to examine the redox poten- tial in ethyl acetate, water, and methanol. These solvents were selected because they were used in a previous study to
+
+Journal of Flow Chemistry (2025) 15:137–143
+
+<image: Indexed(255,ICCBased(RGB,sRGB IEC61966-2.1)), width: 1572, height: 374, bpc: 8>
+
+Scheme 2 Batch reaction in glass flasks with optimized reaction conditions
+
+Conclusion
+
+14 m tubes; 5.1 m (307 tips) for 27 m tubes). The way of photoirradiation is the same as our previous paper [41]. Reaction mixture was separated by a separator (Zaiput Flow Technologies Co. SEP-10) set at output of microreactor.
+
+In this study, we investigated the synthesis of PHA from nitrobenzene using a flow microreactor with a slug flow of an organic solution and water. Bayesian optimization, enabled to achieve the highest yield of 96% after seven optimization steps. Additional experiments, measurements, and calcula- tions revealed that the key to the high selectivity of PHA lies in the suppression of condensation and further reduction of the target compound. These results were accomplished by controlling both the reaction rate and reduction energies. Thus, our photoreaction method is effective for the synthe- sis of unstable PHAs.
+
+Synthetic methods (General)
+
+Procedure for the photoreduction of 4-chloronitrobenzene as follows: 4-Chloronitrobenzene was dissolved in organic solvent degassed by Ar gas. Then, appropriate equivalents of triethanolamine and Eosin Y (tetrabromofluorescein) were added in water and degassed by Ar gas. The pH value of water solution was adjusted to 8.5 by adding concen- trated HCl aqueous solution, because this pH value is the best condition for this photoreaction proceeding [43]. After adjusting the pH, each solution was pull out by using gas- tight syringes and syringe pumps controlled by appropri- ated flow rate, and mixed with a T-shape mixer to make slug flow. The mixed solution with slug flow was irradiated by the LED light for photoreduction. After photoreaction, the solution was separated to organic phase and water phase by the separator, and organic phase was collected. The con- centration of the collected solution is adjusted by using a rotary evaporator, by adding 1,3,5-trimethoxybenzene, and measured 1H-NMR. For isolation of a target PHA, collected organic phase was washed with saturated NaHCO3 aque- ous solution (15 mL) and saturated NaCl solution (15 mL), dried over anhydrous Na2SO4.
+
+Experimental
+
+General information
+
+Spectrograde solvents (EtOAc and water) were used throughout the work. All commercially available reagents were used without further purification. Particularly, 1,3,5-tri- methoxybenzene as an internal standard was purchased with the qNMR grade. 1H nuclear magnetic resonance (NMR) and 13C NMR spectra were recorded at 400 and 100 MHz (Bruker Co. Ltd. Avance 400 and III 400 HD), respectively, and chemical shifts were represented as δ-values relative to internal standard TMS. Abbreviation is as follow: dd (dou- ble doublet). LC-MS measurement was recorded by Waters Co. Xevo G2-XS QTof. CV measurements were recorded using HOKUTO DENKO Co. HZ-7000. All DFT calcula- tions were performed by B3LYP with the 6-31G(d, p) basis set employing the PCM solvation model, using Gaussian 16 program.
+
+4-Chlorophenylhydroxylamine (2) [20, 38]: 1H-NMR
+
+(400 MHz, CDCl3): δ = 7.24 (2 H, dd), 6.93 (2 H, dd) ppm; 13C-NMR (100 MHz, CDCl3): δ = 148.20, 128.93, 127.17, 115.82 ppm; HRMS (LC-MS) m/z [M + H]+ calcd for C6H7ClNO+ 144.0211, found 144.0212.
+
+Photoreaction set-up
+
+Synthetic methods of batch reaction (shown in Scheme 2)
+
+FEP tube (internal diameter (ID) = 1 mm) was used as a microreactor. The path length of tube is 1 mm. Tape-type green LED (5050type 60 LED/m Non-waterproof, con- sumed electric power 6 W/m) was utilized as the light source. Three different lengths of tape-type LED were made to match the length of the tube (4.4 m (261 tips) for 7 and
+
+4-Chloronitrobenzene (41.8 mg, 0.265 mmol) was dis- solved in ethyl acetate (6.6 mL) degassed by Ar gas. Then, triethanolamine (5.94 g, 39.8 mmol) and Eosin Y (308 mg, 0.475 mmol) were added in water (33 mL) degassed by Ar gas. The pH value of water solutions was adjusted to 8.5 by
+
+Journal of Flow Chemistry (2025) 15:137–143
+
+with tetra-n-propylammonium perruthenate. Tetrahedron Lett 35:6571–6574
+
+adding concentrated HCl aqueous solutions. After adjusting the pH, each solution was put into a glass shrink (internal diameter (ID) = 22 mm), and mixed with a magnetic star- ring bar vigorously. The mixed solution was irradiated by the LED light for photoreduction until confirmed that the starting material was disappeared by reaction tracking of 1H-NMR measurement. After photoreaction, the solu- tion was separated to organic phase and water phase, and organic phase was collected. The concentration of the col- lected solution is adjusted by using a rotary evaporator, by adding 1,3,5-trimethoxybenzene, and measured 1H-NMR to obtain NMR yields.
+
+8. Kato T, Tabei K, Kawashima E (1976) Studies on ketene and its derivatives. LXXXII. Reaction of diketene with N-Phenylhy- droxylamine derivatives. Chem Pharm Bull 24:1544–1551
+
+9. Keilin D, Hartree EF (1943) Reactions of Hæmoglobin and its derivatives with phenyl hydroxylamine and nitrosobenzene. Nature 151:390–391
+
+10. Salehzadeh H, Mashhadizadeh MH (2019) Nitrone synthesis via
+
+pair electrochemical coupling of Nitro-Compounds with benzyl alcohol derivatives. J Org Chem 84:9307–9312
+
+11. Xi Z, Liu XJ, Guo Z, Gao Z, Yu ZX, Gao H (2023) Regioselective
+
+Umpolung para-C–H functionalization of arylhydroxylamines. Nat Synthesis 2:778–788
+
+12. Hojczyk KN, Geng P, Zhan C, Ngai MY (2014) Trifluorometh-
+
+oxylation of Arenes: synthesis of ortho-Trifluoromethoxylated aniline derivatives by OCF3 migration. Angew Chem Int Ed 53:14559–14563
+
+Optimization algorithm
+
+13. Ichikawa S, Zhu S, Buchwald SL (2018) A modified system for
+
+the synthesis of enantioenriched N-Arylamines through Copper- Catalyzed hydroamination. Angew Chem Inter Edi 57:8714–8718
+
+Bayesian optimization was performed using the same the program code reported by Sugisawa N et al. [48] with a default arbitrary parameter to produce Gaussian Processes (GP) model. We used Latin hypercube sample (LHS) to select 5 initial experiments and the upper confidence bound (UCB) acquisition function with a default arbitrary param- eter to identify subsequent reaction conditions with GP model.
+
+14. Haber F (1898) Gradual electrolytic reduction of nitrobenzene
+
+with limited cathode potential. Z Elektrochem Angew Phys Chem 22:506–514
+
+15. Blaser HU (2006) A golden boost to an old reaction. Science
+
+313:312–313
+
+16. Takenaka Y, Kiyosu T, Choi JC, Sakakura T, Yasuda H (2009)
+
+Selective synthesis of N-aryl hydroxylamines by the hydrogena- tion of nitroaromatics using supported platinum catalysts. Green Chem 11:1385–1390
+
+17. Chen G, Xu C, Huang X, Ye J, Gu L, Li G, Tang Z, Wu B, Yang
+
+Supplementary Information The online version contains
+
+H, Zhao Z, Zhou Z, Gu G, Zheng N (2016) Interfacial electronic effects control the reaction selectivity of platinum catalysts. Nat Mater 15:564–569
+
+supplementary material available at h t t p s : / / d o i . o r g / 1 0 . 1 0 0 7 / s 4 1 9 8 1 - 0 2 5 - 0 0 3 5 1 - 6.
+
+18. Karwa SL, Rajadhyaksha RA (1987) Selective catalytic hydroge-
+
+Acknowledgements We would like to thank Editage (www.editage.jp) for English language editing.
+
+nation of nitrobenzene to Phenylhydroxylamine. Ind Eng Chem Res 26:1746–1750
+
+19. Chen J, Lin X, Xu F, Chai K, Ren M, Yu X, Su W, Liu F (2023)
+
+Declarations
+
+An efficient continuous flow synthesis for the Preparation of N-Arylhydroxylamines: via a DMAP-Mediated hydrogenation process. Molecules 28:2968–2984
+
+Competing interests The authors declare that they have no known conflicts of interest/competing interests.
+
+20. Jawale DV, Gravel E, Boudet C, Shah N, Geertsen V, Li H, Nam-
+
+boothiri INN, Doris E (2015) Selective conversion of nitroarenes using a carbon nanotube–ruthenium nanohybrid. Chem Commun 51:1739–1742

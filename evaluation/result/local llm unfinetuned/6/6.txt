@@ -1,0 +1,1169 @@
+Optimization of heterogeneous continuous flow
+
+hydrogenation using FTIR inline analysis: a comparative
+
+study of multi-objective Bayesian optimization and kinetic
+
+modeling
+
+Kejie Chai a, Weida Xia a, Runqiu Shen a, Guihua Luo a, Yingying Cheng a, Weike Su a,
+
+*, An Su b, *
+
+a Key Laboratory of Pharmaceutical Engineering of Zhejiang Province, National
+
+Engineering Research Center for Process Development of Active Pharmaceutical
+
+Ingredients, Collaborative Innovation Center of Yangtze River Delta Region Green
+
+Pharmaceuticals, Zhejiang University of Technology, Hangzhou, 310014, P. R. China
+
+b College of Chemical Engineering, Zhejiang University of Technology, Hangzhou
+
+310014, P. R. China
+
+Corresponding Authors:
+
+Prof. An Su
+
+College of Chemical Engineering, Zhejiang University of Technology, Hangzhou
+
+310014, P. R. China
+
+Email: ansu@zjut.edu.cn
+
+Prof. Weike Su
+
+Key Laboratory of Pharmaceutical Engineering of Zhejiang Province, National
+
+Engineering Research Center for Process Development of Active Pharmaceutical
+
+Ingredients, Collaborative Innovation Center of Yangtze River Delta Region Green
+
+Pharmaceuticals, Zhejiang University of Technology, Hangzhou, 310014, P. R. China
+
+Email: pharmlab@zjut.edu.cn
+
+Graphical Abstract
+
+<image: DeviceRGB, width: 747, height: 398, bpc: 8>
+
+Abstract
+
+The heterogeneous continuous flow hydrogenation is pivotal in chemical research and
+
+production, yet its reaction optimization has historically been intricate and labor-
+
+intensive. This study introduces a heterogeneous continuous flow hydrogenation
+
+system specifically designed for the preparation of 2-amino-3-methylbenzoic acid
+
+(AMA), employing FTIR inline analysis coupled with an artificial neural network
+
+model for monitoring. We explored two distinct reaction optimization strategies: multi-
+
+objective Bayesian optimization (MOBO) and intrinsic kinetic modeling, executed in
+
+parallel to optimize the reaction conditions. Remarkably, the MOBO approach achieved
+
+an optimal AMA yield of 99% and a productivity of 0.64 g/hour within a limited
+
+number of iterations. Conversely, despite requiring extensive experimental data
+
+collection and equation fitting, the intrinsic kinetic modeling approach yielded a similar
+
+optimal AMA yield but a higher productivity of 1.13 g/hour, attributed to increased
+
+catalyst usage. Our findings indicate that while MOBO offers a more efficient route
+
+with fewer required experiments, kinetic modeling provides deeper insights into the
+
+reaction optimization landscape but is limited by its assumptions.
+
+Keywords
+
+Multi-objective Bayesian optimization; Kinetic modeling; continuous flow;
+
+heterogeneous hydrogenation; Reaction optimization; Inline analysis
+
+Introduction
+
+Heterogeneous catalytic hydrogenation is pivotal in organic synthetic chemistry, with
+
+broad applications across the dye, pharmaceutical, and fine chemical industries.[1-3]
+
+Traditional intermittent hydrogenation processes, however, are constrained by critical
+
+safety concerns associated with reaction temperature and pressure, prompting a shift
+
+towards continuous flow hydrogenation as a safer and more efficient alternative.[4, 5]
+
+The reaction optimization within these continuous flow systems has emerged as a
+
+research focus.[6, 7] Historically, the reaction optimization process predominantly
+
+employed the one factor at a time (OFAT) method [8], which relies on a sequential,
+
+factor-based optimization guided by chemical intuition[9-12]. Despite its widespread
+
+use, the OFAT approach is often criticized for its inefficiency and inaccuracy, primarily
+
+due to its inability to account for potential synergistic effects among various factors,
+
+potentially leading to misinterpretation of the chemical processes.[13] Consequently,
+
+there is a pressing need for developing systematic approaches to reaction optimization.
+
+Kinetic modeling, grounded in a comprehensive understanding of chemical processes,
+
+represents a classical and crucial strategy for reaction optimization, especially for
+
+heterogeneous hydrogenation reactions.[14-17] For instance, Su et al. demonstrated the
+
+application of kinetic modeling in the heterogeneous flow hydrogenation of
+
+hexafluoroacetone trihydrate, revealing an adsorption-desorption mechanism with
+
+competitive adsorption of H2 dissociation.[18] Similarly, Yu et al. conducted a
+
+continuous hydrogenation study of 2-(4-nitrophenyl) butanoic acid and kinetics study
+
+in a micropacked-bed reactor, employing kinetic analysis to elucidate the impacts of
+
+internal and external diffusion, as well as salt formation.[19] Despite these advances,
+
+the application of kinetic modeling in heterogeneous catalysis is often hampered by the
+
+complexities associated with non-chemical kinetics phenomena.[20-24]
+
+Multi-objective Bayesian Optimization (MOBO) has revolutionized the optimization
+
+of continuous-flow reactions by adeptly handling competing objectives.[25-28] It
+
+leverages the surrogate model and acquisition function to systematically explore the
+
+Pareto Front, aiming to strike an optimal balance among objectives. Using probabilistic
+
+models, MOBO predicts outcomes for specific reaction conditions, guiding the
+
+optimization process toward superior performance metrics. Recent significant
+
+implementations of MOBO include Jensen et al.'s optimization of multistep synthetic
+
+routes on an automated platform [25], Bourne et al.'s achievement of an 81% yield
+
+through the simultaneous optimization of telescoped reactions [29], and Lapkin et al.'s
+
+application of MOBO in medicinal chemistry for yield optimization [30]. Despite its
+
+advancements, MOBO's comparison with traditional optimization methods is less
+
+studied.
+
+Inline analytical techniques, including inline FTIR, NMR, and UV/vis spectroscopy,
+
+are becoming integral to reaction optimization due to their ability to provide real-time
+
+data, which facilitates the creation of self-optimizing systems when combined with
+
+Bayesian optimization.[29, 31, 32] Kappe et al. have notably advanced this field by
+
+integrating four complementary inline analysis instruments and developing advanced
+
+data analysis models, which quantify desired products, intermediates, and impurities
+
+inline across various stages of a multi-step synthetic pathway.[33] Furthermore, they
+
+have successfully applied artificial neural networks (ANN) for processing NMR and
+
+UV/vis spectra of multiple components.[34] Besides enhancing Bayesian optimization,
+
+inline analysis is also anticipated to improve the efficiency of traditional optimization
+
+techniques, such as kinetic modeling.
+
+In this study, we focused on the synthesis of 2-amino-3-methylbenzoic acid, a key
+
+intermediate for the pesticide chlorantraniliprole, to serve a case study for optimizing
+
+heterogeneous continuous flow hydrogenation. We designed a continuous flow
+
+hydrogenation system equipped with an FTIR for inline monitoring and analysis of
+
+reaction data. Multi-objective Bayesian optimization and kinetic modeling were
+
+conducted in parallel to optimization the reaction process, allowing us to compare the
+
+advantages and limitations of these two approaches directly.
+
+Materials and Methods
+
+Materials. 3-Methyl-2-nitrobenzoic acid (98%, MNA), 2-amino-3-methylbenzoic acid
+
+(98%, AMA), methanol (MeOH, analytical grade), and silica (100-200 mesh) were
+
+purchased from Sinopharm Chemical Reagent Co., Ltd. (SCRC) without further
+
+purification. Hydrogen (H2, 99.999%) and nitrogen (N2, 99.999%) were purchased from
+
+Hangzhou Jingong Special Gas Co., Ltd. The catalyst Pd@SBA-15 was synthesized
+
+following the method reported in our previous work.[35]
+
+Experimental setup. Metering pump (JJRZ-10004F) was purchased from Hangzhou
+
+Jingjin Technology Co., Ltd. High performance liquid chromatography (HPLC)
+
+column (5 mm in diameter and 50 mm long) was purchased from Dalian Baijia Lida
+
+Technology Co., Ltd. Check valve, T-joint mixer, temperature sensor, pressure gauge,
+
+back pressure regulator, and stainless steel tube (1/8" and 1/16" outside diameter) were
+
+purchased from Beijing Xiongchuan Technology Co., Ltd. Polytetrafluoroethylene
+
+(PTFE) tube (1/8" and 1/16" outside diameter) was purchased from Nanjing Runze
+
+Fluid Control Equipment Co., Ltd. Inline FTIR (ReactIR 702L) was purchased from
+
+Mettler Toledo Technology Co., Ltd. Mass flow controller (D07) was purchased from
+
+Beijing Sevenstar Flow Co., Ltd. Water bath was purchased from Heidolph Instruments
+
+Co., Ltd. Experimental setup was shown in Figure S1a.
+
+Heterogeneous continuous flow hydrogenation system. MNA was dissolved in
+
+MeOH and pumped into the continuous flow system through a metering pump. The
+
+flow rate and pressure of H2 involved in the hydrogenation were controlled by adjusting
+
+the mass flow controller and the pressure gauge, respectively. The gas and liquid flow
+
+tubes were fitted with check valves to avoid backflow. The hydrogen and MNA solution
+
+were mixed in a T-joint mixer and then flowed into a 1.0-meter pretreatment tube to
+
+reach hydrogenation temperature. The synthesized catalyst Pd@SBA-15 was pre-
+
+loaded in an HPLC column and the remaining space was filled with silica. Then, sieve
+
+plates were installed at the ends of the HPLC column as a micro pack-bed reactor
+
+(MPBR). The MPBR was placed vertically in a hot water bath, which facilitates full
+
+contact between the gas-liquid mixture and the catalyst. The gas-liquid mixture
+
+undergoes hydrogenation in the MPBR. The pressure of the entire system was
+
+controlled by a manual back pressure regulator. The water bath and temperature sensor
+
+accurately control the hydrogenation temperature together. The check valve and back
+
+pressure regulator ensured that the continuous flow system was isolated from air. Then,
+
+the gas-liquid mixture flowed into a 1.0-meter pretreatment tube in a cold water bath to
+
+reach 20 ˚C. Inline FTIR monitored the concentrations of MNA and AMA after the
+
+hydrogenation in real-time. The tubes for solution flow through the inline FTIR were
+
+PTFE tubes and all other tubes were stainless steel tubes. The entire heterogeneous
+
+continuous flow hydrogenation system was controlled by adjusting the reaction
+
+parameters, such as temperature, flow rate, and hydrogen pressure.
+
+Concentration determination. Concentrations of MNA and AMA in the reaction
+
+solution were monitored in real-time by inline FTIR. ANN modeling was performed as
+
+a processing approach for inline FTIR spectra data according to the reported literature
+
+(Figure S2a).[34] Several groups of MNA and AMA in methanol solution with different
+
+concentrations were prepared and their inline FTIR spectra data were collected as
+
+training set and validation set. Here the verification set is equivalent to the test set
+
+(Table S1). Next, 5000 analog spectra are generated from a linear combination of two
+
+pure components, and Gaussian noise is added to augment the training set. Some of the
+
+data simulating the experimental process were also added to the training set and
+
+validation set. To improve the stability and performance of the ANN training phase, all
+
+spectra data were normalized. Next, during the training process, an architecture of one
+
+convolutional layer followed by dense layers was investigated. The spectra data was
+
+processed at the Conv1D convolutional layer for characteristic extraction to screen the
+
+weights of the data. Then, data dimension reduction was performed through different
+
+functions in the dense layers. Finally, the output layer outputs the predicted
+
+concentrations of MNA and AMA. Compared with the known concentration in the test
+
+set, the predicted results of the model are basically consistent, indicating that the ANN
+
+model framework developed for this purpose is suitable (Figure S2b). The inline FTIR
+
+spectra data monitored during the experiment were used to quickly predict the
+
+concentrations of MNA and AMA through the ANN model. The conversion of the
+
+MNA (ConversionMNA), the yield of the AMA (YieldAMA), and the productivity of the
+
+AMA (ProductivityMNA) in the continuous flow hydrogenation system were calculated
+
+through Equation 1, Equation 2, and Equation 3, respectively:
+
+ConversionMNA = 1 − 𝐶MNA
+
+(1)
+
+𝐶MNA
+
+YieldAMA = 𝐶AMA
+
+(2)
+
+𝐶MNA
+
+ProductivityMNA = 𝐶AMA𝐹MNA𝑀AMA (3)
+
+was the initial concentration of the MNA in the solution; 𝐶MNA and
+
+where 𝐶MNA
+
+𝐶AMA were the concentration of the MNA and the AMA in the collected solution,
+
+respectively; 𝐹MNA was the flow rate of the MNA solution; 𝑀AMA was the molar mass
+
+of the AMA.
+
+Multi-objective Bayesian Optimization. MOBO was performed according to the
+
+following process in general.[36, 37] The Bayesian optimizer was initialized by the
+
+design of experiments (DoE) or the random collection of initial experimental condition
+
+parameters and results. The expectation and uncertainty of each point were predicted
+
+based on a probabilistic surrogate model generated from the initial experimental results,
+
+with the trade-off between exploration and exploitation of the response space. Among
+
+them, the exploration region had high uncertainty, while the exploitation focuses on the
+
+part with high predictive expectations. New experimental condition parameters were
+
+obtained to perform new experiments after maximizing the acquisition function. The
+
+experimental dataset was then extended and reused to train a more accurate surrogate
+
+model. This process was iterated until obtaining satisfactory reaction yield and
+
+productivity.
+
+The initial sampling, the surrogate model, and the acquisition function as the three core
+
+sections formed the MOBO model.[38, 39] Latin Hypercube Sampling (LHS) was used
+
+as the initial sampling approach to avoid the presence of excessive data aggregation in
+
+simple random sampling. The LHS divided the sampling units into different layers
+
+according to some characterization or some rules, and then extracted samples
+
+independently and randomly from the different layers. Notably, the LHS uses fewer
+
+samples than the traditional OFAT or DoE approach when the same threshold is reached,
+
+thus reducing the complexity of the calculation.
+
+MOBO was a response surface approach to uncertainty guidance, in which the
+
+performance of the surrogate model represented the predictive accuracy of the
+
+optimizer.[36] The efficiency of the surrogate model could only be recognized if its
+
+estimations of expectation and variance were close enough to the true response
+
+surface.[36] Gaussian process (GP) was an infinite-dimensional extended function
+
+distribution frequently used as the surrogate model.[39] GP allowed the construction of
+
+joint probability distributions of variables for estimating the variance and mean of the
+
+predicted data based on the available data. The Matérn class was a commonly used class
+
+of covariance functions in GP, via Equation 4:[40]
+
+𝑀Matérn(𝑥, 𝑦) = 21−𝜈𝜎2
+
+𝜈𝐾𝜈(√2𝜈‖𝑥 − 𝑦‖) (4)
+
+𝛤(𝜈) (√2𝜈‖𝑥 − 𝑦‖)
+
+Where 𝜎2 > 0 and 𝜈 > 0; 𝜈, 𝜎2, 𝛤(𝜈), ‖𝑥 − 𝑦‖, and 𝐾𝜈 were the non-negative
+
+parameter, the output variance, the gamma function, the distance between two points,
+
+and the Bessel function, respectively.
+
+Furthermore, the acquisition function was crucial for the desired optimization
+
+performance. Among them, probabilistic improvement (PI), expected improvement
+
+(EI), and upper confidence bound (UCB) are frequently used to tune hyperparameters.
+
+The q-noisy expected hypervolume improvement (qNEHVI) function was superior to
+
+other existing acquisition functions for MOBO, for example, it enabled one-step
+
+hypervolume maximization in both noisy and noise-free environments, via Equation
+
+5:[41, 42]
+
+𝑁̃
+
+𝛼𝑞NEHVI(𝜒cand|𝒫) = 1
+
+(5)
+
+𝑁̃ ∑ HVI (𝑓̃𝑡(𝜒cand|𝒫))
+
+𝑡=1
+
+where 𝑁̃, HVI, 𝑓̃𝑡, 𝜒cand, and 𝒫 were the number of samples, the hypervolume
+
+improvement, the posterior sample, the candidate sample, and the Pareto boundary,
+
+respectively.
+
+In this work, the qNEHVI function was used to optimize the yield of the AMA
+
+(YieldAMA) and the productivity of the AMA (ProductivityMNA) in the continuous flow
+
+hydrogenation system.
+
+Results and discussion
+
+In this study, a continuous flow hydrogenation system (Figure 1) was constructed to
+
+perform the hydrogenation of MNA using an MPBR filled with Pd@SBA-15 catalyst.
+
+Real-time reaction monitoring was achieved through an inline FTIR instrument, the
+
+ReactIR 702L. The data collected via inline FTIR were processed using an ANN model,
+
+enabling the acquisition of real-time concentration for MNA and AMA. These data
+
+points were subsequently utilized in Bayesian optimization and kinetic modeling
+
+studies to optimize the reaction system.
+
+<image: DeviceRGB, width: 748, height: 268, bpc: 8>
+
+Figure 1. Heterogeneous continuous flow hydrogenation of MNA and its inline analysis
+
+MOBO for reaction optimization.
+
+MOBO was applied to optimize four key reaction parameters (Figure 2): reaction
+
+), and
+
+temperature (𝑇bath), hydrogen pressure (𝑃H2), initial MNA concentration (𝐶MNA
+
+MNA solution flow rate (𝐹MNA), to maximize yield and productivity. Initially, Latin
+
+Hypercube Sampling (LHS) was used to create four sets of experimental conditions,
+
+and the outcomes of these experiments formed the initial training data for a Gaussian
+
+Process (GP) surrogate model. Utilizing this GP model, the acquisition function known
+
+as qNEHVI [43] then recommended a new set of experimental conditions. With each
+
+new experiment conducted, the GP model was updated with the results, and qNEHVI
+
+continued to make further recommendations. This process was repeated iteratively until
+
+the desired levels of yield and productivity were reached. Ultimately, this method led
+
+to the identification of the optimal experimental parameters located on the Pareto Front,
+
+achieving a balance between yield and productivity.
+
+<image: DeviceRGB, width: 1088, height: 501, bpc: 8>
+
+Figure 2. The MOBO of the continuous flow hydrogenation of MNA
+
+The parameter space for the reaction was initially delineated in Figure 2. To ensure
+
+experimental safety, the hydrogen pressure and reaction temperature were capped at 2.5
+
+MPa and 100 ˚C, respectively. The solubility of MNA in methanol dictated its
+
+concentration limit, setting the upper boundary at 0.25 mL/min. The residence time,
+
+crucial for reaction completion, was adjusted by modulating the solution's flow rate.
+
+An excessively high flow rate could result in undue pressure build-up within the reactor
+
+tubes, while a markedly low flow rate might increase the gas phase's proportion,
+
+complicating the monitoring of MNA concentration. Consequently, the flow rate was
+
+confined to 0.5-1.0 mL/min to balance these factors.
+
+The MOBO results are presented in Figure 3, with Figure 3a highlighting the evolution
+
+of the Pareto Front. Initial data points, marked by black crosses, were derived from LHS.
+
+The colored dots, varying in color based on iteration count, represent the data points
+
+suggested by the acquisition function. Through operation iterations with the GP model
+
+and the qNEHVI function, the data converged to form a compact Pareto Front. The data
+
+points in the upper right corner indicate the best balance between yield and productivity,
+
+showing nearly 99% yield and 0.64 g/hour productivity. The conclusive set of
+
+experimental parameters and results, which includes three sets capable of attaining
+
+these optimal levels, is detailed in Table S2.
+
+<image: DeviceRGB, width: 958, height: 680, bpc: 8>
+
+Figure 3. Results of the MOBO campaign. (a) The Pareto Front of the yield and productivity.
+
+(b) Optimization progress: each parameter versus experiment number. (c) Parallel coordinate
+
+plot showing the interactions between experimental parameters and results.
+
+Figure 3b demonstrates the evolution of four optimization parameters—reaction
+
+temperature, concentration, flow rate, and hydrogen pressure—throughout the
+
+optimization process. It is observed that the reaction temperature, concentration, and
+
+flow rate values gradually stabilize, indicating that the MOBO successfully identified
+
+their optimal levels. In contrast, hydrogen pressure displayed continuous fluctuations,
+
+implying uncertainty regarding its impact on the optimization goals.
+
+Further insights are provided by a parallel coordinate plot (Figure 3c), which delineates
+
+the preferred reaction parameter values as determined by MOBO for enhancing both
+
+yield and productivity. Notably, optimal reaction temperatures are concentrated around
+
+the upper boundary of 100 ˚C, suggesting a preference for higher temperatures to
+
+maximize yield and productivity while minimizing by-product formation. This
+
+observation highlights the advantage of multi-objective optimization, demonstrating
+
+that a 99% yield is attainable at various temperatures when yield is the sole
+
+consideration. Moreover, the plot shows that the optimal concentration and flow rate
+
+settle at approximately 0.08 mol/L and 0.86 mL/min, respectively, with neither
+
+parameter reaching its maximum or minimum limit. The analysis also indicates that
+
+hydrogen pressure does not significantly influence the optimization objectives, hinting
+
+that even the minimum hydrogen pressure level might suffice for the reaction.
+
+For the later comparison with kinetic modeling which uses the response surface method
+
+for optimization, we performed another round of MOBO to fully explore the response
+
+surface surrounding the optimal points, with the three sets of optimal experimental
+
+parameters obtained in the previous round as the initial training set. The reaction
+
+temperature and hydrogen pressure were fixed at 100 ˚C and 0.5 MPa, respectively,
+
+acknowledging the positive correlation of high temperature and the optimization
+
+objectives and the negligible impact of hydrogen pressure. The exploration ranges for
+
+concentration and flow rate were narrowed to 0.0770-0.0884 mol/L and 0.8036-0.9227
+
+mL/min, aiming for a thorough investigation of this refined reaction space. After 10
+
+iterations, the results (Table S3) show that an additional four sets of experimental
+
+parameters are able to achieve the same optimal yield and productivity as the original
+
+three sets. Mapping these seven optimal sets of experimental data onto the reaction
+
+space form a response surface with an irregular shape (Figure 4).
+
+<image: DeviceRGB, width: 893, height: 694, bpc: 8>
+
+Figure 4. 3D response surface of objective values formed through fitting the optimal
+
+experimental data underwent two rounds of MOBO. The blue points represent the three
+
+optimal data points from the first round, which were used as the initial training set for the
+
+second round. The purple points indicate all the data points gathered during the second round.
+
+Kinetic modeling for reaction optimization.
+
+Concurrently, kinetic modeling was conducted in alignment with our previously
+
+established intrinsic kinetic modeling methodology[18]. It is important to note that non-
+
+chemical kinetic phenomena, such as gas-liquid interfacial area, fluid kinetics, solute
+
+diffusion, and mass transfer limitations, can significantly impact the accuracy of
+
+intrinsic kinetic modeling.[18] A comprehensive examination of reaction parameters
+
+(e.g., gas-to-liquid flow ratio, mean residence time) was performed to minimize these
+
+effects, ensuring that the reaction rate data were obtained under conditions of kinetic
+
+control (see Supporting Information). Subsequently, experimental data were
+
+collected on the flow synthesis of AMA across various temperatures and mean
+
+residence times. This data formed the basis for our kinetic modeling efforts, during
+
+which the parameters across all models were estimated using the gPROMS (PSE, UK)
+
+parameter estimation tool [44]. Upon identifying the optimal model, a detailed
+
+examination of the reaction mechanism and the scope of this optimization approach was
+
+conducted (Figure 5).
+
+<image: DeviceRGB, width: 1001, height: 306, bpc: 8>
+
+Figure 5. The overall approach for the kinetic modeling
+
+The Langmuir-Hinshelwood-Hougen-Watson (LHHW) methodology is widely
+
+recognized for its efficacy in the kinetic modeling of heterogeneous catalytic
+
+hydrogenation processes.[44] This approach distinctively elucidates the adsorption and
+
+dissociation stages inherent in catalytic hydrogenation, thereby aiding in the accurate
+
+derivation of the reaction mechanism. The LHHW framework is structured around three
+
+pivotal stages: the Langmuir adsorption of reactants onto the catalyst surface, the
+
+surface reaction involving the adsorbed intermediates, and the subsequent desorption
+
+of the products. Typically, the surface reaction step acts as the rate-determining phase.
+
+Based on the variations in adsorption and dissociation behaviors of the reactants, four
+
+LHHW models, each characterized by unique rate expressions ( 𝑟MNA ), have been
+
+formulated (Table 1).
+
+Table 1. The LHHW kinetic models I-IV for MNA hydrogenation
+
+Modela,b Description Initial rate expression
+
+competitive adsorption
+
+−𝑘1𝐾H2𝐾MNA𝐶MNA
+
+{1 + √𝐾H2𝑃H2 + 𝐾MNA𝐶MNA + 𝐾AMA𝐶AMA}3
+
+I
+
+𝑟MNA =
+
+dissociative adsorbed H2
+
+competitive adsorption
+
+−𝑘1𝐾H2𝐾MNA𝐶MNA𝑃H2
+
+{1 + 𝐾H2𝑃H2 + 𝐾MNA𝐶MNA + 𝐾AMA𝐶AMA}2
+
+II
+
+𝑟MNA =
+
+nondissociative adsorbed H2
+
+noncompetitive adsorption
+
+−𝑘1𝐾H2𝐾MNA𝐶MNA𝑃H2
+
+{1 + 𝐾MNA𝐶MNA + 𝐾AMA𝐶AMA}{1 + √𝐾H2𝑃H2}2
+
+III
+
+𝑟MNA =
+
+dissociative adsorbed H2
+
+noncompetitive adsorption
+
+−𝑘1𝐾H2𝐾MNA𝐶MNA𝑃H2
+
+{1 + 𝐾MNA𝐶MNA + 𝐾AMA𝐶AMA}{1 + 𝐾H2𝑃H2}
+
+IV
+
+𝑟MNA =
+
+nondissociative adsorbed H2
+
+a𝑘1 is the reaction rate constant of 𝑟MNA; 𝐾H2, 𝐾MNA, and 𝐾AMA are adsorption equilibrium constants of H2,
+
+MNA, and AMA, respectively; 𝐶MNA and 𝐶AMA are the concentration of MNA and AMA in the collected
+
+(0.1
+
+solution, respectively; 𝑃H2 is the pressure of H2. bExperimental conditions for data collection: 𝐶MNA
+
+mol/L), 𝐹MNA (0.5 mL/min), 𝐹H2 (20 mL/min), 𝑃H2 (0.5 MPa).
+
+The experimental data obtained were subsequently employed to fit these LHHW rate
+
+expressions as objective functions in MATLAB, achieved through the fmincon function
+
+with a Sequential Quadratic Programming (SQP) method. The ordinary differential
+
+equations (ODEs) were solved using the ODE45 function. We fitted the kinetic models
+
+to the experimental data obtained at the reaction temperatures of 30 ˚C (303.15 K), 40
+
+˚C (313.15 K), 50 ˚C (323.15 K), and 60 ˚C (333.15 K), with the results of these fittings
+
+shown in Figure 6 and Figure S3.
+
+<image: DeviceRGB, width: 1028, height: 884, bpc: 8>
+
+Figure 6. Fitted curves of the LHHW kinetic model I: (i) 30 ˚C, (ii) 40 ˚C, (iii) 50 ˚C, and (iv)
+
+60 ˚C.
+
+Each LHHW kinetic model was evaluated by estimating model parameters using the
+
+gPROMS parameter estimation tool. Based on these estimated parameters, various
+
+statistical indicators were calculated to assess the fitting performance of each model
+
+(see Supporting Information). The selection criteria for the optimal model included
+
+the highest value of regression coefficient (𝑅2) alongside the lowest sum of squared
+
+residuals (SSR) and mean relative error (MRE). Upon comparison of these indicators
+
+in Table 2, the LHHW kinetic model I emerged as the most fitting according to these
+
+criteria, thereby establishing it as the optimal kinetic model. Furthermore, the chosen
+
+LHHW kinetic model I was further evaluated by comparing the experimental reaction
+
+rates with those predicted by the model in Figure 7a. This alignment between
+
+experimental and predicted rates underscores the robustness of the LHHW kinetic
+
+model I in simulating the reaction kinetics under study.
+
+Table 2. Statistical evaluations related to experimental and predicted concentrations of MNA
+
+for different LHHW kinetic models
+
+Model Stat. param. 30 ˚C 40 ˚C 50 ˚C 60 ˚C
+
+I 𝑅2 0.9983 0.9986 0.9986 0.9985
+
+SSR × 105 0.874 0.953 1.07 1.29
+
+MRE (%) 2.23 3.20 5.51 10.2
+
+II 𝑅2 0.9964 0.9984 0.9979 0.9983
+
+SSR × 105 1.90 1.07 1.67 1.54
+
+MRE (%) 4.32 4.86 6.25 11.9
+
+III 𝑅2 0.9967 0.9982 0.9983 0.9979
+
+SSR × 105 1.72 1.18 1.32 1.89
+
+MRE (%) 3.95 4.94 7.71 12.4
+
+IV 𝑅2 0.9969 0.9982 0.9978 0.9979
+
+SSR × 105 1.64 1.19 1.72 1.88
+
+MRE (%) 3.80 4.28 8.19 12.7
+
+<image: DeviceRGB, width: 893, height: 342, bpc: 8>
+
+Figure 7. (a) Comparison of experimental reaction rate and predicted reaction rate using the
+
+LHHW kinetic model I. (b) Fitted curves of Arrhenius equation for LHHW model I.
+
+The kinetic and thermodynamic parameters of the LHHW model I are determined and
+
+shown in Table 3. The 𝑘1, 𝐾H2, 𝐾MNA, and 𝐾AMA were obtained through kinetic
+
+model fitting in MATLAB. The activation energy (𝐸) and the pre-exponential factor
+
+(𝑘0) were obtained from the Arrhenius equation (Equation 6) and its variant (Equation
+
+7) for the surface reaction:
+
+𝑘 = 𝑘0𝑒− 𝐸
+
+𝑅𝑇 (6)
+
+ln 𝑘 = − 𝐸
+
+𝑅𝑇 + ln 𝑘0 (7)
+
+where 𝑘 is the reaction rate constant; 𝑘0 is the pre-exponential factor; 𝐸 is the
+
+activation energy; 𝑅 is the universal gas constant; 𝑇 the temperature in K.
+
+Table 3. Various kinetic and thermodynamic parameters of the LHHW model I
+
+Temperature (K) Thermodynamic parameters
+
+Para.
+
+303.15 313.15 323.15 333.15 𝐸 (kJ mol-1) 𝑘0 (mol L-1 s-1)
+
+𝑘1 (mol L-1 s-1) 19.290 23.072 26.972 31.590 13.740 4.503×103
+
+Temperature (K) Thermodynamic parameters
+
+Para.
+
+303.15 313.15 323.15 333.15 𝐸𝑎 (kJ mol-1) 𝐾0
+
+𝐾MNA (L mol-1) 190.988 189.882 188.768 187.866 -0.465 158.823 (L mol-1)
+
+𝐾AMA (L mol-1) 107.645 105.101 102.990 100.703 -1.849 51.685 (L mol-1)
+
+𝐾H2 (MPa-1) 0.0548 0.0543 0.0538 0.0533 -0.776 0.0403 (MPa-1)
+
+The activation energy of the surface reaction is 13.740 kJ/mol through the linear fitting
+
+method, and the adsorption heats (𝐸𝑎 ) of H2, MNA, and AMA are all negative,
+
+signifying that the adsorption process is exothermic (Figure 7b). The adsorption heat
+
+(𝐸𝑎) and the pre-exponential factor (𝐾0) were also estimated using the Arrhenius
+
+equation (Equation 8) for the adsorption process:
+
+ln 𝐾 = − 𝐸𝑎
+
+𝑅𝑇 + ln 𝐾0 (8)
+
+where 𝐾 is the adsorption equilibrium constant; 𝐾0 is the pre-exponential factor; 𝐸𝑎
+
+is the adsorption heat; 𝑅 is the universal gas constant; 𝑇 the temperature in K.
+
+To achieve reaction optimization via intrinsic kinetic modeling, response surfaces of
+
+the kinetic model were generated across various MNA concentrations, with yield
+
+represented on the Z axis and the productivity illustrated through a color map (Figure
+
+8). While it is feasible to attain a yield nearing 99% at a lower concentration and reduced
+
+mean residence time, optimizing both productivity and yield simultaneously—targeting
+
+the yellow area in Figure 8—requires an increase in both the mean residence time and
+
+MNA concentration. Under these optimized conditions, it is possible to achieve both a
+
+yield and productivity of up to 99% and 1.13 g/hour, respectively. The results predicted
+
+by the kinetic model at the optimized conditions were all confirmed by experimental
+
+results (Table S4).
+
+<image: DeviceRGB, width: 581, height: 342, bpc: 8>
+
+Figure 8. 3D response surface of objective values formed through the LHHW kinetic model I
+
+Comparison of MOBO and kinetic modeling.
+
+Table 4 presents the optimal reaction parameters and results from the two optimization
+
+approaches. The MOBO achieved an optimal yield of approximately 99% and
+
+productivity of 0.64 g/hour, respectively. Conversely, kinetic modeling achieved a
+
+similar optimal yield (~99%) but attained higher productivity (1.13 g/hour). The
+
+variation in optimal productivity was attributed to the distinct strategies for
+
+manipulating the residence time of the two approaches. MOBO modulated the
+
+residence time by adjusting the solution's flow rate, keeping the catalyst mass constant
+
+within the MPBR. This approach was favored because MOBO was implemented in an
+
+automated manner, discouraging altering the catalyst quantity in the MPBR. Manually
+
+increasing the catalyst quantity could further increase productivity. Conversely, the
+
+intrinsic kinetic modeling methodology, which presumes that non-chemical kinetics
+
+phenomena (e.g., mass transfer, solute diffusion, flow dynamics) minimally impact the
+
+reaction, does not permit free variation of the flow rate but requires adjustment of the
+
+catalyst mass to maintain a constant solution flow rate.
+
+Table 4. The optimal reaction parameters and results of MOBO and kinetic modeling
+
+Productivity
+
+Data typea 𝐶𝑀𝑁𝐴
+
+(mol/L) 𝐹𝑀𝑁𝐴 (mL/min) Yield (%)
+
+(g/hour)
+
+0.0770
+
+0.9227
+
+99.25
+
+0.6396
+
+0.0805
+
+0.8763
+
+99.99
+
+0.6397
+
+0.0884
+
+0.8036
+
+99.09
+
+0.6385
+
+MOBO
+
+0.0854
+
+0.8547
+
+99.18
+
+0.6404
+
+0.0868
+
+0.8648
+
+99.08
+
+0.6398
+
+0.0846
+
+0.8741
+
+99.99
+
+0.6407
+
+0.0817
+
+0.8733
+
+99.99
+
+0.6413
+
+Productivity
+
+Productivity
+
+Yield (%)
+
+Yield (%)
+
+(g/hour)
+
+(g/hour)
+
+Data typeb 𝑇bath (˚C) MRT (s)
+
+Predicted data Experimental data
+
+99.16
+
+1.1242
+
+99.98
+
+1.1335
+
+99.02
+
+1.1226
+
+99.92
+
+1.1328
+
+Kinetic modeling
+
+99.02
+
+1.1226
+
+99.95
+
+1.1332
+
+99.11
+
+1.1237
+
+99.93
+
+1.1329
+
+99.06
+
+1.1231
+
+99.91
+
+1.1327
+
+aExperimental conditions for data collection: 𝑇bath (100 ˚C), 𝑃H2 (0.5 MPa). bExperimental conditions for
+
+(0.25 mol/L), 𝐹MNA (0.5 mL/min), 𝐹H2 (20 mL/min), 𝑃H2 (0.5 MPa).
+
+data collection: 𝐶𝑀𝑁𝐴
+
+Regarding optimization efficiency, MOBO excels in swiftly identifying the optimal
+
+reaction space by utilizing the Pareto Front. With an additional round of optimization,
+
+it effectively narrowed down the search to the seven promising parameter combinations
+
+(Figure 4). These selected points are subsequently used to construct the response
+
+surface for the optimization objectives, effectively mapping out the optimal reaction
+
+space from a broader set of possibilities. The integration of inline FTIR with MOBO
+
+enhances its capability to optimize reactions rapidly and with high precision. In contrast,
+
+kinetic modeling requires significant time and resources. The process involves the
+
+collection of large amounts of experimental data, the fitting of kinetic equations, and
+
+the derivation of scientific models. This approach is more labor intensive and slower
+
+than the simplified and data-saving process of MOBO.
+
+Although kinetic modeling is may not be as efficient as MOBO for reaction
+
+optimization, it offers a distinct advantage in terms of understanding reaction kinetics.
+
+While Bayesian Optimization is engineered for rapid convergence to optimal solutions,
+
+it lacks the capability to generate a comprehensive response surface across the full
+
+reaction space (Figure 4). In contrast, kinetic modeling allows for the calculation of a
+
+spectrum of optimal reaction parameters by leveraging predictions from scientific
+
+models. The response surfaces derived from kinetic modeling (Figure 8) provide
+
+valuable insights into reaction optimization by offering a visual representation of the
+
+entire reaction space, thereby highlighting trends and delineating the boundaries of
+
+optimization possibilities [7, 45].
+
+Conclusions
+
+In this work, we developed a heterogeneous continuous flow hydrogenation system
+
+enhanced with real-time inline infrared monitoring utilizing an ANN model for
+
+optimizing the synthesis of the crucial pesticide intermediate, AMA. This work
+
+systematically undertook and compared MOBO and kinetic modeling approaches to
+
+optimize the reaction process. In only 40 iterations, MOBO efficiently identified the
+
+Pareto optimal parameter combinations within the vast and intricate reaction space. The
+
+compromise between yield and productivity was impressively achieved. Conversely,
+
+intrinsic kinetic modeling revealed the activation energy of this hydrogenation reaction
+
+and characterized the hydrogen adsorption as competitive dissociative adsorption. This
+
+approach provided a comprehensive understanding of how variations in parameters
+
+affect the reaction results. Simultaneous optimization of yield and productivity was also
+
+achieved by leveraging the response surfaces generated from the kinetic model.
+
+While MOBO is efficient and accurate in determining the optimal reaction conditions,
+
+kinetic modeling provides insight into the mechanistic details of the reaction and offers
+
+comprehensive optimization possibilities over the entire reaction space. Thus, the in-
+
+depth study of heterogeneous continuous flow hydrogenation systems benefits from the
+
+synergistic application of MOBO and kinetic modeling. This dual approach enriches
+
+our understanding of reaction optimization and provides a deeper exploration of
+
+continuous-flow hydrogenation systems, offering valuable prospects for future research
+
+and development in this field.
+
+Declaration of Competing Interest
+
+The authors declare that they have no known competing financial interests or personal
+
+relationships that could have appeared to influence the work reported in this paper.
+
+Acknowledgments
+
+This research was supported by the Joint Funds of the Zhejiang Provincial Natural
+
+Science Foundation of China under Grant No. LHDMZ23B060001, Zhejiang Province
+
+Science and Technology Plan Project under Grant No. 2022C01179, and the National
+
+Natural Science Foundation of China under Grant No. 22108252).
+
+Appendix A. Supplementary data
+
+Supplementary data to this article can be found online at XXXXXXXXXXXXXXX.

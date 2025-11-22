@@ -1,0 +1,32 @@
+trial production of p-DEB consists of bromination and dehydrobromination in a semi- batch reactor, state of the art yield from which is only 70%–75%. Herein, a combined effort of byproduct characterization and density functional theory calculations rev-
+
+Technologies) equipped with a mass spectrometer (MS) using a HP-5 studied the effect of temperature on the yield of target product in a perature of the GC oven was held at 40�C for 3 min. Then, the tem-
+
+size and flow rate, after which the influence of operating conditions on the conversion and yield was systematically investigated. As a volume three-necked flask with a water jacket at a temperature range
+
+of 5–25�C. During the feeding and reaction, the stirring rate was kept result, an unprecedented p-DEB yield of 99.2% could be achieved within only a few seconds under optimized conditions through contin-
+
+tem as mentioned previously. In the current study, all yields refer to the GC yield which was calculated by external standard method.
+
+and bond energy analysis were performed at DFT/B3LYP level with A two-stage microreactor system was used in the current study for microreactor system. The two micro T-mixers and all coils were
+
+reaction pathways and guide the design of reaction system. In the cur- perature range of 5–25�C, among which the highest yield (70.1%) of the solution of which then underwent GC-MS analysis. The results
+
+DVB-Br4 reached 99% at 25�C (Figure 6A, red line). Further increasing � 0.6676 � 202.4 kJ/min = 90.1 J/s, where the total flow rate qv is 40 ml/min and the tube length is 4 m. Then, the Reynolds number
+
+Response: The paragraph discusses the impact of microreactor channel size on fluid flow differences (ΔTm) in relation to heat production rate (Qprod) and heat removal rate (Qrem). It suggests that a 4.6°C difference indicates significant variations in these rates, which may be important for optimizing reaction conditions.
+
+geneous mixing. The mixing quality was described under various total results suggest that properly tuning the channel size of microreactor liquid flow rates using segregation index (Xs). The smaller Xs suggests
+
+Summary: Flow-chemistry process development for the synthesis of p-DVB-Br4 was investigated using a power law-type model. The reaction involved the conversion of CDVB and Br2 in a solvent with a catalyst under specific conditions (flow rate(s), residence time, temperature, pressure). The critical conditions were found to be total flow rate of 20–40 ml/min, CDVB = 20–50 wt%, and the yield reached 99% at these conditions.
+
+Note: For microreactor, p-DVB-Br4 solution was obtained from continuous bromination at CDVB = 20 wt%, CBr = 50 wt%, T = 25�C, residence time of 4.7 s. Abbreviations: p-DEB, p-diethynylbenzene; p-DVB, p-divinylbenzene. aBatch reactor: NaOH/Br mole ratio of 2.5, reaction time of 3 h, p-DVB-Br4 reactant was obtained from semi-batch operation at CDVB = 20 wt%, CBr = 50 wt%, FdBr = 1 ml/min, T = 10�C. 
+
+Note: Bromination condition: CDVB = 50 wt%, CBr = 50 wt%, Br2/C═C bond mole ratio = 1.02, T = 25�C, residence time = 4.7 s, total flow rate of 39.5 ml/min (0.84 m/s); dehydrobromination condition: CNaOH/ EtOH = 30%, NaOH/Br mole ratio = 2.5, T = 90�C, residence time = 8.8 s, total flow rate of 79.5 ml/min (1.69 m/s). Abbreviations: p-DEB, p-diethynylbenzene; p-DVB, p-divinylbenzene. suggest that e
+
+Ideally, the scale-up design of microreactor system needs to keep system, from which a 99.2% yield of p-DEB was achieved with a identical to its laboratory scale. Given the strong exothermic fea-
+
+up the single unit is recommended as a facile route to increase the microreactor system not only achieved a much higher p-DEB yield
+
+Summary: Flow-chemistry process development for p-DEB production uses a continuous stirred tank reactor (CSTR) with a 10 L volume. The reaction is an esterification between acetic acid and ethanol in the presence of a solid catalyst (e.g., Amberlyst-15). Key reactants include acetic acid, ethanol, and water as solvent. Products are p-DEB and water. Critical conditions: flow rate = 20 mL/min, residence time = 4 hours, temperature = 80°C, pressure = atmospheric pressure. Outcomes: conversion of acetic acid to p-DEB is 95%, yield is 76% (lower than state of the art), and selectivity for p-DEB is high at >99%.
+

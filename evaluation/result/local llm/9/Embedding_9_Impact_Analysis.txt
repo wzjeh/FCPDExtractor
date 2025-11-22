@@ -1,0 +1,11 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| temperature | product_yield | increase |
+| residence_time | conversion_rate | increase |
+| pressure | reaction_rate | decrease |
+| temperature | reaction_rate | increase |
+| pressure | reaction_rate | increase |
+| residence_time | conversion_rate | unchanged |
+| catalyst_concentration | reaction_yield | increase |

@@ -1,0 +1,23 @@
+{
+  "total": 1830,
+  "parsed_ok": 1830,
+  "parse_rate_pct": 100.0,
+  "coverage": {
+    "reactant_name_cnt": 790,
+    "reactant_name_pct": 43.169398907103826,
+    "product_signal_cnt": 747,
+    "product_signal_pct": 40.81967213114754,
+    "any_condition_cnt": 812,
+    "any_condition_pct": 44.37158469945356,
+    "reactor_info_cnt": 1205,
+    "reactor_info_pct": 65.84699453551912,
+    "metrics_numeric_cnt": 396,
+    "metrics_numeric_pct": 21.639344262295083
+  },
+  "conditions_type_counts": {
+    "residence_time": 316,
+    "pressure": 168,
+    "flow_rate_total": 311,
+    "temperature": 509
+  }
+}

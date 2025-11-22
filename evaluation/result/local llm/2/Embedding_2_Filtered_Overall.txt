@@ -1,0 +1,1 @@
+{"reaction_summary": {"reaction_type": "A", "reactants": [{"name": "X", "role": "R"}], "products": [], "conditions": [{"type": "C2", "value": "V1"}, {"type": "C3", "value": "V4"}], "reactor": {"type": "T6", "inner_diameter": 60}, "metrics": {"conversion": null, "yield": null, "selectivity": null, "unit": "%"}}}

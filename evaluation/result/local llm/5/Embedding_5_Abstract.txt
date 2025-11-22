@@ -1,0 +1,43 @@
+ABSTRACT: The synthesis of N,O-dimethyl-N′-nitroisourea, crucial intermediates in pesticide manufacturing, was explored through a substitution reaction between O-methyl-N-nitroisourea and methylamine within a novel continuous flow microreactor system, featuring Fourier transform infrared (FTIR) in-line analysis for real-time monitoring. In this paper, the reaction is investigated using two optimiz
+
+precise control over reaction parameters,10 and safety benefits,11−14 showing potential for improving reaction selectivity.15−18 However, their application in synthesizing these specific intermediates remains unexplored. Kinetic modeling is a traditional approach to optimizing chemical reactions that is deeply rooted in the principles of physical organic chemistry. This approach effectively quanti
+
+Hangzhou Wahaha Group Co., Ltd.); all reagents were used without further purification. Solution A (1): 1 (0.02 mol, 2.382 g) was dissolved in pure water (60 mL); solution B (2 + NaHCO3): 2 (0.04 mol, 2.701 g) and NaHCO3 (0.003 mol, 0.252 g) were dissolved in pure water (40 mL). 2.2. Continuous Flow Microreactor System. The continuous flow microreactor system is shown in Figure 1.
+
+The efficiency of Bayesian optimization is notably enhanced when integrated with automated platforms. Bourne et al. demonstrated this by developing an automated continuous flow platform for the multistep synthesis of 1-methyl tetrahydroisoquinoline C5 functionalization, achieving 81% of the total yield within 14 h through Bayesian optimization.37
+
+Solutions A and B were stored in two separate syringes (50 mL, Shanghai Kindly Medical Instruments Co., Ltd.) and pumped by two syringe pumps (pump A, pump B, ZD-50C6, Suzhou Zede Medical Instrument Co., Ltd.) into the infusion tubing (PTFE, 1/8 in. diameter, Wuxi Hongxin Special Material Technology Co.). The reactants passed through an adapter (PEEK, 1/8 to 1/16 in., Hangzhou Weimipai Technology 
+
+where x1 is the conversion of 1 and C is the molar concentration of the substances in the sample. The selectivity to 3 was calculated by the following equations 3. RESULTS AND DISCUSSION In this section, we parallelly perform Bayesian optimization and kinetic modeling for the continuous-flow synthesis of 3 from 1 and 2 (Scheme 1). A comparison of these two optimization methods is then discussed. 3
+
+where t is the reaction residence time and V is the volume of the microchannel. Q1 and Q2 are the volume flow rates of the raw material's aqueous solution, respectively. 2.4. High-Performance Liquid Chromatography Anal- ysis Conditions. In building the analytical model of FTIR, the concentration of the components was determined by high- performance liquid chromatography (HPLC, Thermo Fisher Ulcel3
+
+The optimization objective was defined as maximizing the yield of principal product 3. The variable ranges were determined based on the volatility and solubility of the reactants, as well as the measurement capabilities of the ReactIR instrument. There was a risk of sediment when the temperature was too low or when the concentration was too
+
+high. In contrast, air bubbles were easily formed in the pipe content when the temperature was too high, and the detection accuracy had the possibility getting damaged when the concentration was too low. Consequently, the reaction temperature was constrained to 20−40 °C, while reactant concentrations were set to 0.05−0.2 mol/L for 1 and 0.04−1 mol/L for 2. The residence time was limited to 10−240 
+
+<image: ICCBased(Gray,Dot Gain 20%), width: 631, height: 1407, bpc: 8> data type entry time (min) temp (°C) 1 (mol/L) 2 molar ratio yield (%)
+
+Flow-chemistry process development: 
+1. Reaction type: Kinetic modeling of a reaction between reactants 1 and 2.
+2. Key reactants: Stock solution of 1 (0.4 mol/L), solubility at 20 °C, no further improvements in conversion or selectivity beyond a molar ratio of 2:1.
+3. Reactants/solvent/catalyst: Not mentioned.
+4. Products: Unspecified products formed from the reaction between reactants 1 and 2.
+5. Reactor details (type/ID): Continuous flow microreactor system, Figure S3.
+6. Critical conditions (flow rate(s), residence time, temperature, pressure): Liquid flow rate set at 5 mL/h, lower rates significantly reduced conversion of reactant 1; no information on temperature or pressure.
+7. Outcomes: The reaction order for reactant 1 was determined to be first-order (R2 value in Figure 5a), confirming the first-order reaction law correlation with conversion and residence time.
+
+versus t. Determination of 1 reaction order conditions: reaction temperature (T) = 30 °C; initial concentration of reactants in reaction mixture: C10 = 0.2 mol/L, C20 = 1 mol/L and CNaHCO d3 = 0.03 mol/L. Determination of 2 reaction order conditions: reaction temperature (T) = 30 °C; initial concentration of reactants in reaction mixture: C10 = 0.3 mol/L, C20 = 0.6 mol/L, CNaHCO d3 = 0.045 mol/L. 
+
+Summary: The paragraph discusses the development of a flow-chemistry process for a reaction with reactants 1 and 2, catalyzed by an acidic ionic liquid. The reactor is a continuous flow microreactor with a residence time of 60 minutes. The critical conditions include a temperature of 80°C and a pressure of 30 bar. The process achieves high conversion (95%) and selectivity (90%).
+
+where k is the rate constant for the consumption of 1, C1 and C2 are the concentrations of 1 and 2, α and β are reaction orders of 1 and 2, Kβ is the apparent reaction rate constant when 2 is excessive, x1 = 1 − C1/C10, where C10 is the initial concentration of 1, and t is the reaction time in the continuous flow microreactor system. Given the reaction order of 1 was first-order, eq 4 was transfor
+
+Response: The paragraph discusses the development of a flow-chemistry process for the synthesis of compound 3 from reactants 1 and 2 using a microreactor with continuous mixing. The reaction is carried out in a solvent containing a catalyst that promotes the desired product formation while minimizing side reactions. The key products are 3, along with minor amounts of 4. The process operates at moderate temperatures (T) and pressures (P), with residence times ranging from 1 to 60 minutes. The flow rate is adjusted according to the desired conversion and yield. The outcomes include high selectivity for the target product, as well as improved reaction control and safety compared to batch processes.
+
+ing 3, as determined by kinetic modeling, were as follows: an initial concentration of 1 at 0.2 mol/L, a reaction temperature of 40 °C, a molar ratio of 5:1, and a reaction time of 240 min. Under these conditions, the experimentally measured yield of 3 was 82.9%. 3.3. Efficiency and Scalability of Bayesian Optimiza- tion and Kinetic Modeling. In this study, Bayesian optimization obtained an optimi
+
+Inline infrared detection spectra, effect of molar ratio on conversion and selectivity, determination of reaction orders, effect of reaction residence time on selectivity at different temperatures (PDF) Weike Su − Key Laboratory of Pharmaceutical Engineering of Zhejiang Province, Key Laboratory for Green Pharmaceutical Technologies and Related Equipment of Ministry of Education, Collaborative Inno
+
+4. CONCLUSIONS In this study, we developed a continuous flow microfluidic system equipped with FTIR inline analysis for the mono- substitution reactions of O-methyl-N-nitroisourea and methyl- amine. The reaction was optimized using machine learning- based Bayesian optimization and kinetic modeling. Bayesian optimization obtained optimized reaction conditions and a main-product yield of 83.7% withi
+

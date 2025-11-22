@@ -1,0 +1,8 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| Format: Cause | Effect | - |
+| Cause | Effect | - |
+| Flow conditions | Synthesis of butylpyridinium bromide | - |
+| Format: Cause | Effect | - |

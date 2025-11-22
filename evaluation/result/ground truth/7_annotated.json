@@ -1,0 +1,49 @@
+{
+  "reaction_summary": {
+    "reaction_type": "photooxygenation",
+    "reactants": [
+      "dihydroartemisinic acid (DHAA)",
+      "methylene blue (MB)",
+      "oxygen"
+    ],
+    "products": [
+      "hydroperoxide"
+    ],
+    "conditions": [
+      {
+        "type": "temperature",
+        "value": "room temperature"
+      },
+      {
+        "type": "pressure",
+        "value": "atmospheric pressure"
+      },
+      {
+        "type": "flow_rate_ratio",
+        "value": "0.5 (solution flow rate / oxygen flow rate)"
+      },
+      {
+        "type": "dhaa_concentration",
+        "value": "0.5 mg/ml"
+      },
+      {
+        "type": "photosensitizer_concentration",
+        "value": "1.5 mg/ml"
+      }
+    ],
+    "reactor": {
+      "type": "glass micro-reactor",
+      "inner_diameter": "not specified",
+      "dimensions": {
+        "width": "not specified",
+        "height": "not specified"
+      }
+    },
+    "metrics": {
+      "conversion": 69,
+      "yield": null,
+      "selectivity": null,
+      "unit": "%"
+    }
+  }
+}

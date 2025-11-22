@@ -1,0 +1,20 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| pressure | increase or decrease | - |
+| liquid phase flow rate | increase or decrease | - |
+| gas flow rate | increase or decrease | - |
+| pressure | increase or decrease | - |
+| liquid phase flow rate | increase or decrease | - |
+| gas flow rate | increase or decrease | - |
+| liquid phase flow rate | increase or decrease | - |
+| gas flow rate | increase or decrease | - |
+| liquid phase flow rate | increase or decrease | - |
+| gas flow rate | increase or decrease | - |
+| liquid phase flow rate | increase or decrease | - |
+| gas flow rate | increase or decrease | - |
+| liquid phase flow rate | increase or decrease | - |
+| gas flow rate | increase or decrease | - |
+| liquid phase flow rate | increase or decrease | - |
+| gas flow rate | increase | increase |

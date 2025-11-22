@@ -1,0 +1,14 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| 1. temperature | reaction_rate | increase |
+| 2. residence_time | conversion_rates | increase |
+| 3. residence_time | yield | unchanged |
+| 4. catalyst_loading | activity_catalyst | increase |
+| 5. flow_rate | residence_times | decrease |
+| 6. temperature | degradation_reactants | increase |
+| 7. pH | enzyme_activity | increase |
+| 8. reaction_time | conversions | increase |
+| 9. concentration | degradation_rates | increase |
+| 10. pressure | reaction_rate | increase |

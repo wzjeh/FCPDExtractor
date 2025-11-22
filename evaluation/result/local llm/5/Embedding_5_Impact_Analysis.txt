@@ -1,0 +1,23 @@
+# Influence Factor Summary
+
+| Factor | Metric | Direction |
+|--------|--------|-----------|
+| reaction_temperature | - | decrease |
+| residence_time | increase | - |
+| flow_rate | decrease | - |
+| catalyst_C1_concentration | increase | - |
+| temperature | decrease | - |
+| solvent_amount | decrease | - |
+| catalyst_C2_concentration | increase | - |
+| residence_time | increase | - |
+| reagent_R1_amount | decrease | - |
+| reaction_temperature | - | decrease |
+| solvent_amount | decrease | - |
+| residence_time | increase | - |
+| reagent_R2_amount | decrease | - |
+| reaction_temperature | - | decrease |
+| solvent_amount | decrease | - |
+| residence_time | increase | - |
+| reagent_R3_amount | decrease | - |
+| reaction_temperature | - | decrease |
+| solvent_amount | - | decrease |

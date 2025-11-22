@@ -1,0 +1,48 @@
+Flow-chemistry process development: 
+Reaction type: Synthesis of O-methylisourea
+Key reactants: H2O, CH3OH, H2SO4 (catalyst)
+Solvent: Water
+Catalyst: Ammonium chloride
+Products: O-methylisourea and water
+Reactor details: Continuous flow system with transfer learning capabilities
+Critical conditions: 
+Flow rate(s): Not mentioned
+Residence time: Not mentioned
+Temperature: Not mentioned
+Pressure: Not mentioned
+Outcomes: Conversion of approximately 75 % and an E-factor as low as 0.557 during the third round of optimization, with a production rate of up to 52.2 g/h.
+
+reliable platform for reaction optimization [15,16]. This enables the use of methods such as one-factor-at-a-time (OFAT), design of experiments (DoE), and kinetic modeling [17]. However, these approaches often rely on the chemist's intuition [18–21] and may struggle to optimize mul- tiple competing objectives simultaneously [22,23]. The development of multi-objective Bayesian optimization (MOBO) h
+
+starting with a focused range for each parameter, and later expanding the ranges based on early results. This iterative strategy allows the optimization process to proceed efficiently while avoiding unnecessary waste. For our system, the initial temperature range was set to −5–10 ◦C to prevent cyanamide decomposition. The residence time was limited to 0.1–0.5 h, and the molar ratio of cyanamide to
+
+ylisourea in a continuous flow system using MOBO. The first round of optimization established a preliminary Pareto front, followed by a sec- ond round with an expanded parameter range to further extend the frontier. By equipping the MOBO model with transfer learning capa- bilities [36], we enabled continued optimization in a scaled-up contin- uous flow system. Leveraging optimization data from the
+
+trating how each experimental variable—reaction time, temperature, and molar ratio—simultaneously impacts both production rate and E factor. This plot allows clear identification of trends and trade-offs: for example, shorter reaction times generally lead to increased production rates but are often associated with higher E-factors, indicating less efficient reagent usage. Similarly, higher reactio
+
+s—temperature, residence time, and molar ratio—were initially defined based on preliminary investigations. If the parameter range is too nar- row, optimization may overlook valuable regions in the reaction space. If it is too broad, the optimization model requires more experiments and more raw materials, increasing resource consumption. To conserve materials and improve efficiency, we adopted a st
+
+Flow-chemistry process development: Reaction type - not mentioned; Key reactants/solvent/catalyst - not mentioned; Products - not mentioned; Reactor details (type/ID) - not mentioned; Critical conditions (flow rate(s), residence time, temperature, pressure) - not mentioned; Outcomes (conversion/yield/selectivity) - not mentioned.
+
+reactor system, a scaled-up reaction device was constructed (Scheme 3) to evaluate its potential for industrial production and achieve higher production capacity. However, increasing the reactor tube diameter from 1/16 inch to 1/8 inch reduced mass transfer efficiency, which limits the unit's capacity [39]. To address this, a simple and cost-effective static mixer was designed to enhance mixing ef
+
+The evaluation was conducted at a reaction temperature of 10 ◦C. Using only the T-mixer, as shown in Fig. 4a, the effect of flow rate on conversion was assessed (Fig. 4c). Even at flow rate of 686 mL/h, the conversion did not stabilize at a plateau, indicating unresolved mass transfer limitations. In contrast, with our homemade static mixer (a 1/4 inch mixing coil filled with SiO2 beads, Fig. 4b),
+
+In the first round of optimization experiments, reaction time and sulfuric acid molar ratio were found to significantly impact the pro- duction rate. To further explore the reaction space and extend the Pareto front, the parameter ranges were expanded. During our initial investi- gation, we observed that the material remains more stable at lower temperatures, and that the reaction conversion drops
+
+As shown in Fig. 5b-d, reaction time was concentrated between 0.260–0.326 h, favoring shorter time for higher production rate. The reaction temperature consistently remained at its upper limit to accel- erate the reaction, while the molar ratio ranged from 1.82:1–2.30:1, Compared to optimized result in the first-round optimization, the final optimized results in the scaled-up device achieved a mor
+
+In this work, we demonstrated the effectiveness of multiple rounds of MOBO in the continuous flow synthesis of O-methylisourea, both at the small-scale and in a scaled-up device. By iteratively refining the compromise between higher production rates and lower E-factors, we achieved an ever-improving Pareto front, culminating in optimized scaled-up production conditions with a maximum production ra
+
+tenfold increase in production rate, with only a slight E-factor increase of about 0.2, which remained at a low level. The high consistency of reaction parameters and results in this round indicates a well-balanced trade-off between the E-factor and production rate, with an average yield of 75 %. Additionally, the optimized process features a signifi- cantly shorter reaction time and is intrinsica
+
+The Scale-up of continuous flow system is shown in Scheme 3 and Scheme 4 (Scheme 4 is identical to Scheme 3 only with the addition of a homemade static mixer.). Solutions A and B were stored in four separate syringes (50 mL, Shanghai Kindly Medical Instruments Co., Ltd.) and pumped by four syringe pumps (Pump A, Pump B, and Pump C, Pump D, ZD-50C6, Suzhou Zede Medical Instrument Co., Ltd.) into th
+
+The continuous flow microreactor system is shown in Scheme 2. Solutions A and B were stored in two separate syringes (50 mL, Shanghai Kindly Medical Instruments Co., Ltd.) and pumped by two syringe pumps (Pump A, Pump B, ZD-50C6, Suzhou Zede Medical Instrument Co., Ltd.) into the infusion tubing (PTFE, 1/8inch diameter, Wuxi Hongxin Special Material Technology Co.). The reactants passed through an
+
+The reaction solutions were collected for quenching at appropriate times and analyzed by high-performance liquid chromatography (HPLC, ThermoFisher Ulcel3000). The conversion rate of the samples was ob- tained by constructing the regression equation of the standard curve by the external standard method. HPLC detection conditions C18 column (10 μm, 4.6 × 250 mm, Welch Materials (Shanghai, China), U
+
+In this experiment, the E-factor of the product and the production rate were selected as the optimization objectives for MOBO. Using MOBO, the Pareto front for the continuous flow synthesis of O-methyl- isourea was rapidly obtained to optimize the reaction process. No data was used for the research described in the article.
+
+tion for multi-objective optimization. In this study, following the methodology reported by Baldwin et al. in EDBO+ [34], we dynamically define the reference point as the vector of minimum observed values for each objective (e.g., yield and space-time yield) obtained in the exper- iments. Because the optimization is performed as a black-box procedure without a fixed, predefined reference, this dyn
+
