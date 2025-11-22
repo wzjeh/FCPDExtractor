@@ -1,0 +1,22 @@
+{
+  "reaction": {
+    "summary": {
+      "reaction_type": null,
+      "reactants": [
+        {"name": "H2", "role": "reagent"},
+        {"name": "O2", "null": true},
+        {"name": "CH4", "role": "fuel"}
+      ],
+      "products": [],
+      "conditions": {
+        "type": null,
+        "value": 0
+      },
+      "reactor": {
+        "type": "batch",
+        "inner_diameter": null
+      }
+    },
+    "text": "The reaction is a combustion of methane with oxygen to produce water and carbon dioxide. The conditions are: temperature = 500°C, pressure = 1 atm."
+  }
+}

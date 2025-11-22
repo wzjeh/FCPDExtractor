@@ -65,7 +65,8 @@ def main() -> None:
             filter_model=local_cfg.get('filter'),
             abstract_model=local_cfg.get('abstract'),
             summarize_model=local_cfg.get('summarize'),
-                overall_model=local_cfg.get('overall'),
+            overall_model=local_cfg.get('overall'),
+            impact_model=local_cfg.get('impact'),
             finetuned_trigger_name=local_cfg.get('finetuned_trigger_name', 'My_Finetuned_Model'),
         )
     elif engine_choice == 'qwen':

@@ -2,6 +2,7 @@
 
 | Factor | Metric | Direction |
 |--------|--------|-----------|
-| Residence time | conversion of TFMB | increase |
-| Temperature | yield | increase |
-| Temperature | production rate | - |
+| Format: Cause | Effect | - |
+| Format: Cause | Effect | - |
+| Format: Cause | Effect | - |
+| Format: Cause | Effect | - |

@@ -126,7 +126,7 @@ def run_embedding_selection(txt_path: str, top_n: int = 10) -> str:
     # 规则加权：命中数值/单位/结果词等给予小幅加权（封顶）
     percent_re = re.compile(r"\b\d{1,3}\s?%\b")
     units_re = re.compile(
-        r"(?:\bmL\s*/\s*(?:h|min)\b|\bµL\s*/\s*min\b|\buL\s*/\s*min\b|\bbar\b|\b°C\b|\bmg\s*/\s*h\b)",
+        r"(?:\bmL\s*/\s*(?:h|min)\b|\bµL\s*/\s*min\b|\buL\s*/\s*min\b|\bmg\s*/\s*h\b|\bbar\b|\bMPa\b|\b°C\b|\bK\b|\b°F\b)",
         re.IGNORECASE,
     )
     outcomes_re = re.compile(r"\b(yield|conversion|selectivity|productivity)\b", re.IGNORECASE)
@@ -135,12 +135,17 @@ def run_embedding_selection(txt_path: str, top_n: int = 10) -> str:
     bpr_re = re.compile(r"\bBPR\b", re.IGNORECASE)
 
     bonuses = np.zeros_like(base_scores)
+    unit_boost = 0.0
+    try:
+        unit_boost = float(os.getenv("FCPD_EMB_UNIT_BOOST", "0.12"))
+    except Exception:
+        unit_boost = 0.12
     for i, text in enumerate(paragraphs):
         bonus = 0.0
         if percent_re.search(text):
             bonus += 0.12
         if units_re.search(text):
-            bonus += 0.08
+            bonus += unit_boost
         if outcomes_re.search(text):
             bonus += 0.08
         if rt_re.search(text):
@@ -153,10 +158,59 @@ def run_embedding_selection(txt_path: str, top_n: int = 10) -> str:
             bonus = 0.25
         bonuses[i] = bonus
 
-    final_scores = base_scores + bonuses
+    # 段落长度加权：长段落优先级略高（加分权重适度提高）
+    lengths = np.array([len(t) for t in paragraphs], dtype=float)
+    if lengths.size and lengths.max() > lengths.min():
+        lengths_norm = (lengths - lengths.min()) / (lengths.max() - lengths.min())
+    else:
+        lengths_norm = np.zeros_like(lengths)
+    length_bonus = 0.12 * lengths_norm
+
+    # 对短且缺少定量/单位/结果词的段落进行轻微惩罚，避免短句占前
+    short_penalty = np.zeros_like(base_scores)
+    for i, text in enumerate(paragraphs):
+        if len(text) < 160:
+            has_signal = bool(percent_re.search(text) or units_re.search(text) or outcomes_re.search(text) or rt_re.search(text) or flow_re.search(text) or bpr_re.search(text))
+            if not has_signal:
+                short_penalty[i] = 0.06
+
+    final_scores = base_scores + bonuses + length_bonus - short_penalty
     # 选Top-N
     idx_sorted = np.argsort(-final_scores)[: max(top_n, 1)]
-    selected = [paragraphs[i] for i in idx_sorted]
+
+    # 可选：合并相邻段落以增加信息量，避免短句丢信息（通过环境变量控制）
+    expand = os.getenv('FCPD_EMB_EXPAND', '0') == '1'
+    min_chars = int(os.getenv('FCPD_EMB_MIN_CHARS', '300'))
+    max_chars = int(os.getenv('FCPD_EMB_MAX_CHARS', '1200'))
+    selected_blocks = []
+    used = set()
+    for i in idx_sorted:
+        if i in used:
+            continue
+        base_text = paragraphs[i]
+        combined = base_text
+        block_min_idx = i
+        if expand and len(base_text) < min_chars:
+            # 优先尝试向后合并，再尝试向前合并
+            if i + 1 < len(paragraphs) and (i + 1) not in used:
+                cand = combined + " " + paragraphs[i + 1]
+                if len(cand) <= max_chars:
+                    combined = cand
+                    used.add(i + 1)
+                    block_min_idx = min(block_min_idx, i + 1)
+            if len(combined) < min_chars and i - 1 >= 0 and (i - 1) not in used:
+                cand = paragraphs[i - 1] + " " + combined
+                if len(cand) <= max_chars:
+                    combined = cand
+                    used.add(i - 1)
+                    block_min_idx = min(block_min_idx, i - 1)
+        selected_blocks.append((block_min_idx, combined))
+        used.add(i)
+
+    # 写出前是否按原文顺序输出（仅影响文件中顺序，不影响候选选择）
+    if os.getenv('FCPD_EMB_KEEP_ORDER', '0') == '1':
+        selected_blocks.sort(key=lambda x: x[0])
+    selected = [text for _, text in selected_blocks]
 
     base = os.path.splitext(os.path.basename(txt_path))[0]
     out_path = os.path.join(os.path.dirname(txt_path), f"Embedding_{base}.txt")

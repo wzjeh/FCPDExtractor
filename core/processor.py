@@ -405,12 +405,14 @@ class UnifiedTextProcessor:
 
             # 影响因素（简化三列）
             try:
-                impact_md = self.extract_influence_factors_with_llm(overall_input)
-                impact_file = file_path.replace('.txt', '_Impact_Analysis.txt')
-                with open(impact_file, 'w', encoding='utf-8') as f:
-                    f.write("# Influence Factor Summary\n\n")
-                    f.write(impact_md)
-                outputs['impact_analysis'] = impact_file
+                import os
+                if os.getenv('FCPD_RUN_IMPACT', '1') == '1':
+                    impact_md = self.extract_influence_factors_with_llm(overall_input)
+                    impact_file = file_path.replace('.txt', '_Impact_Analysis.txt')
+                    with open(impact_file, 'w', encoding='utf-8') as f:
+                        f.write("# Influence Factor Summary\n\n")
+                        f.write(impact_md)
+                    outputs['impact_analysis'] = impact_file
             except Exception:
                 pass
         return outputs
