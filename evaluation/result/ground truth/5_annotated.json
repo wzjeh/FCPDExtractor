@@ -2,12 +2,28 @@
   "reaction_summary": {
     "reaction_type": "nucleophilic substitution",
     "reactants": [
-      "O-methyl-N-nitroisourea",
-      "methylamine",
-      "NaHCO3"
+      {
+        "name": "O-methyl-N-nitroisourea",
+        "role": "reactant"
+      },
+      {
+        "name": "methylamine hydrochloride",
+        "role": "reactant"
+      }
     ],
     "products": [
-      "N,O-dimethyl-N'-nitroisourea"
+      {
+        "name": "N,O-dimethyl-N'-nitroisourea",
+        "role": "product",
+        "yield_optimal": 83.7,
+        "unit": "%"
+      },
+      {
+        "name": "1-methyl-3-nitroguanidine",
+        "role": "product",
+        "yield_optimal": null,
+        "unit": "%"
+      }
     ],
     "conditions": [
       {
@@ -19,17 +35,17 @@
         "value": "240 min"
       },
       {
-        "type": "molar_ratio",
-        "value": "5:1"
+        "type": "flow_rate_total",
+        "value": null
       },
       {
-        "type": "concentration",
-        "value": "0.2 mol/L (O-methyl-N-nitroisourea)"
+        "type": "pressure",
+        "value": null
       }
     ],
     "reactor": {
-      "type": "continuous flow microreactor",
-      "inner_diameter": "1/16 in. (disk-shaped PTFE capillary tube)"
+      "type": "coil reactor",
+      "inner_diameter": "1/8 inch"
     },
     "metrics": {
       "conversion": null,

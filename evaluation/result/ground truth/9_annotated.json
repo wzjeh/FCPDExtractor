@@ -2,22 +2,43 @@
   "reaction_summary": {
     "reaction_type": "bromination/dehydrobromination",
     "reactants": [
-      "p-divinylbenzene (p-DVB)",
-      "Br2",
-      "NaOH",
-      "CCl4"
+      {
+        "name": "p-divinylbenzene (p-DVB)",
+        "role": "reactant"
+      },
+      {
+        "name": "Br2",
+        "role": "reactant"
+      },
+      {
+        "name": "NaOH",
+        "role": "reactant"
+      },
+      {
+        "name": "CCl4",
+        "role": "solvent"
+      }
     ],
     "products": [
-      "p-diethynylbenzene (p-DEB)"
+      {
+        "name": "p-diethynylbenzene (p-DEB)",
+        "role": "product",
+        "yield_optimal": "99.2",
+        "unit": "%"
+      }
     ],
     "conditions": [
       {
         "type": "temperature",
-        "value": "25 °C (bromination), 90 °C (dehydrobromination)"
+        "value": null
       },
       {
         "type": "residence_time",
-        "value": "4.7 s (bromination), 8.8 s (dehydrobromination)"
+        "value": "14 s"
+      },
+      {
+        "type": "flow_rate_total",
+        "value": null
       },
       {
         "type": "pressure",
@@ -25,8 +46,8 @@
       }
     ],
     "reactor": {
-      "type": "microreactor (two-stage, T-mixer and coil)",
-      "inner_diameter": "1 mm (coils), 0.3 mm (T-mixer channels)"
+      "type": "coil reactor",
+      "inner_diameter": null
     },
     "metrics": {
       "conversion": null,

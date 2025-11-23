@@ -1,5 +1,0 @@
-# Influence Factor Summary
-
-| Factor | Metric | Direction |
-|--------|--------|-----------|
-| None | - | - |

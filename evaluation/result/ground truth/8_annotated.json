@@ -2,12 +2,34 @@
   "reaction_summary": {
     "reaction_type": "α-bromination",
     "reactants": [
-      "acetophenone",
-      "bromine",
-      "hydrogen bromide (catalyst)"
+      {
+        "name": "acetophenone",
+        "role": "reactant"
+      },
+      {
+        "name": "bromine",
+        "role": "reactant"
+      },
+      {
+        "name": "hydrogen bromide",
+        "role": "catalyst"
+      },
+      {
+        "name": "1,4-dioxane",
+        "role": "solvent"
+      },
+      {
+        "name": "acetic acid",
+        "role": "solvent"
+      }
     ],
     "products": [
-      "phenacyl bromide"
+      {
+        "name": "phenacyl bromide",
+        "role": "product",
+        "yield_optimal": null,
+        "unit": "%"
+      }
     ],
     "conditions": [
       {
@@ -19,19 +41,26 @@
         "value": "60 s"
       },
       {
-        "type": "bromine_molar_ratio",
-        "value": "1.5"
+        "type": "flow_rate_reactant_A",
+        "value": "0.26 mL/min"
+      },
+      {
+        "type": "flow_rate_reactant_B",
+        "value": "0.39 mL/min"
+      },
+      {
+        "type": "pressure",
+        "value": null
       }
     ],
     "reactor": {
       "type": "microreactor",
-      "inner_diameter": null,
-      "volume": "0.65 mL"
+      "inner_diameter": null
     },
     "metrics": {
       "conversion": null,
-      "yield": 99.0,
-      "selectivity": 98.0,
+      "yield": 99,
+      "selectivity": 98,
       "unit": "%"
     }
   }

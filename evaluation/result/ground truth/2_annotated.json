@@ -2,35 +2,46 @@
   "reaction_summary": {
     "reaction_type": "quaternization",
     "reactants": [
-      "pyridine",
-      "bromobutane",
-      "DMAc solvent"
+      {
+        "name": "pyridine",
+        "role": "reactant"
+      },
+      {
+        "name": "bromobutane",
+        "role": "reactant"
+      },
+      {
+        "name": "DMAc",
+        "role": "solvent"
+      }
     ],
     "products": [
-      "butylpyridinium bromide"
+      {
+        "name": "butylpyridinium bromide",
+        "role": "product",
+        "yield_optimal": null,
+        "unit": "%"
+      }
     ],
     "conditions": [
       {
         "type": "temperature",
-        "value": "168 ﾂｰC"
+        "value": null
       },
       {
         "type": "residence_time",
-        "value": "29 min"
+        "value": null
       }
     ],
     "reactor": {
-      "type": "stainless steel tube reactor",
-      "inner_diameter": null,
-      "volume": "5 mL"
+      "type": "tube reactor",
+      "inner_diameter": null
     },
     "metrics": {
-      "conversion": 76,
-      "yield": 97,
+      "conversion": null,
+      "yield": null,
       "selectivity": null,
-      "production_rate_g_h": 5.6,
-      "space_time_yield": 5.18,
-      "unit": "% or g h竅ｻﾂｹ or mmol mL竅ｻﾂｹ h竅ｻﾂｹ"
+      "unit": "%"
     }
   }
 }

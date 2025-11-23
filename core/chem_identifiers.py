@@ -84,3 +84,4 @@ def annotate_compound_identifiers(component, name: str) -> None:
             ident_inchi.value = inchi
 
 
+

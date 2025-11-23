@@ -214,9 +214,9 @@ class LocalPipeline:
 
     def filter_content(self, df: pd.DataFrame) -> pd.DataFrame:
         user_question = (
-            "Does this paragraph describe the authors' OWN experimental work, results, or conclusions in this specific study? "
-            "Answer 'Yes' if it contains experimental details, results, specific conditions, OR if it is the Abstract/Conclusion summarizing the work.\n"
-            "Answer 'No' if it is purely Introduction, Background, Literature Review (citing others), or general theory.\n"
+            "Does this paragraph describe the authors' OWN experimental work, results, or conclusions in THIS SPECIFIC study? "
+            "Answer 'Yes' ONLY if it details new experiments, specific conditions (temp/time/yield), or results performed by the authors.\n"
+            "Answer 'No' if it is Introduction, Background, Literature Review (citing previous work/references), general theory, or future plans.\n"
             "Strictly answer 'Yes' or 'No'."
         )
         system_prompt = (
@@ -232,11 +232,7 @@ class LocalPipeline:
                 "materials and methods", "methods", "procedure", "general procedure",
                 "typical procedure", "optimization", "best conditions", "results and discussion"
             ]
-            kw_technical = [
-                "flow chemistry","continuous flow","residence time","flow rate","mL/min","µL/min","ul/min",
-                "reactor","tubular","coil","microreactor","inner diameter","i.d.","mm","μm",
-                "temperature","°c","selectivity","conversion","yield","bpr","bar","back pressure","min","pressure"
-            ]
+            # kw_technical 已被移除，不再用于跳过 LLM 检查
             content_lower = content.lower()
             # 1) 标题窗口命中：前 N 字符内包含强信号标题则直接保留
             try:
@@ -247,10 +243,19 @@ class LocalPipeline:
             if any(k in prefix for k in kw_strong):
                 results.append('Yes')
                 continue
-            # 2) 技术关键词命中（原有逻辑）
-            if any(k in content_lower for k in kw_technical):
+            # 2) 技术关键词命中 -> 强制交给 LLM 判断，以减少误报
+            # 恢复部分极高置信度的技术指标直通，以避免 LLM 过度过滤
+            # 规则：必须包含明确的数值结果（%）或关键流程参数（residence time）
+            if "residence time" in content_lower:
                 results.append('Yes')
                 continue
+            if "%" in content and ("yield" in content_lower or "conversion" in content_lower):
+                # 简单的正则检查数值
+                import re
+                if re.search(r"\d+\s*%", content):
+                    results.append('Yes')
+                    continue
+            
             # 3) 其它情况交给 LLM 判断
             prompt = self._create_prompt(system_prompt, user_question, content)
             model = self._get_stage_model('filter')
@@ -511,11 +516,15 @@ class LocalPipeline:
             system_prompt = "You output ONLY valid JSON. No explanations."
             user_prompt = (
                 "Only use THIS paragraph; do not infer across other paragraphs.\n"
+                "NEGATIVE CONSTRAINTS: If the paragraph describes 'previous work', 'literature review', or 'background theory', ONLY extract data if it is explicitly compared with or part of the current study's experimental results. Otherwise, return a JSON with all nulls. Do NOT extract data cited from other papers unless relevant to the current study's optimization.\n\n"
+                "SPECIAL ATTENTION (Gases & Solvents):\n"
+                "- Explicitly extract gaseous reactants (e.g., Hydrogen/H2, Oxygen/O2, CO) if flow rates or partial pressures are mentioned, even if not in a 'reagents' list.\n"
+                "- Include simple molecules (e.g., ethylene, benzene, toluene) as reactants/products if they are the main reaction components.\n\n"
                 # "For conditions, prefer values with units (°C/K/°F; s/min/h; bar/MPa; mL/min). Ignore counts like '7 experiments'.\n"
                 # "If a result (yield/conversion) is mentioned, associate the nearest temperature/time in the same or preceding sentence.\n\n"
                 "Schema (keys in this exact order):\n"
                 "1) reaction_summary.reaction_type\n"
-                "2) reactants[{name,role}]\n"
+                "2) reactants[{name,role}] (include gases like H2/O2 if used)\n"
                 "3) products[{name,yield_optimal,unit}]\n"
                 "4) conditions[{type,value}]  (types: temperature,residence_time,flow_rate_total,pressure)\n"
                 "5) reactor{type,inner_diameter}\n"
@@ -538,12 +547,13 @@ class LocalPipeline:
             user_prompt = (
                 "Analyze the provided paragraph regarding flow-chemistry process development.\n"
                 "Task:\n"
-                "1. Identify the MAIN reaction described.\n"
+                "1. Identify the MAIN reaction described (Authors' OWN work only).\n"
                 "2. Extract the OPTIMAL/BEST condition set mentioned (highest yield/conversion).\n"
                 "   - If no explicit 'best' is labeled, infer it based on the highest reported metrics.\n"
                 "   - Look for temperature, residence time, flow rates, and reactor details associated with that result.\n"
                 "3. Extract all reactants and products involved in this main reaction.\n\n"
-                "Output ONLY valid JSON. Use null for unknown fields. Do NOT invent numbers.\n"
+                "NEGATIVE CONSTRAINTS: If the paragraph describes 'previous work', 'literature review', or 'background theory', ONLY extract data if it is explicitly compared with or part of the current study's experimental results. Otherwise, return a JSON with all nulls. Do NOT extract data cited from other papers unless relevant to the current study's optimization.\n\n"
+                # "For conditions, prefer values with units (°C/K/°F; s/min/h; bar/MPa; mL/min). Ignore counts like '7 experiments'.\n"
                 "Guidance:\n"
                 "- For conditions, prefer values with units (°C/K/°F; s/min/h; bar/MPa; mL/min). Ignore counts like '7 experiments'.\n"
                 "- If a result (yield/conversion) is mentioned, associate the nearest temperature/time in the same or preceding sentence.\n"

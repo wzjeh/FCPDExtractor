@@ -12,14 +12,6 @@ reaction pathways and guide the design of reaction system. In the cur- perature 
 
 � 0.6676 � 202.4 kJ/min = 90.1 J/s, where the total flow rate qv is 40 ml/min and the tube length is 4 m. Then, the Reynolds number ance of white precipitates due to occurrence of side reactions, which
 
-DVB-Br4 yield can only reach 70% at 35�C due to severe side reac- tivity of the solvent λ is 0.1121 W m�1 K�1 and the heat capacity Cp is 1109 J kg�1 K�1. So, the required logarithmic mean temperature to different heat removal capability as "surface area to volume ratio"
-
-differences of the fluid flow (ΔTm) to equate heat production rate with of microreactor system changes dramatically with its channel size. In heat removal rate (Qprod = Qrem = αAΔTm) is 4.6�C, suggesting a much
-
-geneous mixing. The mixing quality was described under various total results suggest that properly tuning the channel size of microreactor liquid flow rates using segregation index (Xs). The smaller Xs suggests
-
-this flow range. In the following studies, the total flow rates were kept well above 8 ml/min to ensure a good mixing performance.37 Then, the influence of operating conditions on the bromination of
-
 Here, we demonstrated that the yield of p-DVB-Br4 reach 99% at conditions of total flow rate of 20–40 ml/min, CDVB = 20–50 wt%, tion was established using a power law-type model (Equation 1),
 
 Note: For microreactor, p-DVB-Br4 solution was obtained from continuous bromination at CDVB = 20 wt%, CBr = 50 wt%, T = 25�C, residence time of 4.7 s. Abbreviations: p-DEB, p-diethynylbenzene; p-DVB, p-divinylbenzene. aBatch reactor: NaOH/Br mole ratio of 2.5, reaction time of 3 h, p-DVB-Br4 reactant was obtained from semi-batch operation at CDVB = 20 wt%, CBr = 50 wt%, FdBr = 1 ml/min, T = 10�C. bMicroreactor: T-mixer channel size of 0.3 mm, NaOH/Br mole ratio of 2.5, total flow rate of 79.5 ml/min (1.69 m/s), residence time of 11.8 s (copper coil length = 20 m, 1 mm i.d.). cMicroreactor: T-mixer channel size of 0.3 mm, NaOH/Br mole ratio of 2.5, total flow rate of 79.5 ml/min (1.69 m/s), residence time of 14.7 s (copper coil length = 25 m, 1 mm i.d.).

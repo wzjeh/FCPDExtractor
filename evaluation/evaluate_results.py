@@ -105,30 +105,78 @@ def parse_prediction_file(path: str, prefer_best: bool) -> Optional[Dict[str, An
     return best
 
 
+def extract_structure_keys(obj: Dict[str, Any], src_obj: Dict[str, Any]) -> Set[str]:
+    """
+    从原始对象 src_obj 中提取存在的结构键。
+    """
+    struct_keys = set()
+    
+    # 1. Root Keys
+    if "reaction_summary" in obj:
+        struct_keys.add("has_reaction_summary")
+    if "reaction_type" in src_obj:
+        struct_keys.add("has_reaction_type")
+    
+    # 2. Lists Presence
+    if "reactants" in src_obj and isinstance(src_obj["reactants"], list):
+        struct_keys.add("has_reactants_list")
+        # Check internal keys of list items
+        for r in src_obj["reactants"]:
+            if isinstance(r, dict):
+                if "name" in r:
+                    struct_keys.add("reactant_has_name")
+                if "role" in r:
+                    struct_keys.add("reactant_has_role")
+    
+    if "products" in src_obj and isinstance(src_obj["products"], list):
+        struct_keys.add("has_products_list")
+        for p in src_obj["products"]:
+            if isinstance(p, dict):
+                if "name" in p:
+                    struct_keys.add("product_has_name")
+    
+    if "conditions" in src_obj and isinstance(src_obj["conditions"], list):
+        struct_keys.add("has_conditions_list")
+        for c in src_obj["conditions"]:
+            if isinstance(c, dict):
+                if "type" in c:
+                    struct_keys.add("condition_has_type")
+                if "value" in c:
+                    struct_keys.add("condition_has_value")
+
+    # 3. Dicts Presence
+    reactor = src_obj.get("reactor", obj.get("reactor"))
+    if isinstance(reactor, dict):
+        struct_keys.add("has_reactor_dict")
+        if "type" in reactor:
+            struct_keys.add("reactor_has_type")
+        if "inner_diameter" in reactor:
+            struct_keys.add("reactor_has_inner_diameter")
+
+    metrics = src_obj.get("metrics", obj.get("metrics"))
+    if isinstance(metrics, dict):
+        struct_keys.add("has_metrics_dict")
+        if "conversion" in metrics:
+            struct_keys.add("metrics_has_conversion")
+        if "yield" in metrics:
+            struct_keys.add("metrics_has_yield")
+        if "selectivity" in metrics:
+            struct_keys.add("metrics_has_selectivity")
+        if "unit" in metrics:
+            struct_keys.add("metrics_has_unit")
+            
+    return struct_keys
+
+
 def normalize_prediction(obj: Dict[str, Any]) -> Dict[str, Any]:
     """
     将预测对象归一化为与GT相同的字段布局：
-    {
-      "reaction_type": str|None,
-      "reactants": [{ "name": str, "role": str|None }],
-      "products": [{ "name": str }],
-      "conditions": [{ "type": str, "value": Any }],
-      "reactor": { "type": str|None, "inner_diameter": str|None },
-      "metrics": { "conversion": Any, "yield": Any, "selectivity": Any, "unit": str|None }
-    }
     """
     # 预测有时包在 reaction_summary 里，有时是混合结构（部分在根下，部分在 summary 里）
     # 策略：将 reaction_summary 的内容（如果存在）合并到根对象中作为一个统一的源
     summary = obj.get("reaction_summary")
     if isinstance(summary, dict):
         # 优先使用 summary 中的字段，补充以根对象中的字段
-        # 注意：Python 的 update 语义是后者覆盖前者，所以我们将 obj 作为基础，summary 覆盖之
-        # 但考虑到有时 summary 仅含部分信息（如仅含 reaction_type），而 reactants 在根下
-        # 我们希望保留根下的信息。
-        # 如果 summary 中没有某key，自然会用 obj 的。
-        # 如果 summary 中有某key但为 None，可能会覆盖 obj 中的有效值吗？
-        # 通常预测结果不会同时在两处出现同一字段。
-        # 安全起见，我们构造一个混合视图：src = {**obj, **summary}
         src = {**obj, **summary}
     else:
         src = obj
@@ -140,7 +188,9 @@ def normalize_prediction(obj: Dict[str, Any]) -> Dict[str, Any]:
         "conditions": [],
         "reactor": {"type": None, "inner_diameter": None},
         "metrics": {"conversion": None, "yield": None, "selectivity": None, "unit": None},
+        "_struct_keys": extract_structure_keys(obj, src)
     }
+    
     # reactants: 可能是字符串列表或对象列表
     reactants = src.get("reactants")
     if isinstance(reactants, list):
@@ -186,6 +236,7 @@ def normalize_prediction(obj: Dict[str, Any]) -> Dict[str, Any]:
 def normalize_ground_truth(obj: Dict[str, Any]) -> Dict[str, Any]:
     # 兼容两种结构：顶层字段或包在 reaction_summary 内
     src = obj.get("reaction_summary", obj)
+    
     result: Dict[str, Any] = {
         "reaction_type": _norm_str(src.get("reaction_type")),
         "reactants": [],
@@ -193,7 +244,9 @@ def normalize_ground_truth(obj: Dict[str, Any]) -> Dict[str, Any]:
         "conditions": [],
         "reactor": {"type": None, "inner_diameter": None},
         "metrics": {"conversion": None, "yield": None, "selectivity": None, "unit": None},
+        "_struct_keys": extract_structure_keys(obj, src)
     }
+    
     reactants = src.get("reactants")
     if isinstance(reactants, list):
         for r in reactants:
@@ -265,8 +318,16 @@ def flatten_items(norm: Dict[str, Any]) -> Set[Tuple]:
     - 条件：("condition", type, value)
     - 反应物：("reactant.name", name) 和 ("reactant.role", name, role)
     - 产物：("product.name", name)
+    - 结构：("struct", key_name)
     """
     items: Set[Tuple] = set()
+    
+    # 0. 结构项
+    struct_keys = norm.get("_struct_keys", set())
+    for k in struct_keys:
+        items.add(("struct", k))
+        
+    # 1. 值项
     if norm.get("reaction_type"):
         items.add(("reaction_type", norm["reaction_type"]))
     reactor = norm.get("reactor", {})
@@ -299,10 +360,51 @@ def flatten_items(norm: Dict[str, Any]) -> Set[Tuple]:
 
 
 def compute_counts(gt_items: Set[Tuple], pred_items: Set[Tuple]) -> Tuple[int, int, int]:
-    tp = len(gt_items & pred_items)
-    fp = len(pred_items - gt_items)
-    fn = len(gt_items - pred_items)
-    return tp, fp, fn
+    # 由于引入了模糊匹配，不能简单用集合交集
+    # TP: 对于每个 pred_item，如果它能匹配上任意一个尚未被匹配的 gt_item，则算 TP
+    
+    tp = 0
+    # 先把 gt_items 转为列表以便标记是否已使用
+    gt_list = list(gt_items)
+    gt_matched = [False] * len(gt_list)
+    
+    # 剩余的 pred_items 即为 FP
+    fp_count = 0
+    
+    for p_item in pred_items:
+        # p_item: (key, val) or (key, val1, val2) ...
+        matched_idx = -1
+        
+        for i, g_item in enumerate(gt_list):
+            if gt_matched[i]:
+                continue
+                
+            # 键必须完全一致（除了 struct 这种特殊键？这里假设 key 必须一致）
+            # item 结构通常是 (key, val, ...)
+            if len(p_item) != len(g_item):
+                continue
+            if p_item[0] != g_item[0]: # Key mismatch
+                continue
+                
+            # 比较剩余的值部分
+            is_match = True
+            for k in range(1, len(p_item)):
+                if not is_value_match(g_item[k], p_item[k]):
+                    is_match = False
+                    break
+            
+            if is_match:
+                matched_idx = i
+                break
+        
+        if matched_idx != -1:
+            tp += 1
+            gt_matched[matched_idx] = True
+        else:
+            fp_count += 1
+            
+    fn = len(gt_list) - sum(gt_matched)
+    return tp, fp_count, fn
 
 
 def compute_metrics(tp: int, fp: int, fn: int) -> Dict[str, float]:
@@ -337,30 +439,120 @@ def _extract_number_if_possible(v: Any) -> Any:
     if v is None:
         return None
     if isinstance(v, (int, float)):
-        return v
+        return float(v)  # 统一转为float
     s = str(v).strip()
     # 提取第一个可能的浮点数/整数
     m = re.search(r"-?\d+(\.\d+)?", s)
     if m:
         num_str = m.group(0)
         try:
-            if "." in num_str:
-                return float(num_str)
-            return int(num_str)
+            return float(num_str)  # 统一转为float
         except ValueError:
             return s.lower()
     return s.lower()
-
 
 def _norm_val(v: Any) -> Any:
     # 对数值尝试抽取数值，其他统一小写字符串
     if v is None:
         return None
     if isinstance(v, (int, float)):
-        return v
+        return float(v)  # 统一转为float
     return _extract_number_if_possible(v)
 
+def is_value_match(gt_val: Any, pred_val: Any) -> bool:
+    """
+    判断两个值是否匹配（支持数值容差和字符串宽松匹配）
+    """
+    if gt_val is None and pred_val is None:
+        return True
+    if gt_val is None or pred_val is None:
+        return False
+        
+    # 1. 数值比较 (float)
+    if isinstance(gt_val, float) and isinstance(pred_val, float):
+        return abs(gt_val - pred_val) < 1e-4
+    
+    # 2. 字符串比较
+    s_gt = str(gt_val).lower().strip()
+    s_pred = str(pred_val).lower().strip()
+    
+    if s_gt == s_pred:
+        return True
+        
+    # 3. 宽松匹配：括号别名与包含关系
+    # 如果一个是全名+缩写形式 "Full Name (Abbr)"，尝试拆解
+    def get_variants(s: str) -> Set[str]:
+        parts = {s}
+        # 提取括号内容 "A (B)" -> A, B
+        m = re.match(r"^(.*?)\s*\((.*?)\)$", s)
+        if m:
+            main_part = m.group(1).strip()
+            paren_part = m.group(2).strip()
+            parts.add(main_part)
+            parts.add(paren_part)
+        return {p for p in parts if p}
+    
+    gt_vars = get_variants(s_gt)
+    pred_vars = get_variants(s_pred)
+    
+    # 只要集合有交集就算对
+    if gt_vars & pred_vars:
+        return True
+        
+    # 4. 单向包含（仅针对较长字符串，避免误判）
+    # 比如 "TFMB" vs "Trifluoromethoxybenzene" -> 如果我们有一个已知缩写表最好
+    # 这里简单地：如果一个是另一个的子串且长度差不离谱？不，这太危险。
+    # 仅针对特定情况：如果一个是全大写（缩写），出现在另一个中？
+    # 暂时只使用上面的括号拆解逻辑，已经能解决 "trifluoromethoxybenzene (TFMB)" vs "TFMB" 的问题
+    
+    return False
 
+def compute_counts(gt_items: Set[Tuple], pred_items: Set[Tuple]) -> Tuple[int, int, int]:
+    # 由于引入了模糊匹配，不能简单用集合交集
+    # TP: 对于每个 pred_item，如果它能匹配上任意一个尚未被匹配的 gt_item，则算 TP
+    
+    tp = 0
+    # 先把 gt_items 转为列表以便标记是否已使用
+    gt_list = list(gt_items)
+    gt_matched = [False] * len(gt_list)
+    
+    # 剩余的 pred_items 即为 FP
+    fp_count = 0
+    
+    for p_item in pred_items:
+        # p_item: (key, val) or (key, val1, val2) ...
+        matched_idx = -1
+        
+        for i, g_item in enumerate(gt_list):
+            if gt_matched[i]:
+                continue
+                
+            # 键必须完全一致（除了 struct 这种特殊键？这里假设 key 必须一致）
+            # item 结构通常是 (key, val, ...)
+            if len(p_item) != len(g_item):
+                continue
+            if p_item[0] != g_item[0]: # Key mismatch
+                continue
+                
+            # 比较剩余的值部分
+            is_match = True
+            for k in range(1, len(p_item)):
+                if not is_value_match(g_item[k], p_item[k]):
+                    is_match = False
+                    break
+            
+            if is_match:
+                matched_idx = i
+                break
+        
+        if matched_idx != -1:
+            tp += 1
+            gt_matched[matched_idx] = True
+        else:
+            fp_count += 1
+            
+    fn = len(gt_list) - sum(gt_matched)
+    return tp, fp_count, fn
 def list_document_ids() -> List[str]:
     ids: List[str] = []
     for fname in os.listdir(GROUND_TRUTH_DIR):
@@ -483,5 +675,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-

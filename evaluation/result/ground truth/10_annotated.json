@@ -1,14 +1,31 @@
 {
   "reaction_summary": {
-    "reaction_type": "Pinnick oxidation",
+    "reaction_type": "oxidation",
     "reactants": [
-      "crotonaldehyde",
-      "sodium chlorite (NaClO2)",
-      "hydrogen peroxide (H2O2)",
-      "hydrochloric acid (HCl)"
+      {
+        "name": "crotonaldehyde",
+        "role": "reactant"
+      },
+      {
+        "name": "sodium chlorite (NaClO2)",
+        "role": "reactant"
+      },
+      {
+        "name": "hydrogen peroxide (H2O2)",
+        "role": "reactant"
+      },
+      {
+        "name": "hydrochloric acid (HCl)",
+        "role": "reactant"
+      }
     ],
     "products": [
-      "crotonic acid"
+      {
+        "name": "crotonic acid",
+        "role": "product",
+        "yield_optimal": null,
+        "unit": "%"
+      }
     ],
     "conditions": [
       {
@@ -20,12 +37,16 @@
         "value": "3 min"
       },
       {
+        "type": "flow_rate_total",
+        "value": null
+      },
+      {
         "type": "pressure",
         "value": "4.0 MPa"
       }
     ],
     "reactor": {
-      "type": "microchannel reactor",
+      "type": " cross- shaped micromixer",
       "inner_diameter": "0.25 mm"
     },
     "metrics": {

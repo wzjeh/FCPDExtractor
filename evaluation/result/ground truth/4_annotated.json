@@ -1,50 +1,56 @@
 {
-  "reaction_summary": {
-    "reaction_type": "hydroiodination and dimerization",
-    "reactants": [
-      "acetylene",
-      "PtIV iodo complexes",
-      "iodide ions",
-      "HClO4",
-      "iodine (for diiodobutadiene synthesis)"
-    ],
-    "products": [
-      "vinyl iodide",
-      "(E,E)-1,4-diiodo-1,3-butadiene"
-    ],
-    "conditions": [
-      {
-        "type": "temperature",
-        "value": "80 °C"
-      },
-      {
-        "type": "residence_time",
-        "value": "7 min"
-      },
-      {
-        "type": "pressure",
-        "value": "3 bar"
-      },
-      {
-        "type": "gas_flow_rate",
-        "value": "2 mL/min"
-      },
-      {
-        "type": "liquid_flow_rate",
-        "value": "0.06–0.18 mL/min"
-      }
-    ],
-    "reactor": {
-      "type": "capillary microreactor (FEP tube)",
-      "inner_diameter": "0.8 mm",
-      "outer_diameter": "1.6 mm",
-      "length": "5 m"
+  "reaction_type": "nitration",
+  "reactants": [
+    {
+      "name": "trifluoromethoxybenzene",
+      "role": "reactant"
     },
-    "metrics": {
-      "conversion": 23.5,
-      "yield": null,
-      "selectivity": 100,
+    {
+      "name": "mixed acid",
+      "role": "reactant"
+    },
+    {
+      "name": "sulfuric acid",
+      "role": "catalyst"
+    }
+  ],
+  "products": [
+    {
+      "name": "p-NB",
+      "yield_optimal": 91.08,
       "unit": "%"
     }
+  ],
+  "conditions": [
+    {
+      "type": "temperature",
+      "value": "273 K"
+    },
+    {
+      "type": "residence_time",
+      "value": null
+    },
+    {
+      "type": "flow_rate_A",
+      "value": "0.4 mL/min"
+    },
+    {
+      "type": "flow_rate_B",
+      "value": "0.9 mL/min"
+    },
+    {
+      "type": "pressure",
+      "value": null
+    }
+  ],
+  "reactor": {
+    "type": "packed tubular reactor",
+    "inner_diameter": "6 mm"
+  },
+  "metrics": {
+    "conversion": 99.6,
+    "yield": null,
+    "selectivity": 90.97,
+    "unit": "%"
   }
 }

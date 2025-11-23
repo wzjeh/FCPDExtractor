@@ -8,8 +8,6 @@ MOBO was applied to optimize four key reaction parameters (Figure 2): reaction M
 
 continued to make further recommendations. This process was repeated iteratively until the desired levels of yield and productivity were reached. Ultimately, this method led to the identification of the optimal experimental parameters located on the Pareto Front,
 
-MPa and 100 ˚C, respectively. The solubility of MNA in methanol dictated its concentration limit, setting the upper boundary at 0.25 mL/min. The residence time,
-
 crucial for reaction completion, was adjusted by modulating the solution's flow rate. An excessively high flow rate could result in undue pressure build-up within the reactor tubes, while a markedly low flow rate might increase the gas phase's proportion,
 
 points in the upper right corner indicate the best balance between yield and productivity, showing nearly 99% yield and 0.64 g/hour productivity. The conclusive set of experimental parameters and results, which includes three sets capable of attaining
@@ -22,17 +20,11 @@ objectives and the negligible impact of hydrogen pressure. The exploration range
 
 iterations, the results (Table S3) show that an additional four sets of experimental parameters are able to achieve the same optimal yield and productivity as the original three sets. Mapping these seven optimal sets of experimental data onto the reaction
 
-equations (ODEs) were solved using the ODE45 function. We fitted the kinetic models to the experimental data obtained at the reaction temperatures of 30 ˚C (303.15 K), 40 ˚C (313.15 K), 50 ˚C (323.15 K), and 60 ˚C (333.15 K), with the results of these fittings
-
 represented on the Z axis and the productivity illustrated through a color map (Figure 8). While it is feasible to attain a yield nearing 99% at a lower concentration and reduced the yellow area in Figure 8—requires an increase in both the mean residence time and
 
 MNA concentration. Under these optimized conditions, it is possible to achieve both a yield and productivity of up to 99% and 1.13 g/hour, respectively. The results predicted by the kinetic model at the optimized conditions were all confirmed by experimental
 
 productivity of 0.64 g/hour, respectively. Conversely, kinetic modeling achieved a similar optimal yield (~99%) but attained higher productivity (1.13 g/hour). The variation in optimal productivity was attributed to the distinct strategies for
-
-manipulating the residence time of the two approaches. MOBO modulated the residence time by adjusting the solution's flow rate, keeping the catalyst mass constant within the MPBR. This approach was favored because MOBO was implemented in an
-
-phenomena (e.g., mass transfer, solute diffusion, flow dynamics) minimally impact the reaction, does not permit free variation of the flow rate but requires adjustment of the aExperimental conditions for data collection: 𝑇bath (100 ˚C), 𝑃H2 (0.5 MPa). bExperimental conditions for
 
 approach provided a comprehensive understanding of how variations in parameters affect the reaction results. Simultaneous optimization of yield and productivity was also achieved by leveraging the response surfaces generated from the kinetic model.
 
